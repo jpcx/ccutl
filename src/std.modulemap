@@ -1,0 +1,4 @@
+module std [system] {
+  header "std.h"
+  export *
+}
