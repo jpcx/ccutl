@@ -65,8 +65,8 @@ Several notes must be made:
 - ccutl modules must be built with Clang. I wasn't able to successfully build them with GCC devel/c++-modules
 - the library uses many C++20 features that are currently unavailable in `libc++`, so GNU `libstdc++` is required
 - Clang does not have an `std` module for `libstdc++`, and header units were not working
-- a module named `std` is created internally (simple system header inclusion in the global module fragment caused many errors)
-- this `std` module includes ALL C++ API headers and is re-exported from each module in the project that imports it
+- an `std` modules is created internally (system header inclusion in the global module fragment caused many errors)
+- this `std` module includes ALL C++ API headers and is re-exported from each module that imports it
 - conflicts will arise if `ccutl` is imported with another module that exports `std` or any C++ header units.
 
 The project will be updated as soon as:
@@ -142,7 +142,7 @@ They may be consumed directly as a subfolder as follows:
 git clone -b @PROJECT_VERSION@ https://github.com/jpcx/ccutl.git
 ```
 ```cmake
-set(CCUTL_MODULES ON) # this is required for modules
+set(CCUTL_MODULES ON)
 add_subdirectory([ccutl download dir])
 target_link_libraries([your target] ccutl)
 set_target_properties([your target] PROPERTIES
@@ -185,7 +185,7 @@ make test-headers # mkdir -p build/headers                         &&
 
 Testing Modules:
 ```shell
-# modules can only be tested with Clang for now
+# modules can only be tested with Clang (for now)
 make test-modules # mkdir -p build/modules                         &&
                   # cmake -Bbuild/modules -DCCUTL_MODULES=ON       &&
                   # cmake --build build/modules --target testccutl &&
@@ -242,7 +242,6 @@ ccutl.nontype_pack | Provides a nontype template arg container with transformati
 ccutl.nontype_specialization_of | detects template specializations for nontype-parameter templates (<auto...>)
 ccutl.noref | removes the topmost reference qualifiers on a type
 ccutl.range_of | describes a range-type T that contains Contained
-ccutl.reduce | performs a reduction operation on the provided range or arguments
 ccutl.same | describes a set of types with no variation
 ccutl.specializable_with | describes a template that is specializable with given type template args
 ccutl.specialization_of | detects template specializations for type-parameter templates (<class...>)
