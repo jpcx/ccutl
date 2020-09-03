@@ -121,11 +121,11 @@ add_module (ccutl
 # end project modules
 
 # manual dependencies for non-module detail headers
-add_dependencies (ccutl.streq.o  ccutl.subscriptable_to.o)
-add_dependencies (ccutl.strlen.o ccutl.subscriptable_to.o)
-add_dependencies (ccutl.eq.o     ccutl.noref.o)
-add_dependencies (ccutl.gt.o     ccutl.noref.o)
-add_dependencies (ccutl.gteq.o   ccutl.noref.o)
-add_dependencies (ccutl.lt.o     ccutl.noref.o)
-add_dependencies (ccutl.lteq.o   ccutl.noref.o)
-add_dependencies (ccutl.neq.o    ccutl.noref.o)
+add_dependencies (ccutl.streq.pcm  ccutl.subscriptable_to.o)
+add_dependencies (ccutl.strlen.pcm ccutl.subscriptable_to.o)
+add_dependencies (ccutl.eq.pcm     ccutl.noref.o)
+add_dependencies (ccutl.gt.pcm     ccutl.noref.o)
+add_dependencies (ccutl.gteq.pcm   ccutl.noref.o)
+add_dependencies (ccutl.lt.pcm     ccutl.noref.o)
+add_dependencies (ccutl.lteq.pcm   ccutl.noref.o)
+add_dependencies (ccutl.neq.pcm    ccutl.noref.o)

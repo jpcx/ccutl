@@ -32,7 +32,7 @@
 #
 #define CCUTL_VERSION_MAJOR 0
 #define CCUTL_VERSION_MINOR 1
-#define CCUTL_VERSION_PATCH 0
+#define CCUTL_VERSION_PATCH 1
 #
 #ifdef CCUTL_MODULES
 #define CCUTL_BEGIN_EXPORT_NAMESPACE(fullname) export namespace fullname {

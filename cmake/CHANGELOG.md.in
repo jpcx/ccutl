@@ -2,7 +2,16 @@
 
 ## [Upcoming](https://github.com/jpcx/ccutl/compare/@PROJECT_VERSION@...devel)
 
-## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@)
+## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.0...@PROJECT_VERSION@)\]
+
+### Changed
+
+- Separated dev build scripts from main build recipe
+- Fixed README typo
+- Fixed module depenencies for detail headers
+- Updated cctest dev dependency
+
+## [0.1.0](https://github.com/jpcx/ccutl/releases/tag/0.1.0)
 
 ### Added
 

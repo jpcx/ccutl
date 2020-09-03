@@ -26,15 +26,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const CONFIGURATION = process.argv[2];
-if (!CONFIGURATION) {
-  console.error(
-      'Error: configuration is required. ex: node buildModuleDeps modules')
-  process.exit(1);
-}
-
 const ROOTDIR  = path.join(__dirname, '../../');
-const BUILDDIR = path.join(ROOTDIR, `build/${CONFIGURATION}`);
 const SRCDIR   = path.join(ROOTDIR, 'include');
 const SRCEXT   = 'h';
 
@@ -157,17 +149,6 @@ function writeDeps(sortedDeps: SortedDeps) {
   return modules;
 }
 
-function cleanUnnecessaryBuildFiles(modules: ModuleSet) {
-  for (const pcm of fs.readdirSync(path.join(BUILDDIR, 'modules'))) {
-    if (!modules.has(pcm.replace(/^(.*)\.pcm$/m, '$1')))
-      fs.unlinkSync(path.join(BUILDDIR, 'modules', pcm));
-  }
-  for (const o of fs.readdirSync(path.join(BUILDDIR, 'objects'))) {
-    if (!modules.has(o.replace(/^(.*)\.o/m, '$1')))
-      fs.unlinkSync(path.join(BUILDDIR, 'objects', o));
-  }
-}
-
 class Pipeline<Stream extends any> {
   public pipe(fn: (arg?: Stream) => any) {
     const stream = this.stream === null ? fn() : fn(this.stream);
@@ -189,4 +170,3 @@ new Pipeline()
     .pipe(reduceRedundantDeps)
     .pipe(sortDeps)
     .pipe(writeDeps)
-    .pipe(cleanUnnecessaryBuildFiles);

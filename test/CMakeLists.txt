@@ -52,8 +52,8 @@ endif ()
 
 set_target_properties  (test${PROJECT_NAME} PROPERTIES
                         $<$<BOOL:${CCUTL_MODULES}>:CXX_EXTENSIONS OFF>
-                        EXCLUDE_FROM_ALL true
-                        EXCLUDE_FROM_DEFUALT_BUILD true)
+                        EXCLUDE_FROM_ALL TRUE
+                        EXCLUDE_FROM_DEFUALT_BUILD TRUE)
   
 target_compile_options (test${PROJECT_NAME} PRIVATE 
                         ${CMAKE_CXX_FLAGS}

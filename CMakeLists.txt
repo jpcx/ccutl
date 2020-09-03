@@ -26,7 +26,7 @@
 
 cmake_minimum_required (VERSION 3.0)
 project (ccutl
-  VERSION 0.1.0)
+  VERSION 0.1.1)
 
 configure_file (
   ${PROJECT_SOURCE_DIR}/cmake/config.h.in
@@ -132,6 +132,4 @@ install (EXPORT ${PROJECT_NAME}
 
 # - - - - - - - - - - - - - - - - - - test - - - - - - - - - - - - - - - - - - #
 
-if (TESTCCUTL)
-  add_subdirectory (test)
-endif ()
+add_subdirectory (test)

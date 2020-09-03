@@ -1,6 +1,19 @@
 # Changelog
 
-## [Upcoming](https://github.com/jpcx/cctest/compare/0.4.0...devel)
+## [Upcoming](https://github.com/jpcx/cctest/compare/0.4.2...devel)
+
+## [0.4.2](https://github.com/jpcx/cctest/releases/tag/0.4.2) \[[diff](https://github.com/jpcx/cctest/compare/0.4.1...0.4.2)\]
+
+### Changed
+
+- added EXCLUDE_FROM_DEFUALT_BUILD to test target for compatibility
+- fixed Changelog typo
+
+## [0.4.1](https://github.com/jpcx/cctest/releases/tag/0.4.1) \[[diff](https://github.com/jpcx/cctest/compare/0.4.0...0.4.1)\]
+
+### Changed
+
+- removed test from default target
 
 ## [0.4.0](https://github.com/jpcx/cctest/releases/tag/0.4.0) \[[diff](https://github.com/jpcx/cctest/compare/0.3.0...0.4.0)\]
 

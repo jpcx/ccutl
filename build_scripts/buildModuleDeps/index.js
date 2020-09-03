@@ -26,13 +26,7 @@
 exports.__esModule = true;
 var fs = require("fs");
 var path = require("path");
-var CONFIGURATION = process.argv[2];
-if (!CONFIGURATION) {
-    console.error('Error: configuration is required. ex: node buildModuleDeps modules');
-    process.exit(1);
-}
 var ROOTDIR = path.join(__dirname, '../../');
-var BUILDDIR = path.join(ROOTDIR, "build/" + CONFIGURATION);
 var SRCDIR = path.join(ROOTDIR, 'include');
 var SRCEXT = 'h';
 function genDeps() {
@@ -144,18 +138,6 @@ function writeDeps(sortedDeps) {
     fs.writeFileSync(cmakeListsPath, content.replace(/^(# begin project modules)$([\s\S]+?)^(# end project modules)$/m, '$1\n' + moduleCommands.join('\n') + '\n$3'));
     return modules;
 }
-function cleanUnnecessaryBuildFiles(modules) {
-    for (var _i = 0, _a = fs.readdirSync(path.join(BUILDDIR, 'modules')); _i < _a.length; _i++) {
-        var pcm = _a[_i];
-        if (!modules.has(pcm.replace(/^(.*)\.pcm$/m, '$1')))
-            fs.unlinkSync(path.join(BUILDDIR, 'modules', pcm));
-    }
-    for (var _b = 0, _c = fs.readdirSync(path.join(BUILDDIR, 'objects')); _b < _c.length; _b++) {
-        var o = _c[_b];
-        if (!modules.has(o.replace(/^(.*)\.o/m, '$1')))
-            fs.unlinkSync(path.join(BUILDDIR, 'objects', o));
-    }
-}
 var Pipeline = /** @class */ (function () {
     function Pipeline(input) {
         this.stream = null;
@@ -174,5 +156,4 @@ new Pipeline()
     .pipe(genDeps)
     .pipe(reduceRedundantDeps)
     .pipe(sortDeps)
-    .pipe(writeDeps)
-    .pipe(cleanUnnecessaryBuildFiles);
+    .pipe(writeDeps);

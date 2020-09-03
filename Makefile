@@ -52,28 +52,26 @@ build/headers_single:
 build-modules: build/modules
 	mkdir -p $</modules
 	mkdir -p $</objects
-	make -C build_scripts/buildModuleDeps run-modules
-	node build_scripts/buildFeatureSummary
-	cmake -B$< -GNinja -DCCUTL_MODULES=ON -DTESTCCUTL=ON
+	cmake -B$< -GNinja -DCCUTL_MODULES=ON
 	cmake --build $<
 
 build-modules-single: build/modules_single
 	mkdir -p $</modules
 	mkdir -p $</objects
-	make -C build_scripts/buildModuleDeps run-modules-single
-	node build_scripts/buildFeatureSummary
-	cmake -B$< -GNinja -DCCUTL_MODULES=ON -DTESTCCUTL=ON -DTESTCCUTL_SINGLE=ON
+	cmake -B$< -GNinja -DCCUTL_MODULES=ON -DTESTCCUTL_SINGLE=ON
 	cmake --build $<
 
 build-headers: build/headers
-	node build_scripts/buildFeatureSummary
-	cmake -B$< -GNinja -DTESTCCUTL=ON
+	cmake -B$< -GNinja
 	cmake --build $<
 
 build-headers-single: build/headers_single
-	node build_scripts/buildFeatureSummary
-	cmake -B$< -GNinja -DTESTCCUTL=ON -DTESTCCUTL_SINGLE=ON
+	cmake -B$< -GNinja -DTESTCCUTL_SINGLE=ON
 	cmake --build $<
+
+dev-update:
+	make -C build_scripts/buildModuleDeps run
+	node build_scripts/buildFeatureSummary
 
 install: build-headers
 	cmake --install build/headers
@@ -99,6 +97,6 @@ test-all: test-modules test-modules-single test-headers test-headers-single
 clean:
 	${RM} -rf build
 
-.PHONY: all install build-modules build-modules-single build-headers       \
-	      build-headers-single test-modules test-modules-single test-headers \
-				test-headers-single test-all clean
+.PHONY: all build-modules build-modules-single build-headers       \
+	      build-headers-single clean dev-update install test-modules \
+				test-modules-single test-headers test-headers-single test-all clean
