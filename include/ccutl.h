@@ -59,7 +59,6 @@ export import ccutl.indexed_arg;
 export import ccutl.gt;
 export import ccutl.eq;
 export import ccutl.lowest;
-export import ccutl.reduce;
 export import ccutl.strlen;
 export import std;
 #else
@@ -86,7 +85,6 @@ export import std;
 #include "ccutl/nontype_specialization_of.h"
 #include "ccutl/noref.h"
 #include "ccutl/range_of.h"
-#include "ccutl/reduce.h"
 #include "ccutl/same.h"
 #include "ccutl/specializable_with.h"
 #include "ccutl/specialization_of.h"
