@@ -3,6 +3,3 @@ build
 
 # ignore third-party libraries
 node_modules
-
-# cctest master submodule directory for gh-pages
-master

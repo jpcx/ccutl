@@ -1,0 +1,51 @@
+\hypertarget{type__pack_8h}{}\doxysection{master/ccutl/include/ccutl/type\+\_\+pack.h File Reference}
+\label{type__pack_8h}\index{master/ccutl/include/ccutl/type\_pack.h@{master/ccutl/include/ccutl/type\_pack.h}}
+
+
+\mbox{\hyperlink{structtype__pack_type_pack}{ccutl.\+type\+\_\+pack}} -\/ Provides a type template arg container with transformational utilities  
+
+
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/indexed\+\_\+type.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/gt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/gteq.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/lt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/lteq.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/specializable\+\_\+with.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/specialization\+\_\+of.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtype__pack}{type\+\_\+pack$<$ Ts $>$}}
+\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1from}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::from$<$ class, class $>$}}
+\begin{DoxyCompactList}\small\item\em pulls template types from specialzied template \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1from_3_01Template_00_01Template_3_01Rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::from$<$ Template, Template$<$ Rs... $>$ $>$}}
+\begin{DoxyCompactList}\small\item\em pulls template types from specialzied template \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1concat}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::concat$<$... $>$}}
+\begin{DoxyCompactList}\small\item\em concatenates a nontype pack with Us... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1concat_3_01type__pack_3_01Us_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::concat$<$ type\+\_\+pack$<$ Us... $>$ $>$}}
+\begin{DoxyCompactList}\small\item\em concatenates a nontype pack with Us... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtype__pack}{type\+\_\+pack$<$ Ts $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class... Ts, std\+::size\+\_\+t... seq$>$ }\\requires constexpr \mbox{\hyperlink{group__ccutl_ga63f3237f9db72093e73de16e5dba6a22}{meta\+::gt}}$<$ sizeof...(Ts), 0 $>$ auto \mbox{\hyperlink{group__detail___ga6a93ec9b8c9a1d10e9123c6f08fac94e}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::pop\+\_\+back}} (std\+::index\+\_\+sequence$<$ seq... $>$ \&\&) noexcept
+\begin{DoxyCompactList}\small\item\em removes the last template type from Ts... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{type__pack_8h_a50f48d9c821cba9ebfd0e136514b7655}\label{type__pack_8h_a50f48d9c821cba9ebfd0e136514b7655}} 
+{\footnotesize template$<$template$<$ class... $>$ class Template, class... Ts$>$ }\\\mbox{\hyperlink{type__pack_8h_a50f48d9c821cba9ebfd0e136514b7655}{type\+\_\+pack}} (Template$<$ Ts... $>$) -\/$>$ \mbox{\hyperlink{structtype__pack}{type\+\_\+pack}}$<$ Ts... $>$
+\begin{DoxyCompactList}\small\item\em Allows for deduction construction from type template objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{type__pack_8h_ae4728b7be5f077d0877abd8cb6026c7e}\label{type__pack_8h_ae4728b7be5f077d0877abd8cb6026c7e}} 
+{\bfseries C\+C\+U\+T\+L\+\_\+\+E\+N\+D\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{structtype__pack_type_pack}{ccutl.\+type\+\_\+pack}} -\/ Provides a type template arg container with transformational utilities 
+

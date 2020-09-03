@@ -1,0 +1,52 @@
+\hypertarget{nontype__pack_8h}{}\doxysection{master/ccutl/include/ccutl/nontype\+\_\+pack.h File Reference}
+\label{nontype__pack_8h}\index{master/ccutl/include/ccutl/nontype\_pack.h@{master/ccutl/include/ccutl/nontype\_pack.h}}
+
+
+\mbox{\hyperlink{structnontype__pack_nontype_pack}{ccutl.\+nontype\+\_\+pack}} -\/ Provides a nontype template arg container with transformational utilities  
+
+
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/indexed\+\_\+arg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/gt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/lt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/meta/lteq.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/nontype\+\_\+specialization\+\_\+of.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/type\+\_\+pack.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnontype__pack}{nontype\+\_\+pack$<$ values $>$}}
+\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1from}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::from$<$ class, class $>$}}
+\begin{DoxyCompactList}\small\item\em pulls nontype template values from specialzied template \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1from_3_01Template_00_01Template_3_01rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::from$<$ Template, Template$<$ rs... $>$ $>$}}
+\begin{DoxyCompactList}\small\item\em pulls nontype template values from specialzied template \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1concat}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::concat$<$ class $>$}}
+\begin{DoxyCompactList}\small\item\em concatenates a nontype pack with rs... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1concat_3_01nontype__pack_3_01rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::concat$<$ nontype\+\_\+pack$<$ rs... $>$ $>$}}
+\begin{DoxyCompactList}\small\item\em concatenates a nontype pack with rs... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnontype__pack}{nontype\+\_\+pack$<$ values $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$auto... vs, std\+::size\+\_\+t... seq$>$ }\\requires constexpr \mbox{\hyperlink{group__ccutl_ga63f3237f9db72093e73de16e5dba6a22}{meta\+::gt}}$<$ sizeof...(vs), 0 $>$ auto \mbox{\hyperlink{group__detail___ga2787f69c224c3abd2e650511e41b5d51}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::pop\+\_\+back}} (std\+::index\+\_\+sequence$<$ seq... $>$ \&\&) noexcept
+\begin{DoxyCompactList}\small\item\em removes the last nontype template value from vs... \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{nontype__pack_8h_a005485b33e124ae6cc39e8bd291668b4}\label{nontype__pack_8h_a005485b33e124ae6cc39e8bd291668b4}} 
+{\footnotesize template$<$template$<$ auto... $>$ class Template, auto... values$>$ }\\\mbox{\hyperlink{nontype__pack_8h_a005485b33e124ae6cc39e8bd291668b4}{nontype\+\_\+pack}} (Template$<$ values... $>$) -\/$>$ \mbox{\hyperlink{structnontype__pack}{nontype\+\_\+pack}}$<$ values... $>$
+\begin{DoxyCompactList}\small\item\em Allows for deduction construction from nontype template objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{nontype__pack_8h_ae4728b7be5f077d0877abd8cb6026c7e}\label{nontype__pack_8h_ae4728b7be5f077d0877abd8cb6026c7e}} 
+{\bfseries C\+C\+U\+T\+L\+\_\+\+E\+N\+D\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE}
+\item 
+{\footnotesize template$<$template$<$ auto... $>$ class Template, auto... vs$>$ }\\concept \mbox{\hyperlink{group__detail___ga7d27af9eb77419bfdeac58bf66914632}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::specializable\+\_\+with\+\_\+nontypes}}
+\begin{DoxyCompactList}\small\item\em checks if a template is specializable with vs... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{structnontype__pack_nontype_pack}{ccutl.\+nontype\+\_\+pack}} -\/ Provides a nontype template arg container with transformational utilities 
+

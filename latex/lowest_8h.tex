@@ -1,0 +1,25 @@
+\hypertarget{lowest_8h}{}\doxysection{master/ccutl/include/ccutl/lowest.h File Reference}
+\label{lowest_8h}\index{master/ccutl/include/ccutl/lowest.h@{master/ccutl/include/ccutl/lowest.h}}
+
+
+\mbox{\hyperlink{group__ccutl_lowest}{ccutl.\+lowest}} -\/ represents the lowest number possible for a given arithmetic type  
+
+
+{\ttfamily \#include $<$concepts$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/specializes.\+h\char`\"{}}\newline
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___ga0d163046dd6fdec2e24dfcfbcabbb439}{ccutl\+::detail\+\_\+\+::lowest\+\_\+\+::has\+\_\+numeric\+\_\+limits\+\_\+lowest}}
+\begin{DoxyCompactList}\small\item\em checks if std\+::numeric\+\_\+limits$<$\+T$>$\+::max() is well-\/formed \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gaa4ea1fc33d3d3fb45ff52fc92f77f363}{ccutl\+::detail\+\_\+\+::lowest\+\_\+\+::arithmetic}} = std\+::integral$<$T$>$ $\vert$$\vert$ std\+::floating\+\_\+point$<$T$>$
+\begin{DoxyCompactList}\small\item\em naiive arithmetic concept that describes an integral or floating\+\_\+point type \end{DoxyCompactList}\item 
+{\footnotesize template$<$detail\+\_\+\+::lowest\+\_\+\+::arithmetic Arithmetic$>$ }\\requires constexpr detail\+\_\+\+::lowest\+\_\+\+::has\+\_\+numeric\+\_\+limits\+\_\+lowest$<$ Arithmetic $>$ Arithmetic \mbox{\hyperlink{group__ccutl_gab816a859ff51b909eb526194f17c5898}{lowest}} = std\+::numeric\+\_\+limits$<$Arithmetic$>$\+::lowest()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{group__ccutl_lowest}{ccutl.\+lowest}} -\/ represents the lowest number possible for a given arithmetic type 
+

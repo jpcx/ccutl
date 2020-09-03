@@ -1,0 +1,35 @@
+\hypertarget{indexed__type_8h}{}\doxysection{master/ccutl/include/ccutl/indexed\+\_\+type.h File Reference}
+\label{indexed__type_8h}\index{master/ccutl/include/ccutl/indexed\_type.h@{master/ccutl/include/ccutl/indexed\_type.h}}
+
+
+\mbox{\hyperlink{group__ccutl_indexed_type}{ccutl.\+indexed\+\_\+type}} -\/ represents the type template argument at index idx  
+
+
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ size\+\_\+t, size\+\_\+t,... $>$}}
+\begin{DoxyCompactList}\small\item\em primary template for \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl}{indexed\+\_\+type\+\_\+\+::impl}} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01targ_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ targ, targ, First, Rest... $>$}}
+\begin{DoxyCompactList}\small\item\em end of iteration; type represents first type \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ targ, i, First, Rest... $>$}}
+\begin{DoxyCompactList}\small\item\em iterates until i reaches target \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t targ, class... Pack$>$ }\\using \mbox{\hyperlink{group__detail___ga733eb2b0dcda6f06bf0b78816988f115}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::type}} = typename impl$<$ targ, 0, Pack... $>$\+::type
+\begin{DoxyCompactList}\small\item\em helper typedef for impl\+::type \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\using \mbox{\hyperlink{group__ccutl_ga3094ef75b944d9dec308f29584d34bb1}{indexed\+\_\+type}} = detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::type$<$ idx, Ts... $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gacba1c9d3314c01d3ad5e81bb3d9774d1}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::valid\+\_\+indexable\+\_\+pack}} = sizeof...(Ts) $>$ 0 \&\& idx $<$ sizeof...(Ts)
+\begin{DoxyCompactList}\small\item\em checks if idx can be used to index Ts... \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{group__ccutl_indexed_type}{ccutl.\+indexed\+\_\+type}} -\/ represents the type template argument at index idx 
+
