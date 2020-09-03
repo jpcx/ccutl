@@ -7,6 +7,7 @@ docs: gen/fixes.js gen/Doxyfile
 clean:
 	rm -rf latex
 	rm -rf gen*.html
+	rm -rf build_scripts
 	find .               \
 		! -path './.git*'  \
 		! -path './gen*'   \
