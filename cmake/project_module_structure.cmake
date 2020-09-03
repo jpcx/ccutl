@@ -31,7 +31,6 @@ include (cmake/add_module.cmake)
 # begin project modules
 add_module (ccutl.specialization_of)
 add_module (ccutl.specializable_with)
-add_module (ccutl.reduce)
 add_module (ccutl.range_of)
 add_module (ccutl.noref)
 add_module (ccutl.nontype_specialization_of)
@@ -118,7 +117,6 @@ add_module (ccutl
             ccutl.streq
             ccutl.different
             ccutl.lowest
-            ccutl.reduce
             ccutl.strlen)
 # end project modules
 
