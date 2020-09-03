@@ -27,10 +27,7 @@ all: index.js
 index.js: index.ts
 	npm run-script build
 
-run-modules: index.js
-	node index modules
+run: index.js
+	node index
 
-run-modules-single: index.js
-	node index modules_single
-
-.PHONY: all run-modules run-modules-single
+.PHONY: all run

@@ -1,4 +1,4 @@
-# ccutl 0.1.0  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.1.0/CHANGELOG.md)
+# ccutl 0.1.1  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.1.1/CHANGELOG.md)
 
 ```
                     |    |
@@ -35,7 +35,7 @@ Generally, this library will contain the following types of utilites:
 - more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html), [ccutl::indexed\_type](http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type))
 - less verbose methods for common operations (e.g. [ccutl::streq](http://jpcx.github.io/ccutl/group__ccutl.html#streq), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
 - preprocessor tools to circumvent language limitations (e.g. [CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
-- type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccult::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
+- type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
 - code generation scripts (future releases)
 
 ## Requirements
@@ -88,7 +88,7 @@ ccutl is a header-only CMake interface library with `find_package` compatibility
 #### Standard -I
 
 ```shell
-git clone -b 0.1.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
 ```
 ```makefile
 CXXFLAGS += -I[ccutl download dir]/include
@@ -97,14 +97,14 @@ CXXFLAGS += -I[ccutl download dir]/include
 #### CMake Install
 
 ```shell
-git clone -b 0.1.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
 cd ccutl
 
 make # mkdir build
      # cmake -Bbuild
 
-# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.0
-# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.0
+# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.1
+# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.1
 sudo make install # cmake --install build
 ```
 ```cmake
@@ -118,7 +118,7 @@ target_link_libraries([your target] ccutl)
 include(FetchContent)
 FetchContent_Declare(ccutl
                      GIT_REPOSITORY https://github.com/jpcx/ccutl.git
-                     GIT_TAG "0.1.0")
+                     GIT_TAG "0.1.1")
 FetchContent_MakeAvailable(ccutl)
 target_link_libraries([your target] ccutl)
 ```
@@ -126,7 +126,7 @@ target_link_libraries([your target] ccutl)
 #### CMake add_subdirectory
 
 ```shell
-git clone -b 0.1.0 https://github.com/jpcx/ccutl.git # or git submodule add
+git clone -b 0.1.1 https://github.com/jpcx/ccutl.git # or git submodule add
 ```
 ```cmake
 add_subdirectory([ccutl download dir])
@@ -139,7 +139,7 @@ ccutl modules cannot be installed to the system at this time.
 They may be consumed directly as a subfolder as follows:
 
 ```shell
-git clone -b 0.1.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
 ```
 ```cmake
 set(CCUTL_MODULES ON)

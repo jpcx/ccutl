@@ -35,7 +35,7 @@ Generally, this library will contain the following types of utilites:
 - more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html), [ccutl::indexed\_type](http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type))
 - less verbose methods for common operations (e.g. [ccutl::streq](http://jpcx.github.io/ccutl/group__ccutl.html#streq), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
 - preprocessor tools to circumvent language limitations (e.g. [CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
-- type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccult::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
+- type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
 - code generation scripts (future releases)
 
 ## Requirements
