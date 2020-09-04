@@ -2,7 +2,15 @@
 
 ## [Upcoming](https://github.com/jpcx/ccutl/compare/@PROJECT_VERSION@...devel)
 
-## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.0...@PROJECT_VERSION@)\]
+## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.1...@PROJECT_VERSION@)\]
+
+### Changed
+
+- Fixed subscriptable-to file brief
+- updated CMake project information
+- moved manual dependencies to buildModuleDeps
+
+## [0.1.1](https://github.com/jpcx/ccutl/releases/tag/0.1.1) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.0...0.1.1)\]
 
 ### Changed
 

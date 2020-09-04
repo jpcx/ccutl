@@ -1,4 +1,4 @@
-# ccutl 0.1.1  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.1.1/CHANGELOG.md)
+# ccutl 0.1.2  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.1.2/CHANGELOG.md)
 
 ```
                     |    |
@@ -88,7 +88,7 @@ ccutl is a header-only CMake interface library with `find_package` compatibility
 #### Standard -I
 
 ```shell
-git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.2 https://github.com/jpcx/ccutl.git
 ```
 ```makefile
 CXXFLAGS += -I[ccutl download dir]/include
@@ -97,14 +97,14 @@ CXXFLAGS += -I[ccutl download dir]/include
 #### CMake Install
 
 ```shell
-git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.2 https://github.com/jpcx/ccutl.git
 cd ccutl
 
 make # mkdir build
      # cmake -Bbuild
 
-# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.1
-# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.1
+# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.2
+# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.2
 sudo make install # cmake --install build
 ```
 ```cmake
@@ -118,7 +118,7 @@ target_link_libraries([your target] ccutl)
 include(FetchContent)
 FetchContent_Declare(ccutl
                      GIT_REPOSITORY https://github.com/jpcx/ccutl.git
-                     GIT_TAG "0.1.1")
+                     GIT_TAG "0.1.2")
 FetchContent_MakeAvailable(ccutl)
 target_link_libraries([your target] ccutl)
 ```
@@ -126,7 +126,7 @@ target_link_libraries([your target] ccutl)
 #### CMake add_subdirectory
 
 ```shell
-git clone -b 0.1.1 https://github.com/jpcx/ccutl.git # or git submodule add
+git clone -b 0.1.2 https://github.com/jpcx/ccutl.git # or git submodule add
 ```
 ```cmake
 add_subdirectory([ccutl download dir])
@@ -139,7 +139,7 @@ ccutl modules cannot be installed to the system at this time.
 They may be consumed directly as a subfolder as follows:
 
 ```shell
-git clone -b 0.1.1 https://github.com/jpcx/ccutl.git
+git clone -b 0.1.2 https://github.com/jpcx/ccutl.git
 ```
 ```cmake
 set(CCUTL_MODULES ON)
@@ -248,7 +248,7 @@ ccutl.specialization_of | detects template specializations for type-parameter te
 ccutl.specializes | requires that a type may be used to specialize a given template
 ccutl.streq | true if all provided char ranges or null-terminated strings are equal
 ccutl.strlen | returns the length of any char range or null-terminated string
-ccutl.subscriptable_to | describes a T whose subscript operator returns a type decay-same as SubType
+ccutl.subscriptable_to | describes a T whose subscript operator returns a type convertible to SubType
 ccutl.type_pack | Provides a type template arg container with transformational utilities
 
 Macro | Location | Brief

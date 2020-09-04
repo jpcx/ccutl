@@ -3,7 +3,7 @@
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief \link subscriptable_to ccutl.subscriptable_to\endlink -
-/// describes a T whose subscript operator returns a type decay-same as SubType
+/// describes a T whose subscript operator returns a type convertible to SubType
 /// @file
 //                      |    |
 //    __|   __|  |   |  __|  |

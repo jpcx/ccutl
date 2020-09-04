@@ -29,6 +29,16 @@ var path = require("path");
 var ROOTDIR = path.join(__dirname, '../../');
 var SRCDIR = path.join(ROOTDIR, 'include');
 var SRCEXT = 'h';
+var MANUAL_DEPS = {
+    'ccutl.streq': ['ccutl.subscriptable_to'],
+    'ccutl.strlen': ['ccutl.subscriptable_to'],
+    'ccutl.eq': ['ccutl.noref'],
+    'ccutl.gt': ['ccutl.noref'],
+    'ccutl.gteq': ['ccutl.noref'],
+    'ccutl.lt': ['ccutl.noref'],
+    'ccutl.lteq': ['ccutl.noref'],
+    'ccutl.neq': ['ccutl.noref']
+};
 function genDeps() {
     var deps = {};
     var depthMatcher = /^\s*?(?:export )?import ([\w.]+?);$/gm;
@@ -51,15 +61,25 @@ function genDeps() {
             else if (dent.name.match(/\.h/m) && !srcRelDir.match(/detail_/) &&
                 !srcRelDir.match(/macros/)) {
                 var name_1 = dent.name;
-                var moduleName = [srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '')]
-                    .filter(function (x) { return x; })
-                    .join('.');
+                var moduleName = [
+                    srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '')
+                ].filter(function (x) { return x; }).join('.');
                 var content = fs.readFileSync(path.join(dir, name_1), 'utf8');
                 deps[moduleName] = scanDeps(content);
             }
         }
     }
     search();
+    for (var _i = 0, _a = Object.entries(MANUAL_DEPS); _i < _a.length; _i++) {
+        var _b = _a[_i], key = _b[0], manualdeps = _b[1];
+        if (deps[key])
+            for (var _c = 0, manualdeps_1 = manualdeps; _c < manualdeps_1.length; _c++) {
+                var dep = manualdeps_1[_c];
+                deps[key].add(dep);
+            }
+        else
+            deps[key] = new Set(manualdeps);
+    }
     return deps;
 }
 function reduceRedundantDeps(dependencies) {
