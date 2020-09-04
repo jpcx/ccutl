@@ -119,7 +119,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.1.1 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.1.2 https://github.com/jpcx/ccutl.git}
 \end{DoxyCode}
 
 
@@ -133,14 +133,14 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.1.1 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.1.2 https://github.com/jpcx/ccutl.git}
 \DoxyCodeLine{cd ccutl}
 \DoxyCodeLine{}
 \DoxyCodeLine{make \# mkdir build}
 \DoxyCodeLine{     \# cmake -\/Bbuild}
 \DoxyCodeLine{}
-\DoxyCodeLine{\# installs header to      \$\{DESTDIR\}\$\{PREFIX\}/include/ccutl-\/0.1.1}
-\DoxyCodeLine{\# installs cmake files to \$\{DESTDIR\}\$\{PREFIX\}/lib/cmake/ccutl-\/0.1.1}
+\DoxyCodeLine{\# installs header to      \$\{DESTDIR\}\$\{PREFIX\}/include/ccutl-\/0.1.2}
+\DoxyCodeLine{\# installs cmake files to \$\{DESTDIR\}\$\{PREFIX\}/lib/cmake/ccutl-\/0.1.2}
 \DoxyCodeLine{sudo make install \# cmake -\/-\/install build}
 \end{DoxyCode}
 
@@ -159,7 +159,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 \DoxyCodeLine{include(FetchContent)}
 \DoxyCodeLine{FetchContent\_Declare(ccutl}
 \DoxyCodeLine{                     GIT\_REPOSITORY https://github.com/jpcx/ccutl.git}
-\DoxyCodeLine{                     GIT\_TAG "0.1.1")}
+\DoxyCodeLine{                     GIT\_TAG "0.1.2")}
 \DoxyCodeLine{FetchContent\_MakeAvailable(ccutl)}
 \DoxyCodeLine{target\_link\_libraries([your target] ccutl)}
 \end{DoxyCode}
@@ -169,7 +169,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.1.1 https://github.com/jpcx/ccutl.git \# or git submodule add}
+\DoxyCodeLine{git clone -\/b 0.1.2 https://github.com/jpcx/ccutl.git \# or git submodule add}
 \end{DoxyCode}
 
 
@@ -188,7 +188,7 @@ ccutl modules cannot be installed to the system at this time. ~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.1.1 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.1.2 https://github.com/jpcx/ccutl.git}
 \end{DoxyCode}
 
 
@@ -316,7 +316,7 @@ ccutl.\+specialization\+\_\+of &detects template specializations for type-\/para
 ccutl.\+specializes &requires that a type may be used to specialize a given template  \\\cline{1-2}
 ccutl.\+streq &true if all provided char ranges or null-\/terminated strings are equal  \\\cline{1-2}
 ccutl.\+strlen &returns the length of any char range or null-\/terminated string  \\\cline{1-2}
-ccutl.\+subscriptable\+\_\+to &describes a T whose subscript operator returns a type decay-\/same as Sub\+Type  \\\cline{1-2}
+ccutl.\+subscriptable\+\_\+to &describes a T whose subscript operator returns a type convertible to Sub\+Type  \\\cline{1-2}
 ccutl.\+type\+\_\+pack &Provides a type template arg container with transformational utilities  \\\cline{1-2}
 \end{longtabu}
 

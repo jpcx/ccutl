@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl 0.1.1</title>
+<title>ccutl 0.1.2</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="index.html" style="text-decoration: none">ccutl</a>
-   &#160;<span id="projectnumber">0.1.1</span>
+   &#160;<span id="projectnumber">0.1.2</span>
    </div>
    <div id="projectbrief">ccutl Core Utilities</div>
   </td>
@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">ccutl 0.1.1 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.1.1/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
+<div class="title">ccutl 0.1.2 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.1.2/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_master_ccutl_README"></a> </p><div class="fragment"><div class="line">                    |    |</div>
@@ -157,17 +157,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <h2>As Headers</h2>
 <h3>Standard -I</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.1 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">CXXFLAGS += -I[ccutl download dir]/include</div>
 </div><!-- fragment --><h3>CMake Install</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.1 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
 <div class="line">cd ccutl</div>
 <div class="line"> </div>
 <div class="line">make # mkdir build</div>
 <div class="line">     # cmake -Bbuild</div>
 <div class="line"> </div>
-<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.1</div>
-<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.1</div>
+<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.2</div>
+<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.2</div>
 <div class="line">sudo make install # cmake --install build</div>
 </div><!-- fragment --><div class="fragment"><div class="line">find_package(ccutl 0.1 REQUIRED)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
@@ -175,17 +175,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">include(FetchContent)</div>
 <div class="line">FetchContent_Declare(ccutl</div>
 <div class="line">                     GIT_REPOSITORY https://github.com/jpcx/ccutl.git</div>
-<div class="line">                     GIT_TAG &quot;0.1.1&quot;)</div>
+<div class="line">                     GIT_TAG &quot;0.1.2&quot;)</div>
 <div class="line">FetchContent_MakeAvailable(ccutl)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h3>CMake add_subdirectory</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.1 https://github.com/jpcx/ccutl.git # or git submodule add</div>
+<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git # or git submodule add</div>
 </div><!-- fragment --><div class="fragment"><div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h2>As Modules <a class="anchor" id="setup_as_modules"></a></h2>
 <p>ccutl modules cannot be installed to the system at this time. <br  />
  They may be consumed directly as a subfolder as follows:</p>
-<div class="fragment"><div class="line">git clone -b 0.1.1 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">set(CCUTL_MODULES ON)</div>
 <div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
@@ -296,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.strlen </td><td class="markdownTableBodyNone">returns the length of any char range or null-terminated string  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ccutl.subscriptable_to </td><td class="markdownTableBodyNone">describes a T whose subscript operator returns a type decay-same as SubType  </td></tr>
+<td class="markdownTableBodyNone">ccutl.subscriptable_to </td><td class="markdownTableBodyNone">describes a T whose subscript operator returns a type convertible to SubType  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.type_pack </td><td class="markdownTableBodyNone">Provides a type template arg container with transformational utilities  </td></tr>
 </table>
