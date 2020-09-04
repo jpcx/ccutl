@@ -1,6 +1,14 @@
 # Changelog
 
-## [Upcoming](https://github.com/jpcx/ccutl/compare/0.1.1...devel)
+## [Upcoming](https://github.com/jpcx/ccutl/compare/0.1.2...devel)
+
+## [0.1.2](https://github.com/jpcx/ccutl/releases/tag/0.1.2) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.1...0.1.2)\]
+
+### Changed
+
+- Fixed subscriptable-to file brief
+- updated CMake project information
+- moved manual dependencies to buildModuleDeps
 
 ## [0.1.1](https://github.com/jpcx/ccutl/releases/tag/0.1.1) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.0...0.1.1)\]
 

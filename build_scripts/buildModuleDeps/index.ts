@@ -26,9 +26,20 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const ROOTDIR  = path.join(__dirname, '../../');
-const SRCDIR   = path.join(ROOTDIR, 'include');
-const SRCEXT   = 'h';
+const ROOTDIR = path.join(__dirname, '../../');
+const SRCDIR  = path.join(ROOTDIR, 'include');
+const SRCEXT  = 'h';
+
+const MANUAL_DEPS = {
+  'ccutl.streq' : [ 'ccutl.subscriptable_to' ],
+  'ccutl.strlen' : [ 'ccutl.subscriptable_to' ],
+  'ccutl.eq' : [ 'ccutl.noref' ],
+  'ccutl.gt' : [ 'ccutl.noref' ],
+  'ccutl.gteq' : [ 'ccutl.noref' ],
+  'ccutl.lt' : [ 'ccutl.noref' ],
+  'ccutl.lteq' : [ 'ccutl.noref' ],
+  'ccutl.neq' : [ 'ccutl.noref' ],
+};
 
 type ModuleName   = string;
 type ModuleSet    = Set<ModuleName>;
@@ -60,16 +71,22 @@ function genDeps(): Dependencies {
       else if (
           dent.name.match(/\.h/m) && !srcRelDir.match(/detail_/) &&
           !srcRelDir.match(/macros/)) {
-        const name = dent.name;
-        const moduleName =
-            [ srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '') ]
-                .filter(x => x)
-                .join('.');
+        const name       = dent.name;
+        const moduleName = [
+          srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '')
+        ].filter(x => x).join('.');
         const content    = fs.readFileSync(path.join(dir, name), 'utf8');
         deps[moduleName] = scanDeps(content);
       }
   }
   search();
+
+  for (const [key, manualdeps] of Object.entries(MANUAL_DEPS))
+    if (deps[key])
+      for (const dep of manualdeps)
+        deps[key].add(dep);
+    else
+      deps[key] = new Set(manualdeps);
 
   return deps;
 }

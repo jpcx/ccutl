@@ -248,7 +248,7 @@ ccutl.specialization_of | detects template specializations for type-parameter te
 ccutl.specializes | requires that a type may be used to specialize a given template
 ccutl.streq | true if all provided char ranges or null-terminated strings are equal
 ccutl.strlen | returns the length of any char range or null-terminated string
-ccutl.subscriptable_to | describes a T whose subscript operator returns a type decay-same as SubType
+ccutl.subscriptable_to | describes a T whose subscript operator returns a type convertible to SubType
 ccutl.type_pack | Provides a type template arg container with transformational utilities
 
 Macro | Location | Brief

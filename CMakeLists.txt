@@ -26,7 +26,10 @@
 
 cmake_minimum_required (VERSION 3.0)
 project (ccutl
-  VERSION 0.1.1)
+         VERSION 0.1.2
+         DESCRIPTION "A General Utilities Library for C++20"
+         HOMEPAGE_URL "https://github.com/jpcx/ccutl"
+         LANGUAGES CXX)
 
 configure_file (
   ${PROJECT_SOURCE_DIR}/cmake/config.h.in

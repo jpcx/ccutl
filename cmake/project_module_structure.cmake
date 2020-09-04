@@ -52,15 +52,18 @@ add_module (ccutl.specializes
 add_module (ccutl.highest
             ccutl.specializes)
 add_module (ccutl.lt
-            ccutl.highest)
+            ccutl.highest
+            ccutl.noref)
 add_module (ccutl.meta.lt
             ccutl.lt)
 add_module (ccutl.fwd
             ccutl.noref)
 add_module (ccutl.strlen
-            ccutl.fwd)
+            ccutl.fwd
+            ccutl.subscriptable_to)
 add_module (ccutl.streq
-            ccutl.fwd)
+            ccutl.fwd
+            ccutl.subscriptable_to)
 add_module (ccutl.indexed_arg
             ccutl.fwd)
 add_module (ccutl.nontype_pack
@@ -112,20 +115,9 @@ add_module (ccutl
             ccutl.boolean_testable
             ccutl.meta
             ccutl.nontype_pack
-            ccutl.subscriptable_to
             ccutl.range_of
             ccutl.streq
             ccutl.different
             ccutl.lowest
             ccutl.strlen)
 # end project modules
-
-# manual dependencies for non-module detail headers
-add_dependencies (ccutl.streq.pcm  ccutl.subscriptable_to.o)
-add_dependencies (ccutl.strlen.pcm ccutl.subscriptable_to.o)
-add_dependencies (ccutl.eq.pcm     ccutl.noref.o)
-add_dependencies (ccutl.gt.pcm     ccutl.noref.o)
-add_dependencies (ccutl.gteq.pcm   ccutl.noref.o)
-add_dependencies (ccutl.lt.pcm     ccutl.noref.o)
-add_dependencies (ccutl.lteq.pcm   ccutl.noref.o)
-add_dependencies (ccutl.neq.pcm    ccutl.noref.o)
