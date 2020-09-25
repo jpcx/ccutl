@@ -1,5 +1,5 @@
-#ifndef TESTCCUTL_STRINGLIKES_H_INCLUDED
-#define TESTCCUTL_STRINGLIKES_H_INCLUDED
+#ifndef TESTCCUTL_CHAR_RANGE_H_INCLUDED
+#define TESTCCUTL_CHAR_RANGE_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
 /// @file
