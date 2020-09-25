@@ -395,9 +395,7 @@ static constexpr wchar_t wfoobar[7] = {'f', 'o', 'o', 'b', 'a', 'r', '\0'};
 
 // clang-format on
 
-TEST(
-    ccutl.str_eq,
-    "lexicographically compares two or more stringlike char objects")
+TEST(ccutl.str_eq, "lexicographically compares two or more stringlike objects")
 
 REQUIRE_EQ(foo)
 REQUIRE_NEQ(foo, bar)
