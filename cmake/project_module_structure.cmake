@@ -29,10 +29,21 @@ include (cmake/add_module.cmake)
 # add_module communicates these dependcies to CMake and creates their targets. #
 
 # begin project modules
+add_module (ccutl.type_at)
 add_module (ccutl.specialization_of)
 add_module (ccutl.specializable_with)
+add_module (ccutl.same
+            ccutl.type_at)
+add_module (ccutl.specializes
+            ccutl.same)
 add_module (ccutl.range_of)
 add_module (ccutl.noref)
+add_module (ccutl.strlen
+            ccutl.subscriptable_to
+            ccutl.noref)
+add_module (ccutl.str_lt
+            ccutl.subscriptable_to
+            ccutl.noref)
 add_module (ccutl.nontype_specialization_of)
 add_module (ccutl.nocvref)
 add_module (ccutl.subscriptable_to
@@ -44,11 +55,6 @@ add_module (ccutl.meta.neq
             ccutl.neq)
 add_module (ccutl.lowest
             ccutl.specializes)
-add_module (ccutl.indexed_type)
-add_module (ccutl.same
-            ccutl.indexed_type)
-add_module (ccutl.specializes
-            ccutl.same)
 add_module (ccutl.highest
             ccutl.specializes)
 add_module (ccutl.lt
@@ -58,18 +64,6 @@ add_module (ccutl.meta.lt
             ccutl.lt)
 add_module (ccutl.fwd
             ccutl.noref)
-add_module (ccutl.strlen
-            ccutl.fwd
-            ccutl.subscriptable_to)
-add_module (ccutl.streq
-            ccutl.fwd
-            ccutl.subscriptable_to)
-add_module (ccutl.indexed_arg
-            ccutl.fwd)
-add_module (ccutl.nontype_pack
-            ccutl.indexed_arg
-            ccutl.nontype_specialization_of
-            ccutl.type_pack)
 add_module (ccutl.eq
             ccutl.highest
             ccutl.fwd)
@@ -109,15 +103,36 @@ add_module (ccutl.different
             ccutl.same)
 add_module (ccutl.boolean_testable
             ccutl.fwd)
+add_module (ccutl.arg_at
+            ccutl.fwd)
+add_module (ccutl.str_eq
+            ccutl.arg_at
+            ccutl.subscriptable_to)
+add_module (ccutl.str_neq
+            ccutl.str_eq)
+add_module (ccutl.str_lteq
+            ccutl.str_eq
+            ccutl.str_lt)
+add_module (ccutl.str_gt
+            ccutl.str_eq
+            ccutl.str_lt)
+add_module (ccutl.str_gteq
+            ccutl.str_gt)
+add_module (ccutl.nontype_pack
+            ccutl.arg_at
+            ccutl.nontype_specialization_of
+            ccutl.type_pack)
 add_module (ccutl
-            ccutl.nocv
-            ccutl.mv
             ccutl.boolean_testable
-            ccutl.meta
-            ccutl.nontype_pack
-            ccutl.range_of
-            ccutl.streq
             ccutl.different
             ccutl.lowest
+            ccutl.meta
+            ccutl.mv
+            ccutl.nocv
+            ccutl.nontype_pack
+            ccutl.range_of
+            ccutl.str_gteq
+            ccutl.str_lteq
+            ccutl.str_neq
             ccutl.strlen)
 # end project modules

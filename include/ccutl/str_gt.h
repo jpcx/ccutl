@@ -1,9 +1,9 @@
-#ifndef CCUTL_STRLEN_H_INCLUDED
-#define CCUTL_STRLEN_H_INCLUDED
+#ifndef CCUTL_STR_GT_H_INCLUDED
+#define CCUTL_STR_GT_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief \link strlen ccutl.strlen\endlink -
-/// returns the length of any char range or null-terminated string
+/// @brief \link str_gt ccutl.str_gt\endlink -
+/// performs a lexicographical greater-than comarison of two stringlike objects
 /// @file
 //                      |    |
 //    __|   __|  |   |  __|  |
@@ -29,83 +29,55 @@
 
 #ifdef CCUTL_MODULES
 module;
-#else
-#include <ranges>
 #endif
 
 #include "ccutl/detail_/config.h"
 #include "ccutl/detail_/str.h"
 
 #ifdef CCUTL_MODULES
-export module ccutl.strlen;
-import std;
-export import std;
+export module ccutl.str_gt;
+
+import ccutl.str_eq;
+import ccutl.str_lt;
+export import ccutl.str_eq;
+export import ccutl.str_lt;
+#else
+#include "ccutl/str_eq.h"
+#include "ccutl/str_lt.h"
 #endif
-
-namespace ccutl::detail_::strlen_ {
-/// @addtogroup detail_
-/// \{
-
-using namespace std::ranges;
-
-/// counts the length of a stringlike range
-template <str_range Str>
-[[nodiscard]] inline constexpr std::size_t
-strlen(const Str &s) noexcept {
-  std::size_t i = 0;
-  for (auto &&it = begin(s);
-       it != end(s) and *it != static_cast<range_value_t<Str>>('\0'); ++it, ++i)
-    ;
-
-  return i;
-}
-
-/// counts the length of a str_subscriptable
-template <str_subscriptable Str>
-[[nodiscard]] inline constexpr std::size_t
-strlen(const Str &s) noexcept {
-  std::size_t i = 0;
-  for (; s[i] != static_cast<decltype(s[0])>('\0'); ++i)
-    ;
-  return i;
-}
-
-/// \}
-} // namespace ccutl::detail_::strlen_
 
 CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 
-/// returns the length of any char range or null-terminated string
+/// performs a lexicographical greater-than comarison of two stringlike objects
 ///
 /// @details
 ///   accepts any char input ranges or char-subscriptables (e.g. char *).
 ///   wchar_t is also supported.
+///   compares until range-end or null terminator.
 ///
-/// @tparam Str stringlike type (char range or char-subscriptable)
-/// @param  s   stringlike object
-///
-/// @returns length of string (size before null terminator)
+/// @param strs any char input ranges or char pointers
 ///
 /// @code
 ///   #include <string>
 ///   // import std; //
-///   #include "ccutl/strlen.h"
-///   // import ccutl.strlen; //
+///   #include "ccutl/str_gt.h"
+///   // import ccutl.str_gt; //
 ///
-///   auto s = std::string{"bar"};
+///   constexpr const char *foo = "foo";
 ///
-///   auto a = ccutl::strlen("foo"); // 3
-///   auto b = ccutl::strlen(s);     // 3
+///   ccutl::str_gt(foo, "foo");              // false
+///   ccutl::str_gt(foo, "foobar");           // false
+///   ccutl::str_gt(foo, std::string("bar")); // true
 /// @endcode
 ///
 /// @see ccutl/detail_/str.h
 ///
 /// @ingroup ccutl
-/// @anchor  strlen
-template <detail_::stringlike Str>
-[[nodiscard]] inline constexpr std::size_t
-strlen(const Str &s) noexcept {
-  return detail_::strlen_::strlen(s);
+/// @anchor  alphacmp
+template <detail_::stringlike Lhs, detail_::stringlike Rhs>
+[[nodiscard]] inline constexpr bool
+str_gt(const Lhs &l, const Rhs &r) noexcept {
+  return !str_lt(l, r) and !str_eq(l, r);
 }
 
 CCUTL_END_EXPORT_NAMESPACE // ccutl

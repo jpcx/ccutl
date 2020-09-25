@@ -1,8 +1,8 @@
-#ifndef CCUTL_INDEXED_ARG_H_INCLUDED
-#define CCUTL_INDEXED_ARG_H_INCLUDED
+#ifndef CCUTL_ARG_AT_H_INCLUDED
+#define CCUTL_ARG_AT_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief \link indexed_arg ccutl.indexed_arg\endlink -
+/// @brief \link arg_at ccutl.arg_at\endlink -
 /// returns the argument at index idx
 /// @file
 //                      |    |
@@ -36,7 +36,7 @@ module;
 #include "ccutl/detail_/config.h"
 
 #ifdef CCUTL_MODULES
-export module ccutl.indexed_arg;
+export module ccutl.arg_at;
 import std;
 import ccutl.fwd;
 export import std;
@@ -45,7 +45,7 @@ export import ccutl.fwd;
 #include "ccutl/fwd.h"
 #endif
 
-namespace ccutl::detail_::indexed_arg_ {
+namespace ccutl::detail_::arg_at_ {
 
 using ccutl::fwd;
 
@@ -54,7 +54,7 @@ using ccutl::fwd;
 
 /*                                                        */ // clang-format off
 
-/// lvalue forwarder for final indexed_arg result
+/// lvalue forwarder for final arg_at result
 template <std::size_t targ, std::size_t i, class First, class... Rest>
 requires (targ == i) && (std::is_lvalue_reference_v<First &&>)
 [[nodiscard]] inline constexpr First &
@@ -62,7 +62,7 @@ impl(First&& first, Rest &&...) noexcept {
   return fwd<First>(first);
 }
 
-/// rvalue forwarder for final indexed_arg result
+/// rvalue forwarder for final arg_at result
 template <std::size_t targ, std::size_t i, class First, class... Rest>
 requires (targ == i) && (std::is_rvalue_reference_v<First &&>)
 [[nodiscard]] inline constexpr First &&
@@ -85,29 +85,29 @@ inline constexpr bool
 
 /// \}
 
-} // namespace indexed_arg_
+} // namespace arg_at_
 
 CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 
 /// returns the argument at index idx
 ///
 /// @code
-///   #include "ccutl/indexed_arg.h"
-///   // import ccutl.indexed_arg; //
+///   #include "ccutl/arg_at.h"
+///   // import ccutl.arg_at; //
 ///
 ///   char c  = 'c';
-///   auto &&x0 = ccutl::indexed_arg<0>('a', "b", c); // (char)         'a'
-///   auto &&x1 = ccutl::indexed_arg<1>('a', "b", c); // (const char *) "b"
-///   auto &&x2 = ccutl::indexed_arg<2>('a', "b", c); // (char &)        c
+///   auto &&x0 = ccutl::arg_at<0>('a', "b", c); // (char)         'a'
+///   auto &&x1 = ccutl::arg_at<1>('a', "b", c); // (const char *) "b"
+///   auto &&x2 = ccutl::arg_at<2>('a', "b", c); // (char &)        c
 /// @endcode
 ///
 /// @ingroup ccutl
-/// @anchor  indexed_arg
+/// @anchor  arg_at
 template <std::size_t idx, class... Ts>
-requires detail_::indexed_arg_::valid_indexable_pack<idx, Ts...>
+requires detail_::arg_at_::valid_indexable_pack<idx, Ts...>
 [[nodiscard]] inline constexpr auto &&
-indexed_arg(Ts &&... args) noexcept {
-  return detail_::indexed_arg_::impl<idx, 0>(fwd<Ts>(args)...);
+arg_at(Ts &&... args) noexcept {
+  return detail_::arg_at_::impl<idx, 0>(fwd<Ts>(args)...);
 }
 
 /*                                                        */ // clang-format on

@@ -69,7 +69,7 @@ build-headers-single: build/headers_single
 	cmake -B$< -GNinja -DTESTCCUTL_SINGLE=ON
 	cmake --build $<
 
-dev-update:
+dev:
 	make -C build_scripts/buildModuleDeps run
 	node build_scripts/buildFeatureSummary
 
@@ -97,6 +97,7 @@ test-all: test-modules test-modules-single test-headers test-headers-single
 clean:
 	${RM} -rf build
 
-.PHONY: all build-modules build-modules-single build-headers       \
-	      build-headers-single clean dev-update install test-modules \
-				test-modules-single test-headers test-headers-single test-all clean
+.PHONY: all build-modules build-modules-single build-headers \
+	      build-headers-single clean dev install test-modules  \
+				test-modules-single test-headers test-headers-single \
+				test-all clean

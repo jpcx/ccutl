@@ -23,22 +23,27 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.  ////
 ////////////////////////////////////////////////////////////////////////////////
 
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 
-const ROOTDIR = path.join(__dirname, '../../');
-const SRCDIR  = path.join(ROOTDIR, 'include');
-const SRCEXT  = 'h';
+const ROOTDIR = path.join(__dirname, "../../");
+const SRCDIR  = path.join(ROOTDIR, "include");
+const SRCEXT  = "h";
 
 const MANUAL_DEPS = {
-  'ccutl.streq' : [ 'ccutl.subscriptable_to' ],
-  'ccutl.strlen' : [ 'ccutl.subscriptable_to' ],
-  'ccutl.eq' : [ 'ccutl.noref' ],
-  'ccutl.gt' : [ 'ccutl.noref' ],
-  'ccutl.gteq' : [ 'ccutl.noref' ],
-  'ccutl.lt' : [ 'ccutl.noref' ],
-  'ccutl.lteq' : [ 'ccutl.noref' ],
-  'ccutl.neq' : [ 'ccutl.noref' ],
+  "ccutl.str_eq" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.str_gt" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.str_gteq" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.str_lt" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.str_lteq" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.str_neq" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.strlen" : [ "ccutl.subscriptable_to", "ccutl.noref" ],
+  "ccutl.eq" : [ "ccutl.noref" ],
+  "ccutl.gt" : [ "ccutl.noref" ],
+  "ccutl.gteq" : [ "ccutl.noref" ],
+  "ccutl.lt" : [ "ccutl.noref" ],
+  "ccutl.lteq" : [ "ccutl.noref" ],
+  "ccutl.neq" : [ "ccutl.noref" ],
 };
 
 type ModuleName   = string;
@@ -73,9 +78,10 @@ function genDeps(): Dependencies {
           !srcRelDir.match(/macros/)) {
         const name       = dent.name;
         const moduleName = [
-          srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '')
-        ].filter(x => x).join('.');
-        const content    = fs.readFileSync(path.join(dir, name), 'utf8');
+          srcRelDir.replace(/\//g, "."),
+          dent.name.replace(/\.h/m, ""),
+        ].filter((x) => x).join(".");
+        const content    = fs.readFileSync(path.join(dir, name), "utf8");
         deps[moduleName] = scanDeps(content);
       }
   }
@@ -102,7 +108,7 @@ function reduceRedundantDeps(dependencies: Dependencies): Dependencies {
       const recurseReduceDeps = (depdeps: ModuleName[]) => {
         for (const depdep of depdeps) {
           if (depsArray.includes(depdep)) {
-            const removeIdx = depsArray.findIndex(x => x === depdep);
+            const removeIdx = depsArray.findIndex((x) => x === depdep);
             depsArray.splice(removeIdx, 1);
             if (removeIdx <= i)
               --i;
@@ -141,18 +147,18 @@ function sortDeps(deps: Dependencies): SortedDeps {
 
 function writeDeps(sortedDeps: SortedDeps) {
   const cmakeListsPath =
-      path.join(ROOTDIR, 'cmake/project_module_structure.cmake');
-  const content = fs.readFileSync(cmakeListsPath, 'utf8');
+      path.join(ROOTDIR, "cmake/project_module_structure.cmake");
+  const content = fs.readFileSync(cmakeListsPath, "utf8");
 
   const modules: ModuleSet       = new Set();
   const moduleCommands: string[] = [];
   for (const [name, set] of sortedDeps) {
     modules.add(name);
     if (set.size) {
-      let cmd = '';
+      let cmd = "";
       cmd += `add_module (${name}\n`;
-      cmd += Array.from(set).map(x => `            ${x}`).join('\n');
-      cmd += ')';
+      cmd += Array.from(set).map((x) => `            ${x}`).join("\n");
+      cmd += ")";
       moduleCommands.push(cmd);
     } else
       moduleCommands.push(`add_module (${name})`);
@@ -162,7 +168,7 @@ function writeDeps(sortedDeps: SortedDeps) {
       cmakeListsPath,
       content.replace(
           /^(# begin project modules)$([\s\S]+?)^(# end project modules)$/m,
-          '$1\n' + moduleCommands.join('\n') + '\n$3'));
+          "$1\n" + moduleCommands.join("\n") + "\n$3"));
   return modules;
 }
 
@@ -186,4 +192,4 @@ new Pipeline()
     .pipe(genDeps)
     .pipe(reduceRedundantDeps)
     .pipe(sortDeps)
-    .pipe(writeDeps)
+    .pipe(writeDeps);
