@@ -1,6 +1,12 @@
 # Changelog
 
-## [Upcoming](https://github.com/jpcx/ccutl/compare/0.2.0...devel)
+## [Upcoming](https://github.com/jpcx/ccutl/compare/0.2.1...devel)
+
+## [0.2.1](https://github.com/jpcx/ccutl/releases/tag/0.2.1) \[[diff](https://github.com/jpcx/ccutl/compare/0.2.0...0.2.1)\]
+
+### Fixed
+
+- Fixed README links
 
 ## [0.2.0](https://github.com/jpcx/ccutl/releases/tag/0.2.0) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.2...0.2.0)\]
 
