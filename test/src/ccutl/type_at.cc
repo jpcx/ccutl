@@ -1,8 +1,5 @@
-#ifndef CCUTL_DETAIL_STR_H_INCLUDED
-#define CCUTL_DETAIL_STR_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief detail helpers for ccutl string functions
 /// @file
 //                      |    |
 //    __|   __|  |   |  __|  |
@@ -27,46 +24,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #ifdef CCUTL_MODULES
-import std;
-import ccutl.noref;
-import ccutl.subscriptable_to;
+#ifdef TESTCCUTL_SINGLE
+import ccutl.same;
+import ccutl.type_at;
 #else
-#include <ranges>
-
-#include "ccutl/noref.h"
-#include "ccutl/subscriptable_to.h"
+import ccutl;
+#endif
+#else
+#ifdef TESTCCUTL_SINGLE
+#include <ccutl/same.h>
+#include <ccutl/type_at.h>
+#else
+#include <ccutl.h>
+#endif
 #endif
 
-#include "ccutl/detail_/config.h"
+#include <cctest.h>
 
-namespace ccutl::detail_ {
-
-/// @addtogroup detail_
-/// \{
-
-/// specifies a type that is an input range of values convertible to const char
-template <class T>
-concept str_range =
-    std::ranges::input_range<noref<T>> and
-    (std::convertible_to<std::ranges::range_value_t<noref<T>>, const char> ||
-     std::convertible_to<
-         std::ranges::range_value_t<noref<T>>, const wchar_t>);
-
-/// specifies a type that is subscriptable to const char and is not a range
-template <class T>
-concept str_subscriptable =
-    (subscriptable_to<noref<T>, const char> ||
-     subscriptable_to<noref<T>, const wchar_t>)&&!str_range<noref<T>>;
-
-/// specifies a const char range or subscriptable type
-template <class T>
-concept stringlike = str_range<noref<T>> || str_subscriptable<noref<T>>;
-
-/// checks if all Ts are stringlike
-template <class... Ts>
-concept stringlike_pack = (stringlike<Ts> and ...);
-
-/// \}
-} // namespace ccutl::detail_
-
-#endif
+TEST(ccutl.type_at, "represents the type template argument at index idx")
+    << STATIC_REQUIRE(ccutl::same<ccutl::type_at<0, int>, int>)
+    << STATIC_REQUIRE(ccutl::same<ccutl::type_at<0, int, float>, int>)
+    << STATIC_REQUIRE(ccutl::same<ccutl::type_at<1, int, float>, float>)
+    << STATIC_REQUIRE(ccutl::same<ccutl::type_at<0, int, float, double>, int>)
+    << STATIC_REQUIRE(ccutl::same<ccutl::type_at<1, int, float, double>, float>)
+    << STATIC_REQUIRE(
+           ccutl::same<ccutl::type_at<2, int, float, double>, double>);

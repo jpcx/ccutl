@@ -1,3 +1,5 @@
+#ifndef TESTCCUTL_STRINGLIKES_H_INCLUDED
+#define TESTCCUTL_STRINGLIKES_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
 /// @file
@@ -23,29 +25,51 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.  ////
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifdef CCUTL_MODULES
-#ifdef TESTCCUTL_SINGLE
-import ccutl.same;
-#else
-import ccutl;
-#endif
-#else
-#ifdef TESTCCUTL_SINGLE
-#include <ccutl/same.h>
-#else
-#include <ccutl.h>
-#endif
-#endif
+#include <compare>
 
-#include <cctest.h>
+namespace testccutl {
 
-TEST(ccutl.indexed_type, "represents the type template argument at index idx")
-    << STATIC_REQUIRE(ccutl::same<ccutl::indexed_type<0, int>, int>)
-    << STATIC_REQUIRE(ccutl::same<ccutl::indexed_type<0, int, float>, int>)
-    << STATIC_REQUIRE(ccutl::same<ccutl::indexed_type<1, int, float>, float>)
-    << STATIC_REQUIRE(
-           ccutl::same<ccutl::indexed_type<0, int, float, double>, int>)
-    << STATIC_REQUIRE(
-           ccutl::same<ccutl::indexed_type<1, int, float, double>, float>)
-    << STATIC_REQUIRE(
-           ccutl::same<ccutl::indexed_type<2, int, float, double>, double>);
+using std::ranges::input_range;
+
+template <size_t maxsz, class Char = char, bool range_includes_null = false>
+class char_range {
+ public:
+  constexpr char_range(const Char *from) {
+    size_t i = 0;
+    for (; i < maxsz && from[i] != '\0'; ++i)
+      data[i] = from[i];
+    data[i] = '\0';
+    len     = i;
+  }
+
+  constexpr Char *
+  begin() {
+    return data;
+  }
+  constexpr const Char *
+  begin() const {
+    return data;
+  }
+  constexpr Char *
+  end() {
+    if constexpr (range_includes_null)
+      return data + len + 1;
+    else
+      return data + len;
+  }
+  constexpr const Char *
+  end() const {
+    if constexpr (range_includes_null)
+      return data + len + 1;
+    else
+      return data + len;
+  }
+
+ private:
+  Char data[maxsz + 1]{};
+  size_t len = 0;
+};
+
+} // namespace testccutl
+
+#endif

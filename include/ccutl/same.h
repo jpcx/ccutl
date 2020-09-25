@@ -38,11 +38,11 @@ module;
 #ifdef CCUTL_MODULES
 export module ccutl.same;
 import std;
-import ccutl.indexed_type;
+import ccutl.type_at;
 export import std;
-export import ccutl.indexed_type;
+export import ccutl.type_at;
 #else
-#include "ccutl/indexed_type.h"
+#include "ccutl/type_at.h"
 #endif
 
 namespace ccutl::detail_::same_ {
@@ -65,7 +65,7 @@ impl() noexcept {
     return (std::is_same_v<First, Rest> && ...);
   } else /* i < sizeof...(Rest) and sizeof...(Rest) > 1 */ {
     constexpr bool this_comparison =
-        (std::is_same_v<indexed_type<i, First, Rest...>, Rest> && ...);
+        (std::is_same_v<type_at<i, First, Rest...>, Rest> && ...);
     // recurse with First pushed to end to ensure two-way comparison
     return this_comparison && impl<i + 1, Rest..., First>();
   }

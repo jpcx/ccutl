@@ -26,18 +26,23 @@
 exports.__esModule = true;
 var fs = require("fs");
 var path = require("path");
-var ROOTDIR = path.join(__dirname, '../../');
-var SRCDIR = path.join(ROOTDIR, 'include');
-var SRCEXT = 'h';
+var ROOTDIR = path.join(__dirname, "../../");
+var SRCDIR = path.join(ROOTDIR, "include");
+var SRCEXT = "h";
 var MANUAL_DEPS = {
-    'ccutl.streq': ['ccutl.subscriptable_to'],
-    'ccutl.strlen': ['ccutl.subscriptable_to'],
-    'ccutl.eq': ['ccutl.noref'],
-    'ccutl.gt': ['ccutl.noref'],
-    'ccutl.gteq': ['ccutl.noref'],
-    'ccutl.lt': ['ccutl.noref'],
-    'ccutl.lteq': ['ccutl.noref'],
-    'ccutl.neq': ['ccutl.noref']
+    "ccutl.str_eq": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.str_gt": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.str_gteq": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.str_lt": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.str_lteq": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.str_neq": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.strlen": ["ccutl.subscriptable_to", "ccutl.noref"],
+    "ccutl.eq": ["ccutl.noref"],
+    "ccutl.gt": ["ccutl.noref"],
+    "ccutl.gteq": ["ccutl.noref"],
+    "ccutl.lt": ["ccutl.noref"],
+    "ccutl.lteq": ["ccutl.noref"],
+    "ccutl.neq": ["ccutl.noref"]
 };
 function genDeps() {
     var deps = {};
@@ -62,9 +67,10 @@ function genDeps() {
                 !srcRelDir.match(/macros/)) {
                 var name_1 = dent.name;
                 var moduleName = [
-                    srcRelDir.replace(/\//g, '.'), dent.name.replace(/\.h/m, '')
-                ].filter(function (x) { return x; }).join('.');
-                var content = fs.readFileSync(path.join(dir, name_1), 'utf8');
+                    srcRelDir.replace(/\//g, "."),
+                    dent.name.replace(/\.h/m, ""),
+                ].filter(function (x) { return x; }).join(".");
+                var content = fs.readFileSync(path.join(dir, name_1), "utf8");
                 deps[moduleName] = scanDeps(content);
             }
         }
@@ -138,24 +144,24 @@ function sortDeps(deps) {
     return sorted;
 }
 function writeDeps(sortedDeps) {
-    var cmakeListsPath = path.join(ROOTDIR, 'cmake/project_module_structure.cmake');
-    var content = fs.readFileSync(cmakeListsPath, 'utf8');
+    var cmakeListsPath = path.join(ROOTDIR, "cmake/project_module_structure.cmake");
+    var content = fs.readFileSync(cmakeListsPath, "utf8");
     var modules = new Set();
     var moduleCommands = [];
     for (var _i = 0, sortedDeps_1 = sortedDeps; _i < sortedDeps_1.length; _i++) {
         var _a = sortedDeps_1[_i], name_2 = _a[0], set = _a[1];
         modules.add(name_2);
         if (set.size) {
-            var cmd = '';
+            var cmd = "";
             cmd += "add_module (" + name_2 + "\n";
-            cmd += Array.from(set).map(function (x) { return "            " + x; }).join('\n');
-            cmd += ')';
+            cmd += Array.from(set).map(function (x) { return "            " + x; }).join("\n");
+            cmd += ")";
             moduleCommands.push(cmd);
         }
         else
             moduleCommands.push("add_module (" + name_2 + ")");
     }
-    fs.writeFileSync(cmakeListsPath, content.replace(/^(# begin project modules)$([\s\S]+?)^(# end project modules)$/m, '$1\n' + moduleCommands.join('\n') + '\n$3'));
+    fs.writeFileSync(cmakeListsPath, content.replace(/^(# begin project modules)$([\s\S]+?)^(# end project modules)$/m, "$1\n" + moduleCommands.join("\n") + "\n$3"));
     return modules;
 }
 var Pipeline = /** @class */ (function () {

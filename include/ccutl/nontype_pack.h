@@ -39,7 +39,7 @@ module;
 #ifdef CCUTL_MODULES
 export module ccutl.nontype_pack;
 import std;
-import ccutl.indexed_arg;
+import ccutl.arg_at;
 import ccutl.meta.gt;
 import ccutl.meta.gteq;
 import ccutl.meta.lt;
@@ -47,7 +47,7 @@ import ccutl.meta.lteq;
 import ccutl.nontype_specialization_of;
 import ccutl.type_pack;
 export import std;
-export import ccutl.indexed_arg;
+export import ccutl.arg_at;
 export import ccutl.meta.gt;
 export import ccutl.meta.gteq;
 export import ccutl.meta.lt;
@@ -55,7 +55,7 @@ export import ccutl.meta.lteq;
 export import ccutl.specialization_of;
 export import ccutl.type_pack;
 #else
-#include "ccutl/indexed_arg.h"
+#include "ccutl/arg_at.h"
 #include "ccutl/meta/gt.h"
 #include "ccutl/meta/lt.h"
 #include "ccutl/meta/lteq.h"
@@ -97,21 +97,21 @@ template <auto... vs, std::size_t... seq>
 requires meta::gt<sizeof...(vs), 0>
 [[nodiscard]] inline constexpr auto
 pop_back(std::index_sequence<seq...> &&) noexcept {
-  return nontype_pack<indexed_arg<seq>(vs...)...>{};
+  return nontype_pack<arg_at<seq>(vs...)...>{};
 }
 /// removes the first nontype template value from vs...
 template <std::size_t n_removed, auto... vs, std::size_t... seq>
 requires meta::gteq<sizeof...(vs), n_removed>
 [[nodiscard]] static constexpr auto
 pop_front(std::index_sequence<seq...> &&) noexcept {
-  return nontype_pack<indexed_arg<seq + n_removed>(vs...)...>{};
+  return nontype_pack<arg_at<seq + n_removed>(vs...)...>{};
 }
 /// creates a nontype_pack from a section of vs...
 template <std::size_t begin, auto... vs, std::size_t... seq>
 requires meta::gt<sizeof...(vs), 0>
 [[nodiscard]] static constexpr auto
 slice(std::index_sequence<seq...> &&) noexcept {
-  return nontype_pack<indexed_arg<seq + begin>(vs...)...>{};
+  return nontype_pack<arg_at<seq + begin>(vs...)...>{};
 } /*                                                      */ // clang-format on
 
 /// concatenates a nontype pack with rs...
@@ -196,7 +196,7 @@ struct nontype_pack {
   /// @brief Represents the value at index idx
   template <std::size_t idx>
   requires meta::lt<idx, sizeof...(values)>
-  static constexpr type_at<idx> at = indexed_arg<idx>(values...);
+  static constexpr type_at<idx> at = arg_at<idx>(values...);
 
   /// @brief Represents a nontype_pack with value pushed to the back
   template <auto value>

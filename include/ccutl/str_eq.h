@@ -1,9 +1,9 @@
-#ifndef CCUTL_STREQ_H_INCLUDED
-#define CCUTL_STREQ_H_INCLUDED
+#ifndef CCUTL_STR_EQ_H_INCLUDED
+#define CCUTL_STR_EQ_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief \link streq ccutl.streq\endlink -
-/// true if all provided char ranges or null-terminated strings are equal
+/// @brief \link str_eq ccutl.str_eq\endlink -
+/// performs a lexicographical equality comparison of two stringlike objects
 /// @file
 //                      |    |
 //    __|   __|  |   |  __|  |
@@ -30,6 +30,7 @@
 #ifdef CCUTL_MODULES
 module;
 #else
+#include <ranges>
 #include <tuple>
 #include <utility>
 #endif
@@ -38,84 +39,81 @@ module;
 #include "ccutl/detail_/str.h"
 
 #ifdef CCUTL_MODULES
-export module ccutl.streq;
+export module ccutl.str_eq;
 import std;
-import ccutl.fwd;
+import ccutl.arg_at;
 export import std;
-export import ccutl.fwd;
+export import ccutl.arg_at;
 #else
+#include "ccutl/arg_at.h"
 #include "ccutl/fwd.h"
 #endif
 
-namespace ccutl::detail_::streq_ {
+namespace ccutl::detail_::str_eq_ {
 /// @addtogroup detail_
 /// \{
 
 using std::size_t;
+using std::ranges::begin;
+using std::ranges::end;
 
-/// checks if all Ts are stringlike
-template <class... Ts>
-concept stringlike_pack = (stringlike<Ts> && ...);
-
-/// eq comparison of str_subscriptables
+/// lexicographical eq comparison of str_subscriptables
 [[nodiscard]] constexpr inline bool
-eq(str_subscriptable auto &&a, str_subscriptable auto &&b) {
-  for (size_t i = 0;; ++i) {
-    if (a[i] == '\0' and b[i] == '\0')
-      return true;
+eq(const str_subscriptable auto &a, const str_subscriptable auto &b) noexcept {
+  size_t i = 0;
+  for (; a[i] and b[i]; ++i) {
     if (a[i] != b[i])
       return false;
   }
+  return a[i] == b[i];
 }
 
-/// eq comparison of str_ranges to str_subscriptables
+/// lexicographical eq comparison of str_ranges to str_subscriptables
 [[nodiscard]] constexpr inline bool
-eq(str_range auto &&a, str_subscriptable auto &&b) {
-  auto &&ita = a.begin();
+eq(const str_range auto &a, const str_subscriptable auto &b) noexcept {
+  auto &&ita = begin(a);
   size_t ib  = 0;
-  for (;; ++ita, ++ib) {
-    if (*ita == '\0' and b[ib] == '\0')
-      return true;
+  for (; !(ita == end(a) || !*ita) and b[ib]; ++ita, ++ib) {
     if (*ita != b[ib])
       return false;
   }
+  return (ita == end(a) || !*ita) and !b[ib];
 }
 
-/// eq comparison of str_subscriptables to str_ranges
+/// lexicographical eq comparison of str_subscriptables to str_ranges
 [[nodiscard]] constexpr inline bool
-eq(str_subscriptable auto &&a, str_range auto &&b) {
-  return eq(fwd<decltype(b)>(b), fwd<decltype(a)>(a));
+eq(const str_subscriptable auto &a, const str_range auto &b) noexcept {
+  return eq(b, a);
 }
 
-/// eq comparison of str_ranges
+/// lexicographical eq comparison of str_ranges
 [[nodiscard]] constexpr inline bool
-eq(str_range auto &&a, str_range auto &&b) {
-  auto &&ita = a.begin();
-  auto &&itb = b.begin();
-  for (;; ++ita, ++itb) {
-    if (*ita == '\0' and *itb == '\0')
-      return true;
+eq(const str_range auto &a, const str_range auto &b) noexcept {
+  auto &&ita = begin(a);
+  auto &&itb = begin(b);
+  for (; !(ita == end(a) || !*ita) and !(itb == end(b) || !*itb);
+       ++ita, ++itb) {
     if (*ita != *itb)
       return false;
   }
+  return (ita == end(a) || *ita == 0) and (itb == end(b) || *itb == 0);
 }
 
 /// executes comparisons for all Strs...
 template <stringlike_pack... Strs, size_t seq_first, size_t... seq_rest>
 [[nodiscard]] constexpr inline bool
-impl(std::index_sequence<seq_first, seq_rest...> &&, Strs &&...strs) {
-  auto tup     = std::tuple{ccutl::fwd<Strs>(strs)...};
-  auto &&first = std::get<0>(tup);
-
-  return (eq(first, std::get<seq_rest>(tup)) && ...);
+impl(
+    std::index_sequence<seq_first, seq_rest...> &&,
+    const Strs &...strs) noexcept {
+  return (eq(arg_at<0>(strs...), arg_at<seq_rest>(strs...)) and ...);
 }
 
 /// \}
-} // namespace ccutl::detail_::streq_
+} // namespace ccutl::detail_::str_eq_
 
 CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 
-/// true if all provided char ranges or null-terminated strings are equal
+/// performs a lexicographical equality comparison of two stringlike objects
 ///
 /// @details
 ///   accepts any char input ranges or char-subscriptables (e.g. char *).
@@ -126,24 +124,24 @@ CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 /// @code
 ///   #include <string>
 ///   // import std; //
-///   #include "ccutl/streq.h"
-///   // import ccutl.streq; //
+///   #include "ccutl/str_eq.h"
+///   // import ccutl.str_eq; //
 ///
-///   streq("foo", "foo");                           // true
-///   streq("foo", "bar");                           // false
-///   streq("foo", std::string{"foo"});              // true
-///   streq(std::string{"foo"}, std::string{"foo"}); // true
+///   ccutl::str_eq("foo", "foo");                           // true
+///   ccutl::str_eq("foo", "bar", "foo");                    // false
+///   ccutl::str_eq("foo", "bar");                           // false
+///   ccutl::str_eq("foo", std::string{"foo"});              // true
+///   ccutl::str_eq(std::string{"foo"}, std::string{"foo"}); // true
 /// @endcode
 ///
 /// @see ccutl/detail_/str.h
 ///
 /// @ingroup ccutl
-/// @anchor  streq
-template <detail_::streq_::stringlike_pack... Strs>
+/// @anchor  str_eq
+template <detail_::stringlike_pack... Strs>
 [[nodiscard]] inline constexpr bool
-streq(Strs &&...strs) noexcept {
-  return detail_::streq_::impl(
-      std::index_sequence_for<Strs...>{}, fwd<Strs>(strs)...);
+str_eq(const Strs &...strs) noexcept {
+  return detail_::str_eq_::impl(std::index_sequence_for<Strs...>{}, strs...);
 }
 
 CCUTL_END_EXPORT_NAMESPACE // ccutl

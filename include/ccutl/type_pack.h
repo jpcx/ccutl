@@ -40,7 +40,7 @@ module;
 export module ccutl.type_pack;
 
 import std;
-import ccutl.indexed_type;
+import ccutl.type_at;
 import ccutl.meta.gt;
 import ccutl.meta.gteq;
 import ccutl.meta.lt;
@@ -48,7 +48,7 @@ import ccutl.meta.lteq;
 import ccutl.specializable_with;
 import ccutl.specialization_of;
 export import std;
-export import ccutl.indexed_type;
+export import ccutl.type_at;
 export import ccutl.meta.gt;
 export import ccutl.meta.gteq;
 export import ccutl.meta.lt;
@@ -56,13 +56,13 @@ export import ccutl.meta.lteq;
 export import ccutl.specializable_with;
 export import ccutl.specialization_of;
 #else
-#include "ccutl/indexed_type.h"
 #include "ccutl/meta/gt.h"
 #include "ccutl/meta/gteq.h"
 #include "ccutl/meta/lt.h"
 #include "ccutl/meta/lteq.h"
 #include "ccutl/specializable_with.h"
 #include "ccutl/specialization_of.h"
+#include "ccutl/type_at.h"
 #endif
 
 CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
@@ -93,21 +93,21 @@ template <class... Ts, std::size_t... seq>
 requires meta::gt<sizeof...(Ts), 0>
 [[nodiscard]] inline constexpr auto
 pop_back(std::index_sequence<seq...> &&) noexcept {
-  return type_pack<indexed_type<seq, Ts...>...>{};
+  return type_pack<type_at<seq, Ts...>...>{};
 }
 /// removes the first template type from Ts...
 template <std::size_t n_removed, class... Ts, std::size_t... seq>
 requires meta::gt<sizeof...(Ts), 0> and meta::lteq<n_removed, sizeof...(Ts)>
 [[nodiscard]] static constexpr auto
 pop_front(std::index_sequence<seq...> &&) noexcept {
-  return type_pack<indexed_type<seq + n_removed, Ts...>...>{};
+  return type_pack<type_at<seq + n_removed, Ts...>...>{};
 }
 /// creates a type_pack from a section of Ts...
 template <std::size_t begin, class... Ts, std::size_t... seq>
 requires meta::gt<sizeof...(Ts), 0>
 [[nodiscard]] static constexpr auto
 slice(std::index_sequence<seq...> &&) noexcept {
-  return type_pack<indexed_type<seq + begin, Ts...>...>{};
+  return type_pack<type_at<seq + begin, Ts...>...>{};
 } /*                                                      */ // clang-format on
 
 /// concatenates a nontype pack with Us...
@@ -192,7 +192,7 @@ struct type_pack {
   /// @tparam idx - Index to retrieve
   template <std::size_t idx>
   requires meta::lt<idx, size>
-  using at = indexed_type<idx, Ts...>;
+  using at = type_at<idx, Ts...>;
 
   /// @brief Represents a type_pack with T pushed to the back
   /// @tparam T - Type to push back

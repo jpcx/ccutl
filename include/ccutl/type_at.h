@@ -1,8 +1,8 @@
-#ifndef CCUTL_INDEXED_TYPE_H_INCLUDED
-#define CCUTL_INDEXED_TYPE_H_INCLUDED
+#ifndef CCUTL_TYPE_AT_H_INCLUDED
+#define CCUTL_TYPE_AT_H_INCLUDED
 /////                                                                      c++20
 ////////////////////////////////////////////////////////////////////////////////
-/// @brief \link indexed_type ccutl.indexed_type\endlink -
+/// @brief \link type_at ccutl.type_at\endlink -
 /// represents the type template argument at index idx
 /// @file
 //                      |    |
@@ -36,17 +36,17 @@ module;
 #include "ccutl/detail_/config.h"
 
 #ifdef CCUTL_MODULES
-export module ccutl.indexed_type;
+export module ccutl.type_at;
 import std;
 export import std;
 #endif
 
-namespace ccutl::detail_::indexed_type_ {
+namespace ccutl::detail_::type_at_ {
 
 /// @addtogroup detail_
 /// \{
 
-/// primary template for indexed_type_::impl
+/// primary template for type_at_::impl
 template <std::size_t, std::size_t, class...>
 struct impl;
 
@@ -73,7 +73,7 @@ inline constexpr bool
 
 /// \}
 
-} // namespace ccutl::detail_::indexed_type_
+} // namespace ccutl::detail_::type_at_
 
 CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 
@@ -82,18 +82,18 @@ CCUTL_BEGIN_EXPORT_NAMESPACE(ccutl)
 /// represents the type template argument at index idx
 ///
 /// @code
-///   #include "ccutl/indexed_type.h"
-///   // import ccutl.indexed_type; //
-///   using x0 = ccutl::indexed_type<0, int, float, double>; // int
-///   using x1 = ccutl::indexed_type<1, int, float, double>; // float
-///   using x2 = ccutl::indexed_type<2, int, float, double>; // double
+///   #include "ccutl/type_at.h"
+///   // import ccutl.type_at; //
+///   using x0 = ccutl::type_at<0, int, float, double>; // int
+///   using x1 = ccutl::type_at<1, int, float, double>; // float
+///   using x2 = ccutl::type_at<2, int, float, double>; // double
 /// @endcode
 ///
 /// @ingroup ccutl
-/// @anchor  indexed_type
+/// @anchor  type_at
 template <std::size_t idx, class... Ts>
-requires detail_::indexed_type_::valid_indexable_pack<idx, Ts...>
-using indexed_type = detail_::indexed_type_::type<idx, Ts...>;
+requires detail_::type_at_::valid_indexable_pack<idx, Ts...>
+using type_at = detail_::type_at_::type<idx, Ts...>;
 
 /*                                                        */ // clang-format on
 

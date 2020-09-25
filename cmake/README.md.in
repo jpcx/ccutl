@@ -33,8 +33,8 @@ Generally, this library will contain the following types of utilites:
 - shortcuts to existing functionality (e.g. [ccutl::mv](http://jpcx.github.io/ccutl/group__ccutl.html#mv), [ccutl::fwd](http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues), [ccutl::noref](http://jpcx.github.io/ccutl/group__ccutl.html#noref))
 - more flexible versions of existing functionality (e.g. [ccutl::same](http://jpcx.github.io/ccutl/group__ccutl.html#same))
 - more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html), [ccutl::indexed\_type](http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type))
-- less verbose methods for common operations (e.g. [ccutl::streq](http://jpcx.github.io/ccutl/group__ccutl.html#streq), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
-- preprocessor tools to circumvent language limitations (e.g. [CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
+- less verbose methods for common operations (e.g. [ccutl::str\_eq](http://jpcx.github.io/ccutl/group__ccutl.html#str_eq), [ccutl::str\_lt](http://jpcx.github.io/ccutl/group__ccutl.html#str_lt), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
+- preprocessor tools to circumvent language limitations (e.g. [CCUTL\_MAKE\_SPECIALIZATION\_OF\_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
 - type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
 - code generation scripts (future releases)
 
@@ -215,6 +215,7 @@ C++ is an extremely versatile language, I'd like to make it even more so!
 Module | Brief
 --- | ---
 ccutl | ccutl Core Utilities
+ccutl.arg_at | returns the argument at index idx
 ccutl.boolean_testable | describes a bool-convertible B that is capable of usual logic operations
 ccutl.different | describes a set of types with at least one variation
 ccutl.eq | equality comparison of two strongly-ordered three-way comparables or differently-signed integrals
@@ -222,8 +223,6 @@ ccutl.fwd | perfect reference forwarder
 ccutl.gt | greater-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
 ccutl.gteq | greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
 ccutl.highest | represents the highest number possible for a given arithmetic type
-ccutl.indexed_arg | returns the argument at index idx
-ccutl.indexed_type | represents the type template argument at index idx
 ccutl.lowest | represents the lowest number possible for a given arithmetic type
 ccutl.lt | less-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
 ccutl.lteq | less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
@@ -246,9 +245,15 @@ ccutl.same | describes a set of types with no variation
 ccutl.specializable_with | describes a template that is specializable with given type template args
 ccutl.specialization_of | detects template specializations for type-parameter templates (<class...>)
 ccutl.specializes | requires that a type may be used to specialize a given template
-ccutl.streq | true if all provided char ranges or null-terminated strings are equal
+ccutl.str_eq | performs a lexicographical equality comparison of two stringlike objects
+ccutl.str_gt | performs a lexicographical greater-than comarison of two stringlike objects
+ccutl.str_gteq | performs a lexicographical gteq comarison of two stringlike objects
+ccutl.str_lt | performs a lexicographical less-than comarison of two stringlike objects
+ccutl.str_lteq | performs a lexicographical lteq comarison of two stringlike objects
+ccutl.str_neq | performs a lexicographical non-equality comarison of two stringlike objects
 ccutl.strlen | returns the length of any char range or null-terminated string
 ccutl.subscriptable_to | describes a T whose subscript operator returns a type convertible to SubType
+ccutl.type_at | represents the type template argument at index idx
 ccutl.type_pack | Provides a type template arg container with transformational utilities
 
 Macro | Location | Brief
