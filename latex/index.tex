@@ -45,7 +45,7 @@ Generally, this library will contain the following types of utilites\+:
 \begin{DoxyItemize}
 \item shortcuts to existing functionality (e.\+g. \href{http://jpcx.github.io/ccutl/group__ccutl.html\#mv}{\texttt{ ccutl\+::mv}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#fwd_lvalues}{\texttt{ ccutl\+::fwd}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#noref}{\texttt{ ccutl\+::noref}})
 \item more flexible versions of existing functionality (e.\+g. \href{http://jpcx.github.io/ccutl/group__ccutl.html\#same}{\texttt{ ccutl\+::same}})
-\item more approachable metaprogramming techniques (e.\+g. \href{http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html}{\texttt{ ccutl\+::type\+\_\+pack}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#indexed_type}{\texttt{ ccutl\+::indexed\+\_\+type}})
+\item more approachable metaprogramming techniques (e.\+g. \href{http://jpcx.github.io/ccutl/structtype__pack.html}{\texttt{ ccutl\+::type\+\_\+pack}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#type_at}{\texttt{ ccutl\+::type\+\_\+at}})
 \item less verbose methods for common operations (e.\+g. \href{http://jpcx.github.io/ccutl/group__ccutl.html\#str_eq}{\texttt{ ccutl\+::str\+\_\+eq}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#str_lt}{\texttt{ ccutl\+::str\+\_\+lt}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#highest}{\texttt{ ccutl\+::highest}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#lowest}{\texttt{ ccutl\+::lowest}})
 \item preprocessor tools to circumvent language limitations (e.\+g. \href{http://jpcx.github.io/ccutl/group__ccutl.html\#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT}{\texttt{ C\+C\+U\+T\+L\+\_\+\+M\+A\+K\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+C\+O\+N\+C\+E\+PT}})
 \item type-\/general operations (e.\+g. \href{http://jpcx.github.io/ccutl/group__ccutl.html\#eq}{\texttt{ ccutl\+::eq}}, \href{http://jpcx.github.io/ccutl/group__ccutl.html\#strlen}{\texttt{ ccutl\+::strlen}})
@@ -119,7 +119,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.2.0 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.2.1 https://github.com/jpcx/ccutl.git}
 \end{DoxyCode}
 
 
@@ -133,14 +133,14 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.2.0 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.2.1 https://github.com/jpcx/ccutl.git}
 \DoxyCodeLine{cd ccutl}
 \DoxyCodeLine{}
 \DoxyCodeLine{make \# mkdir build}
 \DoxyCodeLine{     \# cmake -\/Bbuild}
 \DoxyCodeLine{}
-\DoxyCodeLine{\# installs header to      \$\{DESTDIR\}\$\{PREFIX\}/include/ccutl-\/0.2.0}
-\DoxyCodeLine{\# installs cmake files to \$\{DESTDIR\}\$\{PREFIX\}/lib/cmake/ccutl-\/0.2.0}
+\DoxyCodeLine{\# installs header to      \$\{DESTDIR\}\$\{PREFIX\}/include/ccutl-\/0.2.1}
+\DoxyCodeLine{\# installs cmake files to \$\{DESTDIR\}\$\{PREFIX\}/lib/cmake/ccutl-\/0.2.1}
 \DoxyCodeLine{sudo make install \# cmake -\/-\/install build}
 \end{DoxyCode}
 
@@ -159,7 +159,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 \DoxyCodeLine{include(FetchContent)}
 \DoxyCodeLine{FetchContent\_Declare(ccutl}
 \DoxyCodeLine{                     GIT\_REPOSITORY https://github.com/jpcx/ccutl.git}
-\DoxyCodeLine{                     GIT\_TAG "0.2.0")}
+\DoxyCodeLine{                     GIT\_TAG "0.2.1")}
 \DoxyCodeLine{FetchContent\_MakeAvailable(ccutl)}
 \DoxyCodeLine{target\_link\_libraries([your target] ccutl)}
 \end{DoxyCode}
@@ -169,7 +169,7 @@ ccutl is a header-\/only C\+Make interface library with {\ttfamily find\+\_\+pac
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.2.0 https://github.com/jpcx/ccutl.git \# or git submodule add}
+\DoxyCodeLine{git clone -\/b 0.2.1 https://github.com/jpcx/ccutl.git \# or git submodule add}
 \end{DoxyCode}
 
 
@@ -188,7 +188,7 @@ ccutl modules cannot be installed to the system at this time. ~\newline
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git clone -\/b 0.2.0 https://github.com/jpcx/ccutl.git}
+\DoxyCodeLine{git clone -\/b 0.2.1 https://github.com/jpcx/ccutl.git}
 \end{DoxyCode}
 
 

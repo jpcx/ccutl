@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl 0.2.0</title>
+<title>ccutl 0.2.1</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="index.html" style="text-decoration: none">ccutl</a>
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.2.1</span>
    </div>
    <div id="projectbrief">ccutl Core Utilities</div>
   </td>
@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">ccutl 0.2.0 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.2.0/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
+<div class="title">ccutl 0.2.1 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.2.1/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_master_ccutl_README"></a> </p><div class="fragment"><div class="line">                    |    |</div>
@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>shortcuts to existing functionality (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#mv">ccutl::mv</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues">ccutl::fwd</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#noref">ccutl::noref</a>)</li>
 <li>more flexible versions of existing functionality (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#same">ccutl::same</a>)</li>
-<li>more approachable metaprogramming techniques (e.g. <a href="http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html">ccutl::type_pack</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type">ccutl::indexed_type</a>)</li>
+<li>more approachable metaprogramming techniques (e.g. <a href="http://jpcx.github.io/ccutl/structtype__pack.html">ccutl::type_pack</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#type_at">ccutl::type_at</a>)</li>
 <li>less verbose methods for common operations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#str_eq">ccutl::str_eq</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#str_lt">ccutl::str_lt</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#highest">ccutl::highest</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#lowest">ccutl::lowest</a>)</li>
 <li>preprocessor tools to circumvent language limitations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT">CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT</a>)</li>
 <li>type-general operations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#eq">ccutl::eq</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#strlen">ccutl::strlen</a>)</li>
@@ -157,17 +157,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <h2>As Headers</h2>
 <h3>Standard -I</h3>
-<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.1 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">CXXFLAGS += -I[ccutl download dir]/include</div>
 </div><!-- fragment --><h3>CMake Install</h3>
-<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.1 https://github.com/jpcx/ccutl.git</div>
 <div class="line">cd ccutl</div>
 <div class="line"> </div>
 <div class="line">make # mkdir build</div>
 <div class="line">     # cmake -Bbuild</div>
 <div class="line"> </div>
-<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.0</div>
-<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.0</div>
+<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.1</div>
+<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.1</div>
 <div class="line">sudo make install # cmake --install build</div>
 </div><!-- fragment --><div class="fragment"><div class="line">find_package(ccutl 0.2 REQUIRED)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
@@ -175,17 +175,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line">include(FetchContent)</div>
 <div class="line">FetchContent_Declare(ccutl</div>
 <div class="line">                     GIT_REPOSITORY https://github.com/jpcx/ccutl.git</div>
-<div class="line">                     GIT_TAG &quot;0.2.0&quot;)</div>
+<div class="line">                     GIT_TAG &quot;0.2.1&quot;)</div>
 <div class="line">FetchContent_MakeAvailable(ccutl)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h3>CMake add_subdirectory</h3>
-<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git # or git submodule add</div>
+<div class="fragment"><div class="line">git clone -b 0.2.1 https://github.com/jpcx/ccutl.git # or git submodule add</div>
 </div><!-- fragment --><div class="fragment"><div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h2>As Modules <a class="anchor" id="setup_as_modules"></a></h2>
 <p>ccutl modules cannot be installed to the system at this time. <br  />
  They may be consumed directly as a subfolder as follows:</p>
-<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.1 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">set(CCUTL_MODULES ON)</div>
 <div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
