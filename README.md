@@ -1,4 +1,4 @@
-# ccutl 0.2.0  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.2.0/CHANGELOG.md)
+# ccutl 0.2.1  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.2.1/CHANGELOG.md)
 
 ```
                     |    |
@@ -32,7 +32,7 @@ Generally, this library will contain the following types of utilites:
 
 - shortcuts to existing functionality (e.g. [ccutl::mv](http://jpcx.github.io/ccutl/group__ccutl.html#mv), [ccutl::fwd](http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues), [ccutl::noref](http://jpcx.github.io/ccutl/group__ccutl.html#noref))
 - more flexible versions of existing functionality (e.g. [ccutl::same](http://jpcx.github.io/ccutl/group__ccutl.html#same))
-- more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html), [ccutl::indexed\_type](http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type))
+- more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structtype__pack.html), [ccutl::type\_at](http://jpcx.github.io/ccutl/group__ccutl.html#type_at))
 - less verbose methods for common operations (e.g. [ccutl::str\_eq](http://jpcx.github.io/ccutl/group__ccutl.html#str_eq), [ccutl::str\_lt](http://jpcx.github.io/ccutl/group__ccutl.html#str_lt), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
 - preprocessor tools to circumvent language limitations (e.g. [CCUTL\_MAKE\_SPECIALIZATION\_OF\_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
 - type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
@@ -88,7 +88,7 @@ ccutl is a header-only CMake interface library with `find_package` compatibility
 #### Standard -I
 
 ```shell
-git clone -b 0.2.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
 ```
 ```makefile
 CXXFLAGS += -I[ccutl download dir]/include
@@ -97,14 +97,14 @@ CXXFLAGS += -I[ccutl download dir]/include
 #### CMake Install
 
 ```shell
-git clone -b 0.2.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
 cd ccutl
 
 make # mkdir build
      # cmake -Bbuild
 
-# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.0
-# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.0
+# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.1
+# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.1
 sudo make install # cmake --install build
 ```
 ```cmake
@@ -118,7 +118,7 @@ target_link_libraries([your target] ccutl)
 include(FetchContent)
 FetchContent_Declare(ccutl
                      GIT_REPOSITORY https://github.com/jpcx/ccutl.git
-                     GIT_TAG "0.2.0")
+                     GIT_TAG "0.2.1")
 FetchContent_MakeAvailable(ccutl)
 target_link_libraries([your target] ccutl)
 ```
@@ -126,7 +126,7 @@ target_link_libraries([your target] ccutl)
 #### CMake add_subdirectory
 
 ```shell
-git clone -b 0.2.0 https://github.com/jpcx/ccutl.git # or git submodule add
+git clone -b 0.2.1 https://github.com/jpcx/ccutl.git # or git submodule add
 ```
 ```cmake
 add_subdirectory([ccutl download dir])
@@ -139,7 +139,7 @@ ccutl modules cannot be installed to the system at this time.
 They may be consumed directly as a subfolder as follows:
 
 ```shell
-git clone -b 0.2.0 https://github.com/jpcx/ccutl.git
+git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
 ```
 ```cmake
 set(CCUTL_MODULES ON)

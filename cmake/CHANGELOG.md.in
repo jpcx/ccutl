@@ -2,7 +2,13 @@
 
 ## [Upcoming](https://github.com/jpcx/ccutl/compare/@PROJECT_VERSION@...devel)
 
-## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.2...@PROJECT_VERSION@)\]
+## [@PROJECT_VERSION@](https://github.com/jpcx/ccutl/releases/tag/@PROJECT_VERSION@) \[[diff](https://github.com/jpcx/ccutl/compare/0.2.0...@PROJECT_VERSION@)\]
+
+### Fixed
+
+- Fixed README links
+
+## [0.2.0](https://github.com/jpcx/ccutl/releases/tag/0.2.0) \[[diff](https://github.com/jpcx/ccutl/compare/0.1.2...0.2.0)\]
 
 ### Added
 

@@ -32,7 +32,7 @@ Generally, this library will contain the following types of utilites:
 
 - shortcuts to existing functionality (e.g. [ccutl::mv](http://jpcx.github.io/ccutl/group__ccutl.html#mv), [ccutl::fwd](http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues), [ccutl::noref](http://jpcx.github.io/ccutl/group__ccutl.html#noref))
 - more flexible versions of existing functionality (e.g. [ccutl::same](http://jpcx.github.io/ccutl/group__ccutl.html#same))
-- more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html), [ccutl::indexed\_type](http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type))
+- more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structtype__pack.html), [ccutl::type\_at](http://jpcx.github.io/ccutl/group__ccutl.html#type_at))
 - less verbose methods for common operations (e.g. [ccutl::str\_eq](http://jpcx.github.io/ccutl/group__ccutl.html#str_eq), [ccutl::str\_lt](http://jpcx.github.io/ccutl/group__ccutl.html#str_lt), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
 - preprocessor tools to circumvent language limitations (e.g. [CCUTL\_MAKE\_SPECIALIZATION\_OF\_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
 - type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
