@@ -6,6 +6,7 @@ detail helpers for ccutl string functions
 
 
 {\ttfamily \#include $<$ranges$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/noref.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}ccutl/subscriptable\+\_\+to.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
 \doxysubsection*{Variables}
@@ -15,8 +16,10 @@ detail helpers for ccutl string functions
 \begin{DoxyCompactList}\small\item\em specifies a type that is an input range of values convertible to const char \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gaaf88752247b7f48a62d275bb2b4dc527}{ccutl\+::detail\+\_\+\+::str\+\_\+subscriptable}}
 \begin{DoxyCompactList}\small\item\em specifies a type that is subscriptable to const char and is not a range \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gad877813365959e2835238e811872c424}{ccutl\+::detail\+\_\+\+::stringlike}} = str\+\_\+range$<$T$>$ $\vert$$\vert$ str\+\_\+subscriptable$<$T$>$
-\begin{DoxyCompactList}\small\item\em specifies a const char range or subscriptable type \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gad877813365959e2835238e811872c424}{ccutl\+::detail\+\_\+\+::stringlike}} = str\+\_\+range$<$\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref}}$<$T$>$$>$ $\vert$$\vert$ str\+\_\+subscriptable$<$\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref}}$<$T$>$$>$
+\begin{DoxyCompactList}\small\item\em specifies a const char range or subscriptable type \end{DoxyCompactList}\item 
+{\footnotesize template$<$class... Ts$>$ }\\concept \mbox{\hyperlink{group__detail___ga2eea5f9e0b0cb5db58f70de04ae84886}{ccutl\+::detail\+\_\+\+::stringlike\+\_\+pack}} = (stringlike$<$Ts$>$ and ...)
+\begin{DoxyCompactList}\small\item\em checks if all Ts are stringlike \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

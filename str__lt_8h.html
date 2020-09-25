@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl: master/ccutl/include/ccutl/indexed_arg.h File Reference</title>
+<title>ccutl: master/ccutl/include/ccutl/str_lt.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -80,26 +80,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">indexed_arg.h File Reference</div>  </div>
+<div class="title">str_lt.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="group__ccutl.html#indexed_arg">ccutl.indexed_arg</a> - returns the argument at index idx  
+<p><a class="el" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">ccutl.str_lt</a> - performs a lexicographical less-than comarison of two stringlike objects  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<div class="textblock"><code>#include &lt;ranges&gt;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">ccutl/detail_/config.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fwd_8h_source.html">ccutl/fwd.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="str_8h_source.html">ccutl/detail_/str.h</a>&quot;</code><br />
 </div>
-<p><a href="indexed__arg_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="str__lt_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
-<tr class="memitem:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr detail_::indexed_arg_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga6e0ca25d4b10614de69ac2707c489ec6">indexed_arg</a> (Ts &amp;&amp;... args) noexcept</td></tr>
-<tr class="separator:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5202cae71e87ceb8240c82467cc4218"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail__.html#gac5202cae71e87ceb8240c82467cc4218">ccutl::detail_::str_lt_::lt</a> (const str_subscriptable auto &amp;a, const str_subscriptable auto &amp;b) noexcept</td></tr>
+<tr class="memdesc:gac5202cae71e87ceb8240c82467cc4218"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexicographical lt comparison of str_subscriptables <br /></td></tr>
+<tr class="separator:gac5202cae71e87ceb8240c82467cc4218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55d5a6045d33af2ea856451463ca496b"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail__.html#ga55d5a6045d33af2ea856451463ca496b">ccutl::detail_::str_lt_::lt</a> (const str_range auto &amp;a, const str_subscriptable auto &amp;b) noexcept</td></tr>
+<tr class="memdesc:ga55d5a6045d33af2ea856451463ca496b"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexicographical lt comparison of str_ranges to str_subscriptables <br /></td></tr>
+<tr class="separator:ga55d5a6045d33af2ea856451463ca496b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbe8072ccaf49065c2e9e24e168eef4d"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail__.html#gadbe8072ccaf49065c2e9e24e168eef4d">ccutl::detail_::str_lt_::lt</a> (const str_subscriptable auto &amp;a, const str_range auto &amp;b) noexcept</td></tr>
+<tr class="memdesc:gadbe8072ccaf49065c2e9e24e168eef4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexicographical lt comparison of str_subscriptables to str_ranges <br /></td></tr>
+<tr class="separator:gadbe8072ccaf49065c2e9e24e168eef4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cef04e491c51f13e7ec0ff52d5e6b53"><td class="memItemLeft" align="right" valign="top">
+constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__detail__.html#ga0cef04e491c51f13e7ec0ff52d5e6b53">ccutl::detail_::str_lt_::lt</a> (const str_range auto &amp;a, const str_range auto &amp;b) noexcept</td></tr>
+<tr class="memdesc:ga0cef04e491c51f13e7ec0ff52d5e6b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">lexicographical lt comparison of str_ranges <br /></td></tr>
+<tr class="separator:ga0cef04e491c51f13e7ec0ff52d5e6b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </td></tr>
+<tr class="memitem:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">str_lt</a> (const Lhs &amp;l, const Rhs &amp;r) noexcept</td></tr>
+<tr class="separator:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="group__ccutl.html#indexed_arg">ccutl.indexed_arg</a> - returns the argument at index idx </p>
+<div class="textblock"><p><a class="el" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">ccutl.str_lt</a> - performs a lexicographical less-than comarison of two stringlike objects </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

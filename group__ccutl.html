@@ -106,9 +106,6 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga3094ef75b944d9dec308f29584d34bb1"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
-<tr class="memitem:ga3094ef75b944d9dec308f29584d34bb1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga3094ef75b944d9dec308f29584d34bb1">indexed_type</a> = detail_::indexed_type_::type&lt; idx, Ts... &gt;</td></tr>
-<tr class="separator:ga3094ef75b944d9dec308f29584d34bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga65ab0a7e6810ec58bf6e448e957de8b5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ga65ab0a7e6810ec58bf6e448e957de8b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga65ab0a7e6810ec58bf6e448e957de8b5">nocv</a> = std::remove_cv_t&lt; T &gt;</td></tr>
 <tr class="separator:ga65ab0a7e6810ec58bf6e448e957de8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,9 +115,15 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga766857c2ad583c2acd02df3711d56d74"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ga766857c2ad583c2acd02df3711d56d74"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga766857c2ad583c2acd02df3711d56d74">noref</a> = std::remove_reference_t&lt; T &gt;</td></tr>
 <tr class="separator:ga766857c2ad583c2acd02df3711d56d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66298708ac313975d8776a2b99094e72"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
+<tr class="memitem:ga66298708ac313975d8776a2b99094e72"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga66298708ac313975d8776a2b99094e72">type_at</a> = detail_::type_at_::type&lt; idx, Ts... &gt;</td></tr>
+<tr class="separator:ga66298708ac313975d8776a2b99094e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga511231e7f27086515c017a03005449ee"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
+<tr class="memitem:ga511231e7f27086515c017a03005449ee"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr detail_::arg_at_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga511231e7f27086515c017a03005449ee">arg_at</a> (Ts &amp;&amp;... args) noexcept</td></tr>
+<tr class="separator:ga511231e7f27086515c017a03005449ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7dfd36880b81706224ec99ca67b370d5"><td class="memTemplParams" colspan="2">template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </td></tr>
 <tr class="memitem:ga7dfd36880b81706224ec99ca67b370d5"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga7dfd36880b81706224ec99ca67b370d5">eq</a> (L &amp;&amp;l, R &amp;&amp;r) noexcept</td></tr>
 <tr class="separator:ga7dfd36880b81706224ec99ca67b370d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +139,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaab77db47264e5c3ee819758a541ddeb1"><td class="memTemplParams" colspan="2">template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </td></tr>
 <tr class="memitem:gaab77db47264e5c3ee819758a541ddeb1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gaab77db47264e5c3ee819758a541ddeb1">gteq</a> (L l, R r) noexcept</td></tr>
 <tr class="separator:gaab77db47264e5c3ee819758a541ddeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
-<tr class="memitem:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr detail_::indexed_arg_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga6e0ca25d4b10614de69ac2707c489ec6">indexed_arg</a> (Ts &amp;&amp;... args) noexcept</td></tr>
-<tr class="separator:ga6e0ca25d4b10614de69ac2707c489ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac03eabeea646b1b94a4933346e987ae4"><td class="memTemplParams" colspan="2">template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </td></tr>
 <tr class="memitem:gac03eabeea646b1b94a4933346e987ae4"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gac03eabeea646b1b94a4933346e987ae4">lt</a> (L l, R r) noexcept</td></tr>
 <tr class="separator:gac03eabeea646b1b94a4933346e987ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,12 +151,27 @@ Functions</h2></td></tr>
 <tr class="memitem:gab90d39a53545b63e4bff0081e5999b23"><td class="memTemplParams" colspan="2">template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </td></tr>
 <tr class="memitem:gab90d39a53545b63e4bff0081e5999b23"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gab90d39a53545b63e4bff0081e5999b23">neq</a> (L l, R r) noexcept</td></tr>
 <tr class="separator:gab90d39a53545b63e4bff0081e5999b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga061f35fe396b2b463cdbd9da8318fde3"><td class="memTemplParams" colspan="2">template&lt;detail_::streq_::stringlike_pack... Strs&gt; </td></tr>
-<tr class="memitem:ga061f35fe396b2b463cdbd9da8318fde3"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a> (Strs &amp;&amp;...strs) noexcept</td></tr>
-<tr class="separator:ga061f35fe396b2b463cdbd9da8318fde3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga93be7687d7624124357ec79dc0c79d1c"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Str&gt; </td></tr>
-<tr class="memitem:ga93be7687d7624124357ec79dc0c79d1c"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">strlen</a> (Str &amp;&amp;s) noexcept</td></tr>
-<tr class="separator:ga93be7687d7624124357ec79dc0c79d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17a8ea844825447b3c0d3467eea009ec"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike_pack... Strs&gt; </td></tr>
+<tr class="memitem:ga17a8ea844825447b3c0d3467eea009ec"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">str_eq</a> (const Strs &amp;...strs) noexcept</td></tr>
+<tr class="separator:ga17a8ea844825447b3c0d3467eea009ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07912a4ac832d08c962850d6727ffbfd"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </td></tr>
+<tr class="memitem:ga07912a4ac832d08c962850d6727ffbfd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga07912a4ac832d08c962850d6727ffbfd">str_gt</a> (const Lhs &amp;l, const Rhs &amp;r) noexcept</td></tr>
+<tr class="separator:ga07912a4ac832d08c962850d6727ffbfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48bca8d7970c2082029e0a4fc0133c80"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </td></tr>
+<tr class="memitem:ga48bca8d7970c2082029e0a4fc0133c80"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga48bca8d7970c2082029e0a4fc0133c80">str_gteq</a> (const Lhs &amp;l, const Rhs &amp;r) noexcept</td></tr>
+<tr class="separator:ga48bca8d7970c2082029e0a4fc0133c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </td></tr>
+<tr class="memitem:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">str_lt</a> (const Lhs &amp;l, const Rhs &amp;r) noexcept</td></tr>
+<tr class="separator:gaf2e30a300dd6267d6e3fd47bcc360394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80f7b989d871d32dfeae319044965231"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </td></tr>
+<tr class="memitem:ga80f7b989d871d32dfeae319044965231"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga80f7b989d871d32dfeae319044965231">str_lteq</a> (const Lhs &amp;l, const Rhs &amp;r) noexcept</td></tr>
+<tr class="separator:ga80f7b989d871d32dfeae319044965231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga929c69d8145467ad0fc6b6c31c6570fb"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike_pack... Strs&gt; </td></tr>
+<tr class="memitem:ga929c69d8145467ad0fc6b6c31c6570fb"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga929c69d8145467ad0fc6b6c31c6570fb">str_neq</a> (const Strs &amp;...strs) noexcept</td></tr>
+<tr class="separator:ga929c69d8145467ad0fc6b6c31c6570fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaad4d0ad8b22c409f1ca756d9aee482e1"><td class="memTemplParams" colspan="2">template&lt;detail_::stringlike Str&gt; </td></tr>
+<tr class="memitem:gaad4d0ad8b22c409f1ca756d9aee482e1"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">strlen</a> (const Str &amp;s) noexcept</td></tr>
+<tr class="separator:gaad4d0ad8b22c409f1ca756d9aee482e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -289,29 +304,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga3094ef75b944d9dec308f29584d34bb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3094ef75b944d9dec308f29584d34bb1">&#9670;&nbsp;</a></span>indexed_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::size_t idx, class... Ts&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="group__ccutl.html#ga3094ef75b944d9dec308f29584d34bb1">indexed_type</a> =  detail_::indexed_type_::type&lt;idx, Ts...&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>represents the type template argument at index idx</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="indexed__type_8h.html">ccutl/indexed_type.h</a>&quot;</span></div>
-<div class="line"><span class="comment">// import ccutl.indexed_type; //</span></div>
-<div class="line"><span class="keyword">using</span> x0 = ccutl::indexed_type&lt;0, int, float, double&gt;; <span class="comment">// int</span></div>
-<div class="line"><span class="keyword">using</span> x1 = ccutl::indexed_type&lt;1, int, float, double&gt;; <span class="comment">// float</span></div>
-<div class="line"><span class="keyword">using</span> x2 = ccutl::indexed_type&lt;2, int, float, double&gt;; <span class="comment">// double</span></div>
-</div><!-- fragment --><p><a class="anchor" id="indexed_type"></a> </p>
-
-</div>
-</div>
 <a id="ga65ab0a7e6810ec58bf6e448e957de8b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga65ab0a7e6810ec58bf6e448e957de8b5">&#9670;&nbsp;</a></span>nocv</h2>
 
@@ -390,7 +382,67 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="ga66298708ac313975d8776a2b99094e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66298708ac313975d8776a2b99094e72">&#9670;&nbsp;</a></span>type_at</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t idx, class... Ts&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__ccutl.html#ga66298708ac313975d8776a2b99094e72">type_at</a> =  detail_::type_at_::type&lt;idx, Ts...&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>represents the type template argument at index idx</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="type__at_8h.html">ccutl/type_at.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.type_at; //</span></div>
+<div class="line"><span class="keyword">using</span> x0 = ccutl::type_at&lt;0, int, float, double&gt;; <span class="comment">// int</span></div>
+<div class="line"><span class="keyword">using</span> x1 = ccutl::type_at&lt;1, int, float, double&gt;; <span class="comment">// float</span></div>
+<div class="line"><span class="keyword">using</span> x2 = ccutl::type_at&lt;2, int, float, double&gt;; <span class="comment">// double</span></div>
+</div><!-- fragment --><p><a class="anchor" id="type_at"></a> </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga511231e7f27086515c017a03005449ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga511231e7f27086515c017a03005449ee">&#9670;&nbsp;</a></span>arg_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t idx, class... Ts&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">requires constexpr detail_::arg_at_::valid_indexable_pack&lt;idx, Ts...&gt; auto&amp;&amp; arg_at </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>returns the argument at index idx</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="arg__at_8h.html">ccutl/arg_at.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.arg_at; //</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> c  = <span class="charliteral">&#39;c&#39;</span>;</div>
+<div class="line"><span class="keyword">auto</span> &amp;&amp;x0 = ccutl::arg_at&lt;0&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (char)         &#39;a&#39;</span></div>
+<div class="line"><span class="keyword">auto</span> &amp;&amp;x1 = ccutl::arg_at&lt;1&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (const char *) &quot;b&quot;</span></div>
+<div class="line"><span class="keyword">auto</span> &amp;&amp;x2 = ccutl::arg_at&lt;2&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (char &amp;)        c</span></div>
+</div><!-- fragment --><p><a class="anchor" id="arg_at"></a> </p>
+
+</div>
+</div>
 <a id="ga7dfd36880b81706224ec99ca67b370d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7dfd36880b81706224ec99ca67b370d5">&#9670;&nbsp;</a></span>eq()</h2>
 
@@ -709,43 +761,6 @@ template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </div>
 
 </div>
 </div>
-<a id="ga6e0ca25d4b10614de69ac2707c489ec6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6e0ca25d4b10614de69ac2707c489ec6">&#9670;&nbsp;</a></span>indexed_arg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;std::size_t idx, class... Ts&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">requires constexpr detail_::indexed_arg_::valid_indexable_pack&lt;idx, Ts...&gt; auto&amp;&amp; indexed_arg </td>
-          <td>(</td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>returns the argument at index idx</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="indexed__arg_8h.html">ccutl/indexed_arg.h</a>&quot;</span></div>
-<div class="line"><span class="comment">// import ccutl.indexed_arg; //</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">char</span> c  = <span class="charliteral">&#39;c&#39;</span>;</div>
-<div class="line"><span class="keyword">auto</span> &amp;&amp;x0 = ccutl::indexed_arg&lt;0&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (char)         &#39;a&#39;</span></div>
-<div class="line"><span class="keyword">auto</span> &amp;&amp;x1 = ccutl::indexed_arg&lt;1&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (const char *) &quot;b&quot;</span></div>
-<div class="line"><span class="keyword">auto</span> &amp;&amp;x2 = ccutl::indexed_arg&lt;2&gt;(<span class="charliteral">&#39;a&#39;</span>, <span class="stringliteral">&quot;b&quot;</span>, c); <span class="comment">// (char &amp;)        c</span></div>
-</div><!-- fragment --><p><a class="anchor" id="indexed_arg"></a> </p>
-
-</div>
-</div>
 <a id="gac03eabeea646b1b94a4933346e987ae4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac03eabeea646b1b94a4933346e987ae4">&#9670;&nbsp;</a></span>lt()</h2>
 
@@ -1034,21 +1049,21 @@ template&lt;class L , detail_::strongly_comparable_with&lt; L &gt; R&gt; </div>
 
 </div>
 </div>
-<a id="ga061f35fe396b2b463cdbd9da8318fde3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga061f35fe396b2b463cdbd9da8318fde3">&#9670;&nbsp;</a></span>streq()</h2>
+<a id="ga17a8ea844825447b3c0d3467eea009ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17a8ea844825447b3c0d3467eea009ec">&#9670;&nbsp;</a></span>str_eq()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;detail_::streq_::stringlike_pack... Strs&gt; </div>
+template&lt;detail_::stringlike_pack... Strs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool streq </td>
+          <td class="memname">constexpr bool str_eq </td>
           <td>(</td>
-          <td class="paramtype">Strs &amp;&amp;...&#160;</td>
+          <td class="paramtype">const Strs &amp;...&#160;</td>
           <td class="paramname"><em>strs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1059,7 +1074,7 @@ template&lt;detail_::streq_::stringlike_pack... Strs&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>true if all provided char ranges or null-terminated strings are equal</p>
+<p>performs a lexicographical equality comparison of two stringlike objects</p>
 <p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1069,20 +1084,301 @@ template&lt;detail_::streq_::stringlike_pack... Strs&gt; </div>
 </dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><span class="comment">// import std; //</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="streq_8h.html">ccutl/streq.h</a>&quot;</span></div>
-<div class="line"><span class="comment">// import ccutl.streq; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__eq_8h.html">ccutl/str_eq.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_eq; //</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a>(<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;foo&quot;</span>);                           <span class="comment">// true</span></div>
-<div class="line"><a class="code" href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a>(<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>);                           <span class="comment">// false</span></div>
-<div class="line"><a class="code" href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a>(<span class="stringliteral">&quot;foo&quot;</span>, std::string{<span class="stringliteral">&quot;foo&quot;</span>});              <span class="comment">// true</span></div>
-<div class="line"><a class="code" href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a>(std::string{<span class="stringliteral">&quot;foo&quot;</span>}, std::string{<span class="stringliteral">&quot;foo&quot;</span>}); <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">ccutl::str_eq</a>(<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;foo&quot;</span>);                           <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">ccutl::str_eq</a>(<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>, <span class="stringliteral">&quot;foo&quot;</span>);                    <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">ccutl::str_eq</a>(<span class="stringliteral">&quot;foo&quot;</span>, <span class="stringliteral">&quot;bar&quot;</span>);                           <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">ccutl::str_eq</a>(<span class="stringliteral">&quot;foo&quot;</span>, std::string{<span class="stringliteral">&quot;foo&quot;</span>});              <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">ccutl::str_eq</a>(std::string{<span class="stringliteral">&quot;foo&quot;</span>}, std::string{<span class="stringliteral">&quot;foo&quot;</span>}); <span class="comment">// true</span></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
-<p><a class="anchor" id="streq"></a> </p>
+<p><a class="anchor" id="str_eq"></a> </p>
 
 </div>
 </div>
-<a id="ga93be7687d7624124357ec79dc0c79d1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga93be7687d7624124357ec79dc0c79d1c">&#9670;&nbsp;</a></span>strlen()</h2>
+<a id="ga07912a4ac832d08c962850d6727ffbfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07912a4ac832d08c962850d6727ffbfd">&#9670;&nbsp;</a></span>str_gt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool str_gt </td>
+          <td>(</td>
+          <td class="paramtype">const Lhs &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rhs &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>performs a lexicographical greater-than comarison of two stringlike objects</p>
+<p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported. compares until range-end or null terminator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>any char input ranges or char pointers</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="comment">// import std; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__gt_8h.html">ccutl/str_gt.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_gt; //</span></div>
+<div class="line"> </div>
+<div class="line">constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *foo = <span class="stringliteral">&quot;foo&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="group__ccutl.html#ga07912a4ac832d08c962850d6727ffbfd">ccutl::str_gt</a>(foo, <span class="stringliteral">&quot;foo&quot;</span>);              <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga07912a4ac832d08c962850d6727ffbfd">ccutl::str_gt</a>(foo, <span class="stringliteral">&quot;foobar&quot;</span>);           <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga07912a4ac832d08c962850d6727ffbfd">ccutl::str_gt</a>(foo, std::string(<span class="stringliteral">&quot;bar&quot;</span>)); <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
+<p><a class="anchor" id="alphacmp"></a> </p>
+
+</div>
+</div>
+<a id="ga48bca8d7970c2082029e0a4fc0133c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48bca8d7970c2082029e0a4fc0133c80">&#9670;&nbsp;</a></span>str_gteq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool str_gteq </td>
+          <td>(</td>
+          <td class="paramtype">const Lhs &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rhs &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>performs a lexicographical gteq comarison of two stringlike objects</p>
+<p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported. compares until range-end or null terminator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>any char input ranges or char pointers</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="comment">// import std; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__gteq_8h.html">ccutl/str_gteq.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_gteq; //</span></div>
+<div class="line"> </div>
+<div class="line">constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *foo = <span class="stringliteral">&quot;foo&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="group__ccutl.html#ga48bca8d7970c2082029e0a4fc0133c80">ccutl::str_gteq</a>(foo, <span class="stringliteral">&quot;foo&quot;</span>);              <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga48bca8d7970c2082029e0a4fc0133c80">ccutl::str_gteq</a>(foo, <span class="stringliteral">&quot;foobar&quot;</span>);           <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga48bca8d7970c2082029e0a4fc0133c80">ccutl::str_gteq</a>(foo, std::string(<span class="stringliteral">&quot;bar&quot;</span>)); <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
+<p><a class="anchor" id="alphacmp"></a> </p>
+
+</div>
+</div>
+<a id="gaf2e30a300dd6267d6e3fd47bcc360394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2e30a300dd6267d6e3fd47bcc360394">&#9670;&nbsp;</a></span>str_lt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool str_lt </td>
+          <td>(</td>
+          <td class="paramtype">const Lhs &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rhs &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>performs a lexicographical less-than comarison of two stringlike objects</p>
+<p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported. compares until range-end or null terminator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>any char input ranges or char pointers</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="comment">// import std; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__lt_8h.html">ccutl/str_lt.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_lt; //</span></div>
+<div class="line"> </div>
+<div class="line">constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *foo = <span class="stringliteral">&quot;foo&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">ccutl::str_lt</a>(foo, <span class="stringliteral">&quot;foo&quot;</span>);              <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">ccutl::str_lt</a>(foo, <span class="stringliteral">&quot;foobar&quot;</span>);           <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">ccutl::str_lt</a>(foo, std::string(<span class="stringliteral">&quot;bar&quot;</span>)); <span class="comment">// false</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
+<p><a class="anchor" id="alphacmp"></a> </p>
+
+</div>
+</div>
+<a id="ga80f7b989d871d32dfeae319044965231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80f7b989d871d32dfeae319044965231">&#9670;&nbsp;</a></span>str_lteq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail_::stringlike Lhs, detail_::stringlike Rhs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool str_lteq </td>
+          <td>(</td>
+          <td class="paramtype">const Lhs &amp;&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Rhs &amp;&#160;</td>
+          <td class="paramname"><em>r</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>performs a lexicographical lteq comarison of two stringlike objects</p>
+<p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported. compares until range-end or null terminator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>any char input ranges or char pointers</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="comment">// import std; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__lteq_8h.html">ccutl/str_lteq.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_lteq; //</span></div>
+<div class="line"> </div>
+<div class="line">constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *foo = <span class="stringliteral">&quot;foo&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="group__ccutl.html#ga80f7b989d871d32dfeae319044965231">ccutl::str_lteq</a>(foo, <span class="stringliteral">&quot;foo&quot;</span>);              <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga80f7b989d871d32dfeae319044965231">ccutl::str_lteq</a>(foo, <span class="stringliteral">&quot;foobar&quot;</span>);           <span class="comment">// true</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga80f7b989d871d32dfeae319044965231">ccutl::str_lteq</a>(foo, std::string(<span class="stringliteral">&quot;bar&quot;</span>)); <span class="comment">// false</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
+<p><a class="anchor" id="alphacmp"></a> </p>
+
+</div>
+</div>
+<a id="ga929c69d8145467ad0fc6b6c31c6570fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga929c69d8145467ad0fc6b6c31c6570fb">&#9670;&nbsp;</a></span>str_neq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail_::stringlike_pack... Strs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool str_neq </td>
+          <td>(</td>
+          <td class="paramtype">const Strs &amp;...&#160;</td>
+          <td class="paramname"><em>strs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>performs a lexicographical non-equality comarison of two stringlike objects</p>
+<p>accepts any char input ranges or char-subscriptables (e.g. char *). wchar_t is also supported. compares until range-end or null terminator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">strs</td><td>any char input ranges or char pointers</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><span class="comment">// import std; //</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="str__neq_8h.html">ccutl/str_neq.h</a>&quot;</span></div>
+<div class="line"><span class="comment">// import ccutl.str_neq; //</span></div>
+<div class="line"> </div>
+<div class="line">constexpr <span class="keyword">const</span> <span class="keywordtype">char</span> *foo = <span class="stringliteral">&quot;foo&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><a class="code" href="group__ccutl.html#ga929c69d8145467ad0fc6b6c31c6570fb">ccutl::str_neq</a>(foo, <span class="stringliteral">&quot;foo&quot;</span>);              <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga929c69d8145467ad0fc6b6c31c6570fb">ccutl::str_neq</a>(foo, <span class="stringliteral">&quot;foobar&quot;</span>);           <span class="comment">// false</span></div>
+<div class="line"><a class="code" href="group__ccutl.html#ga929c69d8145467ad0fc6b6c31c6570fb">ccutl::str_neq</a>(foo, std::string(<span class="stringliteral">&quot;bar&quot;</span>)); <span class="comment">// true</span></div>
+</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
+<p><a class="anchor" id="alphacmp"></a> </p>
+
+</div>
+</div>
+<a id="gaad4d0ad8b22c409f1ca756d9aee482e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaad4d0ad8b22c409f1ca756d9aee482e1">&#9670;&nbsp;</a></span>strlen()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1095,7 +1391,7 @@ template&lt;detail_::stringlike Str&gt; </div>
         <tr>
           <td class="memname">constexpr std::size_t strlen </td>
           <td>(</td>
-          <td class="paramtype">Str &amp;&amp;&#160;</td>
+          <td class="paramtype">const Str &amp;&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1128,8 +1424,8 @@ template&lt;detail_::stringlike Str&gt; </div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> s = std::string{<span class="stringliteral">&quot;bar&quot;</span>};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> a = <a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">ccutl::strlen</a>(<span class="stringliteral">&quot;foo&quot;</span>); <span class="comment">// 3</span></div>
-<div class="line"><span class="keyword">auto</span> b = <a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">ccutl::strlen</a>(s);     <span class="comment">// 3</span></div>
+<div class="line"><span class="keyword">auto</span> a = <a class="code" href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">ccutl::strlen</a>(<span class="stringliteral">&quot;foo&quot;</span>); <span class="comment">// 3</span></div>
+<div class="line"><span class="keyword">auto</span> b = <a class="code" href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">ccutl::strlen</a>(s);     <span class="comment">// 3</span></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="str_8h.html" title="detail helpers for ccutl string functions">ccutl/detail_/str.h</a></dd></dl>
 <p><a class="anchor" id="strlen"></a> </p>
 
@@ -1495,37 +1791,47 @@ template&lt;class T , class SubType &gt; </div>
 <div class="ttc" id="agroup__ccutl_html_ga9a95cf6d01c8b7e2a9d934f78c97794e"><div class="ttname"><a href="group__ccutl.html#ga9a95cf6d01c8b7e2a9d934f78c97794e">CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT</a></div><div class="ttdeci">#define CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT( name, template_params_tuple, template_args_tuple)</div><div class="ttdef"><b>Definition:</b> make_specialization_of_concept.h:75</div></div>
 <div class="ttc" id="aspecialization__of_8h_html"><div class="ttname"><a href="specialization__of_8h.html">specialization_of.h</a></div><div class="ttdoc">ccutl.specialization_of - detects template specializations for type-parameter templates (&lt;class....</div></div>
 <div class="ttc" id="anocvref_8h_html"><div class="ttname"><a href="nocvref_8h.html">nocvref.h</a></div><div class="ttdoc">ccutl.nocvref - removes the topmost cv and reference qualifiers on a type</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga929c69d8145467ad0fc6b6c31c6570fb"><div class="ttname"><a href="group__ccutl.html#ga929c69d8145467ad0fc6b6c31c6570fb">str_neq</a></div><div class="ttdeci">constexpr bool str_neq(const Strs &amp;...strs) noexcept</div><div class="ttdef"><b>Definition:</b> str_neq.h:76</div></div>
 <div class="ttc" id="astrlen_8h_html"><div class="ttname"><a href="strlen_8h.html">strlen.h</a></div><div class="ttdoc">ccutl.strlen - returns the length of any char range or null-terminated string</div></div>
 <div class="ttc" id="agroup__meta_html_ga1888a231ddf99d5fca5b9e815f2eab0a"><div class="ttname"><a href="group__meta.html#ga1888a231ddf99d5fca5b9e815f2eab0a">gteq</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool gteq</div><div class="ttdef"><b>Definition:</b> gteq.h:93</div></div>
-<div class="ttc" id="aindexed__arg_8h_html"><div class="ttname"><a href="indexed__arg_8h.html">indexed_arg.h</a></div><div class="ttdoc">ccutl.indexed_arg - returns the argument at index idx</div></div>
+<div class="ttc" id="agroup__ccutl_html_gaf2e30a300dd6267d6e3fd47bcc360394"><div class="ttname"><a href="group__ccutl.html#gaf2e30a300dd6267d6e3fd47bcc360394">str_lt</a></div><div class="ttdeci">constexpr bool str_lt(const Lhs &amp;l, const Rhs &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> str_lt.h:143</div></div>
+<div class="ttc" id="astr__lteq_8h_html"><div class="ttname"><a href="str__lteq_8h.html">str_lteq.h</a></div><div class="ttdoc">ccutl.str_lteq - performs a lexicographical lteq comarison of two stringlike objects</div></div>
 <div class="ttc" id="alt_8h_html"><div class="ttname"><a href="lt_8h.html">lt.h</a></div><div class="ttdoc">ccutl.lt - less-than comparison of two strongly-ordered three-way comparables or differently-signed i...</div></div>
 <div class="ttc" id="arange__of_8h_html"><div class="ttname"><a href="range__of_8h.html">range_of.h</a></div><div class="ttdoc">ccutl.range_of - describes a range-type T that contains Contained</div></div>
 <div class="ttc" id="aneq_8h_html"><div class="ttname"><a href="neq_8h.html">neq.h</a></div><div class="ttdoc">ccutl.neq - non-equality comparison of two strongly-ordered three-way comparables or differently-sign...</div></div>
+<div class="ttc" id="aarg__at_8h_html"><div class="ttname"><a href="arg__at_8h.html">arg_at.h</a></div><div class="ttdoc">ccutl.arg_at - returns the argument at index idx</div></div>
+<div class="ttc" id="agroup__ccutl_html_gaad4d0ad8b22c409f1ca756d9aee482e1"><div class="ttname"><a href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(const Str &amp;s) noexcept</div><div class="ttdef"><b>Definition:</b> strlen.h:107</div></div>
 <div class="ttc" id="asame_8h_html"><div class="ttname"><a href="same_8h.html">same.h</a></div><div class="ttdoc">ccutl.same - describes a set of types with no variation</div></div>
-<div class="ttc" id="aindexed__type_8h_html"><div class="ttname"><a href="indexed__type_8h.html">indexed_type.h</a></div><div class="ttdoc">ccutl.indexed_type - represents the type template argument at index idx</div></div>
 <div class="ttc" id="anoref_8h_html"><div class="ttname"><a href="noref_8h.html">noref.h</a></div><div class="ttdoc">ccutl.noref - removes the topmost reference qualifiers on a type</div></div>
-<div class="ttc" id="astreq_8h_html"><div class="ttname"><a href="streq_8h.html">streq.h</a></div><div class="ttdoc">ccutl.streq - true if all provided char ranges or null-terminated strings are equal</div></div>
+<div class="ttc" id="astr__eq_8h_html"><div class="ttname"><a href="str__eq_8h.html">str_eq.h</a></div><div class="ttdoc">ccutl.str_eq - performs a lexicographical equality comparison of two stringlike objects</div></div>
 <div class="ttc" id="agroup__meta_html_ga4fbcf9a96a8ee9377702acecfa1aa019"><div class="ttname"><a href="group__meta.html#ga4fbcf9a96a8ee9377702acecfa1aa019">neq</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool neq</div><div class="ttdef"><b>Definition:</b> neq.h:93</div></div>
+<div class="ttc" id="atype__at_8h_html"><div class="ttname"><a href="type__at_8h.html">type_at.h</a></div><div class="ttdoc">ccutl.type_at - represents the type template argument at index idx</div></div>
 <div class="ttc" id="asubscriptable__to_8h_html"><div class="ttname"><a href="subscriptable__to_8h.html">subscriptable_to.h</a></div><div class="ttdoc">ccutl.subscriptable_to - describes a T whose subscript operator returns a type convertible to SubType</div></div>
 <div class="ttc" id="agroup__ccutl_html_ga0bd9287844b6c8b922f8425f2fe403b4"><div class="ttname"><a href="group__ccutl.html#ga0bd9287844b6c8b922f8425f2fe403b4">nocvref</a></div><div class="ttdeci">std::remove_cvref_t&lt; T &gt; nocvref</div><div class="ttdef"><b>Definition:</b> nocvref.h:62</div></div>
 <div class="ttc" id="aspecializes_8h_html"><div class="ttname"><a href="specializes_8h.html">specializes.h</a></div><div class="ttdoc">ccutl.specializes - requires that a type may be used to specialize a given template</div></div>
 <div class="ttc" id="agroup__meta_html_ga42b23fa3486c9129aafe72490e116e77"><div class="ttname"><a href="group__meta.html#ga42b23fa3486c9129aafe72490e116e77">lt</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool lt</div><div class="ttdef"><b>Definition:</b> lt.h:93</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga48bca8d7970c2082029e0a4fc0133c80"><div class="ttname"><a href="group__ccutl.html#ga48bca8d7970c2082029e0a4fc0133c80">str_gteq</a></div><div class="ttdeci">constexpr bool str_gteq(const Lhs &amp;l, const Rhs &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> str_gteq.h:79</div></div>
 <div class="ttc" id="agroup__meta_html_ga926270172fab0e28ac33e6c7f16a0648"><div class="ttname"><a href="group__meta.html#ga926270172fab0e28ac33e6c7f16a0648">lteq</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool lteq</div><div class="ttdef"><b>Definition:</b> lteq.h:93</div></div>
 <div class="ttc" id="anontype__specialization__of_8h_html"><div class="ttname"><a href="nontype__specialization__of_8h.html">nontype_specialization_of.h</a></div><div class="ttdoc">ccutl.nontype_specialization_of - detects template specializations for nontype-parameter templates (&lt;...</div></div>
 <div class="ttc" id="alowest_8h_html"><div class="ttname"><a href="lowest_8h.html">lowest.h</a></div><div class="ttdoc">ccutl.lowest - represents the lowest number possible for a given arithmetic type</div></div>
 <div class="ttc" id="anocv_8h_html"><div class="ttname"><a href="nocv_8h.html">nocv.h</a></div><div class="ttdoc">ccutl.nocv - removes the topmost cv qualifiers on a type</div></div>
 <div class="ttc" id="agroup__ccutl_html_gacf16f64bc4a1a3516c7efc94bc7a88b6"><div class="ttname"><a href="group__ccutl.html#gacf16f64bc4a1a3516c7efc94bc7a88b6">nontype_specialization_of</a></div><div class="ttdeci">concept nontype_specialization_of</div><div class="ttdef"><b>Definition:</b> nontype_specialization_of.h:80</div></div>
 <div class="ttc" id="agt_8h_html"><div class="ttname"><a href="gt_8h.html">gt.h</a></div><div class="ttdoc">ccutl.gt - greater-than comparison of two strongly-ordered three-way comparables or differently-signe...</div></div>
-<div class="ttc" id="agroup__ccutl_html_ga93be7687d7624124357ec79dc0c79d1c"><div class="ttname"><a href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(Str &amp;&amp;s) noexcept</div><div class="ttdef"><b>Definition:</b> strlen.h:111</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga80f7b989d871d32dfeae319044965231"><div class="ttname"><a href="group__ccutl.html#ga80f7b989d871d32dfeae319044965231">str_lteq</a></div><div class="ttdeci">constexpr bool str_lteq(const Lhs &amp;l, const Rhs &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> str_lteq.h:79</div></div>
+<div class="ttc" id="astr__neq_8h_html"><div class="ttname"><a href="str__neq_8h.html">str_neq.h</a></div><div class="ttdoc">ccutl.str_neq - performs a lexicographical non-equality comarison of two stringlike objects</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga07912a4ac832d08c962850d6727ffbfd"><div class="ttname"><a href="group__ccutl.html#ga07912a4ac832d08c962850d6727ffbfd">str_gt</a></div><div class="ttdeci">constexpr bool str_gt(const Lhs &amp;l, const Rhs &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> str_gt.h:79</div></div>
 <div class="ttc" id="aspecializable__with_8h_html"><div class="ttname"><a href="specializable__with_8h.html">specializable_with.h</a></div><div class="ttdoc">ccutl.specializable_with - describes a template that is specializable with given type template args</div></div>
 <div class="ttc" id="agroup__ccutl_html_ga9e94ef33d8e59df3f00519ee6a74a0a9"><div class="ttname"><a href="group__ccutl.html#ga9e94ef33d8e59df3f00519ee6a74a0a9">subscriptable_to</a></div><div class="ttdeci">concept subscriptable_to</div><div class="ttdef"><b>Definition:</b> subscriptable_to.h:67</div></div>
+<div class="ttc" id="astr__gteq_8h_html"><div class="ttname"><a href="str__gteq_8h.html">str_gteq.h</a></div><div class="ttdoc">ccutl.str_gteq - performs a lexicographical gteq comarison of two stringlike objects</div></div>
 <div class="ttc" id="agroup__meta_html_gabfb2dd9b3305ffb892d522cb67d33b1d"><div class="ttname"><a href="group__meta.html#gabfb2dd9b3305ffb892d522cb67d33b1d">eq</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool eq</div><div class="ttdef"><b>Definition:</b> eq.h:93</div></div>
-<div class="ttc" id="agroup__ccutl_html_ga061f35fe396b2b463cdbd9da8318fde3"><div class="ttname"><a href="group__ccutl.html#ga061f35fe396b2b463cdbd9da8318fde3">streq</a></div><div class="ttdeci">constexpr bool streq(Strs &amp;&amp;...strs) noexcept</div><div class="ttdef"><b>Definition:</b> streq.h:144</div></div>
+<div class="ttc" id="astr__gt_8h_html"><div class="ttname"><a href="str__gt_8h.html">str_gt.h</a></div><div class="ttdoc">ccutl.str_gt - performs a lexicographical greater-than comarison of two stringlike objects</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga17a8ea844825447b3c0d3467eea009ec"><div class="ttname"><a href="group__ccutl.html#ga17a8ea844825447b3c0d3467eea009ec">str_eq</a></div><div class="ttdeci">constexpr bool str_eq(const Strs &amp;...strs) noexcept</div><div class="ttdef"><b>Definition:</b> str_eq.h:143</div></div>
 <div class="ttc" id="aeq_8h_html"><div class="ttname"><a href="eq_8h.html">eq.h</a></div><div class="ttdoc">ccutl.eq - equality comparison of two strongly-ordered three-way comparables or differently-signed in...</div></div>
 <div class="ttc" id="adifferent_8h_html"><div class="ttname"><a href="different_8h.html">different.h</a></div><div class="ttdoc">ccutl.different - describes a set of types with at least one variation</div></div>
 <div class="ttc" id="alteq_8h_html"><div class="ttname"><a href="lteq_8h.html">lteq.h</a></div><div class="ttdoc">ccutl.lteq - less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differ...</div></div>
 <div class="ttc" id="aboolean__testable_8h_html"><div class="ttname"><a href="boolean__testable_8h.html">boolean_testable.h</a></div><div class="ttdoc">ccutl.boolean_testable - describes a bool-convertible B that is capable of usual logic operations</div></div>
 <div class="ttc" id="agteq_8h_html"><div class="ttname"><a href="gteq_8h.html">gteq.h</a></div><div class="ttdoc">ccutl.gteq - greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or dif...</div></div>
+<div class="ttc" id="astr__lt_8h_html"><div class="ttname"><a href="str__lt_8h.html">str_lt.h</a></div><div class="ttdoc">ccutl.str_lt - performs a lexicographical less-than comarison of two stringlike objects</div></div>
 <div class="ttc" id="ahighest_8h_html"><div class="ttname"><a href="highest_8h.html">highest.h</a></div><div class="ttdoc">ccutl.highest - represents the highest number possible for a given arithmetic type</div></div>
 <div class="ttc" id="agroup__meta_html_ga76581a8ea439f7fefb27ab0d8c1b785b"><div class="ttname"><a href="group__meta.html#ga76581a8ea439f7fefb27ab0d8c1b785b">gt</a></div><div class="ttdeci">requires constexpr detail_::strongly_comparable_with&lt; decltype(l), decltype(r)&gt; bool gt</div><div class="ttdef"><b>Definition:</b> gt.h:93</div></div>
 <!-- start footer part -->

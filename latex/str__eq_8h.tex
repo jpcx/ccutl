@@ -1,0 +1,34 @@
+\hypertarget{str__eq_8h}{}\doxysection{master/ccutl/include/ccutl/str\+\_\+eq.h File Reference}
+\label{str__eq_8h}\index{master/ccutl/include/ccutl/str\_eq.h@{master/ccutl/include/ccutl/str\_eq.h}}
+
+
+\mbox{\hyperlink{group__ccutl_str_eq}{ccutl.\+str\+\_\+eq}} -\/ performs a lexicographical equality comparison of two stringlike objects  
+
+
+{\ttfamily \#include $<$ranges$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/str.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/arg\+\_\+at.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/fwd.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr bool \mbox{\hyperlink{group__detail___ga120fc3de2f065faa53ba61e6d6bc1937}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+subscriptables \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{group__detail___ga8e13b7222cb8952818beace8016e6036}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+range auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+ranges to str\+\_\+subscriptables \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{group__detail___ga543e6fd3c187033b08372c4e9c7d1531}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+subscriptables to str\+\_\+ranges \end{DoxyCompactList}\item 
+constexpr bool \mbox{\hyperlink{group__detail___ga3f2d555c177b7a3b7ad4f8f625a38764}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+range auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+ranges \end{DoxyCompactList}\item 
+{\footnotesize template$<$stringlike\+\_\+pack... Strs, size\+\_\+t seq\+\_\+first, size\+\_\+t... seq\+\_\+rest$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gabb5b02b36568352aa865a3a2ffcab0e9}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::impl}} (std\+::index\+\_\+sequence$<$ seq\+\_\+first, seq\+\_\+rest... $>$ \&\&, const Strs \&...strs) noexcept
+\begin{DoxyCompactList}\small\item\em executes comparisons for all Strs... \end{DoxyCompactList}\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike\+\_\+pack... Strs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{str\+\_\+eq}} (const Strs \&...strs) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{group__ccutl_str_eq}{ccutl.\+str\+\_\+eq}} -\/ performs a lexicographical equality comparison of two stringlike objects 
+

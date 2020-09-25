@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl 0.1.2</title>
+<title>ccutl 0.2.0</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -74,7 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">ccutl 0.1.2 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.1.2/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
+<div class="title">ccutl 0.2.0 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a> | <a href="http://jpcx.github.io/ccutl/files.html"><em>Files</em></a> | <a href="http://jpcx.github.io/ccutl/group__ccutl.html"><em>API</em></a> | <a href="https://github.com/jpcx/ccutl/blob/0.2.0/CHANGELOG.md"><em>CHANGELOG</em></a> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_master_ccutl_README"></a> </p><div class="fragment"><div class="line">                    |    |</div>
@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>shortcuts to existing functionality (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#mv">ccutl::mv</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues">ccutl::fwd</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#noref">ccutl::noref</a>)</li>
 <li>more flexible versions of existing functionality (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#same">ccutl::same</a>)</li>
 <li>more approachable metaprogramming techniques (e.g. <a href="http://jpcx.github.io/ccutl/structccutl_1_1type__pack.html">ccutl::type_pack</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#indexed_type">ccutl::indexed_type</a>)</li>
-<li>less verbose methods for common operations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#streq">ccutl::streq</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#highest">ccutl::highest</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#lowest">ccutl::lowest</a>)</li>
+<li>less verbose methods for common operations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#str_eq">ccutl::str_eq</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#str_lt">ccutl::str_lt</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#highest">ccutl::highest</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#lowest">ccutl::lowest</a>)</li>
 <li>preprocessor tools to circumvent language limitations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT">CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT</a>)</li>
 <li>type-general operations (e.g. <a href="http://jpcx.github.io/ccutl/group__ccutl.html#eq">ccutl::eq</a>, <a href="http://jpcx.github.io/ccutl/group__ccutl.html#strlen">ccutl::strlen</a>)</li>
 <li>code generation scripts (future releases)</li>
@@ -157,35 +157,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </p>
 <h2>As Headers</h2>
 <h3>Standard -I</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">CXXFLAGS += -I[ccutl download dir]/include</div>
 </div><!-- fragment --><h3>CMake Install</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
 <div class="line">cd ccutl</div>
 <div class="line"> </div>
 <div class="line">make # mkdir build</div>
 <div class="line">     # cmake -Bbuild</div>
 <div class="line"> </div>
-<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.1.2</div>
-<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.1.2</div>
+<div class="line"># installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.0</div>
+<div class="line"># installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.0</div>
 <div class="line">sudo make install # cmake --install build</div>
-</div><!-- fragment --><div class="fragment"><div class="line">find_package(ccutl 0.1 REQUIRED)</div>
+</div><!-- fragment --><div class="fragment"><div class="line">find_package(ccutl 0.2 REQUIRED)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h3>CMake FetchContent</h3>
 <div class="fragment"><div class="line">include(FetchContent)</div>
 <div class="line">FetchContent_Declare(ccutl</div>
 <div class="line">                     GIT_REPOSITORY https://github.com/jpcx/ccutl.git</div>
-<div class="line">                     GIT_TAG &quot;0.1.2&quot;)</div>
+<div class="line">                     GIT_TAG &quot;0.2.0&quot;)</div>
 <div class="line">FetchContent_MakeAvailable(ccutl)</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h3>CMake add_subdirectory</h3>
-<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git # or git submodule add</div>
+<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git # or git submodule add</div>
 </div><!-- fragment --><div class="fragment"><div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
 </div><!-- fragment --><h2>As Modules <a class="anchor" id="setup_as_modules"></a></h2>
 <p>ccutl modules cannot be installed to the system at this time. <br  />
  They may be consumed directly as a subfolder as follows:</p>
-<div class="fragment"><div class="line">git clone -b 0.1.2 https://github.com/jpcx/ccutl.git</div>
+<div class="fragment"><div class="line">git clone -b 0.2.0 https://github.com/jpcx/ccutl.git</div>
 </div><!-- fragment --><div class="fragment"><div class="line">set(CCUTL_MODULES ON)</div>
 <div class="line">add_subdirectory([ccutl download dir])</div>
 <div class="line">target_link_libraries([your target] ccutl)</div>
@@ -230,74 +230,84 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl </td><td class="markdownTableBodyNone">ccutl Core Utilities  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ccutl.arg_at </td><td class="markdownTableBodyNone">returns the argument at index idx  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.boolean_testable </td><td class="markdownTableBodyNone">describes a bool-convertible B that is capable of usual logic operations  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.different </td><td class="markdownTableBodyNone">describes a set of types with at least one variation  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.eq </td><td class="markdownTableBodyNone">equality comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.fwd </td><td class="markdownTableBodyNone">perfect reference forwarder  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.gt </td><td class="markdownTableBodyNone">greater-than comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.gteq </td><td class="markdownTableBodyNone">greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.highest </td><td class="markdownTableBodyNone">represents the highest number possible for a given arithmetic type  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ccutl.indexed_arg </td><td class="markdownTableBodyNone">returns the argument at index idx  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ccutl.indexed_type </td><td class="markdownTableBodyNone">represents the type template argument at index idx  </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.lowest </td><td class="markdownTableBodyNone">represents the lowest number possible for a given arithmetic type  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.lt </td><td class="markdownTableBodyNone">less-than comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.lteq </td><td class="markdownTableBodyNone">less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.meta </td><td class="markdownTableBodyNone">module file for contains metaprogramming-specific variants of ccutl features  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.meta.eq </td><td class="markdownTableBodyNone">template equality comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.meta.gt </td><td class="markdownTableBodyNone">template greater-than comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.meta.gteq </td><td class="markdownTableBodyNone">template greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.meta.lt </td><td class="markdownTableBodyNone">template less-than comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.meta.lteq </td><td class="markdownTableBodyNone">template less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.meta.neq </td><td class="markdownTableBodyNone">template non-equality comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.mv </td><td class="markdownTableBodyNone">move an rvalue  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.neq </td><td class="markdownTableBodyNone">non-equality comparison of two strongly-ordered three-way comparables or differently-signed integrals  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.nocv </td><td class="markdownTableBodyNone">removes the topmost cv qualifiers on a type  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.nocvref </td><td class="markdownTableBodyNone">removes the topmost cv and reference qualifiers on a type  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.nontype_pack </td><td class="markdownTableBodyNone">Provides a nontype template arg container with transformational utilities  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.nontype_specialization_of </td><td class="markdownTableBodyNone">detects template specializations for nontype-parameter templates (&lt;auto...&gt;)  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.noref </td><td class="markdownTableBodyNone">removes the topmost reference qualifiers on a type  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.range_of </td><td class="markdownTableBodyNone">describes a range-type T that contains Contained  </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.same </td><td class="markdownTableBodyNone">describes a set of types with no variation  </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.specializable_with </td><td class="markdownTableBodyNone">describes a template that is specializable with given type template args  </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ccutl.specialization_of </td><td class="markdownTableBodyNone">detects template specializations for type-parameter templates (&lt;class...&gt;)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">ccutl.specializes </td><td class="markdownTableBodyNone">requires that a type may be used to specialize a given template  </td></tr>
+<td class="markdownTableBodyNone">ccutl.specialization_of </td><td class="markdownTableBodyNone">detects template specializations for type-parameter templates (&lt;class...&gt;)  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ccutl.streq </td><td class="markdownTableBodyNone">true if all provided char ranges or null-terminated strings are equal  </td></tr>
+<td class="markdownTableBodyNone">ccutl.specializes </td><td class="markdownTableBodyNone">requires that a type may be used to specialize a given template  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ccutl.str_eq </td><td class="markdownTableBodyNone">performs a lexicographical equality comparison of two stringlike objects  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ccutl.str_gt </td><td class="markdownTableBodyNone">performs a lexicographical greater-than comarison of two stringlike objects  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ccutl.str_gteq </td><td class="markdownTableBodyNone">performs a lexicographical gteq comarison of two stringlike objects  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ccutl.str_lt </td><td class="markdownTableBodyNone">performs a lexicographical less-than comarison of two stringlike objects  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ccutl.str_lteq </td><td class="markdownTableBodyNone">performs a lexicographical lteq comarison of two stringlike objects  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ccutl.str_neq </td><td class="markdownTableBodyNone">performs a lexicographical non-equality comarison of two stringlike objects  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">ccutl.strlen </td><td class="markdownTableBodyNone">returns the length of any char range or null-terminated string  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.subscriptable_to </td><td class="markdownTableBodyNone">describes a T whose subscript operator returns a type convertible to SubType  </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ccutl.type_at </td><td class="markdownTableBodyNone">represents the type template argument at index idx  </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ccutl.type_pack </td><td class="markdownTableBodyNone">Provides a type template arg container with transformational utilities  </td></tr>
 </table>
 <table class="markdownTable">

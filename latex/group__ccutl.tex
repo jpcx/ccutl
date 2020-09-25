@@ -22,16 +22,18 @@ struct \mbox{\hyperlink{structtype__pack}{type\+\_\+pack$<$ Ts $>$}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\using \mbox{\hyperlink{group__ccutl_ga3094ef75b944d9dec308f29584d34bb1}{indexed\+\_\+type}} = detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::type$<$ idx, Ts... $>$
-\item 
 {\footnotesize template$<$class T $>$ }\\using \mbox{\hyperlink{group__ccutl_ga65ab0a7e6810ec58bf6e448e957de8b5}{nocv}} = std\+::remove\+\_\+cv\+\_\+t$<$ T $>$
 \item 
 {\footnotesize template$<$class T $>$ }\\using \mbox{\hyperlink{group__ccutl_ga0bd9287844b6c8b922f8425f2fe403b4}{nocvref}} = std\+::remove\+\_\+cvref\+\_\+t$<$ T $>$
 \item 
 {\footnotesize template$<$class T $>$ }\\using \mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref}} = std\+::remove\+\_\+reference\+\_\+t$<$ T $>$
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\using \mbox{\hyperlink{group__ccutl_ga66298708ac313975d8776a2b99094e72}{type\+\_\+at}} = detail\+\_\+\+::type\+\_\+at\+\_\+\+::type$<$ idx, Ts... $>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\requires constexpr detail\+\_\+\+::arg\+\_\+at\+\_\+\+::valid\+\_\+indexable\+\_\+pack$<$ idx, Ts... $>$ auto \&\& \mbox{\hyperlink{group__ccutl_ga511231e7f27086515c017a03005449ee}{arg\+\_\+at}} (Ts \&\&... args) noexcept
 \item 
 {\footnotesize template$<$class L , detail\+\_\+\+::strongly\+\_\+comparable\+\_\+with$<$ L $>$ R$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga7dfd36880b81706224ec99ca67b370d5}{eq}} (L \&\&l, R \&\&r) noexcept
 \item 
@@ -43,8 +45,6 @@ struct \mbox{\hyperlink{structtype__pack}{type\+\_\+pack$<$ Ts $>$}}
 \item 
 {\footnotesize template$<$class L , detail\+\_\+\+::strongly\+\_\+comparable\+\_\+with$<$ L $>$ R$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_gaab77db47264e5c3ee819758a541ddeb1}{gteq}} (L l, R r) noexcept
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\requires constexpr detail\+\_\+\+::indexed\+\_\+arg\+\_\+\+::valid\+\_\+indexable\+\_\+pack$<$ idx, Ts... $>$ auto \&\& \mbox{\hyperlink{group__ccutl_ga6e0ca25d4b10614de69ac2707c489ec6}{indexed\+\_\+arg}} (Ts \&\&... args) noexcept
-\item 
 {\footnotesize template$<$class L , detail\+\_\+\+::strongly\+\_\+comparable\+\_\+with$<$ L $>$ R$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_gac03eabeea646b1b94a4933346e987ae4}{lt}} (L l, R r) noexcept
 \item 
 {\footnotesize template$<$class L , detail\+\_\+\+::strongly\+\_\+comparable\+\_\+with$<$ L $>$ R$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga9f71776d137250405075dcc92dd2258d}{lteq}} (L l, R r) noexcept
@@ -53,9 +53,19 @@ struct \mbox{\hyperlink{structtype__pack}{type\+\_\+pack$<$ Ts $>$}}
 \item 
 {\footnotesize template$<$class L , detail\+\_\+\+::strongly\+\_\+comparable\+\_\+with$<$ L $>$ R$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_gab90d39a53545b63e4bff0081e5999b23}{neq}} (L l, R r) noexcept
 \item 
-{\footnotesize template$<$detail\+\_\+\+::streq\+\_\+\+::stringlike\+\_\+pack... Strs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}{streq}} (Strs \&\&...strs) noexcept
+{\footnotesize template$<$detail\+\_\+\+::stringlike\+\_\+pack... Strs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{str\+\_\+eq}} (const Strs \&...strs) noexcept
 \item 
-{\footnotesize template$<$detail\+\_\+\+::stringlike Str$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__ccutl_ga93be7687d7624124357ec79dc0c79d1c}{strlen}} (Str \&\&s) noexcept
+{\footnotesize template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}{str\+\_\+gt}} (const Lhs \&l, const Rhs \&r) noexcept
+\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}{str\+\_\+gteq}} (const Lhs \&l, const Rhs \&r) noexcept
+\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}{str\+\_\+lt}} (const Lhs \&l, const Rhs \&r) noexcept
+\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga80f7b989d871d32dfeae319044965231}{str\+\_\+lteq}} (const Lhs \&l, const Rhs \&r) noexcept
+\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike\+\_\+pack... Strs$>$ }\\constexpr bool \mbox{\hyperlink{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}{str\+\_\+neq}} (const Strs \&...strs) noexcept
+\item 
+{\footnotesize template$<$detail\+\_\+\+::stringlike Str$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__ccutl_gaad4d0ad8b22c409f1ca756d9aee482e1}{strlen}} (const Str \&s) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -168,28 +178,7 @@ template parameter names cannot be {\ttfamily Template\+\_\+} or {\ttfamily T\+\
  
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{group__ccutl_ga3094ef75b944d9dec308f29584d34bb1}\label{group__ccutl_ga3094ef75b944d9dec308f29584d34bb1}} 
-\index{ccutl@{ccutl}!indexed\_type@{indexed\_type}}
-\index{indexed\_type@{indexed\_type}!ccutl@{ccutl}}
-\doxysubsubsection{\texorpdfstring{indexed\_type}{indexed\_type}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t idx, class... Ts$>$ \\
-using \mbox{\hyperlink{group__ccutl_ga3094ef75b944d9dec308f29584d34bb1}{indexed\+\_\+type}} =  detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::type$<$idx, Ts...$>$}
-
-represents the type template argument at index idx
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{indexed__type_8h}{ccutl/indexed\_type.h}}"}}
-\DoxyCodeLine{\textcolor{comment}{// import ccutl.indexed\_type; //}}
-\DoxyCodeLine{\textcolor{keyword}{using} x0 = ccutl::indexed\_type<0, int, float, double>; \textcolor{comment}{// int}}
-\DoxyCodeLine{\textcolor{keyword}{using} x1 = ccutl::indexed\_type<1, int, float, double>; \textcolor{comment}{// float}}
-\DoxyCodeLine{\textcolor{keyword}{using} x2 = ccutl::indexed\_type<2, int, float, double>; \textcolor{comment}{// double}}
-\end{DoxyCode}
-
-
-\label{group__ccutl_indexed_type}%
-\Hypertarget{group__ccutl_indexed_type}%
- \mbox{\Hypertarget{group__ccutl_ga65ab0a7e6810ec58bf6e448e957de8b5}\label{group__ccutl_ga65ab0a7e6810ec58bf6e448e957de8b5}} 
+\mbox{\Hypertarget{group__ccutl_ga65ab0a7e6810ec58bf6e448e957de8b5}\label{group__ccutl_ga65ab0a7e6810ec58bf6e448e957de8b5}} 
 \index{ccutl@{ccutl}!nocv@{nocv}}
 \index{nocv@{nocv}!ccutl@{ccutl}}
 \doxysubsubsection{\texorpdfstring{nocv}{nocv}}
@@ -261,10 +250,54 @@ removes the topmost reference qualifiers on a type
 
 \label{group__ccutl_noref}%
 \Hypertarget{group__ccutl_noref}%
+ \mbox{\Hypertarget{group__ccutl_ga66298708ac313975d8776a2b99094e72}\label{group__ccutl_ga66298708ac313975d8776a2b99094e72}} 
+\index{ccutl@{ccutl}!type\_at@{type\_at}}
+\index{type\_at@{type\_at}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{type\_at}{type\_at}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t idx, class... Ts$>$ \\
+using \mbox{\hyperlink{group__ccutl_ga66298708ac313975d8776a2b99094e72}{type\+\_\+at}} =  detail\+\_\+\+::type\+\_\+at\+\_\+\+::type$<$idx, Ts...$>$}
+
+represents the type template argument at index idx
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{type__at_8h}{ccutl/type\_at.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.type\_at; //}}
+\DoxyCodeLine{\textcolor{keyword}{using} x0 = ccutl::type\_at<0, int, float, double>; \textcolor{comment}{// int}}
+\DoxyCodeLine{\textcolor{keyword}{using} x1 = ccutl::type\_at<1, int, float, double>; \textcolor{comment}{// float}}
+\DoxyCodeLine{\textcolor{keyword}{using} x2 = ccutl::type\_at<2, int, float, double>; \textcolor{comment}{// double}}
+\end{DoxyCode}
+
+
+\label{group__ccutl_type_at}%
+\Hypertarget{group__ccutl_type_at}%
  
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{group__ccutl_ga7dfd36880b81706224ec99ca67b370d5}\label{group__ccutl_ga7dfd36880b81706224ec99ca67b370d5}} 
+\mbox{\Hypertarget{group__ccutl_ga511231e7f27086515c017a03005449ee}\label{group__ccutl_ga511231e7f27086515c017a03005449ee}} 
+\index{ccutl@{ccutl}!arg\_at@{arg\_at}}
+\index{arg\_at@{arg\_at}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{arg\_at()}{arg\_at()}}
+{\footnotesize\ttfamily template$<$std\+::size\+\_\+t idx, class... Ts$>$ \\
+requires constexpr detail\+\_\+\+::arg\+\_\+at\+\_\+\+::valid\+\_\+indexable\+\_\+pack$<$idx, Ts...$>$ auto\&\& arg\+\_\+at (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+returns the argument at index idx
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{arg__at_8h}{ccutl/arg\_at.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.arg\_at; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{char} c  = \textcolor{charliteral}{'c'};}
+\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x0 = ccutl::arg\_at<0>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (char)         'a'}}
+\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x1 = ccutl::arg\_at<1>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (const char *) "b"}}
+\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x2 = ccutl::arg\_at<2>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (char \&)        c}}
+\end{DoxyCode}
+
+
+\label{group__ccutl_arg_at}%
+\Hypertarget{group__ccutl_arg_at}%
+ \mbox{\Hypertarget{group__ccutl_ga7dfd36880b81706224ec99ca67b370d5}\label{group__ccutl_ga7dfd36880b81706224ec99ca67b370d5}} 
 \index{ccutl@{ccutl}!eq@{eq}}
 \index{eq@{eq}!ccutl@{ccutl}}
 \doxysubsubsection{\texorpdfstring{eq()}{eq()}}
@@ -493,30 +526,7 @@ result of strong greater-\/than-\/or-\/equal-\/to comparison
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{compare_8h}{ccutl/detail\+\_\+/compare.\+h}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{group__ccutl_ga6e0ca25d4b10614de69ac2707c489ec6}\label{group__ccutl_ga6e0ca25d4b10614de69ac2707c489ec6}} 
-\index{ccutl@{ccutl}!indexed\_arg@{indexed\_arg}}
-\index{indexed\_arg@{indexed\_arg}!ccutl@{ccutl}}
-\doxysubsubsection{\texorpdfstring{indexed\_arg()}{indexed\_arg()}}
-{\footnotesize\ttfamily template$<$std\+::size\+\_\+t idx, class... Ts$>$ \\
-requires constexpr detail\+\_\+\+::indexed\+\_\+arg\+\_\+\+::valid\+\_\+indexable\+\_\+pack$<$idx, Ts...$>$ auto\&\& indexed\+\_\+arg (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
-
-returns the argument at index idx
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{indexed__arg_8h}{ccutl/indexed\_arg.h}}"}}
-\DoxyCodeLine{\textcolor{comment}{// import ccutl.indexed\_arg; //}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordtype}{char} c  = \textcolor{charliteral}{'c'};}
-\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x0 = ccutl::indexed\_arg<0>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (char)         'a'}}
-\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x1 = ccutl::indexed\_arg<1>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (const char *) "b"}}
-\DoxyCodeLine{\textcolor{keyword}{auto} \&\&x2 = ccutl::indexed\_arg<2>(\textcolor{charliteral}{'a'}, \textcolor{stringliteral}{"b"}, c); \textcolor{comment}{// (char \&)        c}}
-\end{DoxyCode}
-
-
-\label{group__ccutl_indexed_arg}%
-\Hypertarget{group__ccutl_indexed_arg}%
- \mbox{\Hypertarget{group__ccutl_gac03eabeea646b1b94a4933346e987ae4}\label{group__ccutl_gac03eabeea646b1b94a4933346e987ae4}} 
+\mbox{\Hypertarget{group__ccutl_gac03eabeea646b1b94a4933346e987ae4}\label{group__ccutl_gac03eabeea646b1b94a4933346e987ae4}} 
 \index{ccutl@{ccutl}!lt@{lt}}
 \index{lt@{lt}!ccutl@{ccutl}}
 \doxysubsubsection{\texorpdfstring{lt()}{lt()}}
@@ -734,14 +744,14 @@ result of strong non-\/equality comparison
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{compare_8h}{ccutl/detail\+\_\+/compare.\+h}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}\label{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}} 
-\index{ccutl@{ccutl}!streq@{streq}}
-\index{streq@{streq}!ccutl@{ccutl}}
-\doxysubsubsection{\texorpdfstring{streq()}{streq()}}
-{\footnotesize\ttfamily template$<$detail\+\_\+\+::streq\+\_\+\+::stringlike\+\_\+pack... Strs$>$ \\
-constexpr bool streq (\begin{DoxyParamCaption}\item[{Strs \&\&...}]{strs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}\label{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}} 
+\index{ccutl@{ccutl}!str\_eq@{str\_eq}}
+\index{str\_eq@{str\_eq}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_eq()}{str\_eq()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike\+\_\+pack... Strs$>$ \\
+constexpr bool str\+\_\+eq (\begin{DoxyParamCaption}\item[{const Strs \&...}]{strs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
-true if all provided char ranges or null-\/terminated strings are equal
+performs a lexicographical equality comparison of two stringlike objects
 
 accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported.
 
@@ -754,27 +764,208 @@ accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wch
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
 \DoxyCodeLine{\textcolor{comment}{// import std; //}}
-\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{streq_8h}{ccutl/streq.h}}"}}
-\DoxyCodeLine{\textcolor{comment}{// import ccutl.streq; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__eq_8h}{ccutl/str\_eq.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_eq; //}}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}{streq}}(\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"foo"});                           \textcolor{comment}{// true}}
-\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}{streq}}(\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"bar"});                           \textcolor{comment}{// false}}
-\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}{streq}}(\textcolor{stringliteral}{"foo"}, std::string\{\textcolor{stringliteral}{"foo"}\});              \textcolor{comment}{// true}}
-\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga061f35fe396b2b463cdbd9da8318fde3}{streq}}(std::string\{\textcolor{stringliteral}{"foo"}\}, std::string\{\textcolor{stringliteral}{"foo"}\}); \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{ccutl::str\_eq}}(\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"foo"});                           \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{ccutl::str\_eq}}(\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"bar"}, \textcolor{stringliteral}{"foo"});                    \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{ccutl::str\_eq}}(\textcolor{stringliteral}{"foo"}, \textcolor{stringliteral}{"bar"});                           \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{ccutl::str\_eq}}(\textcolor{stringliteral}{"foo"}, std::string\{\textcolor{stringliteral}{"foo"}\});              \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga17a8ea844825447b3c0d3467eea009ec}{ccutl::str\_eq}}(std::string\{\textcolor{stringliteral}{"foo"}\}, std::string\{\textcolor{stringliteral}{"foo"}\}); \textcolor{comment}{// true}}
 \end{DoxyCode}
 
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
 \end{DoxySeeAlso}
-\label{group__ccutl_streq}%
-\Hypertarget{group__ccutl_streq}%
- \mbox{\Hypertarget{group__ccutl_ga93be7687d7624124357ec79dc0c79d1c}\label{group__ccutl_ga93be7687d7624124357ec79dc0c79d1c}} 
+\label{group__ccutl_str_eq}%
+\Hypertarget{group__ccutl_str_eq}%
+ \mbox{\Hypertarget{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}\label{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}} 
+\index{ccutl@{ccutl}!str\_gt@{str\_gt}}
+\index{str\_gt@{str\_gt}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_gt()}{str\_gt()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ \\
+constexpr bool str\+\_\+gt (\begin{DoxyParamCaption}\item[{const Lhs \&}]{l,  }\item[{const Rhs \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+performs a lexicographical greater-\/than comarison of two stringlike objects
+
+accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported. compares until range-\/end or null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strs} & any char input ranges or char pointers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{comment}{// import std; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__gt_8h}{ccutl/str\_gt.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_gt; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constexpr \textcolor{keyword}{const} \textcolor{keywordtype}{char} *foo = \textcolor{stringliteral}{"foo"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}{ccutl::str\_gt}}(foo, \textcolor{stringliteral}{"foo"});              \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}{ccutl::str\_gt}}(foo, \textcolor{stringliteral}{"foobar"});           \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga07912a4ac832d08c962850d6727ffbfd}{ccutl::str\_gt}}(foo, std::string(\textcolor{stringliteral}{"bar"})); \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
+\end{DoxySeeAlso}
+\label{group__ccutl_alphacmp}%
+\Hypertarget{group__ccutl_alphacmp}%
+ \mbox{\Hypertarget{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}\label{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}} 
+\index{ccutl@{ccutl}!str\_gteq@{str\_gteq}}
+\index{str\_gteq@{str\_gteq}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_gteq()}{str\_gteq()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ \\
+constexpr bool str\+\_\+gteq (\begin{DoxyParamCaption}\item[{const Lhs \&}]{l,  }\item[{const Rhs \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+performs a lexicographical gteq comarison of two stringlike objects
+
+accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported. compares until range-\/end or null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strs} & any char input ranges or char pointers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{comment}{// import std; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__gteq_8h}{ccutl/str\_gteq.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_gteq; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constexpr \textcolor{keyword}{const} \textcolor{keywordtype}{char} *foo = \textcolor{stringliteral}{"foo"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}{ccutl::str\_gteq}}(foo, \textcolor{stringliteral}{"foo"});              \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}{ccutl::str\_gteq}}(foo, \textcolor{stringliteral}{"foobar"});           \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga48bca8d7970c2082029e0a4fc0133c80}{ccutl::str\_gteq}}(foo, std::string(\textcolor{stringliteral}{"bar"})); \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
+\end{DoxySeeAlso}
+\label{group__ccutl_alphacmp}%
+\Hypertarget{group__ccutl_alphacmp}%
+ \mbox{\Hypertarget{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}\label{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}} 
+\index{ccutl@{ccutl}!str\_lt@{str\_lt}}
+\index{str\_lt@{str\_lt}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_lt()}{str\_lt()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ \\
+constexpr bool str\+\_\+lt (\begin{DoxyParamCaption}\item[{const Lhs \&}]{l,  }\item[{const Rhs \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+performs a lexicographical less-\/than comarison of two stringlike objects
+
+accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported. compares until range-\/end or null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strs} & any char input ranges or char pointers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{comment}{// import std; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__lt_8h}{ccutl/str\_lt.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_lt; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constexpr \textcolor{keyword}{const} \textcolor{keywordtype}{char} *foo = \textcolor{stringliteral}{"foo"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}{ccutl::str\_lt}}(foo, \textcolor{stringliteral}{"foo"});              \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}{ccutl::str\_lt}}(foo, \textcolor{stringliteral}{"foobar"});           \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_gaf2e30a300dd6267d6e3fd47bcc360394}{ccutl::str\_lt}}(foo, std::string(\textcolor{stringliteral}{"bar"})); \textcolor{comment}{// false}}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
+\end{DoxySeeAlso}
+\label{group__ccutl_alphacmp}%
+\Hypertarget{group__ccutl_alphacmp}%
+ \mbox{\Hypertarget{group__ccutl_ga80f7b989d871d32dfeae319044965231}\label{group__ccutl_ga80f7b989d871d32dfeae319044965231}} 
+\index{ccutl@{ccutl}!str\_lteq@{str\_lteq}}
+\index{str\_lteq@{str\_lteq}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_lteq()}{str\_lteq()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike Lhs, detail\+\_\+\+::stringlike Rhs$>$ \\
+constexpr bool str\+\_\+lteq (\begin{DoxyParamCaption}\item[{const Lhs \&}]{l,  }\item[{const Rhs \&}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+performs a lexicographical lteq comarison of two stringlike objects
+
+accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported. compares until range-\/end or null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strs} & any char input ranges or char pointers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{comment}{// import std; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__lteq_8h}{ccutl/str\_lteq.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_lteq; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constexpr \textcolor{keyword}{const} \textcolor{keywordtype}{char} *foo = \textcolor{stringliteral}{"foo"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga80f7b989d871d32dfeae319044965231}{ccutl::str\_lteq}}(foo, \textcolor{stringliteral}{"foo"});              \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga80f7b989d871d32dfeae319044965231}{ccutl::str\_lteq}}(foo, \textcolor{stringliteral}{"foobar"});           \textcolor{comment}{// true}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga80f7b989d871d32dfeae319044965231}{ccutl::str\_lteq}}(foo, std::string(\textcolor{stringliteral}{"bar"})); \textcolor{comment}{// false}}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
+\end{DoxySeeAlso}
+\label{group__ccutl_alphacmp}%
+\Hypertarget{group__ccutl_alphacmp}%
+ \mbox{\Hypertarget{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}\label{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}} 
+\index{ccutl@{ccutl}!str\_neq@{str\_neq}}
+\index{str\_neq@{str\_neq}!ccutl@{ccutl}}
+\doxysubsubsection{\texorpdfstring{str\_neq()}{str\_neq()}}
+{\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike\+\_\+pack... Strs$>$ \\
+constexpr bool str\+\_\+neq (\begin{DoxyParamCaption}\item[{const Strs \&...}]{strs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+performs a lexicographical non-\/equality comarison of two stringlike objects
+
+accepts any char input ranges or char-\/subscriptables (e.\+g. char $\ast$). wchar\+\_\+t is also supported. compares until range-\/end or null terminator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em strs} & any char input ranges or char pointers\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\textcolor{comment}{// import std; //}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{str__neq_8h}{ccutl/str\_neq.h}}"}}
+\DoxyCodeLine{\textcolor{comment}{// import ccutl.str\_neq; //}}
+\DoxyCodeLine{}
+\DoxyCodeLine{constexpr \textcolor{keyword}{const} \textcolor{keywordtype}{char} *foo = \textcolor{stringliteral}{"foo"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}{ccutl::str\_neq}}(foo, \textcolor{stringliteral}{"foo"});              \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}{ccutl::str\_neq}}(foo, \textcolor{stringliteral}{"foobar"});           \textcolor{comment}{// false}}
+\DoxyCodeLine{\mbox{\hyperlink{group__ccutl_ga929c69d8145467ad0fc6b6c31c6570fb}{ccutl::str\_neq}}(foo, std::string(\textcolor{stringliteral}{"bar"})); \textcolor{comment}{// true}}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{str_8h}{ccutl/detail\+\_\+/str.\+h}}
+\end{DoxySeeAlso}
+\label{group__ccutl_alphacmp}%
+\Hypertarget{group__ccutl_alphacmp}%
+ \mbox{\Hypertarget{group__ccutl_gaad4d0ad8b22c409f1ca756d9aee482e1}\label{group__ccutl_gaad4d0ad8b22c409f1ca756d9aee482e1}} 
 \index{ccutl@{ccutl}!strlen@{strlen}}
 \index{strlen@{strlen}!ccutl@{ccutl}}
 \doxysubsubsection{\texorpdfstring{strlen()}{strlen()}}
 {\footnotesize\ttfamily template$<$detail\+\_\+\+::stringlike Str$>$ \\
-constexpr std\+::size\+\_\+t strlen (\begin{DoxyParamCaption}\item[{Str \&\&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+constexpr std\+::size\+\_\+t strlen (\begin{DoxyParamCaption}\item[{const Str \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 returns the length of any char range or null-\/terminated string
 
@@ -802,8 +993,8 @@ length of string (size before null terminator)
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keyword}{auto} s = std::string\{\textcolor{stringliteral}{"bar"}\};}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keyword}{auto} a = \mbox{\hyperlink{group__ccutl_ga93be7687d7624124357ec79dc0c79d1c}{ccutl::strlen}}(\textcolor{stringliteral}{"foo"}); \textcolor{comment}{// 3}}
-\DoxyCodeLine{\textcolor{keyword}{auto} b = \mbox{\hyperlink{group__ccutl_ga93be7687d7624124357ec79dc0c79d1c}{ccutl::strlen}}(s);     \textcolor{comment}{// 3}}
+\DoxyCodeLine{\textcolor{keyword}{auto} a = \mbox{\hyperlink{group__ccutl_gaad4d0ad8b22c409f1ca756d9aee482e1}{ccutl::strlen}}(\textcolor{stringliteral}{"foo"}); \textcolor{comment}{// 3}}
+\DoxyCodeLine{\textcolor{keyword}{auto} b = \mbox{\hyperlink{group__ccutl_gaad4d0ad8b22c409f1ca756d9aee482e1}{ccutl::strlen}}(s);     \textcolor{comment}{// 3}}
 \end{DoxyCode}
 
 

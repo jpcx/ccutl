@@ -122,87 +122,83 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">CCUTL_MODULES</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">export</span> module ccutl.strlen;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;import std;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;import ccutl.fwd;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">export</span> import std;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">export</span> import ccutl.fwd;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ccutl/fwd.h&quot;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">export</span> import std;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace</span> ccutl::detail_::strlen_ {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/// @addtogroup detail_</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/// \{</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace</span> ccutl::detail_::strlen_ {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/// @addtogroup detail_</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// \{</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">using</span> <span class="keyword">namespace</span> std::ranges;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/// counts the length of a stringlike range</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">template</span> &lt;<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">str_range</a> <a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">Str</a>&gt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;[[<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">nodiscard</a>]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">std</a>::<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">size_t</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">strlen</a>(Str &amp;&amp;s) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::size_t i = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp;it = begin(s);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;       it != end(s) <span class="keyword">and</span> *it != <span class="keyword">static_cast</span>&lt;range_value_t&lt;Str&gt;&gt;(<span class="stringliteral">&#39;\0&#39;</span>); ++it, ++i)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">return</span> i;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/// counts the length of a str_subscriptable</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span> &lt;<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">str_subscriptable</a> <a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">Str</a>&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;[[<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">nodiscard</a>]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">std</a>::<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">size_t</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">strlen</a>(Str &amp;&amp;s) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::size_t i = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">for</span> (; s[i] != <span class="keyword">static_cast</span>&lt;<span class="keyword">decltype</span>(s[0])&gt;(<span class="stringliteral">&#39;\0&#39;</span>); ++i)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">return</span> i;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/// \}</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// namespace ccutl::detail_::strlen_</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="config_8h.html#a48c2580626f167d9add6d96533914700">CCUTL_BEGIN_EXPORT_NAMESPACE</a>(ccutl)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">/// returns the length of any char range or null-terminated string</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">using</span> <span class="keyword">namespace</span> std::ranges;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">/// counts the length of a stringlike range</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span> &lt;str_range Str&gt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::size_t</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<a class="code" href="group__detail__.html#ga13db2f0af9e5e81aefc6844ea1182759">strlen</a>(<span class="keyword">const</span> Str &amp;s) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  std::size_t i = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp;it = begin(s);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;       it != end(s) <span class="keyword">and</span> *it != <span class="keyword">static_cast</span>&lt;range_value_t&lt;Str&gt;&gt;(<span class="stringliteral">&#39;\0&#39;</span>); ++it, ++i)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/// counts the length of a str_subscriptable</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span> &lt;str_subscriptable Str&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::size_t</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="group__detail__.html#ga13db2f0af9e5e81aefc6844ea1182759">strlen</a>(<span class="keyword">const</span> Str &amp;s) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  std::size_t i = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordflow">for</span> (; s[i] != <span class="keyword">static_cast</span>&lt;<span class="keyword">decltype</span>(s[0])&gt;(<span class="stringliteral">&#39;\0&#39;</span>); ++i)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    ;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> i;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">/// \}</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace ccutl::detail_::strlen_</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="config_8h.html#a48c2580626f167d9add6d96533914700">CCUTL_BEGIN_EXPORT_NAMESPACE</a>(ccutl)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/// returns the length of any char range or null-terminated string</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">/// @details</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">///   accepts any char input ranges or char-subscriptables (e.g. char *).</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">///   wchar_t is also supported.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/// @details</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">///   accepts any char input ranges or char-subscriptables (e.g. char *).</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">///   wchar_t is also supported.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/// @tparam Str stringlike type (char range or char-subscriptable)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/// @param  s   stringlike object</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">/// @returns length of string (size before null terminator)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/// @code</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">///   #include &lt;string&gt;</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">///   // import std; //</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">///   #include &quot;ccutl/strlen.h&quot;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">///   // import ccutl.strlen; //</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">///   auto s = std::string{&quot;bar&quot;};</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">/// @tparam Str stringlike type (char range or char-subscriptable)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">/// @param  s   stringlike object</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/// @returns length of string (size before null terminator)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">/// @code</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">///   #include &lt;string&gt;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">///   // import std; //</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">///   #include &quot;ccutl/strlen.h&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">///   // import ccutl.strlen; //</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">///   auto s = std::string{&quot;bar&quot;};</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">///   auto a = ccutl::strlen(&quot;foo&quot;); // 3</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">///   auto b = ccutl::strlen(s);     // 3</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">/// @endcode</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">///   auto a = ccutl::strlen(&quot;foo&quot;); // 3</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">///   auto b = ccutl::strlen(s);     // 3</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/// @endcode</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/// @see ccutl/detail_/str.h</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">///</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/// @ingroup ccutl</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">/// @anchor  strlen</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">template</span> &lt;<a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">detail_</a>::<a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">stringlike</a> <a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">Str</a>&gt;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;[[<a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">nodiscard</a>]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">std</a>::<a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">size_t</a></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">strlen</a>(Str &amp;&amp;s) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordflow">return</span> detail_::strlen_::strlen(fwd&lt;Str&gt;(s));</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<a class="code" href="config_8h.html#ad9d315b4442cecaa96ba44fdee7418e1">CCUTL_END_EXPORT_NAMESPACE</a> <span class="comment">// ccutl</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">/// @see ccutl/detail_/str.h</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">///</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">/// @ingroup ccutl</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">/// @anchor  strlen</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span> &lt;detail_::stringlike Str&gt;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> std::size_t</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<a class="code" href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">strlen</a>(<span class="keyword">const</span> Str &amp;s) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">return</span> detail_::strlen_::strlen(s);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<a class="code" href="config_8h.html#ad9d315b4442cecaa96ba44fdee7418e1">CCUTL_END_EXPORT_NAMESPACE</a> <span class="comment">// ccutl</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aconfig_8h_html_ad9d315b4442cecaa96ba44fdee7418e1"><div class="ttname"><a href="config_8h.html#ad9d315b4442cecaa96ba44fdee7418e1">CCUTL_END_EXPORT_NAMESPACE</a></div><div class="ttdeci">#define CCUTL_END_EXPORT_NAMESPACE</div><div class="ttdef"><b>Definition:</b> config.h:42</div></div>
+<div class="ttc" id="agroup__ccutl_html_gaad4d0ad8b22c409f1ca756d9aee482e1"><div class="ttname"><a href="group__ccutl.html#gaad4d0ad8b22c409f1ca756d9aee482e1">strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(const Str &amp;s) noexcept</div><div class="ttdef"><b>Definition:</b> strlen.h:107</div></div>
 <div class="ttc" id="aconfig_8h_html_a48c2580626f167d9add6d96533914700"><div class="ttname"><a href="config_8h.html#a48c2580626f167d9add6d96533914700">CCUTL_BEGIN_EXPORT_NAMESPACE</a></div><div class="ttdeci">#define CCUTL_BEGIN_EXPORT_NAMESPACE(fullname)</div><div class="ttdef"><b>Definition:</b> config.h:41</div></div>
-<div class="ttc" id="agroup__ccutl_html_ga93be7687d7624124357ec79dc0c79d1c"><div class="ttname"><a href="group__ccutl.html#ga93be7687d7624124357ec79dc0c79d1c">strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(Str &amp;&amp;s) noexcept</div><div class="ttdef"><b>Definition:</b> strlen.h:111</div></div>
-<div class="ttc" id="agroup__detail___html_gae0b17ce75d9c4d2cc83372620787b55f"><div class="ttname"><a href="group__detail__.html#gae0b17ce75d9c4d2cc83372620787b55f">ccutl::detail_::strlen_::strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(Str &amp;&amp;s) noexcept</div><div class="ttdoc">counts the length of a stringlike range</div><div class="ttdef"><b>Definition:</b> strlen.h:58</div></div>
+<div class="ttc" id="agroup__detail___html_ga13db2f0af9e5e81aefc6844ea1182759"><div class="ttname"><a href="group__detail__.html#ga13db2f0af9e5e81aefc6844ea1182759">ccutl::detail_::strlen_::strlen</a></div><div class="ttdeci">constexpr std::size_t strlen(const Str &amp;s) noexcept</div><div class="ttdoc">counts the length of a stringlike range</div><div class="ttdef"><b>Definition:</b> strlen.h:54</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

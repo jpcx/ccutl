@@ -121,11 +121,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">CCUTL_MODULES</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">export</span> module ccutl.same;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;import std;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;import ccutl.indexed_type;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;import ccutl.type_at;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">export</span> import std;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">export</span> import ccutl.indexed_type;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">export</span> import ccutl.type_at;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">else</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ccutl/indexed_type.h&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ccutl/type_at.h&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace</span> ccutl::detail_::same_ {</div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> (std::is_same_v&lt;First, Rest&gt; &amp;&amp; ...);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  } <span class="keywordflow">else</span> <span class="comment">/* i &lt; sizeof...(Rest) and sizeof...(Rest) &gt; 1 */</span> {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">constexpr</span> <span class="keywordtype">bool</span> this_comparison =</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        (std::is_same_v&lt;indexed_type&lt;i, First, Rest...&gt;, Rest&gt; &amp;&amp; ...);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        (std::is_same_v&lt;type_at&lt;i, First, Rest...&gt;, Rest&gt; &amp;&amp; ...);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// recurse with First pushed to end to ensure two-way comparison</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> this_comparison &amp;&amp; impl&lt;i + 1, Rest..., First&gt;();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>

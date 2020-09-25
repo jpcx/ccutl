@@ -1,0 +1,20 @@
+\hypertarget{arg__at_8h}{}\doxysection{master/ccutl/include/ccutl/arg\+\_\+at.h File Reference}
+\label{arg__at_8h}\index{master/ccutl/include/ccutl/arg\_at.h@{master/ccutl/include/ccutl/arg\_at.h}}
+
+
+\mbox{\hyperlink{group__ccutl_arg_at}{ccutl.\+arg\+\_\+at}} -\/ returns the argument at index idx  
+
+
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include \char`\"{}ccutl/detail\+\_\+/config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ccutl/fwd.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\requires constexpr detail\+\_\+\+::arg\+\_\+at\+\_\+\+::valid\+\_\+indexable\+\_\+pack$<$ idx, Ts... $>$ auto \&\& \mbox{\hyperlink{group__ccutl_ga511231e7f27086515c017a03005449ee}{arg\+\_\+at}} (Ts \&\&... args) noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{group__ccutl_arg_at}{ccutl.\+arg\+\_\+at}} -\/ returns the argument at index idx 
+

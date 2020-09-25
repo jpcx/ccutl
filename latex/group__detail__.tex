@@ -3,12 +3,6 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ size\+\_\+t, size\+\_\+t,... $>$}}
-\begin{DoxyCompactList}\small\item\em primary template for \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl}{indexed\+\_\+type\+\_\+\+::impl}} \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01targ_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ targ, targ, First, Rest... $>$}}
-\begin{DoxyCompactList}\small\item\em end of iteration; type represents first type \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::impl$<$ targ, i, First, Rest... $>$}}
-\begin{DoxyCompactList}\small\item\em iterates until i reaches target \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1from}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::from$<$ class, class $>$}}
 \begin{DoxyCompactList}\small\item\em pulls nontype template values from specialzied template \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1from_3_01Template_00_01Template_3_01rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::from$<$ Template, Template$<$ rs... $>$ $>$}}
@@ -17,6 +11,12 @@ struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1concat}{cc
 \begin{DoxyCompactList}\small\item\em concatenates a nontype pack with rs... \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structccutl_1_1detail___1_1nontype__pack___1_1concat_3_01nontype__pack_3_01rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::concat$<$ nontype\+\_\+pack$<$ rs... $>$ $>$}}
 \begin{DoxyCompactList}\small\item\em concatenates a nontype pack with rs... \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__at___1_1impl}{ccutl\+::detail\+\_\+\+::type\+\_\+at\+\_\+\+::impl$<$ size\+\_\+t, size\+\_\+t,... $>$}}
+\begin{DoxyCompactList}\small\item\em primary template for \mbox{\hyperlink{structccutl_1_1detail___1_1type__at___1_1impl}{type\+\_\+at\+\_\+\+::impl}} \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__at___1_1impl_3_01targ_00_01targ_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::type\+\_\+at\+\_\+\+::impl$<$ targ, targ, First, Rest... $>$}}
+\begin{DoxyCompactList}\small\item\em end of iteration; type represents first type \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__at___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4}{ccutl\+::detail\+\_\+\+::type\+\_\+at\+\_\+\+::impl$<$ targ, i, First, Rest... $>$}}
+\begin{DoxyCompactList}\small\item\em iterates until i reaches target \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1from}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::from$<$ class, class $>$}}
 \begin{DoxyCompactList}\small\item\em pulls template types from specialzied template \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1from_3_01Template_00_01Template_3_01Rs_8_8_8_01_4_01_4}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::from$<$ Template, Template$<$ Rs... $>$ $>$}}
@@ -28,8 +28,8 @@ struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1concat_3_01ty
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{group__detail___ga733eb2b0dcda6f06bf0b78816988f115}\label{group__detail___ga733eb2b0dcda6f06bf0b78816988f115}} 
-{\footnotesize template$<$std\+::size\+\_\+t targ, class... Pack$>$ }\\using \mbox{\hyperlink{group__detail___ga733eb2b0dcda6f06bf0b78816988f115}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::type}} = typename \mbox{\hyperlink{structccutl_1_1detail___1_1indexed__type___1_1impl}{impl}}$<$ targ, 0, Pack... $>$\+::\mbox{\hyperlink{group__detail___ga733eb2b0dcda6f06bf0b78816988f115}{type}}
+\mbox{\Hypertarget{group__detail___ga370c3543853d9fb663e3f61e83cb8857}\label{group__detail___ga370c3543853d9fb663e3f61e83cb8857}} 
+{\footnotesize template$<$std\+::size\+\_\+t targ, class... Pack$>$ }\\using \mbox{\hyperlink{group__detail___ga370c3543853d9fb663e3f61e83cb8857}{ccutl\+::detail\+\_\+\+::type\+\_\+at\+\_\+\+::type}} = typename \mbox{\hyperlink{structccutl_1_1detail___1_1type__at___1_1impl}{impl}}$<$ targ, 0, Pack... $>$\+::\mbox{\hyperlink{group__detail___ga370c3543853d9fb663e3f61e83cb8857}{type}}
 \begin{DoxyCompactList}\small\item\em helper typedef for impl\+::type \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -50,22 +50,34 @@ struct \mbox{\hyperlink{structccutl_1_1detail___1_1type__pack___1_1concat_3_01ty
 \item 
 \mbox{\hyperlink{group__detail___gad79acb6d7260c2423cc573dd1e53ac01}{ccutl\+::detail\+\_\+\+::specialization\+\_\+of\+\_\+\+::\+C\+C\+U\+T\+L\+\_\+\+M\+A\+K\+E\+\_\+\+S\+P\+E\+C\+I\+A\+L\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+O\+F\+\_\+\+C\+O\+N\+C\+E\+PT}} (impl,(class... Ts),(Ts...))
 \item 
-\mbox{\Hypertarget{group__detail___gac844ce3ff4f75a535b029341ce153cc5}\label{group__detail___gac844ce3ff4f75a535b029341ce153cc5}} 
-constexpr bool \mbox{\hyperlink{group__detail___gac844ce3ff4f75a535b029341ce153cc5}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::eq}} (str\+\_\+subscriptable auto \&\&a, str\+\_\+subscriptable auto \&\&b)
-\begin{DoxyCompactList}\small\item\em eq comparison of str\+\_\+subscriptables \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__detail___ga8e8bf5291fb2ff5536ecfb78884be98d}\label{group__detail___ga8e8bf5291fb2ff5536ecfb78884be98d}} 
-constexpr bool \mbox{\hyperlink{group__detail___ga8e8bf5291fb2ff5536ecfb78884be98d}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::eq}} (str\+\_\+range auto \&\&a, str\+\_\+subscriptable auto \&\&b)
-\begin{DoxyCompactList}\small\item\em eq comparison of str\+\_\+ranges to str\+\_\+subscriptables \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__detail___ga08c1c348a8cb28f30499d88e1bee243a}\label{group__detail___ga08c1c348a8cb28f30499d88e1bee243a}} 
-constexpr bool \mbox{\hyperlink{group__detail___ga08c1c348a8cb28f30499d88e1bee243a}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::eq}} (str\+\_\+subscriptable auto \&\&a, str\+\_\+range auto \&\&b)
-\begin{DoxyCompactList}\small\item\em eq comparison of str\+\_\+subscriptables to str\+\_\+ranges \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__detail___gae1cfc0339acee3b6a10500de571ce877}\label{group__detail___gae1cfc0339acee3b6a10500de571ce877}} 
-constexpr bool \mbox{\hyperlink{group__detail___gae1cfc0339acee3b6a10500de571ce877}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::eq}} (str\+\_\+range auto \&\&a, str\+\_\+range auto \&\&b)
-\begin{DoxyCompactList}\small\item\em eq comparison of str\+\_\+ranges \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__detail___gaea2539764477d5535a977644455eb1d0}\label{group__detail___gaea2539764477d5535a977644455eb1d0}} 
-{\footnotesize template$<$stringlike\+\_\+pack... Strs, size\+\_\+t seq\+\_\+first, size\+\_\+t... seq\+\_\+rest$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gaea2539764477d5535a977644455eb1d0}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::impl}} (std\+::index\+\_\+sequence$<$ seq\+\_\+first, seq\+\_\+rest... $>$ \&\&, Strs \&\&...strs)
+\mbox{\Hypertarget{group__detail___ga120fc3de2f065faa53ba61e6d6bc1937}\label{group__detail___ga120fc3de2f065faa53ba61e6d6bc1937}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga120fc3de2f065faa53ba61e6d6bc1937}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+subscriptables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga8e13b7222cb8952818beace8016e6036}\label{group__detail___ga8e13b7222cb8952818beace8016e6036}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga8e13b7222cb8952818beace8016e6036}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+range auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+ranges to str\+\_\+subscriptables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga543e6fd3c187033b08372c4e9c7d1531}\label{group__detail___ga543e6fd3c187033b08372c4e9c7d1531}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga543e6fd3c187033b08372c4e9c7d1531}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+subscriptables to str\+\_\+ranges \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga3f2d555c177b7a3b7ad4f8f625a38764}\label{group__detail___ga3f2d555c177b7a3b7ad4f8f625a38764}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga3f2d555c177b7a3b7ad4f8f625a38764}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::eq}} (const str\+\_\+range auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical eq comparison of str\+\_\+ranges \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___gabb5b02b36568352aa865a3a2ffcab0e9}\label{group__detail___gabb5b02b36568352aa865a3a2ffcab0e9}} 
+{\footnotesize template$<$stringlike\+\_\+pack... Strs, size\+\_\+t seq\+\_\+first, size\+\_\+t... seq\+\_\+rest$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gabb5b02b36568352aa865a3a2ffcab0e9}{ccutl\+::detail\+\_\+\+::str\+\_\+eq\+\_\+\+::impl}} (std\+::index\+\_\+sequence$<$ seq\+\_\+first, seq\+\_\+rest... $>$ \&\&, const Strs \&...strs) noexcept
 \begin{DoxyCompactList}\small\item\em executes comparisons for all Strs... \end{DoxyCompactList}\item 
-{\footnotesize template$<$str\+\_\+range Str$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__detail___gae0b17ce75d9c4d2cc83372620787b55f}{ccutl\+::detail\+\_\+\+::strlen\+\_\+\+::strlen}} (Str \&\&s) noexcept
+\mbox{\Hypertarget{group__detail___gac5202cae71e87ceb8240c82467cc4218}\label{group__detail___gac5202cae71e87ceb8240c82467cc4218}} 
+constexpr bool \mbox{\hyperlink{group__detail___gac5202cae71e87ceb8240c82467cc4218}{ccutl\+::detail\+\_\+\+::str\+\_\+lt\+\_\+\+::lt}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical lt comparison of str\+\_\+subscriptables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga55d5a6045d33af2ea856451463ca496b}\label{group__detail___ga55d5a6045d33af2ea856451463ca496b}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga55d5a6045d33af2ea856451463ca496b}{ccutl\+::detail\+\_\+\+::str\+\_\+lt\+\_\+\+::lt}} (const str\+\_\+range auto \&a, const str\+\_\+subscriptable auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical lt comparison of str\+\_\+ranges to str\+\_\+subscriptables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___gadbe8072ccaf49065c2e9e24e168eef4d}\label{group__detail___gadbe8072ccaf49065c2e9e24e168eef4d}} 
+constexpr bool \mbox{\hyperlink{group__detail___gadbe8072ccaf49065c2e9e24e168eef4d}{ccutl\+::detail\+\_\+\+::str\+\_\+lt\+\_\+\+::lt}} (const str\+\_\+subscriptable auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical lt comparison of str\+\_\+subscriptables to str\+\_\+ranges \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga0cef04e491c51f13e7ec0ff52d5e6b53}\label{group__detail___ga0cef04e491c51f13e7ec0ff52d5e6b53}} 
+constexpr bool \mbox{\hyperlink{group__detail___ga0cef04e491c51f13e7ec0ff52d5e6b53}{ccutl\+::detail\+\_\+\+::str\+\_\+lt\+\_\+\+::lt}} (const str\+\_\+range auto \&a, const str\+\_\+range auto \&b) noexcept
+\begin{DoxyCompactList}\small\item\em lexicographical lt comparison of str\+\_\+ranges \end{DoxyCompactList}\item 
+{\footnotesize template$<$str\+\_\+range Str$>$ }\\constexpr std\+::size\+\_\+t \mbox{\hyperlink{group__detail___ga13db2f0af9e5e81aefc6844ea1182759}{ccutl\+::detail\+\_\+\+::strlen\+\_\+\+::strlen}} (const Str \&s) noexcept
 \begin{DoxyCompactList}\small\item\em counts the length of a stringlike range \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__detail___ga6a93ec9b8c9a1d10e9123c6f08fac94e}\label{group__detail___ga6a93ec9b8c9a1d10e9123c6f08fac94e}} 
 {\footnotesize template$<$class... Ts, std\+::size\+\_\+t... seq$>$ }\\requires constexpr \mbox{\hyperlink{group__ccutl_ga63f3237f9db72093e73de16e5dba6a22}{meta\+::gt}}$<$ sizeof...(Ts), 0 $>$ auto \mbox{\hyperlink{group__detail___ga6a93ec9b8c9a1d10e9123c6f08fac94e}{ccutl\+::detail\+\_\+\+::type\+\_\+pack\+\_\+\+::pop\+\_\+back}} (std\+::index\+\_\+sequence$<$ seq... $>$ \&\&) noexcept
@@ -94,15 +106,15 @@ constexpr bool \mbox{\hyperlink{group__detail___gae1cfc0339acee3b6a10500de571ce8
 {\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gaaf88752247b7f48a62d275bb2b4dc527}{ccutl\+::detail\+\_\+\+::str\+\_\+subscriptable}}
 \begin{DoxyCompactList}\small\item\em specifies a type that is subscriptable to const char and is not a range \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__detail___gad877813365959e2835238e811872c424}\label{group__detail___gad877813365959e2835238e811872c424}} 
-{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gad877813365959e2835238e811872c424}{ccutl\+::detail\+\_\+\+::stringlike}} = str\+\_\+range$<$T$>$ $\vert$$\vert$ str\+\_\+subscriptable$<$T$>$
+{\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___gad877813365959e2835238e811872c424}{ccutl\+::detail\+\_\+\+::stringlike}} = str\+\_\+range$<$\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref}}$<$T$>$$>$ $\vert$$\vert$ str\+\_\+subscriptable$<$\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref}}$<$T$>$$>$
 \begin{DoxyCompactList}\small\item\em specifies a const char range or subscriptable type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__detail___ga2eea5f9e0b0cb5db58f70de04ae84886}\label{group__detail___ga2eea5f9e0b0cb5db58f70de04ae84886}} 
+{\footnotesize template$<$class... Ts$>$ }\\concept \mbox{\hyperlink{group__detail___ga2eea5f9e0b0cb5db58f70de04ae84886}{ccutl\+::detail\+\_\+\+::stringlike\+\_\+pack}} = (stringlike$<$Ts$>$ and ...)
+\begin{DoxyCompactList}\small\item\em checks if all Ts are stringlike \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___ga92e73e65dbbe82fcf115245a6bfafbdb}{ccutl\+::detail\+\_\+\+::highest\+\_\+\+::has\+\_\+numeric\+\_\+limits\+\_\+max}}
 \item 
 {\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___ga71537c39e6df2c6f4fd487aafd1e5ff7}{ccutl\+::detail\+\_\+\+::highest\+\_\+\+::arithmetic}} = std\+::integral$<$T$>$ $\vert$$\vert$ std\+::floating\+\_\+point$<$T$>$
 \item 
-\mbox{\Hypertarget{group__detail___gacba1c9d3314c01d3ad5e81bb3d9774d1}\label{group__detail___gacba1c9d3314c01d3ad5e81bb3d9774d1}} 
-{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gacba1c9d3314c01d3ad5e81bb3d9774d1}{ccutl\+::detail\+\_\+\+::indexed\+\_\+type\+\_\+\+::valid\+\_\+indexable\+\_\+pack}} = sizeof...(Ts) $>$ 0 \&\& idx $<$ sizeof...(Ts)
-\begin{DoxyCompactList}\small\item\em checks if idx can be used to index Ts... \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\concept \mbox{\hyperlink{group__detail___ga0d163046dd6fdec2e24dfcfbcabbb439}{ccutl\+::detail\+\_\+\+::lowest\+\_\+\+::has\+\_\+numeric\+\_\+limits\+\_\+lowest}}
 \begin{DoxyCompactList}\small\item\em checks if std\+::numeric\+\_\+limits$<$\+T$>$\+::max() is well-\/formed \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group__detail___gaa4ea1fc33d3d3fb45ff52fc92f77f363}\label{group__detail___gaa4ea1fc33d3d3fb45ff52fc92f77f363}} 
@@ -110,9 +122,9 @@ constexpr bool \mbox{\hyperlink{group__detail___gae1cfc0339acee3b6a10500de571ce8
 \begin{DoxyCompactList}\small\item\em naiive arithmetic concept that describes an integral or floating\+\_\+point type \end{DoxyCompactList}\item 
 {\footnotesize template$<$template$<$ auto... $>$ class Template, auto... vs$>$ }\\concept \mbox{\hyperlink{group__detail___ga7d27af9eb77419bfdeac58bf66914632}{ccutl\+::detail\+\_\+\+::nontype\+\_\+pack\+\_\+\+::specializable\+\_\+with\+\_\+nontypes}}
 \begin{DoxyCompactList}\small\item\em checks if a template is specializable with vs... \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{group__detail___gafc3a4c732f03aeb9b0b09f8bb42c7673}\label{group__detail___gafc3a4c732f03aeb9b0b09f8bb42c7673}} 
-{\footnotesize template$<$class... Ts$>$ }\\concept \mbox{\hyperlink{group__detail___gafc3a4c732f03aeb9b0b09f8bb42c7673}{ccutl\+::detail\+\_\+\+::streq\+\_\+\+::stringlike\+\_\+pack}} = (stringlike$<$Ts$>$ \&\& ...)
-\begin{DoxyCompactList}\small\item\em checks if all Ts are stringlike \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{group__detail___gac2ae0dffd1107e36713bd3b46287dcb1}\label{group__detail___gac2ae0dffd1107e36713bd3b46287dcb1}} 
+{\footnotesize template$<$std\+::size\+\_\+t idx, class... Ts$>$ }\\constexpr bool \mbox{\hyperlink{group__detail___gac2ae0dffd1107e36713bd3b46287dcb1}{ccutl\+::detail\+\_\+\+::type\+\_\+at\+\_\+\+::valid\+\_\+indexable\+\_\+pack}} = sizeof...(Ts) $>$ 0 \&\& idx $<$ sizeof...(Ts)
+\begin{DoxyCompactList}\small\item\em checks if idx can be used to index Ts... \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -164,12 +176,12 @@ lt comparison of (non-\/different-\/signed-\/int) strongly ordered types
 
 lt comparison of unsigned $<$=$>$ signed
 
-lt comparison of signed $<$=$>$ unsigned \mbox{\Hypertarget{group__detail___gae0b17ce75d9c4d2cc83372620787b55f}\label{group__detail___gae0b17ce75d9c4d2cc83372620787b55f}} 
+lt comparison of signed $<$=$>$ unsigned \mbox{\Hypertarget{group__detail___ga13db2f0af9e5e81aefc6844ea1182759}\label{group__detail___ga13db2f0af9e5e81aefc6844ea1182759}} 
 \index{Detail\_@{Detail\_}!strlen@{strlen}}
 \index{strlen@{strlen}!Detail\_@{Detail\_}}
 \doxysubsubsection{\texorpdfstring{strlen()}{strlen()}}
 {\footnotesize\ttfamily template$<$str\+\_\+range Str$>$ \\
-constexpr std\+::size\+\_\+t ccutl\+::detail\+\_\+\+::strlen\+\_\+\+::strlen (\begin{DoxyParamCaption}\item[{Str \&\&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+constexpr std\+::size\+\_\+t ccutl\+::detail\+\_\+\+::strlen\+\_\+\+::strlen (\begin{DoxyParamCaption}\item[{const Str \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
 
 
@@ -289,8 +301,11 @@ concept ccutl\+::detail\+\_\+\+::str\+\_\+range}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{= std::ranges::input\_range<T>}
-\DoxyCodeLine{    and std::convertible\_to<std::ranges::range\_value\_t<T>, \textcolor{keyword}{const} \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    std::ranges::input\_range<noref<T>> and}
+\DoxyCodeLine{    (std::convertible\_to<std::ranges::range\_value\_t<\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref<T>}}>, \textcolor{keyword}{const} \textcolor{keywordtype}{char}> ||}
+\DoxyCodeLine{     std::convertible\_to<}
+\DoxyCodeLine{         std::ranges::range\_value\_t<\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref<T>}}>, \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}>)}
 
 \end{DoxyCode}
 
@@ -307,8 +322,8 @@ concept ccutl\+::detail\+\_\+\+::str\+\_\+subscriptable}
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=}
-\DoxyCodeLine{    (subscriptable\_to<T, const char> ||}
-\DoxyCodeLine{     subscriptable\_to<T, const wchar\_t>)\&\&!str\_range<T>}
+\DoxyCodeLine{    (subscriptable\_to<noref<T>, \textcolor{keyword}{const} \textcolor{keywordtype}{char}> ||}
+\DoxyCodeLine{     subscriptable\_to<noref<T>, \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}>)\&\&!\mbox{\hyperlink{group__detail___ga01a3ec8e3385d48fb79d1a032facf994}{str\_range}}<\mbox{\hyperlink{group__ccutl_ga766857c2ad583c2acd02df3711d56d74}{noref<T>}}>}
 
 \end{DoxyCode}
 

@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>detail helpers for ccutl string functions  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ranges&gt;</code><br />
+<code>#include &quot;<a class="el" href="noref_8h_source.html">ccutl/noref.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="subscriptable__to_8h_source.html">ccutl/subscriptable_to.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">ccutl/detail_/config.h</a>&quot;</code><br />
 </div>
@@ -104,9 +105,14 @@ Variables</h2></td></tr>
 <tr class="separator:gaaf88752247b7f48a62d275bb2b4dc527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad877813365959e2835238e811872c424"><td class="memTemplParams" colspan="2">
 template&lt;class T &gt; </td></tr>
-<tr class="memitem:gad877813365959e2835238e811872c424"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__detail__.html#gad877813365959e2835238e811872c424">ccutl::detail_::stringlike</a> = str_range&lt;T&gt; || str_subscriptable&lt;T&gt;</td></tr>
+<tr class="memitem:gad877813365959e2835238e811872c424"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__detail__.html#gad877813365959e2835238e811872c424">ccutl::detail_::stringlike</a> = str_range&lt;<a class="el" href="group__ccutl.html#ga766857c2ad583c2acd02df3711d56d74">noref</a>&lt;T&gt;&gt; || str_subscriptable&lt;<a class="el" href="group__ccutl.html#ga766857c2ad583c2acd02df3711d56d74">noref</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memdesc:gad877813365959e2835238e811872c424"><td class="mdescLeft">&#160;</td><td class="mdescRight">specifies a const char range or subscriptable type <br /></td></tr>
 <tr class="separator:gad877813365959e2835238e811872c424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eea5f9e0b0cb5db58f70de04ae84886"><td class="memTemplParams" colspan="2">
+template&lt;class... Ts&gt; </td></tr>
+<tr class="memitem:ga2eea5f9e0b0cb5db58f70de04ae84886"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__detail__.html#ga2eea5f9e0b0cb5db58f70de04ae84886">ccutl::detail_::stringlike_pack</a> = (stringlike&lt;Ts&gt; and ...)</td></tr>
+<tr class="memdesc:ga2eea5f9e0b0cb5db58f70de04ae84886"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if all Ts are stringlike <br /></td></tr>
+<tr class="separator:ga2eea5f9e0b0cb5db58f70de04ae84886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>detail helpers for ccutl string functions </p>

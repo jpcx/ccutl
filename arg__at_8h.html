@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl: ccutl::detail_::indexed_type_::impl&lt; targ, i, First, Rest... &gt; Struct Template Reference</title>
+<title>ccutl: master/ccutl/include/ccutl/arg_at.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,38 +73,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>ccutl</b></li><li class="navelem"><b>detail_</b></li><li class="navelem"><b>indexed_type_</b></li><li class="navelem"><a class="el" href="structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4.html">impl&lt; targ, i, First, Rest... &gt;</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c1346cf4828efdd0d2baf0d391d01b77.html">master</a></li><li class="navelem"><a class="el" href="dir_badefd765e94367b4d074d7b3d853a3a.html">ccutl</a></li><li class="navelem"><a class="el" href="dir_271656744544041a7fdb61ae40405dff.html">include</a></li><li class="navelem"><a class="el" href="dir_9b299937dd1245424739bf6b7bd1668c.html">ccutl</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4-members.html">List of all members</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ccutl::detail_::indexed_type_::impl&lt; targ, i, First, Rest... &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__ccutl.html">ccutl</a> &raquo; <a class="el" href="group__detail__.html">Detail_</a></div></div>  </div>
+<div class="title">arg_at.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>iterates until i reaches target  
- <a href="structccutl_1_1detail___1_1indexed__type___1_1impl_3_01targ_00_01i_00_01First_00_01Rest_8_8_8_01_4.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="indexed__type_8h_source.html">indexed_type.h</a>&gt;</code></p>
+<p><a class="el" href="group__ccutl.html#arg_at">ccutl.arg_at</a> - returns the argument at index idx  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;type_traits&gt;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">ccutl/detail_/config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fwd_8h_source.html">ccutl/fwd.h</a>&quot;</code><br />
+</div>
+<p><a href="arg__at_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a8c97e5ee87bbc23185f0702836e7bedd"><td class="memItemLeft" align="right" valign="top"><a id="a8c97e5ee87bbc23185f0702836e7bedd"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> = typename <a class="el" href="structccutl_1_1detail___1_1indexed__type___1_1impl.html">impl</a>&lt; targ, i+1, Rest... &gt;::type</td></tr>
-<tr class="separator:a8c97e5ee87bbc23185f0702836e7bedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga511231e7f27086515c017a03005449ee"><td class="memTemplParams" colspan="2">template&lt;std::size_t idx, class... Ts&gt; </td></tr>
+<tr class="memitem:ga511231e7f27086515c017a03005449ee"><td class="memTemplItemLeft" align="right" valign="top">requires constexpr detail_::arg_at_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga511231e7f27086515c017a03005449ee">arg_at</a> (Ts &amp;&amp;... args) noexcept</td></tr>
+<tr class="separator:ga511231e7f27086515c017a03005449ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;std::size_t targ, std::size_t i, class First, class... Rest&gt;<br />
-struct ccutl::detail_::indexed_type_::impl&lt; targ, i, First, Rest... &gt;</h3>
-
-<p>iterates until i reaches target </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>master/ccutl/include/ccutl/<a class="el" href="indexed__type_8h_source.html">indexed_type.h</a></li>
-</ul>
-</div><!-- contents -->
+<div class="textblock"><p><a class="el" href="group__ccutl.html#arg_at">ccutl.arg_at</a> - returns the argument at index idx </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

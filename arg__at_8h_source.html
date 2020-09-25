@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ccutl: master/ccutl/include/ccutl/indexed_arg.h Source File</title>
+<title>ccutl: master/ccutl/include/ccutl/arg_at.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,14 +78,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">indexed_arg.h</div>  </div>
+<div class="title">arg_at.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="indexed__arg_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">CCUTL_INDEXED_ARG_H_INCLUDED</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">CCUTL_INDEXED_ARG_H_INCLUDED</span></div>
+<a href="arg__at_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">CCUTL_ARG_AT_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">CCUTL_ARG_AT_H_INCLUDED</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/////                                                                      c++20</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">////////////////////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// @brief \link indexed_arg ccutl.indexed_arg\endlink -</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">/// @brief \link arg_at ccutl.arg_at\endlink -</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/// returns the argument at index idx</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/// @file</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//                      |    |</span></div>
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ccutl/detail_/config.h&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifdef</span> <span class="preprocessor">CCUTL_MODULES</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">export</span> module ccutl.indexed_arg;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">export</span> module ccutl.arg_at;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;import std;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;import ccutl.fwd;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">export</span> import std;</div>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ccutl/fwd.h&quot;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace</span> ccutl::detail_::indexed_arg_ {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace</span> ccutl::detail_::arg_at_ {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">using</span> ccutl::fwd;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/*                                                        */</span> <span class="comment">// clang-format off</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// lvalue forwarder for final indexed_arg result</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/// lvalue forwarder for final arg_at result</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">template</span> &lt;std::size_t targ, std::size_t i, <span class="keyword">class</span> First, <span class="keyword">class</span>... Rest&gt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;requires (targ == i) &amp;&amp; (std::is_lvalue_reference_v&lt;First &amp;&amp;&gt;)</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> First &amp;</div>
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> fwd&lt;First&gt;(first);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// rvalue forwarder for final indexed_arg result</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">/// rvalue forwarder for final arg_at result</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span> &lt;std::size_t targ, std::size_t i, <span class="keyword">class</span> First, <span class="keyword">class</span>... Rest&gt;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;requires (targ == i) &amp;&amp; (std::is_rvalue_reference_v&lt;First &amp;&amp;&gt;)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> First &amp;&amp;</div>
@@ -168,29 +168,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/// \}</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace indexed_arg_</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace arg_at_</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="config_8h.html#a48c2580626f167d9add6d96533914700">CCUTL_BEGIN_EXPORT_NAMESPACE</a>(ccutl)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">/// returns the argument at index idx</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">///</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">/// @code</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">///   #include &quot;ccutl/indexed_arg.h&quot;</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">///   // import ccutl.indexed_arg; //</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">///   #include &quot;ccutl/arg_at.h&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">///   // import ccutl.arg_at; //</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">///</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">///   char c  = &#39;c&#39;;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">///   auto &amp;&amp;x0 = ccutl::indexed_arg&lt;0&gt;(&#39;a&#39;, &quot;b&quot;, c); // (char)         &#39;a&#39;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">///   auto &amp;&amp;x1 = ccutl::indexed_arg&lt;1&gt;(&#39;a&#39;, &quot;b&quot;, c); // (const char *) &quot;b&quot;</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">///   auto &amp;&amp;x2 = ccutl::indexed_arg&lt;2&gt;(&#39;a&#39;, &quot;b&quot;, c); // (char &amp;)        c</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">///   auto &amp;&amp;x0 = ccutl::arg_at&lt;0&gt;(&#39;a&#39;, &quot;b&quot;, c); // (char)         &#39;a&#39;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">///   auto &amp;&amp;x1 = ccutl::arg_at&lt;1&gt;(&#39;a&#39;, &quot;b&quot;, c); // (const char *) &quot;b&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">///   auto &amp;&amp;x2 = ccutl::arg_at&lt;2&gt;(&#39;a&#39;, &quot;b&quot;, c); // (char &amp;)        c</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/// @endcode</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">///</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">/// @ingroup ccutl</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/// @anchor  indexed_arg</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/// @anchor  arg_at</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">template</span> &lt;std::size_t idx, <span class="keyword">class</span>... Ts&gt;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;requires detail_::indexed_arg_::valid_indexable_pack&lt;idx, Ts...&gt;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;requires detail_::arg_at_::valid_indexable_pack&lt;idx, Ts...&gt;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;[[nodiscard]] <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> &amp;&amp;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<a class="code" href="group__ccutl.html#ga6e0ca25d4b10614de69ac2707c489ec6">indexed_arg</a>(Ts &amp;&amp;... args) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">return</span> detail_::indexed_arg_::impl&lt;idx, 0&gt;(fwd&lt;Ts&gt;(args)...);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<a class="code" href="group__ccutl.html#ga511231e7f27086515c017a03005449ee">arg_at</a>(Ts &amp;&amp;... args) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordflow">return</span> detail_::arg_at_::impl&lt;idx, 0&gt;(fwd&lt;Ts&gt;(args)...);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">/*                                                        */</span> <span class="comment">// clang-format on</span></div>
@@ -199,9 +199,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="agroup__ccutl_html_ga6e0ca25d4b10614de69ac2707c489ec6"><div class="ttname"><a href="group__ccutl.html#ga6e0ca25d4b10614de69ac2707c489ec6">indexed_arg</a></div><div class="ttdeci">requires constexpr detail_::indexed_arg_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp; indexed_arg(Ts &amp;&amp;... args) noexcept</div><div class="ttdef"><b>Definition:</b> indexed_arg.h:109</div></div>
 <div class="ttc" id="aconfig_8h_html_ad9d315b4442cecaa96ba44fdee7418e1"><div class="ttname"><a href="config_8h.html#ad9d315b4442cecaa96ba44fdee7418e1">CCUTL_END_EXPORT_NAMESPACE</a></div><div class="ttdeci">#define CCUTL_END_EXPORT_NAMESPACE</div><div class="ttdef"><b>Definition:</b> config.h:42</div></div>
 <div class="ttc" id="aconfig_8h_html_a48c2580626f167d9add6d96533914700"><div class="ttname"><a href="config_8h.html#a48c2580626f167d9add6d96533914700">CCUTL_BEGIN_EXPORT_NAMESPACE</a></div><div class="ttdeci">#define CCUTL_BEGIN_EXPORT_NAMESPACE(fullname)</div><div class="ttdef"><b>Definition:</b> config.h:41</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga511231e7f27086515c017a03005449ee"><div class="ttname"><a href="group__ccutl.html#ga511231e7f27086515c017a03005449ee">arg_at</a></div><div class="ttdeci">requires constexpr detail_::arg_at_::valid_indexable_pack&lt; idx, Ts... &gt; auto &amp;&amp; arg_at(Ts &amp;&amp;... args) noexcept</div><div class="ttdef"><b>Definition:</b> arg_at.h:109</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
