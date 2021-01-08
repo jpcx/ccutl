@@ -21,5 +21,25 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
+#include <string_view>
+
 #include "cctest.h"
+
+#include "ctl/found_if.h"
+
+using namespace CCUTL_NAMESPACE;
+using namespace std;
+
+TEST("ccutl.found_if") {
+  constexpr std::string_view s{"foo"};
+  static_assert(
+      found_if(s.begin(), s.end(), [](auto&& v) { return v == 'f'; }));
+  static_assert(
+      found_if(s.begin(), s.end(), [](auto&& v) { return v == 'o'; }));
+  static_assert(
+      !found_if(s.begin(), s.end(), [](auto&& v) { return v == 'e'; }));
+
+  static_assert(found_if(s, [](auto&& v) { return v == 'f'; }));
+  static_assert(found_if(s, [](auto&& v) { return v == 'o'; }));
+  static_assert(!found_if(s, [](auto&& v) { return v == 'e'; }));
+};

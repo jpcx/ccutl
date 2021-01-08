@@ -21,5 +21,15 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
+#include "src/ctl/detail/config.h"
+
+#include <cstring>
+
 #include "cctest.h"
+
+#define STRINGIZE(x)   STRINGIZE_X(x)
+#define STRINGIZE_X(x) #x
+
+TEST("internal.config") {
+  ASSERT(std::strcmp(STRINGIZE(CCUTL_NAMESPACE), "ctl") == 0);
+};

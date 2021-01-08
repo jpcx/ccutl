@@ -1,0 +1,3 @@
+[submodule "libs/pputl"]
+	path = libs/pputl
+	url = https://github.com/jpcx/pputl.git

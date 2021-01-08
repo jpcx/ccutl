@@ -21,5 +21,25 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/rmcv.h"
+
+using namespace CCUTL_NAMESPACE;
+
+template <class T>
+static constexpr bool matches = std::is_same_v<std::remove_cv_t<T>, rmcv<T>>;
+
+TEST("ccutl.rmcv") {
+  static_assert(matches<int>);
+  static_assert(matches<int const>);
+  static_assert(matches<int&>);
+  static_assert(matches<int&&>);
+  static_assert(matches<int const&>);
+  static_assert(matches<int const&&>);
+  static_assert(matches<int volatile>);
+  static_assert(matches<int volatile&>);
+  static_assert(matches<int volatile&&>);
+  static_assert(matches<int volatile const&>);
+  static_assert(matches<int volatile const&&>);
+};

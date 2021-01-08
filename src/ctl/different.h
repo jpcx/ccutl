@@ -1,3 +1,4 @@
+#pragma once
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -6,6 +7,7 @@
 
                               ccutl Core Utilities
 
+    [ccutl.different]: describes a set of types with at least one variation
     Copyright (C) 2020, 2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
@@ -21,5 +23,23 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include "ctl/same.h"
+
+namespace CCUTL_NAMESPACE {
+
+/**
+ * describes a set of types with at least one variation
+ *
+ * \code
+ *   #include "ctl/different.h"
+ *   auto x0 = ctl::different<int, int, int>;   // false
+ *   auto x1 = ctl::different<int, int &, int>; // true
+ * \endcode
+ *
+ * \anchor different
+ * \ingroup ccutl
+ */
+template <class... Ts>
+concept different = !same<Ts...>;
+
+} // namespace CCUTL_NAMESPACE

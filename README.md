@@ -1,4 +1,4 @@
-# ccutl 0.2.1  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.2.1/CHANGELOG.md)
+# ccutl 0.3.0  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.3.0/CHANGELOG.md)
 
 ```
                     |    |
@@ -11,194 +11,106 @@
 
 ## About
 
-ccutl is a C++ utilities library focused on clarity and ease of use.  
-This is a place for general utilites that are often re-implemented in different projects.
+ccutl is a C++ utilities library focused on flexibility and expressibility.
+
+This is a standalone-header-only library; each header may be included independently.
 
 Development will follow these guidelines:
 
--   Limit API verbosity
--   Minimize runtime costs
-    -   Use compile-time abstractions
--   Prevent runtime errors
-    -   Maximally constrain templates
-    -   Encourage constexpr components
--   Increase user development speed
-    -   Focus on feature generalization
+-   Limit API verbosity while maintaining clarity and specificity
+-   Enable compile-time abstractions wherever possible
+-   Maximally constrain templates to prevent runtime errors
 
-In essence, this library aims to increase the expressibility of C++ and  
-decrease general development time without sacrificing runtime performance.
-
-Generally, this library will contain the following types of utilites:
-
-- shortcuts to existing functionality (e.g. [ccutl::mv](http://jpcx.github.io/ccutl/group__ccutl.html#mv), [ccutl::fwd](http://jpcx.github.io/ccutl/group__ccutl.html#fwd_lvalues), [ccutl::noref](http://jpcx.github.io/ccutl/group__ccutl.html#noref))
-- more flexible versions of existing functionality (e.g. [ccutl::same](http://jpcx.github.io/ccutl/group__ccutl.html#same))
-- more approachable metaprogramming techniques (e.g. [ccutl::type\_pack](http://jpcx.github.io/ccutl/structtype__pack.html), [ccutl::type\_at](http://jpcx.github.io/ccutl/group__ccutl.html#type_at))
-- less verbose methods for common operations (e.g. [ccutl::str\_eq](http://jpcx.github.io/ccutl/group__ccutl.html#str_eq), [ccutl::str\_lt](http://jpcx.github.io/ccutl/group__ccutl.html#str_lt), [ccutl::highest](http://jpcx.github.io/ccutl/group__ccutl.html#highest), [ccutl::lowest](http://jpcx.github.io/ccutl/group__ccutl.html#lowest))
-- preprocessor tools to circumvent language limitations (e.g. [CCUTL\_MAKE\_SPECIALIZATION\_OF\_CONCEPT](http://jpcx.github.io/ccutl/group__ccutl.html#CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT))
-- type-general operations (e.g. [ccutl::eq](http://jpcx.github.io/ccutl/group__ccutl.html#eq), [ccutl::strlen](http://jpcx.github.io/ccutl/group__ccutl.html#strlen))
-- code generation scripts (future releases)
+Essentially, ccutl aims to decrease development time without sacrificing runtime performance.
 
 ## Requirements
 
-- C++20
-- CMake >=3.17
-- GNU ISO C++ Library >=10.0.0
-
-__Optional:__
-
-- clang ^10.0.0 with -fmodules support
-- GNU Make ^4.0.0
-- Ninja ^1.0.0
+- C++20 (developed using the GNU ISO C++ library v10.2.0)
 
 __Development:__
 
 - TypeScript ^3.9.0
 - Node.JS    ^12.0.0
 
-## C++20 Modules
-
-This project can be built as C++20 modules!  
-__due to limited module support available today, modules are disabled by default-__ [__see below__](#setup_as_modules)
-
-Several notes must be made:
-
-- ccutl modules must be built with Clang. I wasn't able to successfully build them with GCC devel/c++-modules
-- the library uses many C++20 features that are currently unavailable in `libc++`, so GNU `libstdc++` is required
-- Clang does not have an `std` module for `libstdc++`, and header units were not working
-- an `std` modules is created internally (system header inclusion in the global module fragment caused many errors)
-- this `std` module includes ALL C++ API headers and is re-exported from each module that imports it
-- conflicts will arise if `ccutl` is imported with another module that exports `std` or any C++ header units.
-
-The project will be updated as soon as:
-
-- Clang provides an `std` module for `libstdc++`
-- `libc++` is updated with the necessary `ranges`, `compare`, and `concepts` support
-- GCC modules are updated and can be used to build this project
-
-As it is, the project should work with clang 10.0.0 and `libstdc++` 10.0.0.
-
-System headers must be included after the `import ccutl;` statement.
-
 ## Setup
 
-ccutl is a header-only CMake interface library with `find_package` compatibility.  
+Include the `include/` directory or directly copy any of the headers contained within it.
 
-### As Headers
+All features are pasted into `include/ctl/ccutl.h`; copying this file is the
+easiest way to use the library.
 
-#### Standard -I
+A CMakeLists.txt is also available; integrate into a CMake project using `add_subdirectory`
+or `FetchContent`. The interface target name is `ccutl`.
 
-```shell
-git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
-```
-```makefile
-CXXFLAGS += -I[ccutl download dir]/include
-```
+A CMake install target is also provided if you would like to install the project to your system.
 
-#### CMake Install
-
-```shell
-git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
-cd ccutl
-
-make # mkdir build
-     # cmake -Bbuild
-
-# installs header to      ${DESTDIR}${PREFIX}/include/ccutl-0.2.1
-# installs cmake files to ${DESTDIR}${PREFIX}/lib/cmake/ccutl-0.2.1
-sudo make install # cmake --install build
-```
-```cmake
-find_package(ccutl 0.2 REQUIRED)
-target_link_libraries([your target] ccutl)
-```
-
-#### CMake FetchContent
-
-```cmake
-include(FetchContent)
-FetchContent_Declare(ccutl
-                     GIT_REPOSITORY https://github.com/jpcx/ccutl.git
-                     GIT_TAG "0.2.1")
-FetchContent_MakeAvailable(ccutl)
-target_link_libraries([your target] ccutl)
-```
-
-#### CMake add_subdirectory
-
-```shell
-git clone -b 0.2.1 https://github.com/jpcx/ccutl.git # or git submodule add
-```
-```cmake
-add_subdirectory([ccutl download dir])
-target_link_libraries([your target] ccutl)
-```
-
-### As Modules <a id="setup_as_modules" />
-
-ccutl modules cannot be installed to the system at this time.  
-They may be consumed directly as a subfolder as follows:
-
-```shell
-git clone -b 0.2.1 https://github.com/jpcx/ccutl.git
-```
-```cmake
-set(CCUTL_MODULES ON)
-add_subdirectory([ccutl download dir])
-target_link_libraries([your target] ccutl)
-set_target_properties([your target] PROPERTIES
-                      CXX_EXTENSIONS OFF)
-```
+__note:__  
+Preprocessor version checks are provided for each feature.
+Multiple versions of ccutl may be used in a single translation unit,
+but only if the individual feature dependencies do not overlap.
 
 ## Usage
 
-**Headers Example**
+All features are namespaced under `ctl::`; `#define CCUTL_NAMESPACE` to modify.
+
+### Examples:
 
 ```cpp
-#include <ccutl.h>
-// #include <ccutl/type_pack.h>
+#include <array>
+#include <iostream>
+#include <vector>
 
-using x0     = ccutl::type_pack<>;
-using x1     = x0::push_back<int>;
-using inttup = x1::to<std::tuple>;
+#include <ctl/typeof.h>
+#include <ctl/typeof_concept.h>
+
+// use the provided `typeof` concept that defines `<class...>` specializations
+template <ctl::typeof<std::vector> T>
+void print_size(T &&r) {
+  std::cout << "[std::vector]: size " << v.size() << '\n'; 
+}
+
+// creates a concept `typesize_typeof` that defines `<class, size_t>` specializations
+CTL_TYPEOF_CONCEPT(typesize_typeof, (class T, size_t N), (T, N));
+
+template <typesize_typeof<std::array> T>
+void print_size(T &&v) {
+  std::cout << "[std::array]: size " << v.size() << '\n'; 
+}
+
+template <typesize_typeof<std::span> T>
+void print_size(T &&v) {
+  std::cout << "[std::span]: size " << v.size() << '\n'; 
+}
 ```
 
-**Modules Example**
+```cpp
+#include <ctl/exists.h>
+
+template <template <class...> class Template>
+requires ctl::exists<Template, int>
+using specialize_with_int = Template<int>;
+```
 
 ```cpp
-import ccutl;
-// import ccutl.eq;
+#include <utility>
 
-constexpr bool x0 = ccutl::eq(1, 1u);
+#include <ctl/type_pack.h>
+
+using intpair = ctl::type_pack<>;      // type_pack<>
+                   ::push_back<int>    // type_pack<int>
+                   ::push_front<int>   // type_pack<int, int>
+                   ::push_front<float> // type_pack<float, int, int>
+                   ::slice<1>          // type_pack<int, int>
+                   ::to<std::pair>     // std::pair<int, int>
 ```
 
 ## Testing
 
 All API features are tested using [jpcx/cctest](https://github.com/jpcx/cctest) [embedded]
 
-Testing Headers:
-```shell
-make test-headers # mkdir -p build/headers                         &&
-                  # cmake -Bbuild/headers                          &&
-                  # cmake --build build/headers --target testccutl &&
-                  # ./build/headers/test/testccutl
-```
+Run `make test` to test on your system.
 
-Testing Modules:
-```shell
-# modules can only be tested with Clang (for now)
-make test-modules # mkdir -p build/modules                         &&
-                  # cmake -Bbuild/modules -DCCUTL_MODULES=ON       &&
-                  # cmake --build build/modules --target testccutl &&
-                  # ./build/modules/test/testccutl
-```
-
-Additionally, there are two recipes for testing using single feature import/include:  
-`make test-modules-single` and `make test-headers-single`
-
-Testing Everything:
-```shell
-make test-all # performs four separate tests
-```
+__note:__ Testing is performed on post-buildsystem preprocessed headers
 
 ## Contributing
 
@@ -206,56 +118,43 @@ Contribution is welcome! Please make a pull request.
 
 C++ is an extremely versatile language, I'd like to make it even more so!
 
+If you have any suggestions, please let me know at m@jpcx.dev or file a bug report.
+
+Make sure to update the submodules in order to begin development.
+
+For general development contributions, read the guide below:
+
+ - Any `.h` files created in the src/ctl directory should work with the existing build system.
+ - Place detail files in the `src/ctl/detail` directory.
+   - These files are not built as standalone units; they are only included if depended on
+ - `#pragma once` must be used for source files due to version guards
+ - Each feature must directly or indirectly include `src/ctl/detail/config.h`
+ - `src` include directories are `-I.` ,`-Iinclude`, and one for each `libs/` library
+   - This is for additional error checking, but the downside is that `make` must be called to see the changes reflected.
+ - All headers must have the same license text structure directly underneath the include guard
+ - Embedded libraries are allowed; place them in `libs/` and add the appropriate `-I` statement to the Makefile
+   - Embedded libraries must be header-only
+ - Each file in `src/` must have a complementary test in `test/src/`.
+
 ## Documentation
 
 [Project documentation](http://jpcx.github.io/ccutl) is generated by Doxygen and is hosted by GitHub Pages.
 
-## Synopsis
+## License
 
-Module | Brief
---- | ---
-ccutl | ccutl Core Utilities
-ccutl.arg_at | returns the argument at index idx
-ccutl.boolean_testable | describes a bool-convertible B that is capable of usual logic operations
-ccutl.different | describes a set of types with at least one variation
-ccutl.eq | equality comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.fwd | perfect reference forwarder
-ccutl.gt | greater-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.gteq | greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.highest | represents the highest number possible for a given arithmetic type
-ccutl.lowest | represents the lowest number possible for a given arithmetic type
-ccutl.lt | less-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.lteq | less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta | module file for contains metaprogramming-specific variants of ccutl features
-ccutl.meta.eq | template equality comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta.gt | template greater-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta.gteq | template greater-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta.lt | template less-than comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta.lteq | template less-than-or-equal-to comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.meta.neq | template non-equality comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.mv | move an rvalue
-ccutl.neq | non-equality comparison of two strongly-ordered three-way comparables or differently-signed integrals
-ccutl.nocv | removes the topmost cv qualifiers on a type
-ccutl.nocvref | removes the topmost cv and reference qualifiers on a type
-ccutl.nontype_pack | Provides a nontype template arg container with transformational utilities
-ccutl.nontype_specialization_of | detects template specializations for nontype-parameter templates (<auto...>)
-ccutl.noref | removes the topmost reference qualifiers on a type
-ccutl.range_of | describes a range-type T that contains Contained
-ccutl.same | describes a set of types with no variation
-ccutl.specializable_with | describes a template that is specializable with given type template args
-ccutl.specialization_of | detects template specializations for type-parameter templates (<class...>)
-ccutl.specializes | requires that a type may be used to specialize a given template
-ccutl.str_eq | performs a lexicographical equality comparison of two stringlike objects
-ccutl.str_gt | performs a lexicographical greater-than comarison of two stringlike objects
-ccutl.str_gteq | performs a lexicographical gteq comarison of two stringlike objects
-ccutl.str_lt | performs a lexicographical less-than comarison of two stringlike objects
-ccutl.str_lteq | performs a lexicographical lteq comarison of two stringlike objects
-ccutl.str_neq | performs a lexicographical non-equality comarison of two stringlike objects
-ccutl.strlen | returns the length of any char range or null-terminated string
-ccutl.subscriptable_to | describes a T whose subscript operator returns a type convertible to SubType
-ccutl.type_at | represents the type template argument at index idx
-ccutl.type_pack | Provides a type template arg container with transformational utilities
+```
+Copyright (C) 2020, 2021 Justin Collier
 
-Macro | Location | Brief
---- | --- | ---
-CCUTL_MAKE_SPECIALIZATION_OF_CONCEPT | `ccutl/macros/make_specialization_of_concept.h` | Creates a concept that can detect template specializations.
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the internalied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>. */
+```

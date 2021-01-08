@@ -21,5 +21,33 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include "ctl/exists.h"
+#include "ctl/different.h"
+#include "ctl/same.h"
+
+#include <cctest.h>
+
+using namespace CCUTL_NAMESPACE;
+
+namespace exists_ {
+
+template <template <class...> class IntableTemplate>
+requires exists<IntableTemplate, int> struct example;
+
+template <ctl::same<int>>
+struct need_int;
+
+template <ctl::different<int>>
+struct need_no_int;
+
+} // namespace exists_
+
+TEST("ccutl.exists") {
+  using namespace exists_;
+  static_assert(exists<need_int, int>);
+  static_assert(!exists<need_int, float>);
+  static_assert(!exists<need_int, int, int>);
+  static_assert(exists<need_no_int, float>);
+  static_assert(!exists<need_no_int, int>);
+  static_assert(!exists<need_no_int, float, float>);
+};

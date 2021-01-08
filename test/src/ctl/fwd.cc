@@ -21,5 +21,22 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/fwd.h"
+#include "ctl/same.h"
+
+using namespace CCUTL_NAMESPACE;
+
+#define MATCHES_FWD(T, t) \
+  same<decltype(std::forward<T>(t)), decltype(fwd<T>(t))>
+
+TEST("ccutl.fwd") {
+  int lv = 32;
+  static_assert(MATCHES_FWD(int, 32));
+  static_assert(MATCHES_FWD(int&, 32));
+  static_assert(MATCHES_FWD(int&&, 32));
+  static_assert(MATCHES_FWD(int, lv));
+  static_assert(MATCHES_FWD(int&, lv));
+  static_assert(MATCHES_FWD(int&&, lv));
+};

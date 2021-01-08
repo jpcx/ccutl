@@ -21,5 +21,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/rmcv.h"
+#include "ctl/same.h"
+#include "ctl/targ.h"
+
+using namespace CCUTL_NAMESPACE;
+
+TEST("ccutl.targ") {
+  static_assert(same<targ<0, int>, int>);
+  static_assert(same<targ<0, int, float>, int>);
+  static_assert(same<targ<1, int, float>, float>);
+  static_assert(same<targ<0, int, float, double>, int>);
+  static_assert(same<targ<1, int, float, double>, float>);
+  static_assert(same<targ<2, int, float, double>, double>);
+};

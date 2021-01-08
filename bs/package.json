@@ -1,0 +1,24 @@
+{
+  "name": "ccutl.bs",
+  "version": "0.1.0",
+  "description": "build system for the ccutl Core Utilities library",
+  "main": "build.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpcx/ccutl.git"
+  },
+  "author": "Justin Collier <m@jpcx.dev>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jpcx/ccutl/issues"
+  },
+  "homepage": "https://github.com/jpcx/ccutl#readme",
+  "dependencies": {
+    "@types/node": "^14.14.17",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}

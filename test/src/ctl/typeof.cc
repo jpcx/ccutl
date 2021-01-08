@@ -6,6 +6,7 @@
 
                               ccutl Core Utilities
 
+    [ccutl.typeof]: defines types that are template<class...> specializations
     Copyright (C) 2020, 2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
@@ -21,5 +22,16 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-#define CCTEST_MAIN
+#include "ctl/typeof.h"
 #include "cctest.h"
+
+#include <array>
+#include <tuple>
+#include <vector>
+
+using namespace CCUTL_NAMESPACE;
+
+TEST("ccutl.typeof") {
+  static_assert(typeof<std::vector<int>, std::vector>);
+  static_assert(!typeof<std::vector<int>, std::tuple>);
+};
