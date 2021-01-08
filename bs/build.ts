@@ -511,9 +511,12 @@ function populateReadmeFeatures(): void {
           feat.featureName.replace(
               /_/g,
               '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
-          feat.relPath}) | ${feat.featureDescr} | \[[doc](${
-          docsLink()})\] \[[raw](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
-          feat.relPath})\]\n`;
+          feat.relPath.replace(/_/g, '\\_')}) | ${
+          feat.featureDescr.replace(/_/g, '\\_')} | [\\[?\\]](${
+          docsLink().replace(
+              /_/g,
+              '\\_')}) [\\[get\\]](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
+          feat.relPath.replace(/_/g, '\\_')})\n`;
     }
   }
   fs.writeFileSync(
