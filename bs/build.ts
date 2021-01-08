@@ -493,8 +493,8 @@ function populateReadmeFeatures(): void {
                 : a.featureName > b.featureName ? 1
                                                 : 0);
   let s = '';
-  s += 'Feature | About\n';
-  s += '--- | ---\n';
+  s += 'Feature | About | Links\n';
+  s += '--- | --- | ---\n';
   for (const feat of sortedFeats) {
     // pardon the spaghetti
     const docsLink = () => {
@@ -511,9 +511,9 @@ function populateReadmeFeatures(): void {
           feat.featureName.replace(
               /_/g,
               '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
-          feat.relPath}) | \[[doc](${
+          feat.relPath}) | ${feat.featureDescr} | \[[doc](${
           docsLink()})\] \[[raw](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
-          feat.relPath})]\] ${feat.featureDescr}\n`;
+          feat.relPath})\]\n`;
     }
   }
   fs.writeFileSync(
