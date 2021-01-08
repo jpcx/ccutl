@@ -96,6 +96,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaa9046b8d5d4ef5d61e2ba0d6137e162a"><td class="memTemplParams" colspan="2">template&lt;std::ranges::input_range R, class Proj  = std::identity, std::indirect_unary_predicate&lt; std::projected&lt; std::ranges::iterator_t&lt; R &gt;, Proj &gt;&gt; Pred&gt; </td></tr>
 <tr class="memitem:gaa9046b8d5d4ef5d61e2ba0d6137e162a"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="index.html#gaa9046b8d5d4ef5d61e2ba0d6137e162a">ctl::found_if</a> (R &amp;&amp;r, Pred pred={}, Proj proj={})</td></tr>
 <tr class="separator:gaa9046b8d5d4ef5d61e2ba0d6137e162a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf30652ee5e93b5930006d1d785771cdc"><td class="memTemplParams" colspan="2">template&lt;detail::streq::stringlike... Strings&gt; </td></tr>
+<tr class="memitem:gaf30652ee5e93b5930006d1d785771cdc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="index.html#gaf30652ee5e93b5930006d1d785771cdc">ctl::requires</a> (sizeof...(Strings) &gt; 1) inline const expr bool streq(Strings &amp;&amp;... strings) noexcept</td></tr>
+<tr class="separator:gaf30652ee5e93b5930006d1d785771cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad2c1abc32bbd2b46417ac943093205a6"><td class="memTemplParams" colspan="2">template&lt;std::integral L, std::integral R&gt; </td></tr>
 <tr class="memitem:gad2c1abc32bbd2b46417ac943093205a6"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::strong_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="index.html#gad2c1abc32bbd2b46417ac943093205a6">ctl::icmp</a> (L l, R r) noexcept</td></tr>
 <tr class="separator:gad2c1abc32bbd2b46417ac943093205a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,7 +160,7 @@ Variables</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;                                                                 \</div>
 <div class="line">      template &lt;<a class="code" href="ccutl_8h.html#a1a67b74725892ac2cd8f4754751d7b91">PPUTL_TUPLE_ARGS</a>(template_params_tuple)&gt; <span class="keyword">class </span>Template_,    \</div>
 <div class="line">      PPUTL_TUPLE_ARGS(template_params_tuple)&gt;                               \</div>
-<div class="line">  concept name = requires {                                                  \</div>
+<div class="line">  concept name = <a class="code" href="index.html#gaf30652ee5e93b5930006d1d785771cdc">requires</a> {                                                  \</div>
 <div class="line">    typename Template_&lt;<a class="code" href="ccutl_8h.html#a1a67b74725892ac2cd8f4754751d7b91">PPUTL_TUPLE_ARGS</a>(template_args_tuple)&gt;;               \</div>
 <div class="line">  }</div>
 </div><!-- fragment --><p>creates a concept for specialization validity. different template parameter layouts require different SFINAE setups; use this macro to create a concept for a given parameter layout.</p>
@@ -180,7 +183,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="comment">// may only be specialized with templates that allow an int- type&lt;int&gt;</span></div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">template</span>&lt;<span class="keyword">class</span>...&gt; <span class="keyword">class </span>IntableTemplate&gt;</div>
-<div class="line">requires exists&lt;IntableTemplate, int&gt;</div>
+<div class="line"><a class="code" href="ccutl_8h.html#a60b884a5a9993c0f2afdec2ac9cb0c06">requires</a> exists&lt;IntableTemplate, int&gt;</div>
 <div class="line"><span class="keyword">struct </span>example;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;ctl::same&lt;<span class="keywordtype">int</span>&gt;&gt;</div>
@@ -756,6 +759,46 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="gaf30652ee5e93b5930006d1d785771cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf30652ee5e93b5930006d1d785771cdc">&#9670;&nbsp;</a></span>requires()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;detail::streq::stringlike... Strings&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ctl::requires </td>
+          <td>(</td>
+          <td class="paramtype">sizeof...&#160;</td>
+          <td class="paramname">Strings, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const &amp;&amp;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>equality comparison of stringlike objects</p>
+<p><a class="anchor" id="streq"></a></p>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ga1cc022956f92e73b506cee39bee679c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1cc022956f92e73b506cee39bee679c7">&#9670;&nbsp;</a></span>different</h2>
@@ -914,12 +957,14 @@ template&lt;class T , template&lt; class... &gt; class Template&gt; </div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aindex.html_gaf4736c2885051d1b33c71e48cb7189de"><div class="ttname"><a href="index.html#gaf4736c2885051d1b33c71e48cb7189de">CTL_TYPEOF_CONCEPT</a></div><div class="ttdeci">#define CTL_TYPEOF_CONCEPT(name, template_params_tuple, template_args_tuple)</div><div class="ttdef"><b>Definition:</b> ccutl.h:1129</div></div>
-<div class="ttc" id="accutl_8h_html_a1a67b74725892ac2cd8f4754751d7b91"><div class="ttname"><a href="ccutl_8h.html#a1a67b74725892ac2cd8f4754751d7b91">PPUTL_TUPLE_ARGS</a></div><div class="ttdeci">#define PPUTL_TUPLE_ARGS(tup)</div><div class="ttdef"><b>Definition:</b> ccutl.h:81</div></div>
-<div class="ttc" id="aindex.html_ga68887be03606ea5af325d633b7841fa8"><div class="ttname"><a href="index.html#ga68887be03606ea5af325d633b7841fa8">CTL_EXISTS_CONCEPT</a></div><div class="ttdeci">#define CTL_EXISTS_CONCEPT(name, template_params_tuple, template_args_tuple)</div><div class="ttdef"><b>Definition:</b> ccutl.h:692</div></div>
-<div class="ttc" id="aindex.html_gab3c63d980e2018035fb37120adc52c3e"><div class="ttname"><a href="index.html#gab3c63d980e2018035fb37120adc52c3e">ctl::exists</a></div><div class="ttdeci">concept exists</div><div class="ttdef"><b>Definition:</b> ccutl.h:821</div></div>
-<div class="ttc" id="accutl_8h_html_a0fb9f0f8e2b6f8b16150122052310fe6"><div class="ttname"><a href="ccutl_8h.html#a0fb9f0f8e2b6f8b16150122052310fe6">PPUTL_CAT</a></div><div class="ttdeci">#define PPUTL_CAT(...)</div><div class="ttdef"><b>Definition:</b> ccutl.h:368</div></div>
-<div class="ttc" id="aindex.html_gad2c1abc32bbd2b46417ac943093205a6"><div class="ttname"><a href="index.html#gad2c1abc32bbd2b46417ac943093205a6">ctl::icmp</a></div><div class="ttdeci">constexpr std::strong_ordering icmp(L l, R r) noexcept</div><div class="ttdef"><b>Definition:</b> ccutl.h:1926</div></div>
+<div class="ttc" id="aindex.html_gaf4736c2885051d1b33c71e48cb7189de"><div class="ttname"><a href="index.html#gaf4736c2885051d1b33c71e48cb7189de">CTL_TYPEOF_CONCEPT</a></div><div class="ttdeci">#define CTL_TYPEOF_CONCEPT(name, template_params_tuple, template_args_tuple)</div><div class="ttdef"><b>Definition:</b> ccutl.h:1130</div></div>
+<div class="ttc" id="accutl_8h_html_a60b884a5a9993c0f2afdec2ac9cb0c06"><div class="ttname"><a href="ccutl_8h.html#a60b884a5a9993c0f2afdec2ac9cb0c06">ctl::detail::streq::requires</a></div><div class="ttdeci">requires(sizeof...(Rest) &gt; 1) inline const expr bool impl(First &amp;&amp;first</div><div class="ttdoc">compare more than two stringlike objects</div></div>
+<div class="ttc" id="accutl_8h_html_a1a67b74725892ac2cd8f4754751d7b91"><div class="ttname"><a href="ccutl_8h.html#a1a67b74725892ac2cd8f4754751d7b91">PPUTL_TUPLE_ARGS</a></div><div class="ttdeci">#define PPUTL_TUPLE_ARGS(tup)</div><div class="ttdef"><b>Definition:</b> ccutl.h:82</div></div>
+<div class="ttc" id="aindex.html_ga68887be03606ea5af325d633b7841fa8"><div class="ttname"><a href="index.html#ga68887be03606ea5af325d633b7841fa8">CTL_EXISTS_CONCEPT</a></div><div class="ttdeci">#define CTL_EXISTS_CONCEPT(name, template_params_tuple, template_args_tuple)</div><div class="ttdef"><b>Definition:</b> ccutl.h:693</div></div>
+<div class="ttc" id="aindex.html_gab3c63d980e2018035fb37120adc52c3e"><div class="ttname"><a href="index.html#gab3c63d980e2018035fb37120adc52c3e">ctl::exists</a></div><div class="ttdeci">concept exists</div><div class="ttdef"><b>Definition:</b> ccutl.h:822</div></div>
+<div class="ttc" id="accutl_8h_html_a0fb9f0f8e2b6f8b16150122052310fe6"><div class="ttname"><a href="ccutl_8h.html#a0fb9f0f8e2b6f8b16150122052310fe6">PPUTL_CAT</a></div><div class="ttdeci">#define PPUTL_CAT(...)</div><div class="ttdef"><b>Definition:</b> ccutl.h:369</div></div>
+<div class="ttc" id="aindex.html_gaf30652ee5e93b5930006d1d785771cdc"><div class="ttname"><a href="index.html#gaf30652ee5e93b5930006d1d785771cdc">ctl::requires</a></div><div class="ttdeci">requires(sizeof...(Strings) &gt; 1) inline const expr bool streq(Strings &amp;&amp;... strings) noexcept</div><div class="ttdef"><b>Definition:</b> ccutl.h:1877</div></div>
+<div class="ttc" id="aindex.html_gad2c1abc32bbd2b46417ac943093205a6"><div class="ttname"><a href="index.html#gad2c1abc32bbd2b46417ac943093205a6">ctl::icmp</a></div><div class="ttdeci">constexpr std::strong_ordering icmp(L l, R r) noexcept</div><div class="ttdef"><b>Definition:</b> ccutl.h:1989</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

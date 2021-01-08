@@ -53,6 +53,7 @@
 <code>#include &lt;concepts&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 </div>
@@ -902,7 +903,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_CONCEPT_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a68f235d5e1be278f6ffed783677bead7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a0f178b97897f750dd1fbf9f0d17aac"><td class="memItemLeft" align="right" valign="top"><a id="a1a0f178b97897f750dd1fbf9f0d17aac"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_CONCEPT_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_CONCEPT_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a1a0f178b97897f750dd1fbf9f0d17aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa73c05db9f1e6ee60b8eb7974a067c3"><td class="memItemLeft" align="right" valign="top"><a id="afa73c05db9f1e6ee60b8eb7974a067c3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCV_INCLUDED</b></td></tr>
@@ -914,7 +915,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCV_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a95a9a5c00a1fb0c304c0f00a05efa1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd0c5c38824f77731f86348887aca24a"><td class="memItemLeft" align="right" valign="top"><a id="afd0c5c38824f77731f86348887aca24a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCV_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCV_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:afd0c5c38824f77731f86348887aca24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d8a5e1289486b9008c285ad686968e"><td class="memItemLeft" align="right" valign="top"><a id="a27d8a5e1289486b9008c285ad686968e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMREF_INCLUDED</b></td></tr>
@@ -926,7 +927,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMREF_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a4a2f0187a99ae86b5f731ad4f9d1bf74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a652a8835080d66e2e96d576b8b1bf052"><td class="memItemLeft" align="right" valign="top"><a id="a652a8835080d66e2e96d576b8b1bf052"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMREF_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMREF_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a652a8835080d66e2e96d576b8b1bf052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1d4728f9c55b68f716ef2c5014da326"><td class="memItemLeft" align="right" valign="top"><a id="af1d4728f9c55b68f716ef2c5014da326"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_INCLUDED</b></td></tr>
@@ -938,7 +939,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a618ea3b5b7cca19a47e743bc9c449a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf693e13e0e28b9c440c55a7a8791b44"><td class="memItemLeft" align="right" valign="top"><a id="abf693e13e0e28b9c440c55a7a8791b44"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_EXISTS_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:abf693e13e0e28b9c440c55a7a8791b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ed01b65debf281ae7fb1892b55394f9"><td class="memItemLeft" align="right" valign="top"><a id="a8ed01b65debf281ae7fb1892b55394f9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FWD_INCLUDED</b></td></tr>
@@ -950,7 +951,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FWD_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:adf60f15ea6e4cc02cdc149e95608c56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e8e0ea1aae1d57cd78141116d8a5d4e"><td class="memItemLeft" align="right" valign="top"><a id="a3e8e0ea1aae1d57cd78141116d8a5d4e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FWD_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FWD_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a3e8e0ea1aae1d57cd78141116d8a5d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0407cc60e1873072c49fcebad7a1a25"><td class="memItemLeft" align="right" valign="top"><a id="aa0407cc60e1873072c49fcebad7a1a25"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_LOWEST_INCLUDED</b></td></tr>
@@ -962,7 +963,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_LOWEST_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a39514a983a35de4de338b5e221d71287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c5d83da4f2e1c251cf9423ee7adab72"><td class="memItemLeft" align="right" valign="top"><a id="a4c5d83da4f2e1c251cf9423ee7adab72"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_LOWEST_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_LOWEST_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a4c5d83da4f2e1c251cf9423ee7adab72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02270dbd59aaed929d43e46b2933ab34"><td class="memItemLeft" align="right" valign="top"><a id="a02270dbd59aaed929d43e46b2933ab34"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCVREF_INCLUDED</b></td></tr>
@@ -974,7 +975,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCVREF_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a558b0bcfee27e1691c1c52e089d9ab89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31fc6dd5aed843b7ada5f07e72815445"><td class="memItemLeft" align="right" valign="top"><a id="a31fc6dd5aed843b7ada5f07e72815445"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCVREF_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_RMCVREF_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a31fc6dd5aed843b7ada5f07e72815445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a038054c23e62ad9dd5d14b673213938d"><td class="memItemLeft" align="right" valign="top"><a id="a038054c23e62ad9dd5d14b673213938d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TARG_INCLUDED</b></td></tr>
@@ -986,7 +987,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TARG_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a052ad0920f581ffba50b1cc00c05253c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2977df2e1798629ed184f233b5f5cbc3"><td class="memItemLeft" align="right" valign="top"><a id="a2977df2e1798629ed184f233b5f5cbc3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TARG_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TARG_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a2977df2e1798629ed184f233b5f5cbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22a4450242b59ab28609562ef5e279fd"><td class="memItemLeft" align="right" valign="top"><a id="a22a4450242b59ab28609562ef5e279fd"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_CONCEPT_INCLUDED</b></td></tr>
@@ -1000,7 +1001,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_CONCEPT_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:ad419f9a3ff01f6e39c37a0a742325ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38add6460e2e8ab1b0f5f8e4c2fc3070"><td class="memItemLeft" align="right" valign="top"><a id="a38add6460e2e8ab1b0f5f8e4c2fc3070"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_CONCEPT_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_CONCEPT_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a38add6460e2e8ab1b0f5f8e4c2fc3070"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01335c8243412aba6bdf6bedc07cfc66"><td class="memItemLeft" align="right" valign="top"><a id="a01335c8243412aba6bdf6bedc07cfc66"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ARG_INCLUDED</b></td></tr>
@@ -1012,7 +1013,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ARG_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a49339f3b4d93077894e1a3a851d7a604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c59624c4470d4dd8051db04d598803c"><td class="memItemLeft" align="right" valign="top"><a id="a2c59624c4470d4dd8051db04d598803c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ARG_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ARG_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a2c59624c4470d4dd8051db04d598803c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dce29ce434a2231dee845840469dd6e"><td class="memItemLeft" align="right" valign="top"><a id="a1dce29ce434a2231dee845840469dd6e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_INCLUDED</b></td></tr>
@@ -1024,7 +1025,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:abcee0d26c27242c7cc59b92c389adc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a647cc9e509a30f45eb906f0b65c5eefd"><td class="memItemLeft" align="right" valign="top"><a id="a647cc9e509a30f45eb906f0b65c5eefd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a647cc9e509a30f45eb906f0b65c5eefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf2a6a795072e83a6a2517ca5617a0f9"><td class="memItemLeft" align="right" valign="top"><a id="adf2a6a795072e83a6a2517ca5617a0f9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_HIGHEST_INCLUDED</b></td></tr>
@@ -1036,7 +1037,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_HIGHEST_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a6d931179366bc7e5150edcc0e7a19bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea013e1d73b2db5604cf5f2a26c4c939"><td class="memItemLeft" align="right" valign="top"><a id="aea013e1d73b2db5604cf5f2a26c4c939"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_HIGHEST_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_HIGHEST_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:aea013e1d73b2db5604cf5f2a26c4c939"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cd939f08ceacd7c78ed04ce2e3b69ea"><td class="memItemLeft" align="right" valign="top"><a id="a0cd939f08ceacd7c78ed04ce2e3b69ea"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_MV_INCLUDED</b></td></tr>
@@ -1048,7 +1049,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_MV_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a44b8fd0003e90e719523c24da6969881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01f12056a20335fe0e2448a30afed2f5"><td class="memItemLeft" align="right" valign="top"><a id="a01f12056a20335fe0e2448a30afed2f5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_MV_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_MV_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a01f12056a20335fe0e2448a30afed2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c7caabe21d04ed3af49f36f7762a377"><td class="memItemLeft" align="right" valign="top"><a id="a1c7caabe21d04ed3af49f36f7762a377"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_INCLUDED</b></td></tr>
@@ -1060,7 +1061,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a1d0e1c8fbe05459eee3fd4e3d77c84f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1d6809f0b7b7bdd4c75cc73bfd6a4a"><td class="memItemLeft" align="right" valign="top"><a id="afa1d6809f0b7b7bdd4c75cc73bfd6a4a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPEOF_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:afa1d6809f0b7b7bdd4c75cc73bfd6a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36977d83a01efc666d1712afe88bf42d"><td class="memItemLeft" align="right" valign="top"><a id="a36977d83a01efc666d1712afe88bf42d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_IF_INCLUDED</b></td></tr>
@@ -1072,7 +1073,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_IF_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:ab8d67281d3229546210a7537df24d263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeea0d618f7e8410ee8115c0e0b8037e"><td class="memItemLeft" align="right" valign="top"><a id="afeea0d618f7e8410ee8115c0e0b8037e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_IF_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_FOUND_IF_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:afeea0d618f7e8410ee8115c0e0b8037e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdaf50caeae1beea5757d47a097c7565"><td class="memItemLeft" align="right" valign="top"><a id="abdaf50caeae1beea5757d47a097c7565"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_SAME_INCLUDED</b></td></tr>
@@ -1084,20 +1085,8 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_SAME_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:ad847518f878595c8b607d2c130eac9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd6fa0f328f85c64b24036bc3d5d46b4"><td class="memItemLeft" align="right" valign="top"><a id="acd6fa0f328f85c64b24036bc3d5d46b4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_SAME_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_SAME_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:acd6fa0f328f85c64b24036bc3d5d46b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3685ccfd4c029dcd30f65a3293b90d9e"><td class="memItemLeft" align="right" valign="top"><a id="a3685ccfd4c029dcd30f65a3293b90d9e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_INCLUDED</b></td></tr>
-<tr class="separator:a3685ccfd4c029dcd30f65a3293b90d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c170063fbe9f7abbd4ed3bb6e0abe26"><td class="memItemLeft" align="right" valign="top"><a id="a5c170063fbe9f7abbd4ed3bb6e0abe26"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_MAJOR</b>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a5c170063fbe9f7abbd4ed3bb6e0abe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa8ba7ac37b6e8c2e6346bebdce65398"><td class="memItemLeft" align="right" valign="top"><a id="afa8ba7ac37b6e8c2e6346bebdce65398"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:afa8ba7ac37b6e8c2e6346bebdce65398"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa14244edc7019b4a042ac810b35a493e"><td class="memItemLeft" align="right" valign="top"><a id="aa14244edc7019b4a042ac810b35a493e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:aa14244edc7019b4a042ac810b35a493e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a669656e485683c0b8b73d473a6660185"><td class="memItemLeft" align="right" valign="top"><a id="a669656e485683c0b8b73d473a6660185"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPE_PACK_INCLUDED</b></td></tr>
 <tr class="separator:a669656e485683c0b8b73d473a6660185"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1108,8 +1097,32 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPE_PACK_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a9efe2232cb8007277a88ba998f93841d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a089a8d83a8721e33671685fcbcb5b495"><td class="memItemLeft" align="right" valign="top"><a id="a089a8d83a8721e33671685fcbcb5b495"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPE_PACK_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_TYPE_PACK_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a089a8d83a8721e33671685fcbcb5b495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3685ccfd4c029dcd30f65a3293b90d9e"><td class="memItemLeft" align="right" valign="top"><a id="a3685ccfd4c029dcd30f65a3293b90d9e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_INCLUDED</b></td></tr>
+<tr class="separator:a3685ccfd4c029dcd30f65a3293b90d9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c170063fbe9f7abbd4ed3bb6e0abe26"><td class="memItemLeft" align="right" valign="top"><a id="a5c170063fbe9f7abbd4ed3bb6e0abe26"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_MAJOR</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a5c170063fbe9f7abbd4ed3bb6e0abe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8ba7ac37b6e8c2e6346bebdce65398"><td class="memItemLeft" align="right" valign="top"><a id="afa8ba7ac37b6e8c2e6346bebdce65398"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:afa8ba7ac37b6e8c2e6346bebdce65398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14244edc7019b4a042ac810b35a493e"><td class="memItemLeft" align="right" valign="top"><a id="aa14244edc7019b4a042ac810b35a493e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_DIFFERENT_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:aa14244edc7019b4a042ac810b35a493e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1841cdb9143427478d1a5ac81b15295c"><td class="memItemLeft" align="right" valign="top"><a id="a1841cdb9143427478d1a5ac81b15295c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_STREQ_INCLUDED</b></td></tr>
+<tr class="separator:a1841cdb9143427478d1a5ac81b15295c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f8db19b2053fd3a24620acab055f23"><td class="memItemLeft" align="right" valign="top"><a id="a52f8db19b2053fd3a24620acab055f23"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_STREQ_VERSION_MAJOR</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a52f8db19b2053fd3a24620acab055f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831e4e4f35156a0ec9026f1a6855a94a"><td class="memItemLeft" align="right" valign="top"><a id="a831e4e4f35156a0ec9026f1a6855a94a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_STREQ_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a831e4e4f35156a0ec9026f1a6855a94a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519f73f599864110cfc92bd1ca199392"><td class="memItemLeft" align="right" valign="top"><a id="a519f73f599864110cfc92bd1ca199392"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_STREQ_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a519f73f599864110cfc92bd1ca199392"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acec9c693e1432309e86303eb59479414"><td class="memItemLeft" align="right" valign="top"><a id="acec9c693e1432309e86303eb59479414"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ICMP_INCLUDED</b></td></tr>
 <tr class="separator:acec9c693e1432309e86303eb59479414"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1120,7 +1133,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ICMP_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a1d15aa34075b445190ca15fe83708638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7b0cd22a9834df64d2736c81e7c46dc"><td class="memItemLeft" align="right" valign="top"><a id="af7b0cd22a9834df64d2736c81e7c46dc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ICMP_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_ICMP_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:af7b0cd22a9834df64d2736c81e7c46dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe334cf270da1d1d0da557ab31cad8a8"><td class="memItemLeft" align="right" valign="top"><a id="abe334cf270da1d1d0da557ab31cad8a8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VALUE_PACK_INCLUDED</b></td></tr>
@@ -1132,7 +1145,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VALUE_PACK_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:afdf3187fee05469ab359143b074b62ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3acc82e2d9a6e7f177e97bcf5684b77"><td class="memItemLeft" align="right" valign="top"><a id="ac3acc82e2d9a6e7f177e97bcf5684b77"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VALUE_PACK_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VALUE_PACK_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:ac3acc82e2d9a6e7f177e97bcf5684b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d718529ff3ab239e6370e4e4c231b02"><td class="memItemLeft" align="right" valign="top"><a id="a1d718529ff3ab239e6370e4e4c231b02"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VERSION_MAJOR</b>&#160;&#160;&#160;0</td></tr>
@@ -1141,7 +1154,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VERSION_MINOR</b>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a1c57a2e1563debcb3dff20688c50297c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfe0436816aee3e0bc391d614a48e92c"><td class="memItemLeft" align="right" valign="top"><a id="adfe0436816aee3e0bc391d614a48e92c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VERSION_PATCH</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_VERSION_PATCH</b>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:adfe0436816aee3e0bc391d614a48e92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
@@ -1209,6 +1222,19 @@ template&lt;template&lt; class... &gt; class Template, class... Ts&gt; </td></tr
 <tr class="memitem:acced106a7180af67e3e320c31b757834"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#acced106a7180af67e3e320c31b757834">CCUTL_NAMESPACE::type_pack</a> (Template&lt; Ts... &gt;) -&gt; type_pack&lt; Ts... &gt;</td></tr>
 <tr class="memdesc:acced106a7180af67e3e320c31b757834"><td class="mdescLeft">&#160;</td><td class="mdescRight">allows for deduction construction from type template objects <br /></td></tr>
 <tr class="separator:acced106a7180af67e3e320c31b757834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f71d36fd075722e5cab9b089066db43"><td class="memTemplParams" colspan="2"><a id="a8f71d36fd075722e5cab9b089066db43"></a>
+template&lt;stringlike A, stringlike B&gt; </td></tr>
+<tr class="memitem:a8f71d36fd075722e5cab9b089066db43"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#a8f71d36fd075722e5cab9b089066db43">CCUTL_NAMESPACE::detail::streq::impl</a> (A &amp;&amp;a, B &amp;&amp;b) noexcept</td></tr>
+<tr class="memdesc:a8f71d36fd075722e5cab9b089066db43"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare two stringlike objects <br /></td></tr>
+<tr class="separator:a8f71d36fd075722e5cab9b089066db43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60b884a5a9993c0f2afdec2ac9cb0c06"><td class="memTemplParams" colspan="2"><a id="a60b884a5a9993c0f2afdec2ac9cb0c06"></a>
+template&lt;stringlike First, stringlike... Rest&gt; </td></tr>
+<tr class="memitem:a60b884a5a9993c0f2afdec2ac9cb0c06"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#a60b884a5a9993c0f2afdec2ac9cb0c06">CCUTL_NAMESPACE::detail::streq::requires</a> (sizeof...(Rest) &gt; 1) inline const expr bool impl(First &amp;&amp;first</td></tr>
+<tr class="memdesc:a60b884a5a9993c0f2afdec2ac9cb0c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare more than two stringlike objects <br /></td></tr>
+<tr class="separator:a60b884a5a9993c0f2afdec2ac9cb0c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf30652ee5e93b5930006d1d785771cdc"><td class="memTemplParams" colspan="2">template&lt;detail::streq::stringlike... Strings&gt; </td></tr>
+<tr class="memitem:gaf30652ee5e93b5930006d1d785771cdc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">CCUTL_NAMESPACE::requires</a> (sizeof...(Strings) &gt; 1) inline const expr bool streq(Strings &amp;&amp;... strings) noexcept</td></tr>
+<tr class="separator:gaf30652ee5e93b5930006d1d785771cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1d540e2692672a27d9fe94481f77720"><td class="memTemplParams" colspan="2">template&lt;std::signed_integral L, std::signed_integral R&gt; </td></tr>
 <tr class="memitem:aa1d540e2692672a27d9fe94481f77720"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::strong_ordering&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#aa1d540e2692672a27d9fe94481f77720">CCUTL_NAMESPACE::detail::icmp::impl</a> (L l, R r)</td></tr>
 <tr class="memdesc:aa1d540e2692672a27d9fe94481f77720"><td class="mdescLeft">&#160;</td><td class="mdescRight">eq comparison of signed integrals  <a href="ccutl_8h.html#aa1d540e2692672a27d9fe94481f77720">More...</a><br /></td></tr>
@@ -1271,6 +1297,12 @@ template&lt;class T &gt; </td></tr>
 <tr class="memitem:ga1cc022956f92e73b506cee39bee679c7"><td class="memTemplParams" colspan="2">template&lt;class... Ts&gt; </td></tr>
 <tr class="memitem:ga1cc022956f92e73b506cee39bee679c7"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__ccutl.html#ga1cc022956f92e73b506cee39bee679c7">CCUTL_NAMESPACE::different</a> = !same&lt;Ts...&gt;</td></tr>
 <tr class="separator:ga1cc022956f92e73b506cee39bee679c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c3604ae3a3527679a3eb82d8ec519cb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1c3604ae3a3527679a3eb82d8ec519cb"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#a1c3604ae3a3527679a3eb82d8ec519cb">CCUTL_NAMESPACE::detail::streq::stringlike</a></td></tr>
+<tr class="memdesc:a1c3604ae3a3527679a3eb82d8ec519cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines types that may construct a string view  <a href="ccutl_8h.html#a1c3604ae3a3527679a3eb82d8ec519cb">More...</a><br /></td></tr>
+<tr class="separator:a1c3604ae3a3527679a3eb82d8ec519cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afff74709cc590f945ab9144141074f0f"><td class="memItemLeft" align="right" valign="top">Rest &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><b>CCUTL_NAMESPACE::detail::streq::rest</b></td></tr>
+<tr class="separator:afff74709cc590f945ab9144141074f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab855ef6c9c80ec2009f2297a56937318"><td class="memTemplParams" colspan="2">template&lt;template&lt; auto... &gt; class Template, auto... vs&gt; </td></tr>
 <tr class="memitem:ab855ef6c9c80ec2009f2297a56937318"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ccutl_8h.html#ab855ef6c9c80ec2009f2297a56937318">CCUTL_NAMESPACE::detail::value_pack::specializable_with_nontypes</a></td></tr>
 <tr class="memdesc:ab855ef6c9c80ec2009f2297a56937318"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if a template is specializable with vs...  <a href="ccutl_8h.html#ab855ef6c9c80ec2009f2297a56937318">More...</a><br /></td></tr>
@@ -1467,7 +1499,7 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    ctl::exists&lt;std::numeric_limits, T&gt;and requires() {</div>
+<div class="line">    ctl::exists&lt;std::numeric_limits, T&gt;and <a class="code" href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">requires</a>() {</div>
 <div class="line">  { <a class="code" href="group__ccutl.html#ga4638e98ad842d20fe0ea86e64a762985">std::numeric_limits&lt;T&gt;::lowest</a>() }</div>
 <div class="line">  -&gt;std::convertible_to&lt;T&gt;;</div>
 <div class="line">}</div>
@@ -1489,13 +1521,29 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">requires</a> {</div>
 <div class="line">  { std::numeric_limits&lt;T&gt;::max() }</div>
 <div class="line">  -&gt;std::convertible_to&lt;T&gt;;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p>checks if std::numeric_limits&lt;Arithmetic&gt;::max() is valid </p>
 
+</div>
+</div>
+<a id="afff74709cc590f945ab9144141074f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afff74709cc590f945ab9144141074f0f">&#9670;&nbsp;</a></span>rest</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rest&amp;&amp; CCUTL_NAMESPACE::detail::streq::rest</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{ </div>
+<div class="line">  <span class="keywordflow">return</span> (<a class="code" href="ccutl_8h.html#a15259bcbbaf8afeb90671143016a99a4">impl</a>(fwd&lt;First&gt;(first), fwd&lt;Rest&gt;(rest)) &amp;&amp; ...)</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab855ef6c9c80ec2009f2297a56937318"></a>
@@ -1511,7 +1559,7 @@ template&lt;template&lt; auto... &gt; class Template, auto... vs&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires() {</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">requires</a>() {</div>
 <div class="line">  <span class="keyword">typename</span> Template&lt;vs...&gt;;</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -1519,9 +1567,32 @@ template&lt;template&lt; auto... &gt; class Template, auto... vs&gt; </div>
 
 </div>
 </div>
+<a id="a1c3604ae3a3527679a3eb82d8ec519cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3604ae3a3527679a3eb82d8ec519cb">&#9670;&nbsp;</a></span>stringlike</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept CCUTL_NAMESPACE::detail::streq::stringlike</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= <a class="code" href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">requires</a>(T&amp;&amp; v) {</div>
+<div class="line">  std::string_view{fwd&lt;T&gt;(v)};</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>defines types that may construct a string view </p>
+
+</div>
+</div>
 </div><!-- contents -->
-<div class="ttc" id="accutl_8h_html_afd887579629b64a5f585ea83fd1c3c3b"><div class="ttname"><a href="ccutl_8h.html#afd887579629b64a5f585ea83fd1c3c3b">PPUTL_NARGS</a></div><div class="ttdeci">#define PPUTL_NARGS(...)</div><div class="ttdef"><b>Definition:</b> ccutl.h:126</div></div>
-<div class="ttc" id="agroup__ccutl_html_ga4638e98ad842d20fe0ea86e64a762985"><div class="ttname"><a href="group__ccutl.html#ga4638e98ad842d20fe0ea86e64a762985">CCUTL_NAMESPACE::lowest</a></div><div class="ttdeci">requires constexpr detail::lowest::has_numeric_limits_lowest&lt; Arithmetic &gt; Arithmetic lowest</div><div class="ttdef"><b>Definition:</b> ccutl.h:955</div></div>
+<div class="ttc" id="accutl_8h_html_afd887579629b64a5f585ea83fd1c3c3b"><div class="ttname"><a href="ccutl_8h.html#afd887579629b64a5f585ea83fd1c3c3b">PPUTL_NARGS</a></div><div class="ttdeci">#define PPUTL_NARGS(...)</div><div class="ttdef"><b>Definition:</b> ccutl.h:127</div></div>
+<div class="ttc" id="agroup__ccutl_html_ga4638e98ad842d20fe0ea86e64a762985"><div class="ttname"><a href="group__ccutl.html#ga4638e98ad842d20fe0ea86e64a762985">CCUTL_NAMESPACE::lowest</a></div><div class="ttdeci">requires constexpr detail::lowest::has_numeric_limits_lowest&lt; Arithmetic &gt; Arithmetic lowest</div><div class="ttdef"><b>Definition:</b> ccutl.h:956</div></div>
+<div class="ttc" id="accutl_8h_html_a15259bcbbaf8afeb90671143016a99a4"><div class="ttname"><a href="ccutl_8h.html#a15259bcbbaf8afeb90671143016a99a4">CCUTL_NAMESPACE::detail::same::impl</a></div><div class="ttdeci">constexpr bool impl() noexcept</div><div class="ttdef"><b>Definition:</b> ccutl.h:1557</div></div>
+<div class="ttc" id="agroup__ccutl_html_gaf30652ee5e93b5930006d1d785771cdc"><div class="ttname"><a href="group__ccutl.html#gaf30652ee5e93b5930006d1d785771cdc">CCUTL_NAMESPACE::requires</a></div><div class="ttdeci">requires(sizeof...(Strings) &gt; 1) inline const expr bool streq(Strings &amp;&amp;... strings) noexcept</div><div class="ttdef"><b>Definition:</b> ccutl.h:1877</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
