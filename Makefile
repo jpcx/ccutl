@@ -50,7 +50,7 @@ TEST_SOURCES = $(patsubst src/%.h, test/src/%.cc, ${SRC_HEADERS}) test/src/main.
 TEST_OBJECTS = $(patsubst test/%.cc, test/.o/%.o, ${TEST_SOURCES})
 
 # rule to make the include directory and everything within it
-include: bs/build.ts ${SRC_HEADERS} libs/pputl/include
+include: bs/build.ts ${SRC_HEADERS} libs/pputl/include README.md
 	bs/node_modules/.bin/ts-node -s $<
 
 # test sources depend on the include dir to be generated

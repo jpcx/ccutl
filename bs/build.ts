@@ -38,6 +38,10 @@ export const srcDir = path.join(rootDir, "src");
 export const libDirs = [ "libs/pputl/include" ].map(x => path.join(rootDir, x))
 /// directory of the exported project headers
 export const outputDir = path.join(rootDir, "include");
+/// path of the root README.md
+export const readmePath = path.join(rootDir, "README.md");
+/// a list of class features; doxygen treats these differently
+export const classes = [ 'ccutl.type_pack', 'ccutl.value_pack' ];
 }
 
 enum HeaderType {
@@ -98,7 +102,7 @@ class Header {
         switch (dep.type) {
         case HeaderType.project:
           if (!projectDeps.find(x => x.relPath === dep.relPath))
-            projectDeps.push(dep);
+            projectDeps.push(<ProjectHeader>dep);
           break;
         case HeaderType.lib:
           if (!libDeps.find(x => x.relPath == dep.relPath))
@@ -247,6 +251,8 @@ class Header {
 };
 
 class ProjectHeader extends Header {
+  public featureName: string;
+  public featureDescr: string;
   constructor(relPath: string) {
     if (PROJECT_HEADERS.find(x => x.relPath === relPath))
       throw new Error(`project header ${
@@ -336,6 +342,16 @@ class ProjectHeader extends Header {
       body,
       relPath
     });
+    this.featureName = name.toLowerCase()
+                           .replace(/^ccutl_/m, 'ccutl.')
+                           .replace(/^ccutl\.detail/m, 'internal');
+    this.featureDescr = copyright.split('\n').reduce((a, v) => {
+      const m = v.match(/\[.*?\]: (.*)/m);
+      if (m)
+        return m[1].trim();
+      else
+        return a;
+    }, '');
     PROJECT_HEADERS.push(this);
   }
 };
@@ -470,6 +486,46 @@ function sortDependencies(): void {
   }
 }
 
+function populateReadmeFeatures(): void {
+  const sortedFeats = [...PROJECT_HEADERS ];
+  sortedFeats.sort(
+      (a, b) => a.featureName < b.featureName   ? -1
+                : a.featureName > b.featureName ? 1
+                                                : 0);
+  let s = '';
+  s += 'Feature | Description | Get\n';
+  s += '--- | --- | ---\n';
+  for (const feat of sortedFeats) {
+    // pardon the spaghetti
+    const docsLink = () => {
+      if (Project.classes.includes(feat.featureName))
+        return `https://jpcx.github.io/ccutl/structctl_1_1${
+            feat.featureName.replace(/^ccutl\./m, '')
+                .replace(/_/g, '__')}.html`;
+      else
+        return `http://jpcx.github.io/ccutl#${
+            feat.featureName.replace(/^ccutl\./m, '')}`;
+    };
+    if (!feat.featureName.match(/^internal/m) && feat.featureName !== 'ccutl') {
+      s += `[${
+          feat.featureName.replace(
+              /_/g,
+              '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
+          feat.relPath}) | \[[doc](${docsLink()})\] ${
+          feat.featureDescr} | \`wget\` [\`https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
+          feat.relPath}\`](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
+          feat.relPath})\n`;
+    }
+  }
+  fs.writeFileSync(
+      Project.readmePath,
+      fs.readFileSync(Project.readmePath, 'utf8')
+          .replace(
+              /^### Synopsis\n[\s\S]+?^### Examples\n/m,
+              `### Synopsis\n\n${s.trim()}\n\n### Examples\n`),
+      'utf8')
+}
+
 // main:
 (() => {
   // generate Header objects for all project headers and dependencies
@@ -494,4 +550,5 @@ function sortDependencies(): void {
         path.join(path.join(Project.outputDir, h.relPath)),
         h.toString() + '\n');
   }
+  populateReadmeFeatures();
 })();
