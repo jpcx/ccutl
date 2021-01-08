@@ -493,8 +493,8 @@ function populateReadmeFeatures(): void {
                 : a.featureName > b.featureName ? 1
                                                 : 0);
   let s = '';
-  s += 'Feature | Description | Get\n';
-  s += '--- | --- | ---\n';
+  s += 'Feature | About\n';
+  s += '--- | ---\n';
   for (const feat of sortedFeats) {
     // pardon the spaghetti
     const docsLink = () => {
@@ -511,10 +511,9 @@ function populateReadmeFeatures(): void {
           feat.featureName.replace(
               /_/g,
               '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
-          feat.relPath}) | \[[doc](${docsLink()})\] ${
-          feat.featureDescr} | \`wget\` [\`https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
-          feat.relPath}\`](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
-          feat.relPath})\n`;
+          feat.relPath}) | \[[doc](${
+          docsLink()})\] \[[raw](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
+          feat.relPath})]\] ${feat.featureDescr}\n`;
     }
   }
   fs.writeFileSync(
@@ -532,8 +531,6 @@ function populateReadmeFeatures(): void {
   collectProjectHeaders();
   expandDependencies();
   sortDependencies();
-  // sort header includes by reference count
-  /* PROJECT_HEADERS.forEach(h => h.sortIncludes(headers)); */
   // delete and recreate destination directory
   if (fs.existsSync(Project.outputDir))
     fs.rmdirSync(Project.outputDir, {recursive : true});
