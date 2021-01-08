@@ -38,7 +38,7 @@ Directly copying this file is the easiest way to use the library.
 As a CMake interface library (target `ccutl`):
 
 - use `add_subdirectory` or `FetchContent`
-- use the CMake install target to install as an interface library
+- use the CMake install target to install the interface
 
 __note:__  
 Preprocessor version checks are provided for each feature.
@@ -111,11 +111,8 @@ __note:__ Testing is performed on post-buildsystem preprocessed headers
 ## Contributing
 
 Contribution is welcome! Please make a pull request.
-
 C++ is an extremely versatile language, I'd like to make it even more so!
-
 If you have any suggestions, please let me know at m@jpcx.dev or file a bug report.
-
 Make sure to update the submodules in order to begin development.
 
 For general development contributions, read the guide below:
@@ -152,5 +149,5 @@ Copyright (C) 2020, 2021 Justin Collier
   GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>. */
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
