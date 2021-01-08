@@ -41,7 +41,7 @@
 - `ccutl.found`: uses `std::ranges::find` to check for the existence of an element
 - `ccutl.found_if`: uses `std::ranges::find_if` to check for the truth of a predicate
 - `ccutl.streq`: equality comparison of stringlike objects
-- `ccutl.icmp`: three-way integral comparison of any signedness
+- `ccutl.icmp`: three-way comparison of integrals of any signedness
 
 ## [0.2.1](https://github.com/jpcx/ccutl/releases/tag/0.2.1) \[[diff](https://github.com/jpcx/ccutl/compare/0.2.0...0.2.1)\]
 

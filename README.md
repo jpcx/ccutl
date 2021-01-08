@@ -102,7 +102,7 @@ using intpair = ctl::type_pack<>       // type_pack<>
 
 ## Testing
 
-All API features are tested using [jpcx/cctest](https://github.com/jpcx/cctest) [embedded]
+All API features are tested using [jpcx/cctest](https://github.com/jpcx/cctest) _[embedded]_
 
 Run `make test` to test on your system.
 
@@ -111,9 +111,9 @@ __note:__ Testing is performed on post-buildsystem preprocessed headers
 ## Contributing
 
 Contribution is welcome! Please make a pull request.
-C++ is an extremely versatile language, I'd like to make it even more so!
+C++ is an extremely versatile language; I'd like to make it even more so!
 If you have any suggestions, please let me know at m@jpcx.dev or file a bug report.
-Make sure to update the submodules in order to begin development.
+Make sure to update the submodules and run `npm i -d` in the `bs` directory in order to begin development.
 
 For general development contributions, read the guide below:
 
