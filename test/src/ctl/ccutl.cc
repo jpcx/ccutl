@@ -73,6 +73,9 @@ TEST("ccutl") {
 #ifndef CCUTL_SAME_INCLUDED
   static_assert(false, "ccutl.same not found");
 #endif
+#ifndef CCUTL_STREQ_INCLUDED
+  static_assert(false, "ccutl.streq not found");
+#endif
 #ifndef CCUTL_TARG_INCLUDED
   static_assert(false, "ccutl.targ not found");
 #endif

@@ -40,6 +40,7 @@
 #include "ctl/rmcvref.h"
 #include "ctl/rmref.h"
 #include "ctl/same.h"
+#include "ctl/streq.h"
 #include "ctl/targ.h"
 #include "ctl/type_pack.h"
 #include "ctl/typeof.h"
