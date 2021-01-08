@@ -88,13 +88,13 @@ using targ = detail::targ::type<idx, Ts...>;
 
 #define CCUTL_TARG_VERSION_MAJOR 0
 #define CCUTL_TARG_VERSION_MINOR 3
-#define CCUTL_TARG_VERSION_PATCH 1
+#define CCUTL_TARG_VERSION_PATCH 2
 
 #elif CCUTL_TARG_VERSION_MAJOR != 0
 #error   ccutl.targ major version mismatch
 #elif CCUTL_TARG_VERSION_MINOR != 3
 #error   ccutl.targ minor version mismatch
-#elif CCUTL_TARG_VERSION_PATCH != 1
+#elif CCUTL_TARG_VERSION_PATCH != 2
 #warning ccutl.targ patch version mismatch
 #endif
 

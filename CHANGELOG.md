@@ -1,6 +1,13 @@
 # Changelog
 
-## [Upcoming](https://github.com/jpcx/ccutl/compare/0.2.1...devel)
+## [Upcoming](https://github.com/jpcx/ccutl/compare/0.3.2...devel)
+
+## [0.3.2](https://github.com/jpcx/ccutl/releases/tag/0.3.2) \[[diff](https://github.com/jpcx/ccutl/compare/0.3.1...0.3.2)\]
+
+### Fixed
+
+- Added `ccutl.streq` to `ccutl.h`
+- Fixed changelog 'upcoming' link
 
 ## [0.3.1](https://github.com/jpcx/ccutl/releases/tag/0.3.1) \[[diff](https://github.com/jpcx/ccutl/compare/0.3.0...0.3.1)\]
 

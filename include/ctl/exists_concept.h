@@ -137,13 +137,13 @@ namespace CCUTL_NAMESPACE {
 
 #define CCUTL_EXISTS_CONCEPT_VERSION_MAJOR 0
 #define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 3
-#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 1
+#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 2
 
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.exists_concept major version mismatch
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 3
 #error   ccutl.exists_concept minor version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 1
+#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 2
 #warning ccutl.exists_concept patch version mismatch
 #endif
 

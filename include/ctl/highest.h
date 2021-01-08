@@ -79,13 +79,13 @@ inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
 
 #define CCUTL_HIGHEST_VERSION_MAJOR 0
 #define CCUTL_HIGHEST_VERSION_MINOR 3
-#define CCUTL_HIGHEST_VERSION_PATCH 1
+#define CCUTL_HIGHEST_VERSION_PATCH 2
 
 #elif CCUTL_HIGHEST_VERSION_MAJOR != 0
 #error   ccutl.highest major version mismatch
 #elif CCUTL_HIGHEST_VERSION_MINOR != 3
 #error   ccutl.highest minor version mismatch
-#elif CCUTL_HIGHEST_VERSION_PATCH != 1
+#elif CCUTL_HIGHEST_VERSION_PATCH != 2
 #warning ccutl.highest patch version mismatch
 #endif
 

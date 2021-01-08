@@ -49,13 +49,13 @@ using rmref = std::remove_reference_t<T>;
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
 #define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 1
+#define CCUTL_RMREF_VERSION_PATCH 2
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
 #elif CCUTL_RMREF_VERSION_MINOR != 3
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 1
+#elif CCUTL_RMREF_VERSION_PATCH != 2
 #warning ccutl.rmref patch version mismatch
 #endif
 

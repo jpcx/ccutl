@@ -713,13 +713,13 @@ namespace CCUTL_NAMESPACE {
 
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR 0
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 3
-#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 1
+#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 2
 
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.typeof_concept major version mismatch
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 3
 #error   ccutl.typeof_concept minor version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 1
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 2
 #warning ccutl.typeof_concept patch version mismatch
 #endif
 
@@ -759,13 +759,13 @@ concept typeof = detail::typeof ::impl<T, Template>;
 
 #define CCUTL_TYPEOF_VERSION_MAJOR 0
 #define CCUTL_TYPEOF_VERSION_MINOR 3
-#define CCUTL_TYPEOF_VERSION_PATCH 1
+#define CCUTL_TYPEOF_VERSION_PATCH 2
 
 #elif CCUTL_TYPEOF_VERSION_MAJOR != 0
 #error   ccutl.typeof major version mismatch
 #elif CCUTL_TYPEOF_VERSION_MINOR != 3
 #error   ccutl.typeof minor version mismatch
-#elif CCUTL_TYPEOF_VERSION_PATCH != 1
+#elif CCUTL_TYPEOF_VERSION_PATCH != 2
 #warning ccutl.typeof patch version mismatch
 #endif
 
