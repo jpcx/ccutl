@@ -29,7 +29,7 @@ namespace Project {
 /// name of the project
 export const name = "ccutl";
 /// version data for header guards
-export const version = [ 0, 3, 0 ];
+export const version = [ 0, 3, 1 ];
 /// root of the project (parent directory)
 export const rootDir = path.join(__dirname, "../")
 /// directory of the project headers (pre-bs)

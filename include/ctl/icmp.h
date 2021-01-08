@@ -86,13 +86,13 @@ inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
 
 #define CCUTL_HIGHEST_VERSION_MAJOR 0
 #define CCUTL_HIGHEST_VERSION_MINOR 3
-#define CCUTL_HIGHEST_VERSION_PATCH 0
+#define CCUTL_HIGHEST_VERSION_PATCH 1
 
 #elif CCUTL_HIGHEST_VERSION_MAJOR != 0
 #error   ccutl.highest major version mismatch
 #elif CCUTL_HIGHEST_VERSION_MINOR != 3
 #error   ccutl.highest minor version mismatch
-#elif CCUTL_HIGHEST_VERSION_PATCH != 0
+#elif CCUTL_HIGHEST_VERSION_PATCH != 1
 #warning ccutl.highest patch version mismatch
 #endif
 
@@ -119,13 +119,13 @@ using rmref = std::remove_reference_t<T>;
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
 #define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 0
+#define CCUTL_RMREF_VERSION_PATCH 1
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
 #elif CCUTL_RMREF_VERSION_MINOR != 3
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 0
+#elif CCUTL_RMREF_VERSION_PATCH != 1
 #warning ccutl.rmref patch version mismatch
 #endif
 
@@ -192,13 +192,13 @@ fwd(rmref<T>&& t) noexcept {
 
 #define CCUTL_FWD_VERSION_MAJOR 0
 #define CCUTL_FWD_VERSION_MINOR 3
-#define CCUTL_FWD_VERSION_PATCH 0
+#define CCUTL_FWD_VERSION_PATCH 1
 
 #elif CCUTL_FWD_VERSION_MAJOR != 0
 #error   ccutl.fwd major version mismatch
 #elif CCUTL_FWD_VERSION_MINOR != 3
 #error   ccutl.fwd minor version mismatch
-#elif CCUTL_FWD_VERSION_PATCH != 0
+#elif CCUTL_FWD_VERSION_PATCH != 1
 #warning ccutl.fwd patch version mismatch
 #endif
 
@@ -298,13 +298,13 @@ icmp(L l, R r) noexcept {
 
 #define CCUTL_ICMP_VERSION_MAJOR 0
 #define CCUTL_ICMP_VERSION_MINOR 3
-#define CCUTL_ICMP_VERSION_PATCH 0
+#define CCUTL_ICMP_VERSION_PATCH 1
 
 #elif CCUTL_ICMP_VERSION_MAJOR != 0
 #error   ccutl.icmp major version mismatch
 #elif CCUTL_ICMP_VERSION_MINOR != 3
 #error   ccutl.icmp minor version mismatch
-#elif CCUTL_ICMP_VERSION_PATCH != 0
+#elif CCUTL_ICMP_VERSION_PATCH != 1
 #warning ccutl.icmp patch version mismatch
 #endif
 

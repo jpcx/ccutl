@@ -146,13 +146,13 @@ namespace CCUTL_NAMESPACE {
 
 #define CCUTL_EXISTS_CONCEPT_VERSION_MAJOR 0
 #define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 3
-#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 0
+#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 1
 
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.exists_concept major version mismatch
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 3
 #error   ccutl.exists_concept minor version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 0
+#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 1
 #warning ccutl.exists_concept patch version mismatch
 #endif
 
@@ -203,13 +203,13 @@ concept exists = detail::exists::impl<Template, Args...>;
 
 #define CCUTL_EXISTS_VERSION_MAJOR 0
 #define CCUTL_EXISTS_VERSION_MINOR 3
-#define CCUTL_EXISTS_VERSION_PATCH 0
+#define CCUTL_EXISTS_VERSION_PATCH 1
 
 #elif CCUTL_EXISTS_VERSION_MAJOR != 0
 #error   ccutl.exists major version mismatch
 #elif CCUTL_EXISTS_VERSION_MINOR != 3
 #error   ccutl.exists minor version mismatch
-#elif CCUTL_EXISTS_VERSION_PATCH != 0
+#elif CCUTL_EXISTS_VERSION_PATCH != 1
 #warning ccutl.exists patch version mismatch
 #endif
 
@@ -261,13 +261,13 @@ inline constexpr Arithmetic lowest = std::numeric_limits<Arithmetic>::lowest();
 
 #define CCUTL_LOWEST_VERSION_MAJOR 0
 #define CCUTL_LOWEST_VERSION_MINOR 3
-#define CCUTL_LOWEST_VERSION_PATCH 0
+#define CCUTL_LOWEST_VERSION_PATCH 1
 
 #elif CCUTL_LOWEST_VERSION_MAJOR != 0
 #error   ccutl.lowest major version mismatch
 #elif CCUTL_LOWEST_VERSION_MINOR != 3
 #error   ccutl.lowest minor version mismatch
-#elif CCUTL_LOWEST_VERSION_PATCH != 0
+#elif CCUTL_LOWEST_VERSION_PATCH != 1
 #warning ccutl.lowest patch version mismatch
 #endif
 

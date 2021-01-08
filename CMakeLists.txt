@@ -26,7 +26,7 @@
 
 cmake_minimum_required (VERSION 3.0)
 project (ccutl
-         VERSION 0.3.0
+         VERSION 0.3.1
          DESCRIPTION "a C++ utilities library focused on flexibility and expressibility"
          HOMEPAGE_URL "https://github.com/jpcx/ccutl"
          LANGUAGES CXX)
