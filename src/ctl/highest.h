@@ -57,7 +57,7 @@ concept arithmetic = std::integral<T> || std::floating_point<T>;
  *   #include "ctl/highest.h"
  *   auto x0 = ctl::highest<int8_t>;  // 127
  *   auto x1 = ctl::highest<int16_t>; // 32767
- *   auto x2 = ctl::highest<float>;   // 3.40282e+38
+ *   auto x2 = ctl::highest<float>;   // 3.40283e+38
  * \endcode
  *
  * \anchor highest

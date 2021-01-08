@@ -5,7 +5,7 @@
 \___| \___| \__,_| \__| _|
 
    ccutl Core Utilities
-          v0.3.0
+          v0.3.1
 ```
 
 ## About
@@ -22,6 +22,10 @@ Development will follow these guidelines:
 
 Essentially, ccutl aims to decrease development time without sacrificing runtime performance.
 
+### Migration Notice
+
+Many features have changed since 0.2.1. Please view the [CHANGELOG](https://github.com/jpcx/ccutl/blob/master/CHANGELOG.md) before updating.
+
 ## Requirements
 
 - C++20 _(developed using the GNU ISO C++ library v10.2.0)_
@@ -30,7 +34,7 @@ Essentially, ccutl aims to decrease development time without sacrificing runtime
 
 Include the `include/` directory or directly copy any of the headers contained within it.
 
-All features are pasted into [`include/ctl/ccutl.h`](https://github.com/jpcx/ccutl/blob/master/include/ctl/ccutl.h)  
+All features are pasted into [`include/ctl/ccutl.h`](https://github.com/jpcx/ccutl/blob/master/include/ctl/ccutl.h).  
 Directly copying this file is the easiest way to use the library.
 
 `wget` [`https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h`](https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h)

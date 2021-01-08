@@ -701,13 +701,13 @@ namespace CCUTL_NAMESPACE {
 
 #define CCUTL_EXISTS_CONCEPT_VERSION_MAJOR 0
 #define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 3
-#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 0
+#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 1
 
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.exists_concept major version mismatch
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 3
 #error   ccutl.exists_concept minor version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 0
+#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 1
 #warning ccutl.exists_concept patch version mismatch
 #endif
 
@@ -734,13 +734,13 @@ using rmcv = std::remove_cv_t<T>;
 
 #define CCUTL_RMCV_VERSION_MAJOR 0
 #define CCUTL_RMCV_VERSION_MINOR 3
-#define CCUTL_RMCV_VERSION_PATCH 0
+#define CCUTL_RMCV_VERSION_PATCH 1
 
 #elif CCUTL_RMCV_VERSION_MAJOR != 0
 #error   ccutl.rmcv major version mismatch
 #elif CCUTL_RMCV_VERSION_MINOR != 3
 #error   ccutl.rmcv minor version mismatch
-#elif CCUTL_RMCV_VERSION_PATCH != 0
+#elif CCUTL_RMCV_VERSION_PATCH != 1
 #warning ccutl.rmcv patch version mismatch
 #endif
 
@@ -767,13 +767,13 @@ using rmref = std::remove_reference_t<T>;
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
 #define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 0
+#define CCUTL_RMREF_VERSION_PATCH 1
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
 #elif CCUTL_RMREF_VERSION_MINOR != 3
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 0
+#elif CCUTL_RMREF_VERSION_PATCH != 1
 #warning ccutl.rmref patch version mismatch
 #endif
 
@@ -824,13 +824,13 @@ concept exists = detail::exists::impl<Template, Args...>;
 
 #define CCUTL_EXISTS_VERSION_MAJOR 0
 #define CCUTL_EXISTS_VERSION_MINOR 3
-#define CCUTL_EXISTS_VERSION_PATCH 0
+#define CCUTL_EXISTS_VERSION_PATCH 1
 
 #elif CCUTL_EXISTS_VERSION_MAJOR != 0
 #error   ccutl.exists major version mismatch
 #elif CCUTL_EXISTS_VERSION_MINOR != 3
 #error   ccutl.exists minor version mismatch
-#elif CCUTL_EXISTS_VERSION_PATCH != 0
+#elif CCUTL_EXISTS_VERSION_PATCH != 1
 #warning ccutl.exists patch version mismatch
 #endif
 
@@ -897,13 +897,13 @@ fwd(rmref<T>&& t) noexcept {
 
 #define CCUTL_FWD_VERSION_MAJOR 0
 #define CCUTL_FWD_VERSION_MINOR 3
-#define CCUTL_FWD_VERSION_PATCH 0
+#define CCUTL_FWD_VERSION_PATCH 1
 
 #elif CCUTL_FWD_VERSION_MAJOR != 0
 #error   ccutl.fwd major version mismatch
 #elif CCUTL_FWD_VERSION_MINOR != 3
 #error   ccutl.fwd minor version mismatch
-#elif CCUTL_FWD_VERSION_PATCH != 0
+#elif CCUTL_FWD_VERSION_PATCH != 1
 #warning ccutl.fwd patch version mismatch
 #endif
 
@@ -942,9 +942,9 @@ concept arithmetic = std::integral<T> || std::floating_point<T>;
  *
  * \code
  *   #include "ctl/lowest.h"
- *   auto x0 = ctl::lowest<int8_t>;  // 127
- *   auto x1 = ctl::lowest<int16_t>; // 32767
- *   auto x2 = ctl::lowest<float>;   // 3.40282e+38
+ *   auto x0 = ctl::lowest<int8_t>;  // -128
+ *   auto x1 = ctl::lowest<int16_t>; // -32768
+ *   auto x2 = ctl::lowest<float>;   // -3.40283e+38
  * \endcode
  *
  * \anchor lowest
@@ -959,13 +959,13 @@ inline constexpr Arithmetic lowest = std::numeric_limits<Arithmetic>::lowest();
 
 #define CCUTL_LOWEST_VERSION_MAJOR 0
 #define CCUTL_LOWEST_VERSION_MINOR 3
-#define CCUTL_LOWEST_VERSION_PATCH 0
+#define CCUTL_LOWEST_VERSION_PATCH 1
 
 #elif CCUTL_LOWEST_VERSION_MAJOR != 0
 #error   ccutl.lowest major version mismatch
 #elif CCUTL_LOWEST_VERSION_MINOR != 3
 #error   ccutl.lowest minor version mismatch
-#elif CCUTL_LOWEST_VERSION_PATCH != 0
+#elif CCUTL_LOWEST_VERSION_PATCH != 1
 #warning ccutl.lowest patch version mismatch
 #endif
 
@@ -992,13 +992,13 @@ using rmcvref = std::remove_cvref_t<T>;
 
 #define CCUTL_RMCVREF_VERSION_MAJOR 0
 #define CCUTL_RMCVREF_VERSION_MINOR 3
-#define CCUTL_RMCVREF_VERSION_PATCH 0
+#define CCUTL_RMCVREF_VERSION_PATCH 1
 
 #elif CCUTL_RMCVREF_VERSION_MAJOR != 0
 #error   ccutl.rmcvref major version mismatch
 #elif CCUTL_RMCVREF_VERSION_MINOR != 3
 #error   ccutl.rmcvref minor version mismatch
-#elif CCUTL_RMCVREF_VERSION_PATCH != 0
+#elif CCUTL_RMCVREF_VERSION_PATCH != 1
 #warning ccutl.rmcvref patch version mismatch
 #endif
 
@@ -1064,13 +1064,13 @@ using targ = detail::targ::type<idx, Ts...>;
 
 #define CCUTL_TARG_VERSION_MAJOR 0
 #define CCUTL_TARG_VERSION_MINOR 3
-#define CCUTL_TARG_VERSION_PATCH 0
+#define CCUTL_TARG_VERSION_PATCH 1
 
 #elif CCUTL_TARG_VERSION_MAJOR != 0
 #error   ccutl.targ major version mismatch
 #elif CCUTL_TARG_VERSION_MINOR != 3
 #error   ccutl.targ minor version mismatch
-#elif CCUTL_TARG_VERSION_PATCH != 0
+#elif CCUTL_TARG_VERSION_PATCH != 1
 #warning ccutl.targ patch version mismatch
 #endif
 
@@ -1155,13 +1155,13 @@ using targ = detail::targ::type<idx, Ts...>;
 
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR 0
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 3
-#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 0
+#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 1
 
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.typeof_concept major version mismatch
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 3
 #error   ccutl.typeof_concept minor version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 0
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 1
 #warning ccutl.typeof_concept patch version mismatch
 #endif
 
@@ -1240,13 +1240,13 @@ arg(Ts &&... args) noexcept {
 
 #define CCUTL_ARG_VERSION_MAJOR 0
 #define CCUTL_ARG_VERSION_MINOR 3
-#define CCUTL_ARG_VERSION_PATCH 0
+#define CCUTL_ARG_VERSION_PATCH 1
 
 #elif CCUTL_ARG_VERSION_MAJOR != 0
 #error   ccutl.arg major version mismatch
 #elif CCUTL_ARG_VERSION_MINOR != 3
 #error   ccutl.arg minor version mismatch
-#elif CCUTL_ARG_VERSION_PATCH != 0
+#elif CCUTL_ARG_VERSION_PATCH != 1
 #warning ccutl.arg patch version mismatch
 #endif
 
@@ -1300,13 +1300,13 @@ found(R&& r, T const& value, Proj proj = {}) { // clang-format on
 
 #define CCUTL_FOUND_VERSION_MAJOR 0
 #define CCUTL_FOUND_VERSION_MINOR 3
-#define CCUTL_FOUND_VERSION_PATCH 0
+#define CCUTL_FOUND_VERSION_PATCH 1
 
 #elif CCUTL_FOUND_VERSION_MAJOR != 0
 #error   ccutl.found major version mismatch
 #elif CCUTL_FOUND_VERSION_MINOR != 3
 #error   ccutl.found minor version mismatch
-#elif CCUTL_FOUND_VERSION_PATCH != 0
+#elif CCUTL_FOUND_VERSION_PATCH != 1
 #warning ccutl.found patch version mismatch
 #endif
 
@@ -1347,7 +1347,7 @@ concept arithmetic = std::integral<T> || std::floating_point<T>;
  *   #include "ctl/highest.h"
  *   auto x0 = ctl::highest<int8_t>;  // 127
  *   auto x1 = ctl::highest<int16_t>; // 32767
- *   auto x2 = ctl::highest<float>;   // 3.40282e+38
+ *   auto x2 = ctl::highest<float>;   // 3.40283e+38
  * \endcode
  *
  * \anchor highest
@@ -1362,13 +1362,13 @@ inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
 
 #define CCUTL_HIGHEST_VERSION_MAJOR 0
 #define CCUTL_HIGHEST_VERSION_MINOR 3
-#define CCUTL_HIGHEST_VERSION_PATCH 0
+#define CCUTL_HIGHEST_VERSION_PATCH 1
 
 #elif CCUTL_HIGHEST_VERSION_MAJOR != 0
 #error   ccutl.highest major version mismatch
 #elif CCUTL_HIGHEST_VERSION_MINOR != 3
 #error   ccutl.highest minor version mismatch
-#elif CCUTL_HIGHEST_VERSION_PATCH != 0
+#elif CCUTL_HIGHEST_VERSION_PATCH != 1
 #warning ccutl.highest patch version mismatch
 #endif
 
@@ -1415,13 +1415,13 @@ mv(T&& t) noexcept {
 
 #define CCUTL_MV_VERSION_MAJOR 0
 #define CCUTL_MV_VERSION_MINOR 3
-#define CCUTL_MV_VERSION_PATCH 0
+#define CCUTL_MV_VERSION_PATCH 1
 
 #elif CCUTL_MV_VERSION_MAJOR != 0
 #error   ccutl.mv major version mismatch
 #elif CCUTL_MV_VERSION_MINOR != 3
 #error   ccutl.mv minor version mismatch
-#elif CCUTL_MV_VERSION_PATCH != 0
+#elif CCUTL_MV_VERSION_PATCH != 1
 #warning ccutl.mv patch version mismatch
 #endif
 
@@ -1465,13 +1465,13 @@ concept typeof = detail::typeof ::impl<T, Template>;
 
 #define CCUTL_TYPEOF_VERSION_MAJOR 0
 #define CCUTL_TYPEOF_VERSION_MINOR 3
-#define CCUTL_TYPEOF_VERSION_PATCH 0
+#define CCUTL_TYPEOF_VERSION_PATCH 1
 
 #elif CCUTL_TYPEOF_VERSION_MAJOR != 0
 #error   ccutl.typeof major version mismatch
 #elif CCUTL_TYPEOF_VERSION_MINOR != 3
 #error   ccutl.typeof minor version mismatch
-#elif CCUTL_TYPEOF_VERSION_PATCH != 0
+#elif CCUTL_TYPEOF_VERSION_PATCH != 1
 #warning ccutl.typeof patch version mismatch
 #endif
 
@@ -1524,13 +1524,13 @@ found_if(R&& r, Pred pred = {}, Proj proj = {}) {
 
 #define CCUTL_FOUND_IF_VERSION_MAJOR 0
 #define CCUTL_FOUND_IF_VERSION_MINOR 3
-#define CCUTL_FOUND_IF_VERSION_PATCH 0
+#define CCUTL_FOUND_IF_VERSION_PATCH 1
 
 #elif CCUTL_FOUND_IF_VERSION_MAJOR != 0
 #error   ccutl.found_if major version mismatch
 #elif CCUTL_FOUND_IF_VERSION_MINOR != 3
 #error   ccutl.found_if minor version mismatch
-#elif CCUTL_FOUND_IF_VERSION_PATCH != 0
+#elif CCUTL_FOUND_IF_VERSION_PATCH != 1
 #warning ccutl.found_if patch version mismatch
 #endif
 
@@ -1589,13 +1589,13 @@ concept same = sizeof...(Ts) > 0 and detail::same::impl<0, Ts...>();
 
 #define CCUTL_SAME_VERSION_MAJOR 0
 #define CCUTL_SAME_VERSION_MINOR 3
-#define CCUTL_SAME_VERSION_PATCH 0
+#define CCUTL_SAME_VERSION_PATCH 1
 
 #elif CCUTL_SAME_VERSION_MAJOR != 0
 #error   ccutl.same major version mismatch
 #elif CCUTL_SAME_VERSION_MINOR != 3
 #error   ccutl.same minor version mismatch
-#elif CCUTL_SAME_VERSION_PATCH != 0
+#elif CCUTL_SAME_VERSION_PATCH != 1
 #warning ccutl.same patch version mismatch
 #endif
 
@@ -1628,13 +1628,13 @@ concept different = !same<Ts...>;
 
 #define CCUTL_DIFFERENT_VERSION_MAJOR 0
 #define CCUTL_DIFFERENT_VERSION_MINOR 3
-#define CCUTL_DIFFERENT_VERSION_PATCH 0
+#define CCUTL_DIFFERENT_VERSION_PATCH 1
 
 #elif CCUTL_DIFFERENT_VERSION_MAJOR != 0
 #error   ccutl.different major version mismatch
 #elif CCUTL_DIFFERENT_VERSION_MINOR != 3
 #error   ccutl.different minor version mismatch
-#elif CCUTL_DIFFERENT_VERSION_PATCH != 0
+#elif CCUTL_DIFFERENT_VERSION_PATCH != 1
 #warning ccutl.different patch version mismatch
 #endif
 
@@ -1821,13 +1821,13 @@ type_pack(Template<Ts...>) -> type_pack<Ts...>;
 
 #define CCUTL_TYPE_PACK_VERSION_MAJOR 0
 #define CCUTL_TYPE_PACK_VERSION_MINOR 3
-#define CCUTL_TYPE_PACK_VERSION_PATCH 0
+#define CCUTL_TYPE_PACK_VERSION_PATCH 1
 
 #elif CCUTL_TYPE_PACK_VERSION_MAJOR != 0
 #error   ccutl.type_pack major version mismatch
 #elif CCUTL_TYPE_PACK_VERSION_MINOR != 3
 #error   ccutl.type_pack minor version mismatch
-#elif CCUTL_TYPE_PACK_VERSION_PATCH != 0
+#elif CCUTL_TYPE_PACK_VERSION_PATCH != 1
 #warning ccutl.type_pack patch version mismatch
 #endif
 
@@ -1931,13 +1931,13 @@ icmp(L l, R r) noexcept {
 
 #define CCUTL_ICMP_VERSION_MAJOR 0
 #define CCUTL_ICMP_VERSION_MINOR 3
-#define CCUTL_ICMP_VERSION_PATCH 0
+#define CCUTL_ICMP_VERSION_PATCH 1
 
 #elif CCUTL_ICMP_VERSION_MAJOR != 0
 #error   ccutl.icmp major version mismatch
 #elif CCUTL_ICMP_VERSION_MINOR != 3
 #error   ccutl.icmp minor version mismatch
-#elif CCUTL_ICMP_VERSION_PATCH != 0
+#elif CCUTL_ICMP_VERSION_PATCH != 1
 #warning ccutl.icmp patch version mismatch
 #endif
 
@@ -2131,13 +2131,13 @@ value_pack(Template<values...>) -> value_pack<values...>;
 
 #define CCUTL_VALUE_PACK_VERSION_MAJOR 0
 #define CCUTL_VALUE_PACK_VERSION_MINOR 3
-#define CCUTL_VALUE_PACK_VERSION_PATCH 0
+#define CCUTL_VALUE_PACK_VERSION_PATCH 1
 
 #elif CCUTL_VALUE_PACK_VERSION_MAJOR != 0
 #error   ccutl.value_pack major version mismatch
 #elif CCUTL_VALUE_PACK_VERSION_MINOR != 3
 #error   ccutl.value_pack minor version mismatch
-#elif CCUTL_VALUE_PACK_VERSION_PATCH != 0
+#elif CCUTL_VALUE_PACK_VERSION_PATCH != 1
 #warning ccutl.value_pack patch version mismatch
 #endif
 
@@ -2151,13 +2151,13 @@ value_pack(Template<values...>) -> value_pack<values...>;
 
 #define CCUTL_VERSION_MAJOR 0
 #define CCUTL_VERSION_MINOR 3
-#define CCUTL_VERSION_PATCH 0
+#define CCUTL_VERSION_PATCH 1
 
 #elif CCUTL_VERSION_MAJOR != 0
 #error   ccutl major version mismatch
 #elif CCUTL_VERSION_MINOR != 3
 #error   ccutl minor version mismatch
-#elif CCUTL_VERSION_PATCH != 0
+#elif CCUTL_VERSION_PATCH != 1
 #warning ccutl patch version mismatch
 #endif
 

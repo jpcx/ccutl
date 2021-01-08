@@ -49,13 +49,13 @@ using rmcv = std::remove_cv_t<T>;
 
 #define CCUTL_RMCV_VERSION_MAJOR 0
 #define CCUTL_RMCV_VERSION_MINOR 3
-#define CCUTL_RMCV_VERSION_PATCH 0
+#define CCUTL_RMCV_VERSION_PATCH 1
 
 #elif CCUTL_RMCV_VERSION_MAJOR != 0
 #error   ccutl.rmcv major version mismatch
 #elif CCUTL_RMCV_VERSION_MINOR != 3
 #error   ccutl.rmcv minor version mismatch
-#elif CCUTL_RMCV_VERSION_PATCH != 0
+#elif CCUTL_RMCV_VERSION_PATCH != 1
 #warning ccutl.rmcv patch version mismatch
 #endif
 
