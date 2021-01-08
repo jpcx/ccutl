@@ -51,7 +51,7 @@ All features are namespaced under `ctl::`; `#define CCUTL_NAMESPACE` to modify.
 
 ### Synopsis
 
-_note: each `include/` header is independent; use the raw links if desired_
+_note: each `include/` header is independent; use the raw links for direct download_
 
 Feature | About | Links
 --- | --- | ---

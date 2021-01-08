@@ -524,7 +524,7 @@ function populateReadmeFeatures(): void {
       fs.readFileSync(Project.readmePath, 'utf8')
           .replace(
               /^### Synopsis\n[\s\S]+?^### Examples\n/m,
-              `### Synopsis\n\n_note: each \`include/\` header is independent; use the raw links if desired_\n\n${
+              `### Synopsis\n\n_note: each \`include/\` header is independent; use the raw links for direct download_\n\n${
                   s.trim()}\n\n### Examples\n`),
       'utf8')
 }
