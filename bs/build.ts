@@ -509,8 +509,7 @@ function populateReadmeFeatures(): void {
     if (!feat.featureName.match(/^internal/m) && feat.featureName !== 'ccutl') {
       s += `[${
           feat.featureName.replace(
-              /_/g,
-              '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
+              /_/g, '\\_')}](https://github.com/jpcx/ccutl/blob/master/src/${
           feat.relPath.replace(
               /_/g,
               '\\_')}) | ${feat.featureDescr.replace(/_/g, '\\_')} | \\[[?](${
@@ -525,7 +524,7 @@ function populateReadmeFeatures(): void {
       fs.readFileSync(Project.readmePath, 'utf8')
           .replace(
               /^### Synopsis\n[\s\S]+?^### Examples\n/m,
-              `### Synopsis\n\n_note: each header is independent; use the raw links if desired_\n\n${
+              `### Synopsis\n\n_note: each \`include/\` header is independent; use the raw links if desired_\n\n${
                   s.trim()}\n\n### Examples\n`),
       'utf8')
 }
