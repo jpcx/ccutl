@@ -21,5 +21,37 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/rmref.h"
+
+using namespace CCUTL_NAMESPACE;
+
+#if __clang__ == 1
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
+#endif
+
+template <class T>
+static constexpr bool matches =
+    std::is_same_v<std::remove_reference_t<T>, rmref<T>>;
+
+TEST("ccutl.rmref") {
+  static_assert(matches<int>);
+  static_assert(matches<int const>);
+  static_assert(matches<int&>);
+  static_assert(matches<int&&>);
+  static_assert(matches<int const&>);
+  static_assert(matches<int const&&>);
+  static_assert(matches<int volatile>);
+  static_assert(matches<int volatile&>);
+  static_assert(matches<int volatile&&>);
+  static_assert(matches<int volatile const&>);
+  static_assert(matches<int volatile const&&>);
+};
+
+#if __clang__ == 1
+#pragma clang diagnostic pop
+#endif

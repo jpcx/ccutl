@@ -21,5 +21,29 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include "ctl/exists_concept.h"
+#include "ctl/different.h"
+#include "ctl/same.h"
+
+#include <cctest.h>
+
+namespace exists_concept_ {
+
+CTL_EXISTS_CONCEPT(exists, (class... Ts), (Ts...));
+
+template <template <class...> class IntableTemplate>
+requires exists<IntableTemplate, int> struct example;
+
+template <ctl::same<int>>
+struct good;
+
+template <ctl::different<int>>
+struct bad;
+
+} // namespace exists_concept_
+
+TEST("ccutl.exists_concept") {
+  using namespace exists_concept_;
+  static_assert(exists<good, int>);
+  static_assert(!exists<bad, int>);
+};

@@ -27,5 +27,5 @@ BinPackArguments                          : true
 BinPackParameters                         : true
 PointerAlignment                          : Left
 ColumnLimit                               : 80
-Language                                  : Cpp
+Language                                  : JavaScript
 Standard                                  : c++20

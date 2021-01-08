@@ -21,5 +21,34 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
+#include "ctl/typeof_concept.h"
 #include "cctest.h"
+
+#include <array>
+#include <tuple>
+#include <vector>
+
+namespace typeof_concept_ {
+
+template <auto... vs>
+struct nontype_collection {
+  static constexpr bool data = std::tuple{vs...};
+};
+
+CTL_TYPEOF_CONCEPT(type_typeof, (class... Ts), (Ts...));
+
+CTL_TYPEOF_CONCEPT(type_size_typeof, (class T, std::size_t sz), (T, sz));
+
+CTL_TYPEOF_CONCEPT(nontype_typeof, (auto... vs), (vs...));
+
+} // namespace typeof_concept_
+
+TEST("ccutl.typeof_concept") {
+  using namespace typeof_concept_;
+  static_assert(type_typeof<std::vector<int>, std::vector>);
+  static_assert(!type_typeof<std::vector<int>, std::tuple>);
+  static_assert(type_size_typeof<std::array<int, 3>, std::array>);
+  static_assert(!type_size_typeof<std::tuple<int>, std::array>);
+  static_assert(
+      nontype_typeof<nontype_collection<1, 2, 3>, nontype_collection>);
+};

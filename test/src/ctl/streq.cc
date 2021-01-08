@@ -21,5 +21,21 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
+#include <string>
+
 #include "cctest.h"
+
+#include "ctl/streq.h"
+
+using namespace CCUTL_NAMESPACE;
+using namespace std;
+
+TEST("ccutl.streq") {
+  static_assert(streq("foo", "foo"));
+  static_assert(streq("foo", "foo", "foo"));
+  static_assert(!streq("foo", "foo", "bar"));
+  static_assert(!streq("foo", "fooo"));
+  ASSERT(streq("foo", string{"foo"}));
+  ASSERT(streq("foo", string{"foo"}, "foo"));
+  ASSERT(!streq("foo", string{"foo"}, "fooo"));
+};

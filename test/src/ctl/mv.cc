@@ -21,5 +21,17 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/mv.h"
+#include "ctl/same.h"
+
+using namespace CCUTL_NAMESPACE;
+
+#define MATCHES_MV(t) same<decltype(std::move(t)), decltype(mv(t))>
+
+TEST("ccutl.mv") {
+  int lv = 32;
+  static_assert(MATCHES_MV(32));
+  static_assert(MATCHES_MV(lv));
+};

@@ -1,3 +1,4 @@
+#pragma once
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -6,7 +7,8 @@
 
                               ccutl Core Utilities
 
-    Copyright (C) 2020, 2021 Justin Collier
+    [ccutl.rmcvref]: shorthand for std::remove_cvref_t
+    Copyright (C) 2020-2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
       it under the terms of the GNU General Public License as published by
@@ -21,5 +23,19 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include <type_traits>
+
+#include "src/ctl/detail/config.h"
+
+namespace CCUTL_NAMESPACE {
+
+/**
+ * shorthand for std::remove_cvref_t
+ *
+ * \anchor rmcvref
+ * \ingroup ccutl
+ */
+template <class T>
+using rmcvref = std::remove_cvref_t<T>;
+
+} // namespace CCUTL_NAMESPACE

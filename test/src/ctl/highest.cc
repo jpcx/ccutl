@@ -21,5 +21,34 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include <cmath>
+#include <limits>
+
+#include "ctl/highest.h"
+
+using namespace CCUTL_NAMESPACE;
+
+template <class T>
+inline constexpr auto integral_matches_limits = highest<T> ==
+                                                std::numeric_limits<T>::max();
+
+template <class T>
+inline auto floating_matches_limits =
+    !std::islessgreater(highest<T>, std::numeric_limits<T>::max());
+
+TEST("ccutl.highest") {
+  static_assert(integral_matches_limits<int>);
+  static_assert(integral_matches_limits<short>);
+  static_assert(integral_matches_limits<long>);
+  static_assert(integral_matches_limits<long long>);
+  static_assert(integral_matches_limits<unsigned int>);
+  static_assert(integral_matches_limits<unsigned short>);
+  static_assert(integral_matches_limits<unsigned long>);
+  static_assert(integral_matches_limits<unsigned long long>);
+
+  ASSERT(floating_matches_limits<float>);
+  ASSERT(floating_matches_limits<double>);
+  ASSERT(floating_matches_limits<long double>);
+};

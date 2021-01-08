@@ -1,3 +1,4 @@
+#pragma once
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -6,6 +7,7 @@
 
                               ccutl Core Utilities
 
+    [ccutl.typeof]: defines types that are template<class...> specializations
     Copyright (C) 2020, 2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
@@ -21,5 +23,36 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include "ctl/typeof_concept.h"
+
+namespace CCUTL_NAMESPACE {
+
+// detail {{{
+namespace detail {
+namespace typeof { // clang-format off
+/// generated concept implementation for typeof
+CTL_TYPEOF_CONCEPT(impl, (class... Ts), (Ts...)); // clang-format on
+} // namespace typeof
+} // namespace detail
+// detail }}}
+
+/**
+ * Detects template specializations for type-parameter templates (<class...>)
+ *
+ * \code
+ *   #include <tuple>
+ *   #include "ctl/typeof.h"
+ *   using std::tuple;
+ *   auto x0 = ctl::typeof<tuple<int, int>, tuple>; // true
+ *   auto x1 = ctl::typeof<tuple<int, int>, pair>;  // false
+ * \endcode
+ *
+ * \anchor typeof
+ * \ingroup ccutl
+ */
+template <class T, template <class...> class Template>
+concept typeof = detail::typeof ::impl<T, Template>;
+
+} // namespace CCUTL_NAMESPACE
+
+// vim: fmr={{{,}}} fdm=marker

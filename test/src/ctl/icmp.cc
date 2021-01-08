@@ -21,5 +21,30 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
-#include "cctest.h"
+#include <cctest.h>
+
+#include "ctl/icmp.h"
+
+using namespace CCUTL_NAMESPACE;
+
+TEST("ccutl.icmp") {
+  static_assert(icmp(0, 0) == std::strong_ordering::equal);
+  static_assert(icmp(0, 0u) == std::strong_ordering::equal);
+  static_assert(icmp(0u, 0) == std::strong_ordering::equal);
+  static_assert(icmp(0u, 0u) == std::strong_ordering::equal);
+
+  static_assert(icmp(0, 1) == std::strong_ordering::less);
+  static_assert(icmp(1, 0u) == std::strong_ordering::greater);
+  static_assert(icmp(0u, 1) == std::strong_ordering::less);
+
+  static_assert(icmp(0, 1u) == std::strong_ordering::less);
+  static_assert(icmp(1u, 0) == std::strong_ordering::greater);
+  static_assert(icmp(1u, 1u) == std::strong_ordering::equal);
+
+  static_assert(icmp(-1, -1) == std::strong_ordering::equal);
+  static_assert(icmp(-1, 0u) == std::strong_ordering::less);
+  static_assert(icmp(0u, -1) == std::strong_ordering::greater);
+
+  static_assert(icmp(-1, 1) == std::strong_ordering::less);
+  static_assert(icmp(1, -1) == std::strong_ordering::greater);
+};

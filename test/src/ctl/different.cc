@@ -21,5 +21,21 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-#define CCTEST_MAIN
 #include "cctest.h"
+
+#include "ctl/different.h"
+
+using namespace CCUTL_NAMESPACE;
+
+TEST("ccutl.different") {
+  static_assert(!different<int>);
+  static_assert(!different<int, int>);
+  static_assert(!different<int, int, int>);
+  static_assert(!different<char*>);
+  static_assert(!different<char*, char*>);
+  static_assert(!different<char*, char*, char*>);
+  static_assert(different<int, char*>);
+  static_assert(different<int, char*, char*>);
+  static_assert(different<char*, int, char*>);
+  static_assert(different<char*, char*, int>);
+};
