@@ -833,7 +833,7 @@ template&lt;detail::highest::arithmetic Arithmetic&gt; </div>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ctl/highest.h&quot;</span></div>
 <div class="line"><span class="keyword">auto</span> x0 = ctl::highest&lt;int8_t&gt;;  <span class="comment">// 127</span></div>
 <div class="line"><span class="keyword">auto</span> x1 = ctl::highest&lt;int16_t&gt;; <span class="comment">// 32767</span></div>
-<div class="line"><span class="keyword">auto</span> x2 = ctl::highest&lt;float&gt;;   <span class="comment">// 3.40282e+38</span></div>
+<div class="line"><span class="keyword">auto</span> x2 = ctl::highest&lt;float&gt;;   <span class="comment">// 3.40283e+38</span></div>
 </div><!-- fragment --><p><a class="anchor" id="highest"></a></p>
 
 </div>
@@ -862,9 +862,9 @@ template&lt;detail::lowest::arithmetic Arithmetic&gt; </div>
 <p>represents the lowest number possible for a given arithmetic type</p>
 <dl class="section note"><dt>Note</dt><dd>mirrors <a class="el" href="index.html#ga4638e98ad842d20fe0ea86e64a762985">std::numeric_limits&lt;T&gt;::lowest()</a></dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ctl/lowest.h&quot;</span></div>
-<div class="line"><span class="keyword">auto</span> x0 = ctl::lowest&lt;int8_t&gt;;  <span class="comment">// 127</span></div>
-<div class="line"><span class="keyword">auto</span> x1 = ctl::lowest&lt;int16_t&gt;; <span class="comment">// 32767</span></div>
-<div class="line"><span class="keyword">auto</span> x2 = ctl::lowest&lt;float&gt;;   <span class="comment">// 3.40282e+38</span></div>
+<div class="line"><span class="keyword">auto</span> x0 = ctl::lowest&lt;int8_t&gt;;  <span class="comment">// -128</span></div>
+<div class="line"><span class="keyword">auto</span> x1 = ctl::lowest&lt;int16_t&gt;; <span class="comment">// -32768</span></div>
+<div class="line"><span class="keyword">auto</span> x2 = ctl::lowest&lt;float&gt;;   <span class="comment">// -3.40283e+38</span></div>
 </div><!-- fragment --><p><a class="anchor" id="lowest"></a></p>
 
 </div>
