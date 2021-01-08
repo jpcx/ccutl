@@ -242,9 +242,9 @@ concept arithmetic = std::integral<T> || std::floating_point<T>;
  *
  * \code
  *   #include "ctl/lowest.h"
- *   auto x0 = ctl::lowest<int8_t>;  // 127
- *   auto x1 = ctl::lowest<int16_t>; // 32767
- *   auto x2 = ctl::lowest<float>;   // 3.40282e+38
+ *   auto x0 = ctl::lowest<int8_t>;  // -128
+ *   auto x1 = ctl::lowest<int16_t>; // -32768
+ *   auto x2 = ctl::lowest<float>;   // -3.40283e+38
  * \endcode
  *
  * \anchor lowest
