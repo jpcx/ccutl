@@ -511,12 +511,13 @@ function populateReadmeFeatures(): void {
           feat.featureName.replace(
               /_/g,
               '\\_')}](https://github.com/jpcx/ccutl/blob/master/include/${
-          feat.relPath.replace(/_/g, '\\_')}) | ${
-          feat.featureDescr.replace(/_/g, '\\_')} | [\\[?\\]](${
+          feat.relPath.replace(
+              /_/g,
+              '\\_')}) | ${feat.featureDescr.replace(/_/g, '\\_')} | \\[[?](${
           docsLink().replace(
               /_/g,
-              '\\_')}) [\\[get\\]](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
-          feat.relPath.replace(/_/g, '\\_')})\n`;
+              '\\_')})\\] \\[[raw](https://raw.githubusercontent.com/jpcx/ccutl/master/include/${
+          feat.relPath.replace(/_/g, '\\_')})\\]\n`;
     }
   }
   fs.writeFileSync(
@@ -524,7 +525,8 @@ function populateReadmeFeatures(): void {
       fs.readFileSync(Project.readmePath, 'utf8')
           .replace(
               /^### Synopsis\n[\s\S]+?^### Examples\n/m,
-              `### Synopsis\n\n${s.trim()}\n\n### Examples\n`),
+              `### Synopsis\n\n_note: each header is independent; use the raw links if desired_\n\n${
+                  s.trim()}\n\n### Examples\n`),
       'utf8')
 }
 
