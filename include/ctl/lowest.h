@@ -1,7 +1,7 @@
-//                                                 ccutl.lowest include guard {{{
+//                                                ccutl.lowest feature guard {{{
 #ifndef CCUTL_LOWEST_INCLUDED
 #define CCUTL_LOWEST_INCLUDED
-//                                                 ccutl.lowest include guard }}}
+//                                                ccutl.lowest feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -90,10 +90,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                      ccutl.exists_concept {{{
 
-//                                         ccutl.exists_concept include guard {{{
+//                                        ccutl.exists_concept feature guard {{{
 #ifndef CCUTL_EXISTS_CONCEPT_INCLUDED
 #define CCUTL_EXISTS_CONCEPT_INCLUDED
-//                                         ccutl.exists_concept include guard }}}
+//                                        ccutl.exists_concept feature guard }}}
 
 /**
  * creates a concept for specialization validity.
@@ -161,10 +161,10 @@ namespace CCUTL_NAMESPACE {
 //                                                      ccutl.exists_concept }}}
 //                                                              ccutl.exists {{{
 
-//                                                 ccutl.exists include guard {{{
+//                                                ccutl.exists feature guard {{{
 #ifndef CCUTL_EXISTS_INCLUDED
 #define CCUTL_EXISTS_INCLUDED
-//                                                 ccutl.exists include guard }}}
+//                                                ccutl.exists feature guard }}}
 
 // detail {{{
 namespace detail {

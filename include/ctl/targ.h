@@ -1,7 +1,7 @@
-//                                                   ccutl.targ include guard {{{
+//                                                  ccutl.targ feature guard {{{
 #ifndef CCUTL_TARG_INCLUDED
 #define CCUTL_TARG_INCLUDED
-//                                                   ccutl.targ include guard }}}
+//                                                  ccutl.targ feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |

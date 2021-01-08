@@ -1,7 +1,7 @@
-//                                                        ccutl include guard {{{
+//                                                       ccutl feature guard {{{
 #ifndef CCUTL_INCLUDED
 #define CCUTL_INCLUDED
-//                                                        ccutl include guard }}}
+//                                                       ccutl feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -645,10 +645,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                      ccutl.exists_concept {{{
 
-//                                         ccutl.exists_concept include guard {{{
+//                                        ccutl.exists_concept feature guard {{{
 #ifndef CCUTL_EXISTS_CONCEPT_INCLUDED
 #define CCUTL_EXISTS_CONCEPT_INCLUDED
-//                                         ccutl.exists_concept include guard }}}
+//                                        ccutl.exists_concept feature guard }}}
 
 /**
  * creates a concept for specialization validity.
@@ -716,10 +716,10 @@ namespace CCUTL_NAMESPACE {
 //                                                      ccutl.exists_concept }}}
 //                                                                ccutl.rmcv {{{
 
-//                                                   ccutl.rmcv include guard {{{
+//                                                  ccutl.rmcv feature guard {{{
 #ifndef CCUTL_RMCV_INCLUDED
 #define CCUTL_RMCV_INCLUDED
-//                                                   ccutl.rmcv include guard }}}
+//                                                  ccutl.rmcv feature guard }}}
 
 /**
  * shorthand for std::remove_cv_t
@@ -749,10 +749,10 @@ using rmcv = std::remove_cv_t<T>;
 //                                                                ccutl.rmcv }}}
 //                                                               ccutl.rmref {{{
 
-//                                                  ccutl.rmref include guard {{{
+//                                                 ccutl.rmref feature guard {{{
 #ifndef CCUTL_RMREF_INCLUDED
 #define CCUTL_RMREF_INCLUDED
-//                                                  ccutl.rmref include guard }}}
+//                                                 ccutl.rmref feature guard }}}
 
 /**
  * shorthand for std::remove_reference_t
@@ -782,10 +782,10 @@ using rmref = std::remove_reference_t<T>;
 //                                                               ccutl.rmref }}}
 //                                                              ccutl.exists {{{
 
-//                                                 ccutl.exists include guard {{{
+//                                                ccutl.exists feature guard {{{
 #ifndef CCUTL_EXISTS_INCLUDED
 #define CCUTL_EXISTS_INCLUDED
-//                                                 ccutl.exists include guard }}}
+//                                                ccutl.exists feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -839,10 +839,10 @@ concept exists = detail::exists::impl<Template, Args...>;
 //                                                              ccutl.exists }}}
 //                                                                 ccutl.fwd {{{
 
-//                                                    ccutl.fwd include guard {{{
+//                                                   ccutl.fwd feature guard {{{
 #ifndef CCUTL_FWD_INCLUDED
 #define CCUTL_FWD_INCLUDED
-//                                                    ccutl.fwd include guard }}}
+//                                                   ccutl.fwd feature guard }}}
 
 /*
 
@@ -912,10 +912,10 @@ fwd(rmref<T>&& t) noexcept {
 //                                                                 ccutl.fwd }}}
 //                                                              ccutl.lowest {{{
 
-//                                                 ccutl.lowest include guard {{{
+//                                                ccutl.lowest feature guard {{{
 #ifndef CCUTL_LOWEST_INCLUDED
 #define CCUTL_LOWEST_INCLUDED
-//                                                 ccutl.lowest include guard }}}
+//                                                ccutl.lowest feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -974,10 +974,10 @@ inline constexpr Arithmetic lowest = std::numeric_limits<Arithmetic>::lowest();
 //                                                              ccutl.lowest }}}
 //                                                             ccutl.rmcvref {{{
 
-//                                                ccutl.rmcvref include guard {{{
+//                                               ccutl.rmcvref feature guard {{{
 #ifndef CCUTL_RMCVREF_INCLUDED
 #define CCUTL_RMCVREF_INCLUDED
-//                                                ccutl.rmcvref include guard }}}
+//                                               ccutl.rmcvref feature guard }}}
 
 /**
  * shorthand for std::remove_cvref_t
@@ -1007,10 +1007,10 @@ using rmcvref = std::remove_cvref_t<T>;
 //                                                             ccutl.rmcvref }}}
 //                                                                ccutl.targ {{{
 
-//                                                   ccutl.targ include guard {{{
+//                                                  ccutl.targ feature guard {{{
 #ifndef CCUTL_TARG_INCLUDED
 #define CCUTL_TARG_INCLUDED
-//                                                   ccutl.targ include guard }}}
+//                                                  ccutl.targ feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1079,10 +1079,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                                ccutl.targ }}}
 //                                                      ccutl.typeof_concept {{{
 
-//                                         ccutl.typeof_concept include guard {{{
+//                                        ccutl.typeof_concept feature guard {{{
 #ifndef CCUTL_TYPEOF_CONCEPT_INCLUDED
 #define CCUTL_TYPEOF_CONCEPT_INCLUDED
-//                                         ccutl.typeof_concept include guard }}}
+//                                        ccutl.typeof_concept feature guard }}}
 
 /**
  * creates a template spececialization detection concept.
@@ -1170,10 +1170,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                      ccutl.typeof_concept }}}
 //                                                                 ccutl.arg {{{
 
-//                                                    ccutl.arg include guard {{{
+//                                                   ccutl.arg feature guard {{{
 #ifndef CCUTL_ARG_INCLUDED
 #define CCUTL_ARG_INCLUDED
-//                                                    ccutl.arg include guard }}}
+//                                                   ccutl.arg feature guard }}}
 
 /*                                                        */ // clang-format off
 
@@ -1255,10 +1255,10 @@ arg(Ts &&... args) noexcept {
 //                                                                 ccutl.arg }}}
 //                                                               ccutl.found {{{
 
-//                                                  ccutl.found include guard {{{
+//                                                 ccutl.found feature guard {{{
 #ifndef CCUTL_FOUND_INCLUDED
 #define CCUTL_FOUND_INCLUDED
-//                                                  ccutl.found include guard }}}
+//                                                 ccutl.found feature guard }}}
 
 // thanks to https://en.cppreference.com/w/cpp/algorithm/ranges/find
 // for the std::find documentation
@@ -1315,10 +1315,10 @@ found(R&& r, T const& value, Proj proj = {}) { // clang-format on
 //                                                               ccutl.found }}}
 //                                                             ccutl.highest {{{
 
-//                                                ccutl.highest include guard {{{
+//                                               ccutl.highest feature guard {{{
 #ifndef CCUTL_HIGHEST_INCLUDED
 #define CCUTL_HIGHEST_INCLUDED
-//                                                ccutl.highest include guard }}}
+//                                               ccutl.highest feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1377,10 +1377,10 @@ inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
 //                                                             ccutl.highest }}}
 //                                                                  ccutl.mv {{{
 
-//                                                     ccutl.mv include guard {{{
+//                                                    ccutl.mv feature guard {{{
 #ifndef CCUTL_MV_INCLUDED
 #define CCUTL_MV_INCLUDED
-//                                                     ccutl.mv include guard }}}
+//                                                    ccutl.mv feature guard }}}
 
 /*
 
@@ -1430,10 +1430,10 @@ mv(T&& t) noexcept {
 //                                                                  ccutl.mv }}}
 //                                                              ccutl.typeof {{{
 
-//                                                 ccutl.typeof include guard {{{
+//                                                ccutl.typeof feature guard {{{
 #ifndef CCUTL_TYPEOF_INCLUDED
 #define CCUTL_TYPEOF_INCLUDED
-//                                                 ccutl.typeof include guard }}}
+//                                                ccutl.typeof feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1480,10 +1480,10 @@ concept typeof = detail::typeof ::impl<T, Template>;
 //                                                              ccutl.typeof }}}
 //                                                            ccutl.found_if {{{
 
-//                                               ccutl.found_if include guard {{{
+//                                              ccutl.found_if feature guard {{{
 #ifndef CCUTL_FOUND_IF_INCLUDED
 #define CCUTL_FOUND_IF_INCLUDED
-//                                               ccutl.found_if include guard }}}
+//                                              ccutl.found_if feature guard }}}
 
 // thanks to https://en.cppreference.com/w/cpp/algorithm/ranges/find
 // for the std::find_if documentation
@@ -1539,10 +1539,10 @@ found_if(R&& r, Pred pred = {}, Proj proj = {}) {
 //                                                            ccutl.found_if }}}
 //                                                                ccutl.same {{{
 
-//                                                   ccutl.same include guard {{{
+//                                                  ccutl.same feature guard {{{
 #ifndef CCUTL_SAME_INCLUDED
 #define CCUTL_SAME_INCLUDED
-//                                                   ccutl.same include guard }}}
+//                                                  ccutl.same feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1604,10 +1604,10 @@ concept same = sizeof...(Ts) > 0 and detail::same::impl<0, Ts...>();
 //                                                                ccutl.same }}}
 //                                                           ccutl.different {{{
 
-//                                              ccutl.different include guard {{{
+//                                             ccutl.different feature guard {{{
 #ifndef CCUTL_DIFFERENT_INCLUDED
 #define CCUTL_DIFFERENT_INCLUDED
-//                                              ccutl.different include guard }}}
+//                                             ccutl.different feature guard }}}
 
 /**
  * describes a set of types with at least one variation
@@ -1643,10 +1643,10 @@ concept different = !same<Ts...>;
 //                                                           ccutl.different }}}
 //                                                           ccutl.type_pack {{{
 
-//                                              ccutl.type_pack include guard {{{
+//                                             ccutl.type_pack feature guard {{{
 #ifndef CCUTL_TYPE_PACK_INCLUDED
 #define CCUTL_TYPE_PACK_INCLUDED
-//                                              ccutl.type_pack include guard }}}
+//                                             ccutl.type_pack feature guard }}}
 
 // {{{ detail
 template <class...>
@@ -1836,10 +1836,10 @@ type_pack(Template<Ts...>) -> type_pack<Ts...>;
 //                                                           ccutl.type_pack }}}
 //                                                                ccutl.icmp {{{
 
-//                                                   ccutl.icmp include guard {{{
+//                                                  ccutl.icmp feature guard {{{
 #ifndef CCUTL_ICMP_INCLUDED
 #define CCUTL_ICMP_INCLUDED
-//                                                   ccutl.icmp include guard }}}
+//                                                  ccutl.icmp feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1946,10 +1946,10 @@ icmp(L l, R r) noexcept {
 //                                                                ccutl.icmp }}}
 //                                                          ccutl.value_pack {{{
 
-//                                             ccutl.value_pack include guard {{{
+//                                            ccutl.value_pack feature guard {{{
 #ifndef CCUTL_VALUE_PACK_INCLUDED
 #define CCUTL_VALUE_PACK_INCLUDED
-//                                             ccutl.value_pack include guard }}}
+//                                            ccutl.value_pack feature guard }}}
 
 // {{{ detail
 template <auto...>

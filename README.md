@@ -1,5 +1,3 @@
-# ccutl 0.3.0  | [_Files_](http://jpcx.github.io/ccutl/files.html) | [_API_](http://jpcx.github.io/ccutl/group__ccutl.html) | [_CHANGELOG_](https://github.com/jpcx/ccutl/blob/0.3.0/CHANGELOG.md)
-
 ```
                     |    |
   __|   __|  |   |  __|  |
@@ -7,6 +5,7 @@
 \___| \___| \__,_| \__| _|
 
    ccutl Core Utilities
+          v0.3.0
 ```
 
 ## About
@@ -25,24 +24,21 @@ Essentially, ccutl aims to decrease development time without sacrificing runtime
 
 ## Requirements
 
-- C++20 (developed using the GNU ISO C++ library v10.2.0)
-
-__Development:__
-
-- TypeScript ^3.9.0
-- Node.JS    ^12.0.0
+- C++20 _(developed using the GNU ISO C++ library v10.2.0)_
 
 ## Setup
 
 Include the `include/` directory or directly copy any of the headers contained within it.
 
-All features are pasted into `include/ctl/ccutl.h`; copying this file is the
-easiest way to use the library.
+All features are pasted into [`include/ctl/ccutl.h`](https://github.com/jpcx/ccutl/blob/master/include/ctl/ccutl.h)  
+Directly copying this file is the easiest way to use the library.
 
-A CMakeLists.txt is also available; integrate into a CMake project using `add_subdirectory`
-or `FetchContent`. The interface target name is `ccutl`.
+`wget https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h`
 
-A CMake install target is also provided if you would like to install the project to your system.
+As a CMake interface library (target `ccutl`):
+
+- use `add_subdirectory` or `FetchContent`
+- use the CMake install target to install as an interface library
 
 __note:__  
 Preprocessor version checks are provided for each feature.
@@ -96,12 +92,12 @@ using specialize_with_int = Template<int>;
 
 #include <ctl/type_pack.h>
 
-using intpair = ctl::type_pack<>;      // type_pack<>
+using intpair = ctl::type_pack<>       // type_pack<>
                    ::push_back<int>    // type_pack<int>
                    ::push_front<int>   // type_pack<int, int>
                    ::push_front<float> // type_pack<float, int, int>
                    ::slice<1>          // type_pack<int, int>
-                   ::to<std::pair>     // std::pair<int, int>
+                   ::to<std::pair>;    // std::pair<int, int>
 ```
 
 ## Testing

@@ -204,10 +204,10 @@ class Header {
     const errName =
         cleanName.match(/^internal\./m) ? 'ccutl: ' + cleanName : cleanName;
     const guardHeader = [
-      `// ${cleanName.padStart(80 - 20)} include guard {{{`,
+      `// ${cleanName.padStart(80 - 21)} feature guard {{{`,
       `#ifndef ${this.name}_INCLUDED`,
       `#define ${this.name}_INCLUDED`,
-      `// ${cleanName.padStart(80 - 20)} include guard }}}`,
+      `// ${cleanName.padStart(80 - 21)} feature guard }}}`,
     ];
     const guardFooter = [
       `// ${cleanName.padStart(80 - 21)} version guard {{{`,

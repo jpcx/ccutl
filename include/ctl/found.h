@@ -1,7 +1,7 @@
-//                                                  ccutl.found include guard {{{
+//                                                 ccutl.found feature guard {{{
 #ifndef CCUTL_FOUND_INCLUDED
 #define CCUTL_FOUND_INCLUDED
-//                                                  ccutl.found include guard }}}
+//                                                 ccutl.found feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -37,10 +37,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                               ccutl.rmref {{{
 
-//                                                  ccutl.rmref include guard {{{
+//                                                 ccutl.rmref feature guard {{{
 #ifndef CCUTL_RMREF_INCLUDED
 #define CCUTL_RMREF_INCLUDED
-//                                                  ccutl.rmref include guard }}}
+//                                                 ccutl.rmref feature guard }}}
 
 /**
  * shorthand for std::remove_reference_t
@@ -70,10 +70,10 @@ using rmref = std::remove_reference_t<T>;
 //                                                               ccutl.rmref }}}
 //                                                                 ccutl.fwd {{{
 
-//                                                    ccutl.fwd include guard {{{
+//                                                   ccutl.fwd feature guard {{{
 #ifndef CCUTL_FWD_INCLUDED
 #define CCUTL_FWD_INCLUDED
-//                                                    ccutl.fwd include guard }}}
+//                                                   ccutl.fwd feature guard }}}
 
 /*
 

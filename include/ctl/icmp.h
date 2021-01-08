@@ -1,7 +1,7 @@
-//                                                   ccutl.icmp include guard {{{
+//                                                  ccutl.icmp feature guard {{{
 #ifndef CCUTL_ICMP_INCLUDED
 #define CCUTL_ICMP_INCLUDED
-//                                                   ccutl.icmp include guard }}}
+//                                                  ccutl.icmp feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -39,10 +39,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                             ccutl.highest {{{
 
-//                                                ccutl.highest include guard {{{
+//                                               ccutl.highest feature guard {{{
 #ifndef CCUTL_HIGHEST_INCLUDED
 #define CCUTL_HIGHEST_INCLUDED
-//                                                ccutl.highest include guard }}}
+//                                               ccutl.highest feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -101,10 +101,10 @@ inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
 //                                                             ccutl.highest }}}
 //                                                               ccutl.rmref {{{
 
-//                                                  ccutl.rmref include guard {{{
+//                                                 ccutl.rmref feature guard {{{
 #ifndef CCUTL_RMREF_INCLUDED
 #define CCUTL_RMREF_INCLUDED
-//                                                  ccutl.rmref include guard }}}
+//                                                 ccutl.rmref feature guard }}}
 
 /**
  * shorthand for std::remove_reference_t
@@ -134,10 +134,10 @@ using rmref = std::remove_reference_t<T>;
 //                                                               ccutl.rmref }}}
 //                                                                 ccutl.fwd {{{
 
-//                                                    ccutl.fwd include guard {{{
+//                                                   ccutl.fwd feature guard {{{
 #ifndef CCUTL_FWD_INCLUDED
 #define CCUTL_FWD_INCLUDED
-//                                                    ccutl.fwd include guard }}}
+//                                                   ccutl.fwd feature guard }}}
 
 /*
 

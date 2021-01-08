@@ -1,7 +1,7 @@
-//                                                 ccutl.typeof include guard {{{
+//                                                ccutl.typeof feature guard {{{
 #ifndef CCUTL_TYPEOF_INCLUDED
 #define CCUTL_TYPEOF_INCLUDED
-//                                                 ccutl.typeof include guard }}}
+//                                                ccutl.typeof feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -637,10 +637,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                      ccutl.typeof_concept {{{
 
-//                                         ccutl.typeof_concept include guard {{{
+//                                        ccutl.typeof_concept feature guard {{{
 #ifndef CCUTL_TYPEOF_CONCEPT_INCLUDED
 #define CCUTL_TYPEOF_CONCEPT_INCLUDED
-//                                         ccutl.typeof_concept include guard }}}
+//                                        ccutl.typeof_concept feature guard }}}
 
 /**
  * creates a template spececialization detection concept.

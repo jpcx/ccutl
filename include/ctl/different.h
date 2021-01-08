@@ -1,7 +1,7 @@
-//                                              ccutl.different include guard {{{
+//                                             ccutl.different feature guard {{{
 #ifndef CCUTL_DIFFERENT_INCLUDED
 #define CCUTL_DIFFERENT_INCLUDED
-//                                              ccutl.different include guard }}}
+//                                             ccutl.different feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -37,10 +37,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                                ccutl.targ {{{
 
-//                                                   ccutl.targ include guard {{{
+//                                                  ccutl.targ feature guard {{{
 #ifndef CCUTL_TARG_INCLUDED
 #define CCUTL_TARG_INCLUDED
-//                                                   ccutl.targ include guard }}}
+//                                                  ccutl.targ feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -109,10 +109,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                                ccutl.targ }}}
 //                                                                ccutl.same {{{
 
-//                                                   ccutl.same include guard {{{
+//                                                  ccutl.same feature guard {{{
 #ifndef CCUTL_SAME_INCLUDED
 #define CCUTL_SAME_INCLUDED
-//                                                   ccutl.same include guard }}}
+//                                                  ccutl.same feature guard }}}
 
 // detail {{{
 namespace detail {

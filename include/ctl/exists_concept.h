@@ -1,7 +1,7 @@
-//                                         ccutl.exists_concept include guard {{{
+//                                        ccutl.exists_concept feature guard {{{
 #ifndef CCUTL_EXISTS_CONCEPT_INCLUDED
 #define CCUTL_EXISTS_CONCEPT_INCLUDED
-//                                         ccutl.exists_concept include guard }}}
+//                                        ccutl.exists_concept feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |

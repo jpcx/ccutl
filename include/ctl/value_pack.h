@@ -1,7 +1,7 @@
-//                                             ccutl.value_pack include guard {{{
+//                                            ccutl.value_pack feature guard {{{
 #ifndef CCUTL_VALUE_PACK_INCLUDED
 #define CCUTL_VALUE_PACK_INCLUDED
-//                                             ccutl.value_pack include guard }}}
+//                                            ccutl.value_pack feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -641,10 +641,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                               ccutl.rmref {{{
 
-//                                                  ccutl.rmref include guard {{{
+//                                                 ccutl.rmref feature guard {{{
 #ifndef CCUTL_RMREF_INCLUDED
 #define CCUTL_RMREF_INCLUDED
-//                                                  ccutl.rmref include guard }}}
+//                                                 ccutl.rmref feature guard }}}
 
 /**
  * shorthand for std::remove_reference_t
@@ -674,10 +674,10 @@ using rmref = std::remove_reference_t<T>;
 //                                                               ccutl.rmref }}}
 //                                                                 ccutl.fwd {{{
 
-//                                                    ccutl.fwd include guard {{{
+//                                                   ccutl.fwd feature guard {{{
 #ifndef CCUTL_FWD_INCLUDED
 #define CCUTL_FWD_INCLUDED
-//                                                    ccutl.fwd include guard }}}
+//                                                   ccutl.fwd feature guard }}}
 
 /*
 
@@ -747,10 +747,10 @@ fwd(rmref<T>&& t) noexcept {
 //                                                                 ccutl.fwd }}}
 //                                                                ccutl.targ {{{
 
-//                                                   ccutl.targ include guard {{{
+//                                                  ccutl.targ feature guard {{{
 #ifndef CCUTL_TARG_INCLUDED
 #define CCUTL_TARG_INCLUDED
-//                                                   ccutl.targ include guard }}}
+//                                                  ccutl.targ feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -819,10 +819,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                                ccutl.targ }}}
 //                                                                 ccutl.arg {{{
 
-//                                                    ccutl.arg include guard {{{
+//                                                   ccutl.arg feature guard {{{
 #ifndef CCUTL_ARG_INCLUDED
 #define CCUTL_ARG_INCLUDED
-//                                                    ccutl.arg include guard }}}
+//                                                   ccutl.arg feature guard }}}
 
 /*                                                        */ // clang-format off
 
@@ -904,10 +904,10 @@ arg(Ts &&... args) noexcept {
 //                                                                 ccutl.arg }}}
 //                                                      ccutl.exists_concept {{{
 
-//                                         ccutl.exists_concept include guard {{{
+//                                        ccutl.exists_concept feature guard {{{
 #ifndef CCUTL_EXISTS_CONCEPT_INCLUDED
 #define CCUTL_EXISTS_CONCEPT_INCLUDED
-//                                         ccutl.exists_concept include guard }}}
+//                                        ccutl.exists_concept feature guard }}}
 
 /**
  * creates a concept for specialization validity.
@@ -975,10 +975,10 @@ arg(Ts &&... args) noexcept {
 //                                                      ccutl.exists_concept }}}
 //                                                      ccutl.typeof_concept {{{
 
-//                                         ccutl.typeof_concept include guard {{{
+//                                        ccutl.typeof_concept feature guard {{{
 #ifndef CCUTL_TYPEOF_CONCEPT_INCLUDED
 #define CCUTL_TYPEOF_CONCEPT_INCLUDED
-//                                         ccutl.typeof_concept include guard }}}
+//                                        ccutl.typeof_concept feature guard }}}
 
 /**
  * creates a template spececialization detection concept.
@@ -1066,10 +1066,10 @@ arg(Ts &&... args) noexcept {
 //                                                      ccutl.typeof_concept }}}
 //                                                              ccutl.typeof {{{
 
-//                                                 ccutl.typeof include guard {{{
+//                                                ccutl.typeof feature guard {{{
 #ifndef CCUTL_TYPEOF_INCLUDED
 #define CCUTL_TYPEOF_INCLUDED
-//                                                 ccutl.typeof include guard }}}
+//                                                ccutl.typeof feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1116,10 +1116,10 @@ concept typeof = detail::typeof ::impl<T, Template>;
 //                                                              ccutl.typeof }}}
 //                                                              ccutl.exists {{{
 
-//                                                 ccutl.exists include guard {{{
+//                                                ccutl.exists feature guard {{{
 #ifndef CCUTL_EXISTS_INCLUDED
 #define CCUTL_EXISTS_INCLUDED
-//                                                 ccutl.exists include guard }}}
+//                                                ccutl.exists feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -1173,10 +1173,10 @@ concept exists = detail::exists::impl<Template, Args...>;
 //                                                              ccutl.exists }}}
 //                                                           ccutl.type_pack {{{
 
-//                                              ccutl.type_pack include guard {{{
+//                                             ccutl.type_pack feature guard {{{
 #ifndef CCUTL_TYPE_PACK_INCLUDED
 #define CCUTL_TYPE_PACK_INCLUDED
-//                                              ccutl.type_pack include guard }}}
+//                                             ccutl.type_pack feature guard }}}
 
 // {{{ detail
 template <class...>

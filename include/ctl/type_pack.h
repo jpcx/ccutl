@@ -1,7 +1,7 @@
-//                                              ccutl.type_pack include guard {{{
+//                                             ccutl.type_pack feature guard {{{
 #ifndef CCUTL_TYPE_PACK_INCLUDED
 #define CCUTL_TYPE_PACK_INCLUDED
-//                                              ccutl.type_pack include guard }}}
+//                                             ccutl.type_pack feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -641,10 +641,10 @@ namespace CCUTL_NAMESPACE {
 
 //                                                      ccutl.exists_concept {{{
 
-//                                         ccutl.exists_concept include guard {{{
+//                                        ccutl.exists_concept feature guard {{{
 #ifndef CCUTL_EXISTS_CONCEPT_INCLUDED
 #define CCUTL_EXISTS_CONCEPT_INCLUDED
-//                                         ccutl.exists_concept include guard }}}
+//                                        ccutl.exists_concept feature guard }}}
 
 /**
  * creates a concept for specialization validity.
@@ -712,10 +712,10 @@ namespace CCUTL_NAMESPACE {
 //                                                      ccutl.exists_concept }}}
 //                                                              ccutl.exists {{{
 
-//                                                 ccutl.exists include guard {{{
+//                                                ccutl.exists feature guard {{{
 #ifndef CCUTL_EXISTS_INCLUDED
 #define CCUTL_EXISTS_INCLUDED
-//                                                 ccutl.exists include guard }}}
+//                                                ccutl.exists feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -769,10 +769,10 @@ concept exists = detail::exists::impl<Template, Args...>;
 //                                                              ccutl.exists }}}
 //                                                                ccutl.targ {{{
 
-//                                                   ccutl.targ include guard {{{
+//                                                  ccutl.targ feature guard {{{
 #ifndef CCUTL_TARG_INCLUDED
 #define CCUTL_TARG_INCLUDED
-//                                                   ccutl.targ include guard }}}
+//                                                  ccutl.targ feature guard }}}
 
 // detail {{{
 namespace detail {
@@ -841,10 +841,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                                ccutl.targ }}}
 //                                                      ccutl.typeof_concept {{{
 
-//                                         ccutl.typeof_concept include guard {{{
+//                                        ccutl.typeof_concept feature guard {{{
 #ifndef CCUTL_TYPEOF_CONCEPT_INCLUDED
 #define CCUTL_TYPEOF_CONCEPT_INCLUDED
-//                                         ccutl.typeof_concept include guard }}}
+//                                        ccutl.typeof_concept feature guard }}}
 
 /**
  * creates a template spececialization detection concept.
@@ -932,10 +932,10 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                      ccutl.typeof_concept }}}
 //                                                              ccutl.typeof {{{
 
-//                                                 ccutl.typeof include guard {{{
+//                                                ccutl.typeof feature guard {{{
 #ifndef CCUTL_TYPEOF_INCLUDED
 #define CCUTL_TYPEOF_INCLUDED
-//                                                 ccutl.typeof include guard }}}
+//                                                ccutl.typeof feature guard }}}
 
 // detail {{{
 namespace detail {

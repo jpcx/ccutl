@@ -1,7 +1,7 @@
-//                                                   ccutl.rmcv include guard {{{
+//                                                  ccutl.rmcv feature guard {{{
 #ifndef CCUTL_RMCV_INCLUDED
 #define CCUTL_RMCV_INCLUDED
-//                                                   ccutl.rmcv include guard }}}
+//                                                  ccutl.rmcv feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |

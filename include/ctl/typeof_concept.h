@@ -1,7 +1,7 @@
-//                                         ccutl.typeof_concept include guard {{{
+//                                        ccutl.typeof_concept feature guard {{{
 #ifndef CCUTL_TYPEOF_CONCEPT_INCLUDED
 #define CCUTL_TYPEOF_CONCEPT_INCLUDED
-//                                         ccutl.typeof_concept include guard }}}
+//                                        ccutl.typeof_concept feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |

@@ -1,7 +1,7 @@
-//                                                ccutl.highest include guard {{{
+//                                               ccutl.highest feature guard {{{
 #ifndef CCUTL_HIGHEST_INCLUDED
 #define CCUTL_HIGHEST_INCLUDED
-//                                                ccutl.highest include guard }}}
+//                                               ccutl.highest feature guard }}}
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
