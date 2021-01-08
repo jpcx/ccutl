@@ -33,7 +33,7 @@ Include the `include/` directory or directly copy any of the headers contained w
 All features are pasted into [`include/ctl/ccutl.h`](https://github.com/jpcx/ccutl/blob/master/include/ctl/ccutl.h)  
 Directly copying this file is the easiest way to use the library.
 
-`wget https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h`
+`wget` [`https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h`](https://raw.githubusercontent.com/jpcx/ccutl/master/include/ctl/ccutl.h)
 
 As a CMake interface library (target `ccutl`):
 
