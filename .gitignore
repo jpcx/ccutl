@@ -1,5 +1,2 @@
-# ignore build directory
-build
-
-# ignore third-party libraries
-node_modules
+bs
+libs

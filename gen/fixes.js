@@ -1,29 +1,26 @@
-////////////////////////////////////////////////////////////////////////////////
-/// @brief documentation fixes for jpcx/ccutl
-//               __                   __
-//              /\ \__               /\ \__     auto o = "easy!"
-//    ___    ___\ \ ,_\    __    ____\ \ ,_\        << static_pass
-//   /'___\ /'___\ \ \/  /'__`\ /',__\\ \ \/        << dynamic_pass
-//  /\ \__//\ \__/\ \ \_/\  __//\__, `\\ \ \_       << [] {
-//  \ \____\ \____\\ \__\ \____\/\____/ \ \__\           return [...]_pass;
-//   \/____/\/____/ \/__/\/____/\/___/   \/__/         };
-//
-//  ccutl C++ Testing
-//  Copyright (C) 2020 Justin Collier <m@jpcx.dev>
-//
-//    This program is free software: you can redistribute it and/or modify
-//    it under the terms of the GNU General Public License as published by
-//    the Free Software Foundation, either version 3 of the License, or
-//    (at your option) any later version.
-//
-//    This program is distributed in the hope that it will be useful,
-//    but WITHOUT ANY WARRANTY; without even the internalied warranty of
-//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//    GNU General Public License for more details.
-//                                                                            //
-//  You should have received a copy of the GNU General Public License        ///
-//  along with this program.  If not, see <https://www.gnu.org/licenses/>.  ////
-////////////////////////////////////////////////////////////////////////////////
+/*                                                                         C++20
+                                               |    |
+                             __|   __|  |   |  __|  |
+                            (     (     |   |  |    |
+                           \___| \___| \__,_| \__| _|
+
+                              ccutl Core Utilities
+
+    [ccutl]: a C++ utilities library focused on flexibility and expressibility
+    Copyright (C) 2020, 2021 Justin Collier
+
+      This program is free software: you can redistribute it and/or modify
+      it under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version.
+
+      This program is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the internalied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
 const fs = require('fs');
 const path = require('path');
@@ -39,7 +36,10 @@ function readContent() {
              curPath, {encoding : 'utf8', withFileTypes : true})) {
       if (child.isDirectory()) {
         recurse(path.join(curPath, child.name));
-      } else if (child.name.match(/\.html$/m)) {
+      } else if ((child.name.match(/\.html$/m) &&
+                  !child.name.match(/ccutl_8h(?:_source)?.html/)) ||
+                 (child.name.match(/\.js$/m) &&
+                  !child.name.match(/fixes.js/))) {
         const p = path.join(curPath, child.name);
         result[p] = fs.readFileSync(p, 'utf8');
       }
@@ -66,19 +66,42 @@ function globalSearchReplace(content, searchValue, replaceValue) {
 
 // Fixes
 
+function fixNamespace(content) {
+  globalSearchReplace(content, /CCUTL_NAMESPACE/g, 'ctl');
+  globalSearchReplace(content, /CCUTL__NAMESPACE/g, 'ctl');
+  for (const loc of Object.keys(content)) {
+    if (loc.match(/CCUTL__NAMESPACE/g)) {
+      fs.unlinkSync(loc);
+      const newloc = loc.replace(/CCUTL__NAMESPACE/g, 'ctl')
+      content[newloc] = content[loc];
+      delete content[loc];
+    }
+  }
+}
+
 function fixProjectTitle(content) {
+  globalSearchReplace(content, /<title>ccutl: Ccutl<\/title>/g,
+                      '<title>ccutl Core Utilities</title>');
   globalSearchReplace(
-      content, /<div id="projectname">ccutl/g,
-      '<div id="projectname"><a href="index.html" style="text-decoration: none">ccutl</a>');
-  globalSearchReplace(content, /<title>ccutl: ccutl ([\d.]+).+?<\/title>/g,
-                      '<title>ccutl $1</title>');
-  globalSearchReplace(content, /<div class="title">ccutl ([\d.]+)(.+?)<\/div>/g,
-                      '<div class="title">ccutl $1 | <a href="https://github.com/jpcx/ccutl"><em>Repo</em></a>$2</div>');
+      content,
+      /<div class="headertitle">\s*<div class="title">Ccutl<\/div>\s*<\/div>/g,
+      '');
+}
+
+function setGroupAsIndex(content) {
+  globalSearchReplace(content, /group__ccutl.html/g, 'index.html')
+  const index = path.join(path.join(__dirname, '../'), 'index.html');
+  const ccutl = path.join(path.join(__dirname, '../'), 'group__ccutl.html');
+  content[index] = content[ccutl];
+  delete content[ccutl];
+  fs.unlinkSync(ccutl);
 }
 
 function applyFixes(content) {
   console.log('  Fixing titles...');
+  fixNamespace(content);
   fixProjectTitle(content);
+  setGroupAsIndex(content);
 }
 
 // main
