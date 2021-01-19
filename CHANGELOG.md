@@ -6,7 +6,7 @@
 
 ### Added
 
-- `ccutl.pow10`: 10^n for unsigned integrals and floating points
+- `ccutl.pow10`: `<integral>`10^`<unsigned>` and `<floating>`10^`<integral>`
 
 ## [0.3.2](https://github.com/jpcx/ccutl/releases/tag/0.3.2) \[[diff](https://github.com/jpcx/ccutl/compare/0.3.1...0.3.2)\]
 

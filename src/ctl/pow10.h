@@ -7,7 +7,7 @@
 
                               ccutl Core Utilities
 
-    [ccutl.pow10]: 10^n for unsigned integrals and floating points
+    [ccutl.pow10]: <integral>10^<unsigned> and <floating>10^<integral>
     Copyright (C) 2020, 2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
@@ -32,12 +32,12 @@ namespace CCUTL_NAMESPACE {
 /**
  * Raises 10 to an unsigned intgral power.
  *
- * @tparam Res resulting unsigned_integral type
+ * @tparam Res resulting integral type
  * @tparam Exp unsigned_integral exponent
  * @param  n power to raise
  * @return 10^n
  */
-template <std::unsigned_integral Res, std::unsigned_integral Exp>
+template <std::integral Res, std::unsigned_integral Exp>
 [[nodiscard]] inline constexpr Res
 pow10(Exp n) noexcept {
   Res res = 1;
@@ -49,7 +49,7 @@ pow10(Exp n) noexcept {
 /**
  * Raises 10 to an unsigned intgral power.
  *
- * @tparam Res resulting unsigned_integral type
+ * @tparam Res resulting unsigned_integral type and exponent
  * @param  n power to raise
  * @return 10^n
  */
