@@ -93,14 +93,14 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                  ccutl.targ version guard {{{
 
 #define CCUTL_TARG_VERSION_MAJOR 0
-#define CCUTL_TARG_VERSION_MINOR 3
-#define CCUTL_TARG_VERSION_PATCH 2
+#define CCUTL_TARG_VERSION_MINOR 4
+#define CCUTL_TARG_VERSION_PATCH 0
 
 #elif CCUTL_TARG_VERSION_MAJOR != 0
 #error   ccutl.targ major version mismatch
-#elif CCUTL_TARG_VERSION_MINOR != 3
+#elif CCUTL_TARG_VERSION_MINOR != 4
 #error   ccutl.targ minor version mismatch
-#elif CCUTL_TARG_VERSION_PATCH != 2
+#elif CCUTL_TARG_VERSION_PATCH != 0
 #warning ccutl.targ patch version mismatch
 #endif
 
@@ -158,14 +158,14 @@ concept same = sizeof...(Ts) > 0 and detail::same::impl<0, Ts...>();
 //                                                  ccutl.same version guard {{{
 
 #define CCUTL_SAME_VERSION_MAJOR 0
-#define CCUTL_SAME_VERSION_MINOR 3
-#define CCUTL_SAME_VERSION_PATCH 2
+#define CCUTL_SAME_VERSION_MINOR 4
+#define CCUTL_SAME_VERSION_PATCH 0
 
 #elif CCUTL_SAME_VERSION_MAJOR != 0
 #error   ccutl.same major version mismatch
-#elif CCUTL_SAME_VERSION_MINOR != 3
+#elif CCUTL_SAME_VERSION_MINOR != 4
 #error   ccutl.same minor version mismatch
-#elif CCUTL_SAME_VERSION_PATCH != 2
+#elif CCUTL_SAME_VERSION_PATCH != 0
 #warning ccutl.same patch version mismatch
 #endif
 
@@ -193,14 +193,14 @@ concept different = !same<Ts...>;
 //                                             ccutl.different version guard {{{
 
 #define CCUTL_DIFFERENT_VERSION_MAJOR 0
-#define CCUTL_DIFFERENT_VERSION_MINOR 3
-#define CCUTL_DIFFERENT_VERSION_PATCH 2
+#define CCUTL_DIFFERENT_VERSION_MINOR 4
+#define CCUTL_DIFFERENT_VERSION_PATCH 0
 
 #elif CCUTL_DIFFERENT_VERSION_MAJOR != 0
 #error   ccutl.different major version mismatch
-#elif CCUTL_DIFFERENT_VERSION_MINOR != 3
+#elif CCUTL_DIFFERENT_VERSION_MINOR != 4
 #error   ccutl.different minor version mismatch
-#elif CCUTL_DIFFERENT_VERSION_PATCH != 2
+#elif CCUTL_DIFFERENT_VERSION_PATCH != 0
 #warning ccutl.different patch version mismatch
 #endif
 

@@ -61,6 +61,9 @@ TEST("ccutl") {
 #ifndef CCUTL_MV_INCLUDED
   static_assert(false, "ccutl.mv not found");
 #endif
+#ifndef CCUTL_POW10_INCLUDED
+  static_assert(false, "ccutl.pow10 not found");
+#endif
 #ifndef CCUTL_RMCV_INCLUDED
   static_assert(false, "ccutl.rmcv not found");
 #endif

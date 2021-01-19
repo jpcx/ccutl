@@ -706,14 +706,14 @@ namespace CCUTL_NAMESPACE {
 //                                        ccutl.typeof_concept version guard {{{
 
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR 0
-#define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 3
-#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 2
+#define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 4
+#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 0
 
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.typeof_concept major version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 3
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 4
 #error   ccutl.typeof_concept minor version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 2
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 0
 #warning ccutl.typeof_concept patch version mismatch
 #endif
 

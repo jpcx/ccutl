@@ -701,86 +701,129 @@ namespace CCUTL_NAMESPACE {
 //                                        ccutl.exists_concept version guard {{{
 
 #define CCUTL_EXISTS_CONCEPT_VERSION_MAJOR 0
-#define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 3
-#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 2
+#define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 4
+#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 0
 
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.exists_concept major version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 3
+#elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 4
 #error   ccutl.exists_concept minor version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 2
+#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 0
 #warning ccutl.exists_concept patch version mismatch
 #endif
 
 //                                        ccutl.exists_concept version guard }}}
 
 //                                                      ccutl.exists_concept }}}
-//                                                                ccutl.rmcv {{{
+//                                                               ccutl.pow10 {{{
 
-//                                                  ccutl.rmcv feature guard {{{
-#ifndef CCUTL_RMCV_INCLUDED
-#define CCUTL_RMCV_INCLUDED
-//                                                  ccutl.rmcv feature guard }}}
+//                                                 ccutl.pow10 feature guard {{{
+#ifndef CCUTL_POW10_INCLUDED
+#define CCUTL_POW10_INCLUDED
+//                                                 ccutl.pow10 feature guard }}}
 
 /**
- * shorthand for std::remove_cv_t
+ * Raises 10 to an unsigned intgral power.
  *
- * \anchor rmcv
+ * @tparam Res resulting unsigned_integral type
+ * @tparam Exp unsigned_integral exponent
+ * @param  n power to raise
+ * @return 10^n
+ */
+template <std::unsigned_integral Res, std::unsigned_integral Exp>
+[[nodiscard]] inline constexpr Res
+pow10(Exp n) noexcept {
+  Res res = 1;
+  for (Exp i = 0; i < n; ++i)
+    res *= 10;
+  return res;
+}
+
+/**
+ * Raises 10 to an unsigned intgral power.
+ *
+ * @tparam Res resulting unsigned_integral type
+ * @param  n power to raise
+ * @return 10^n
+ */
+template <std::unsigned_integral Res>
+[[nodiscard]] inline constexpr Res
+pow10(Res n) noexcept {
+  return pow10<Res, Res>(n);
+}
+
+/**
+ * Raises 10 to a floating point power.
+ *
+ * @tparam Res resulting floating_point type
+ * @tparam Exp unsigned_integral exponent
+ * @param  n power to raise
+ * @return 10^n
+ */
+template <std::floating_point Res, std::integral Exp>
+[[nodiscard]] inline constexpr Res
+pow10(Exp n) noexcept {
+  Res res = 1;
+  if (n >= 0) {
+    for (Exp i = 0; i < n; ++i)
+      res *= 10;
+  } else {
+    for (Exp i = 0; i > n; --i)
+      res /= 10;
+  }
+  return res;
+}
+
+//                                                 ccutl.pow10 version guard {{{
+
+#define CCUTL_POW10_VERSION_MAJOR 0
+#define CCUTL_POW10_VERSION_MINOR 4
+#define CCUTL_POW10_VERSION_PATCH 0
+
+#elif CCUTL_POW10_VERSION_MAJOR != 0
+#error   ccutl.pow10 major version mismatch
+#elif CCUTL_POW10_VERSION_MINOR != 4
+#error   ccutl.pow10 minor version mismatch
+#elif CCUTL_POW10_VERSION_PATCH != 0
+#warning ccutl.pow10 patch version mismatch
+#endif
+
+//                                                 ccutl.pow10 version guard }}}
+
+//                                                               ccutl.pow10 }}}
+//                                                             ccutl.rmcvref {{{
+
+//                                               ccutl.rmcvref feature guard {{{
+#ifndef CCUTL_RMCVREF_INCLUDED
+#define CCUTL_RMCVREF_INCLUDED
+//                                               ccutl.rmcvref feature guard }}}
+
+/**
+ * shorthand for std::remove_cvref_t
+ *
+ * \anchor rmcvref
  * \ingroup ccutl
  */
 template <class T>
-using rmcv = std::remove_cv_t<T>;
+using rmcvref = std::remove_cvref_t<T>;
 
-//                                                  ccutl.rmcv version guard {{{
+//                                               ccutl.rmcvref version guard {{{
 
-#define CCUTL_RMCV_VERSION_MAJOR 0
-#define CCUTL_RMCV_VERSION_MINOR 3
-#define CCUTL_RMCV_VERSION_PATCH 2
+#define CCUTL_RMCVREF_VERSION_MAJOR 0
+#define CCUTL_RMCVREF_VERSION_MINOR 4
+#define CCUTL_RMCVREF_VERSION_PATCH 0
 
-#elif CCUTL_RMCV_VERSION_MAJOR != 0
-#error   ccutl.rmcv major version mismatch
-#elif CCUTL_RMCV_VERSION_MINOR != 3
-#error   ccutl.rmcv minor version mismatch
-#elif CCUTL_RMCV_VERSION_PATCH != 2
-#warning ccutl.rmcv patch version mismatch
+#elif CCUTL_RMCVREF_VERSION_MAJOR != 0
+#error   ccutl.rmcvref major version mismatch
+#elif CCUTL_RMCVREF_VERSION_MINOR != 4
+#error   ccutl.rmcvref minor version mismatch
+#elif CCUTL_RMCVREF_VERSION_PATCH != 0
+#warning ccutl.rmcvref patch version mismatch
 #endif
 
-//                                                  ccutl.rmcv version guard }}}
+//                                               ccutl.rmcvref version guard }}}
 
-//                                                                ccutl.rmcv }}}
-//                                                               ccutl.rmref {{{
-
-//                                                 ccutl.rmref feature guard {{{
-#ifndef CCUTL_RMREF_INCLUDED
-#define CCUTL_RMREF_INCLUDED
-//                                                 ccutl.rmref feature guard }}}
-
-/**
- * shorthand for std::remove_reference_t
- *
- * \anchor rmref
- * \ingroup ccutl
- */
-template <class T>
-using rmref = std::remove_reference_t<T>;
-
-//                                                 ccutl.rmref version guard {{{
-
-#define CCUTL_RMREF_VERSION_MAJOR 0
-#define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 2
-
-#elif CCUTL_RMREF_VERSION_MAJOR != 0
-#error   ccutl.rmref major version mismatch
-#elif CCUTL_RMREF_VERSION_MINOR != 3
-#error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 2
-#warning ccutl.rmref patch version mismatch
-#endif
-
-//                                                 ccutl.rmref version guard }}}
-
-//                                                               ccutl.rmref }}}
+//                                                             ccutl.rmcvref }}}
 //                                                              ccutl.exists {{{
 
 //                                                ccutl.exists feature guard {{{
@@ -824,93 +867,82 @@ concept exists = detail::exists::impl<Template, Args...>;
 //                                                ccutl.exists version guard {{{
 
 #define CCUTL_EXISTS_VERSION_MAJOR 0
-#define CCUTL_EXISTS_VERSION_MINOR 3
-#define CCUTL_EXISTS_VERSION_PATCH 2
+#define CCUTL_EXISTS_VERSION_MINOR 4
+#define CCUTL_EXISTS_VERSION_PATCH 0
 
 #elif CCUTL_EXISTS_VERSION_MAJOR != 0
 #error   ccutl.exists major version mismatch
-#elif CCUTL_EXISTS_VERSION_MINOR != 3
+#elif CCUTL_EXISTS_VERSION_MINOR != 4
 #error   ccutl.exists minor version mismatch
-#elif CCUTL_EXISTS_VERSION_PATCH != 2
+#elif CCUTL_EXISTS_VERSION_PATCH != 0
 #warning ccutl.exists patch version mismatch
 #endif
 
 //                                                ccutl.exists version guard }}}
 
 //                                                              ccutl.exists }}}
-//                                                                 ccutl.fwd {{{
+//                                                             ccutl.highest {{{
 
-//                                                   ccutl.fwd feature guard {{{
-#ifndef CCUTL_FWD_INCLUDED
-#define CCUTL_FWD_INCLUDED
-//                                                   ccutl.fwd feature guard }}}
+//                                               ccutl.highest feature guard {{{
+#ifndef CCUTL_HIGHEST_INCLUDED
+#define CCUTL_HIGHEST_INCLUDED
+//                                               ccutl.highest feature guard }}}
 
-/*
+// detail {{{
+namespace detail {
+namespace highest {
+/// checks if std::numeric_limits<Arithmetic>::max() is valid
+template <class T>
+concept has_numeric_limits_max = requires {
+  { std::numeric_limits<T>::max() }
+  ->std::convertible_to<T>;
+};
 
-note: the following was copied from the C++ standard draft GitHub sources
-      https://github.com/cplusplus/draft.git 60a9591
+/// naiive arithmetic concept that describes an integral or floating_point type
+template <class T>
+concept arithmetic = std::integral<T> || std::floating_point<T>;
+} // namespace highest
+} // namespace detail
+// detail }}}
 
-©ISO/IEC
-
-20.2.4  forward/move helpers [forward]
-
-1 The library provides templated helper functions to simplify applying move
-  semantics to an lvalue and to simplify the implementation of forwarding
-  functions. All functions specified in this subclause are signal-safe
-  (17.13.4).
-
-  template <class T> constexpr T&& forward(remove_reference_t<T>& t) noexcept;
-  template <class T> constexpr T&& forward(remove_reference_t<T>&& t) noexcept;
-
-2   Mandates: For the second overload, is_lvalue_reference_v<T> is false.
-3   Returns: static_cast<T&&>(t).
-
-*/
-
+/*                                                        */ // clang-format off
 /**
- * perfect forwarder for lvalues
+ * represents the highest number possible for a given arithmetic type
  *
- * \anchor fwd
+ * \note mirrors std::numeric_limits<T>::max()
+ *
+ * \code
+ *   #include "ctl/highest.h"
+ *   auto x0 = ctl::highest<int8_t>;  // 127
+ *   auto x1 = ctl::highest<int16_t>; // 32767
+ *   auto x2 = ctl::highest<float>;   // 3.40283e+38
+ * \endcode
+ *
+ * \anchor highest
  * \ingroup ccutl
  */
-template <class T>
-constexpr T&&
-fwd(rmref<T>& t) noexcept {
-  return static_cast<T&&>(t);
-}
+template <detail::highest::arithmetic Arithmetic>
+requires detail::highest::has_numeric_limits_max<Arithmetic>
+inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
+/*                                                        */ // clang-format on
 
-/**
- * perfect forwarder for rvalues
- *
- * \anchor fwd
- * \ingroup ccutl
- */
-template <class T>
-constexpr T&&
-fwd(rmref<T>&& t) noexcept {
-  static_assert(
-      !std::is_lvalue_reference_v<T>,
-      "cannot instantiate an rvalue forwarder with an lvalue reference type");
-  return static_cast<T&&>(t);
-}
+//                                               ccutl.highest version guard {{{
 
-//                                                   ccutl.fwd version guard {{{
+#define CCUTL_HIGHEST_VERSION_MAJOR 0
+#define CCUTL_HIGHEST_VERSION_MINOR 4
+#define CCUTL_HIGHEST_VERSION_PATCH 0
 
-#define CCUTL_FWD_VERSION_MAJOR 0
-#define CCUTL_FWD_VERSION_MINOR 3
-#define CCUTL_FWD_VERSION_PATCH 2
-
-#elif CCUTL_FWD_VERSION_MAJOR != 0
-#error   ccutl.fwd major version mismatch
-#elif CCUTL_FWD_VERSION_MINOR != 3
-#error   ccutl.fwd minor version mismatch
-#elif CCUTL_FWD_VERSION_PATCH != 2
-#warning ccutl.fwd patch version mismatch
+#elif CCUTL_HIGHEST_VERSION_MAJOR != 0
+#error   ccutl.highest major version mismatch
+#elif CCUTL_HIGHEST_VERSION_MINOR != 4
+#error   ccutl.highest minor version mismatch
+#elif CCUTL_HIGHEST_VERSION_PATCH != 0
+#warning ccutl.highest patch version mismatch
 #endif
 
-//                                                   ccutl.fwd version guard }}}
+//                                               ccutl.highest version guard }}}
 
-//                                                                 ccutl.fwd }}}
+//                                                             ccutl.highest }}}
 //                                                              ccutl.lowest {{{
 
 //                                                ccutl.lowest feature guard {{{
@@ -959,53 +991,53 @@ inline constexpr Arithmetic lowest = std::numeric_limits<Arithmetic>::lowest();
 //                                                ccutl.lowest version guard {{{
 
 #define CCUTL_LOWEST_VERSION_MAJOR 0
-#define CCUTL_LOWEST_VERSION_MINOR 3
-#define CCUTL_LOWEST_VERSION_PATCH 2
+#define CCUTL_LOWEST_VERSION_MINOR 4
+#define CCUTL_LOWEST_VERSION_PATCH 0
 
 #elif CCUTL_LOWEST_VERSION_MAJOR != 0
 #error   ccutl.lowest major version mismatch
-#elif CCUTL_LOWEST_VERSION_MINOR != 3
+#elif CCUTL_LOWEST_VERSION_MINOR != 4
 #error   ccutl.lowest minor version mismatch
-#elif CCUTL_LOWEST_VERSION_PATCH != 2
+#elif CCUTL_LOWEST_VERSION_PATCH != 0
 #warning ccutl.lowest patch version mismatch
 #endif
 
 //                                                ccutl.lowest version guard }}}
 
 //                                                              ccutl.lowest }}}
-//                                                             ccutl.rmcvref {{{
+//                                                                ccutl.rmcv {{{
 
-//                                               ccutl.rmcvref feature guard {{{
-#ifndef CCUTL_RMCVREF_INCLUDED
-#define CCUTL_RMCVREF_INCLUDED
-//                                               ccutl.rmcvref feature guard }}}
+//                                                  ccutl.rmcv feature guard {{{
+#ifndef CCUTL_RMCV_INCLUDED
+#define CCUTL_RMCV_INCLUDED
+//                                                  ccutl.rmcv feature guard }}}
 
 /**
- * shorthand for std::remove_cvref_t
+ * shorthand for std::remove_cv_t
  *
- * \anchor rmcvref
+ * \anchor rmcv
  * \ingroup ccutl
  */
 template <class T>
-using rmcvref = std::remove_cvref_t<T>;
+using rmcv = std::remove_cv_t<T>;
 
-//                                               ccutl.rmcvref version guard {{{
+//                                                  ccutl.rmcv version guard {{{
 
-#define CCUTL_RMCVREF_VERSION_MAJOR 0
-#define CCUTL_RMCVREF_VERSION_MINOR 3
-#define CCUTL_RMCVREF_VERSION_PATCH 2
+#define CCUTL_RMCV_VERSION_MAJOR 0
+#define CCUTL_RMCV_VERSION_MINOR 4
+#define CCUTL_RMCV_VERSION_PATCH 0
 
-#elif CCUTL_RMCVREF_VERSION_MAJOR != 0
-#error   ccutl.rmcvref major version mismatch
-#elif CCUTL_RMCVREF_VERSION_MINOR != 3
-#error   ccutl.rmcvref minor version mismatch
-#elif CCUTL_RMCVREF_VERSION_PATCH != 2
-#warning ccutl.rmcvref patch version mismatch
+#elif CCUTL_RMCV_VERSION_MAJOR != 0
+#error   ccutl.rmcv major version mismatch
+#elif CCUTL_RMCV_VERSION_MINOR != 4
+#error   ccutl.rmcv minor version mismatch
+#elif CCUTL_RMCV_VERSION_PATCH != 0
+#warning ccutl.rmcv patch version mismatch
 #endif
 
-//                                               ccutl.rmcvref version guard }}}
+//                                                  ccutl.rmcv version guard }}}
 
-//                                                             ccutl.rmcvref }}}
+//                                                                ccutl.rmcv }}}
 //                                                                ccutl.targ {{{
 
 //                                                  ccutl.targ feature guard {{{
@@ -1064,14 +1096,14 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                                  ccutl.targ version guard {{{
 
 #define CCUTL_TARG_VERSION_MAJOR 0
-#define CCUTL_TARG_VERSION_MINOR 3
-#define CCUTL_TARG_VERSION_PATCH 2
+#define CCUTL_TARG_VERSION_MINOR 4
+#define CCUTL_TARG_VERSION_PATCH 0
 
 #elif CCUTL_TARG_VERSION_MAJOR != 0
 #error   ccutl.targ major version mismatch
-#elif CCUTL_TARG_VERSION_MINOR != 3
+#elif CCUTL_TARG_VERSION_MINOR != 4
 #error   ccutl.targ minor version mismatch
-#elif CCUTL_TARG_VERSION_PATCH != 2
+#elif CCUTL_TARG_VERSION_PATCH != 0
 #warning ccutl.targ patch version mismatch
 #endif
 
@@ -1155,20 +1187,291 @@ using targ = detail::targ::type<idx, Ts...>;
 //                                        ccutl.typeof_concept version guard {{{
 
 #define CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR 0
-#define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 3
-#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 2
+#define CCUTL_TYPEOF_CONCEPT_VERSION_MINOR 4
+#define CCUTL_TYPEOF_CONCEPT_VERSION_PATCH 0
 
 #elif CCUTL_TYPEOF_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.typeof_concept major version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 3
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_MINOR != 4
 #error   ccutl.typeof_concept minor version mismatch
-#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 2
+#elif CCUTL_TYPEOF_CONCEPT_VERSION_PATCH != 0
 #warning ccutl.typeof_concept patch version mismatch
 #endif
 
 //                                        ccutl.typeof_concept version guard }}}
 
 //                                                      ccutl.typeof_concept }}}
+//                                                               ccutl.rmref {{{
+
+//                                                 ccutl.rmref feature guard {{{
+#ifndef CCUTL_RMREF_INCLUDED
+#define CCUTL_RMREF_INCLUDED
+//                                                 ccutl.rmref feature guard }}}
+
+/**
+ * shorthand for std::remove_reference_t
+ *
+ * \anchor rmref
+ * \ingroup ccutl
+ */
+template <class T>
+using rmref = std::remove_reference_t<T>;
+
+//                                                 ccutl.rmref version guard {{{
+
+#define CCUTL_RMREF_VERSION_MAJOR 0
+#define CCUTL_RMREF_VERSION_MINOR 4
+#define CCUTL_RMREF_VERSION_PATCH 0
+
+#elif CCUTL_RMREF_VERSION_MAJOR != 0
+#error   ccutl.rmref major version mismatch
+#elif CCUTL_RMREF_VERSION_MINOR != 4
+#error   ccutl.rmref minor version mismatch
+#elif CCUTL_RMREF_VERSION_PATCH != 0
+#warning ccutl.rmref patch version mismatch
+#endif
+
+//                                                 ccutl.rmref version guard }}}
+
+//                                                               ccutl.rmref }}}
+//                                                              ccutl.typeof {{{
+
+//                                                ccutl.typeof feature guard {{{
+#ifndef CCUTL_TYPEOF_INCLUDED
+#define CCUTL_TYPEOF_INCLUDED
+//                                                ccutl.typeof feature guard }}}
+
+// detail {{{
+namespace detail {
+namespace typeof { // clang-format off
+/// generated concept implementation for typeof
+CTL_TYPEOF_CONCEPT(impl, (class... Ts), (Ts...)); // clang-format on
+} // namespace typeof
+} // namespace detail
+// detail }}}
+
+/**
+ * Detects template specializations for type-parameter templates (<class...>)
+ *
+ * \code
+ *   #include <tuple>
+ *   #include "ctl/typeof.h"
+ *   using std::tuple;
+ *   auto x0 = ctl::typeof<tuple<int, int>, tuple>; // true
+ *   auto x1 = ctl::typeof<tuple<int, int>, pair>;  // false
+ * \endcode
+ *
+ * \anchor typeof
+ * \ingroup ccutl
+ */
+template <class T, template <class...> class Template>
+concept typeof = detail::typeof ::impl<T, Template>;
+
+//                                                ccutl.typeof version guard {{{
+
+#define CCUTL_TYPEOF_VERSION_MAJOR 0
+#define CCUTL_TYPEOF_VERSION_MINOR 4
+#define CCUTL_TYPEOF_VERSION_PATCH 0
+
+#elif CCUTL_TYPEOF_VERSION_MAJOR != 0
+#error   ccutl.typeof major version mismatch
+#elif CCUTL_TYPEOF_VERSION_MINOR != 4
+#error   ccutl.typeof minor version mismatch
+#elif CCUTL_TYPEOF_VERSION_PATCH != 0
+#warning ccutl.typeof patch version mismatch
+#endif
+
+//                                                ccutl.typeof version guard }}}
+
+//                                                              ccutl.typeof }}}
+//                                                                 ccutl.fwd {{{
+
+//                                                   ccutl.fwd feature guard {{{
+#ifndef CCUTL_FWD_INCLUDED
+#define CCUTL_FWD_INCLUDED
+//                                                   ccutl.fwd feature guard }}}
+
+/*
+
+note: the following was copied from the C++ standard draft GitHub sources
+      https://github.com/cplusplus/draft.git 60a9591
+
+©ISO/IEC
+
+20.2.4  forward/move helpers [forward]
+
+1 The library provides templated helper functions to simplify applying move
+  semantics to an lvalue and to simplify the implementation of forwarding
+  functions. All functions specified in this subclause are signal-safe
+  (17.13.4).
+
+  template <class T> constexpr T&& forward(remove_reference_t<T>& t) noexcept;
+  template <class T> constexpr T&& forward(remove_reference_t<T>&& t) noexcept;
+
+2   Mandates: For the second overload, is_lvalue_reference_v<T> is false.
+3   Returns: static_cast<T&&>(t).
+
+*/
+
+/**
+ * perfect forwarder for lvalues
+ *
+ * \anchor fwd
+ * \ingroup ccutl
+ */
+template <class T>
+constexpr T&&
+fwd(rmref<T>& t) noexcept {
+  return static_cast<T&&>(t);
+}
+
+/**
+ * perfect forwarder for rvalues
+ *
+ * \anchor fwd
+ * \ingroup ccutl
+ */
+template <class T>
+constexpr T&&
+fwd(rmref<T>&& t) noexcept {
+  static_assert(
+      !std::is_lvalue_reference_v<T>,
+      "cannot instantiate an rvalue forwarder with an lvalue reference type");
+  return static_cast<T&&>(t);
+}
+
+//                                                   ccutl.fwd version guard {{{
+
+#define CCUTL_FWD_VERSION_MAJOR 0
+#define CCUTL_FWD_VERSION_MINOR 4
+#define CCUTL_FWD_VERSION_PATCH 0
+
+#elif CCUTL_FWD_VERSION_MAJOR != 0
+#error   ccutl.fwd major version mismatch
+#elif CCUTL_FWD_VERSION_MINOR != 4
+#error   ccutl.fwd minor version mismatch
+#elif CCUTL_FWD_VERSION_PATCH != 0
+#warning ccutl.fwd patch version mismatch
+#endif
+
+//                                                   ccutl.fwd version guard }}}
+
+//                                                                 ccutl.fwd }}}
+//                                                                  ccutl.mv {{{
+
+//                                                    ccutl.mv feature guard {{{
+#ifndef CCUTL_MV_INCLUDED
+#define CCUTL_MV_INCLUDED
+//                                                    ccutl.mv feature guard }}}
+
+/*
+
+note: the following was copied from the C++ standard draft GitHub sources
+      https://github.com/cplusplus/draft.git 60a9591
+
+©ISO/IEC
+
+20.2.4  forward/move helpers [forward]
+
+...
+
+  template <class T> constexpr remove_reference_t<T>&& move(T&& t) noexcept;
+
+7   Returns: static_cast<remove_reference_t<T>&&>(t).
+
+*/
+
+/**
+ * move an rvalue
+ *
+ * \anchor mv
+ * \ingroup ccutl
+ */
+template <class T>
+constexpr rmref<T>&&
+mv(T&& t) noexcept {
+  return static_cast<rmref<T>&&>(t);
+}
+
+//                                                    ccutl.mv version guard {{{
+
+#define CCUTL_MV_VERSION_MAJOR 0
+#define CCUTL_MV_VERSION_MINOR 4
+#define CCUTL_MV_VERSION_PATCH 0
+
+#elif CCUTL_MV_VERSION_MAJOR != 0
+#error   ccutl.mv major version mismatch
+#elif CCUTL_MV_VERSION_MINOR != 4
+#error   ccutl.mv minor version mismatch
+#elif CCUTL_MV_VERSION_PATCH != 0
+#warning ccutl.mv patch version mismatch
+#endif
+
+//                                                    ccutl.mv version guard }}}
+
+//                                                                  ccutl.mv }}}
+//                                                               ccutl.streq {{{
+
+//                                                 ccutl.streq feature guard {{{
+#ifndef CCUTL_STREQ_INCLUDED
+#define CCUTL_STREQ_INCLUDED
+//                                                 ccutl.streq feature guard }}}
+
+// detail {{{
+namespace detail {
+namespace streq {
+/// defines types that may construct a string view
+template <class T>
+concept stringlike = requires(T&& v) {
+  std::string_view{fwd<T>(v)};
+};
+/// compare two stringlike objects
+template <stringlike A, stringlike B>
+[[nodiscard]] inline constexpr bool
+impl(A&& a, B&& b) noexcept {
+  return std::string_view{fwd<A>(a)} == std::string_view{fwd<B>(b)};
+}
+/// compare more than two stringlike objects
+template <stringlike First, stringlike... Rest>
+requires(sizeof...(Rest) > 1) // clang-format off
+[[nodiscard]] inline constexpr bool
+impl(First&& first, Rest&&... rest) { // clang-format on
+  return (impl(fwd<First>(first), fwd<Rest>(rest)) && ...);
+}
+} // namespace streq
+} // namespace detail
+// detail }}}
+
+/**
+ * equality comparison of stringlike objects
+ *
+ * \anchor streq
+ * \ingroup ccutl
+ */
+template <detail::streq::stringlike... Strings> // clang-format off
+requires(sizeof...(Strings) > 1)
+[[nodiscard]] inline constexpr bool
+streq(Strings&&... strings) noexcept { // clang-format on
+  return detail::streq::impl(fwd<Strings>(strings)...);
+};
+
+//                                                 ccutl.streq version guard {{{
+
+#define CCUTL_STREQ_VERSION_MAJOR 0
+#define CCUTL_STREQ_VERSION_MINOR 4
+#define CCUTL_STREQ_VERSION_PATCH 0
+
+#elif CCUTL_STREQ_VERSION_MAJOR != 0
+#error   ccutl.streq major version mismatch
+#elif CCUTL_STREQ_VERSION_MINOR != 4
+#error   ccutl.streq minor version mismatch
+#elif CCUTL_STREQ_VERSION_PATCH != 0
+#warning ccutl.streq patch version mismatch
+#endif
+
+//                                                 ccutl.streq version guard }}}
+
+//                                                               ccutl.streq }}}
 //                                                                 ccutl.arg {{{
 
 //                                                   ccutl.arg feature guard {{{
@@ -1240,14 +1543,14 @@ arg(Ts &&... args) noexcept {
 //                                                   ccutl.arg version guard {{{
 
 #define CCUTL_ARG_VERSION_MAJOR 0
-#define CCUTL_ARG_VERSION_MINOR 3
-#define CCUTL_ARG_VERSION_PATCH 2
+#define CCUTL_ARG_VERSION_MINOR 4
+#define CCUTL_ARG_VERSION_PATCH 0
 
 #elif CCUTL_ARG_VERSION_MAJOR != 0
 #error   ccutl.arg major version mismatch
-#elif CCUTL_ARG_VERSION_MINOR != 3
+#elif CCUTL_ARG_VERSION_MINOR != 4
 #error   ccutl.arg minor version mismatch
-#elif CCUTL_ARG_VERSION_PATCH != 2
+#elif CCUTL_ARG_VERSION_PATCH != 0
 #warning ccutl.arg patch version mismatch
 #endif
 
@@ -1300,309 +1603,130 @@ found(R&& r, T const& value, Proj proj = {}) { // clang-format on
 //                                                 ccutl.found version guard {{{
 
 #define CCUTL_FOUND_VERSION_MAJOR 0
-#define CCUTL_FOUND_VERSION_MINOR 3
-#define CCUTL_FOUND_VERSION_PATCH 2
+#define CCUTL_FOUND_VERSION_MINOR 4
+#define CCUTL_FOUND_VERSION_PATCH 0
 
 #elif CCUTL_FOUND_VERSION_MAJOR != 0
 #error   ccutl.found major version mismatch
-#elif CCUTL_FOUND_VERSION_MINOR != 3
+#elif CCUTL_FOUND_VERSION_MINOR != 4
 #error   ccutl.found minor version mismatch
-#elif CCUTL_FOUND_VERSION_PATCH != 2
+#elif CCUTL_FOUND_VERSION_PATCH != 0
 #warning ccutl.found patch version mismatch
 #endif
 
 //                                                 ccutl.found version guard }}}
 
 //                                                               ccutl.found }}}
-//                                                             ccutl.highest {{{
+//                                                                ccutl.icmp {{{
 
-//                                               ccutl.highest feature guard {{{
-#ifndef CCUTL_HIGHEST_INCLUDED
-#define CCUTL_HIGHEST_INCLUDED
-//                                               ccutl.highest feature guard }}}
-
-// detail {{{
-namespace detail {
-namespace highest {
-/// checks if std::numeric_limits<Arithmetic>::max() is valid
-template <class T>
-concept has_numeric_limits_max = requires {
-  { std::numeric_limits<T>::max() }
-  ->std::convertible_to<T>;
-};
-
-/// naiive arithmetic concept that describes an integral or floating_point type
-template <class T>
-concept arithmetic = std::integral<T> || std::floating_point<T>;
-} // namespace highest
-} // namespace detail
-// detail }}}
-
-/*                                                        */ // clang-format off
-/**
- * represents the highest number possible for a given arithmetic type
- *
- * \note mirrors std::numeric_limits<T>::max()
- *
- * \code
- *   #include "ctl/highest.h"
- *   auto x0 = ctl::highest<int8_t>;  // 127
- *   auto x1 = ctl::highest<int16_t>; // 32767
- *   auto x2 = ctl::highest<float>;   // 3.40283e+38
- * \endcode
- *
- * \anchor highest
- * \ingroup ccutl
- */
-template <detail::highest::arithmetic Arithmetic>
-requires detail::highest::has_numeric_limits_max<Arithmetic>
-inline constexpr Arithmetic highest = std::numeric_limits<Arithmetic>::max();
-/*                                                        */ // clang-format on
-
-//                                               ccutl.highest version guard {{{
-
-#define CCUTL_HIGHEST_VERSION_MAJOR 0
-#define CCUTL_HIGHEST_VERSION_MINOR 3
-#define CCUTL_HIGHEST_VERSION_PATCH 2
-
-#elif CCUTL_HIGHEST_VERSION_MAJOR != 0
-#error   ccutl.highest major version mismatch
-#elif CCUTL_HIGHEST_VERSION_MINOR != 3
-#error   ccutl.highest minor version mismatch
-#elif CCUTL_HIGHEST_VERSION_PATCH != 2
-#warning ccutl.highest patch version mismatch
-#endif
-
-//                                               ccutl.highest version guard }}}
-
-//                                                             ccutl.highest }}}
-//                                                                  ccutl.mv {{{
-
-//                                                    ccutl.mv feature guard {{{
-#ifndef CCUTL_MV_INCLUDED
-#define CCUTL_MV_INCLUDED
-//                                                    ccutl.mv feature guard }}}
-
-/*
-
-note: the following was copied from the C++ standard draft GitHub sources
-      https://github.com/cplusplus/draft.git 60a9591
-
-©ISO/IEC
-
-20.2.4  forward/move helpers [forward]
-
-...
-
-  template <class T> constexpr remove_reference_t<T>&& move(T&& t) noexcept;
-
-7   Returns: static_cast<remove_reference_t<T>&&>(t).
-
-*/
-
-/**
- * move an rvalue
- *
- * \anchor mv
- * \ingroup ccutl
- */
-template <class T>
-constexpr rmref<T>&&
-mv(T&& t) noexcept {
-  return static_cast<rmref<T>&&>(t);
-}
-
-//                                                    ccutl.mv version guard {{{
-
-#define CCUTL_MV_VERSION_MAJOR 0
-#define CCUTL_MV_VERSION_MINOR 3
-#define CCUTL_MV_VERSION_PATCH 2
-
-#elif CCUTL_MV_VERSION_MAJOR != 0
-#error   ccutl.mv major version mismatch
-#elif CCUTL_MV_VERSION_MINOR != 3
-#error   ccutl.mv minor version mismatch
-#elif CCUTL_MV_VERSION_PATCH != 2
-#warning ccutl.mv patch version mismatch
-#endif
-
-//                                                    ccutl.mv version guard }}}
-
-//                                                                  ccutl.mv }}}
-//                                                              ccutl.typeof {{{
-
-//                                                ccutl.typeof feature guard {{{
-#ifndef CCUTL_TYPEOF_INCLUDED
-#define CCUTL_TYPEOF_INCLUDED
-//                                                ccutl.typeof feature guard }}}
+//                                                  ccutl.icmp feature guard {{{
+#ifndef CCUTL_ICMP_INCLUDED
+#define CCUTL_ICMP_INCLUDED
+//                                                  ccutl.icmp feature guard }}}
 
 // detail {{{
 namespace detail {
-namespace typeof { // clang-format off
-/// generated concept implementation for typeof
-CTL_TYPEOF_CONCEPT(impl, (class... Ts), (Ts...)); // clang-format on
-} // namespace typeof
-} // namespace detail
-// detail }}}
-
-/**
- * Detects template specializations for type-parameter templates (<class...>)
- *
- * \code
- *   #include <tuple>
- *   #include "ctl/typeof.h"
- *   using std::tuple;
- *   auto x0 = ctl::typeof<tuple<int, int>, tuple>; // true
- *   auto x1 = ctl::typeof<tuple<int, int>, pair>;  // false
- * \endcode
- *
- * \anchor typeof
- * \ingroup ccutl
- */
-template <class T, template <class...> class Template>
-concept typeof = detail::typeof ::impl<T, Template>;
-
-//                                                ccutl.typeof version guard {{{
-
-#define CCUTL_TYPEOF_VERSION_MAJOR 0
-#define CCUTL_TYPEOF_VERSION_MINOR 3
-#define CCUTL_TYPEOF_VERSION_PATCH 2
-
-#elif CCUTL_TYPEOF_VERSION_MAJOR != 0
-#error   ccutl.typeof major version mismatch
-#elif CCUTL_TYPEOF_VERSION_MINOR != 3
-#error   ccutl.typeof minor version mismatch
-#elif CCUTL_TYPEOF_VERSION_PATCH != 2
-#warning ccutl.typeof patch version mismatch
-#endif
-
-//                                                ccutl.typeof version guard }}}
-
-//                                                              ccutl.typeof }}}
-//                                                            ccutl.found_if {{{
-
-//                                              ccutl.found_if feature guard {{{
-#ifndef CCUTL_FOUND_IF_INCLUDED
-#define CCUTL_FOUND_IF_INCLUDED
-//                                              ccutl.found_if feature guard }}}
-
-// thanks to https://en.cppreference.com/w/cpp/algorithm/ranges/find
-// for the std::find_if documentation
-
-/**
- * checks if a predicate is true for any value in a range
- * mirrors std::ranges::find_if
- *
- * \anchor found_if
- * \ingroup ccutl
- */
-template <
-    std::input_iterator I, std::sentinel_for<I> S, class Proj = std::identity,
-    std::indirect_unary_predicate<std::projected<I, Proj>> Pred>
-[[nodiscard]] inline constexpr bool
-found_if(I first, S last, Pred pred = {}, Proj proj = {}) {
-  return std::ranges::find_if(first, last, pred, proj) != last;
+namespace icmp {
+/// eq comparison of signed integrals
+template <std::signed_integral L, std::signed_integral R>
+[[nodiscard]] inline constexpr std::strong_ordering
+impl(L l, R r) {
+  return l <=> r;
 }
-
-/**
- * checks if a predicate is true for any value in a range
- * mirrors std::ranges::find_if
- *
- * \anchor found_if
- * \ingroup ccutl
- */
-template <
-    std::ranges::input_range R, class Proj = std::identity,
-    std::indirect_unary_predicate<
-        std::projected<std::ranges::iterator_t<R>, Proj>>
-        Pred>
-[[nodiscard]] inline constexpr bool
-found_if(R&& r, Pred pred = {}, Proj proj = {}) {
-  return std::ranges::find_if(fwd<R>(r), pred, proj) != std::ranges::end(r);
+/// eq comparison of unsigned integrals
+template <std::unsigned_integral L, std::unsigned_integral R>
+[[nodiscard]] inline constexpr std::strong_ordering
+impl(L l, R r) {
+  return l <=> r;
 }
-
-//                                              ccutl.found_if version guard {{{
-
-#define CCUTL_FOUND_IF_VERSION_MAJOR 0
-#define CCUTL_FOUND_IF_VERSION_MINOR 3
-#define CCUTL_FOUND_IF_VERSION_PATCH 2
-
-#elif CCUTL_FOUND_IF_VERSION_MAJOR != 0
-#error   ccutl.found_if major version mismatch
-#elif CCUTL_FOUND_IF_VERSION_MINOR != 3
-#error   ccutl.found_if minor version mismatch
-#elif CCUTL_FOUND_IF_VERSION_PATCH != 2
-#warning ccutl.found_if patch version mismatch
-#endif
-
-//                                              ccutl.found_if version guard }}}
-
-//                                                            ccutl.found_if }}}
-//                                                                ccutl.same {{{
-
-//                                                  ccutl.same feature guard {{{
-#ifndef CCUTL_SAME_INCLUDED
-#define CCUTL_SAME_INCLUDED
-//                                                  ccutl.same feature guard }}}
-
-// detail {{{
-namespace detail {
-namespace same {
-/// checks if First, Rest... are the same
-/// adheres to the spirit of the same_as conceptual redundancy;
-/// (same_as = std::is_same_v<T, U> and std::is_same_v<U, T>)
-/// all types are bidirectionally compared with each other
-template <std::size_t i, class First, class... Rest>
-[[nodiscard]] inline constexpr bool
-impl() noexcept {
-  if constexpr (i == sizeof...(Rest)) {
-    return true;
-  } else if constexpr (sizeof...(Rest) == 1) {
-    // pack is not really expanded with the ellipses (sizeof 1)
-    return (std::is_same_v<First, Rest> && ...);
-  } else /* i < sizeof...(Rest) and sizeof...(Rest) > 1 */ {
-    constexpr bool this_comparison =
-        (std::is_same_v<ctl::targ<i, First, Rest...>, Rest> && ...);
-    // recurse with First pushed to end to ensure two-way comparison
-    return this_comparison && impl<i + 1, Rest..., First>();
+/// eq comparison of signed <=> unsigned
+template <std::signed_integral L, std::unsigned_integral R>
+[[nodiscard]] inline constexpr std::strong_ordering
+impl(L l, R r) {
+  if (l < 0)
+    return std::strong_ordering::less;
+  else {
+    if constexpr (ctl::highest<L> >= ctl::highest<R>)
+      return impl(l, static_cast<L>(r));
+    else
+      return impl(static_cast<R>(l), r);
   }
 }
-} // namespace same
+/// eq comparison of unsigned <=> signed
+template <std::unsigned_integral L, std::signed_integral R>
+[[nodiscard]] inline constexpr std::strong_ordering
+impl(L l, R r) {
+  if (r < 0)
+    return std::strong_ordering::greater;
+  else {
+    if constexpr (ctl::highest<L> < ctl::highest<R>)
+      return impl(static_cast<R>(l), r);
+    else
+      return impl(l, static_cast<L>(r));
+  }
+}
+} // namespace icmp
 } // namespace detail
 // detail }}}
 
 /**
- * describes a set of types with no variation
+ * performs a three-way comparison of two integrals of any sign
+ *
+ * \param l  - left-hand  side
+ * \param r  - right-hand side
+ *
+ * \returns result of strongly ordered three-way comparison
  *
  * \code
- *   #include "ctl/same.h"
- *   static_assert( same<int, int,   int>);
- *   static_assert(!same<int, int &, int>);
+ *   #include "ctl/icmp.h"
+ *
+ *   ctl::icmp(0, 0);     // strong_ordering::equal
+ *   ctl::icmp(0, 0u);    // strong_ordering::equal
+ *   ctl::icmp(0u, 0);    // strong_ordering::equal
+ *   ctl::icmp(0u, 0u);   // strong_ordering::equal
+ *
+ *   ctl::icmp(0, 1);     // strong_ordering::less
+ *   ctl::icmp(1, 0u);    // strong_ordering::greater
+ *   ctl::icmp(0u, 1);    // strong_ordering::less
+ *
+ *   ctl::icmp(0, 1u);    // strong_ordering::less
+ *   ctl::icmp(1u, 0);    // strong_ordering::greater
+ *   ctl::icmp(1u, 1u);   // strong_ordering::equal
+ *
+ *   ctl::icmp(-1, -1);   // strong_ordering::equal
+ *   ctl::icmp(-1, 0u);   // strong_ordering::less
+ *   ctl::icmp(0u, -1);   // strong_ordering::greater
+ *
+ *   ctl::icmp(-1, 1);    // strong_ordering::less
+ *   ctl::icmp(1, -1);    // strong_ordering::greater
  * \endcode
  *
- * \anchor same
+ * \anchor icmp
  * \ingroup ccutl
  */
-template <class... Ts>
-concept same = sizeof...(Ts) > 0 and detail::same::impl<0, Ts...>();
+template <std::integral L, std::integral R>
+[[nodiscard]] inline constexpr std::strong_ordering
+icmp(L l, R r) noexcept {
+  return detail::icmp::impl(l, r);
+}
 
-//                                                  ccutl.same version guard {{{
+//                                                  ccutl.icmp version guard {{{
 
-#define CCUTL_SAME_VERSION_MAJOR 0
-#define CCUTL_SAME_VERSION_MINOR 3
-#define CCUTL_SAME_VERSION_PATCH 2
+#define CCUTL_ICMP_VERSION_MAJOR 0
+#define CCUTL_ICMP_VERSION_MINOR 4
+#define CCUTL_ICMP_VERSION_PATCH 0
 
-#elif CCUTL_SAME_VERSION_MAJOR != 0
-#error   ccutl.same major version mismatch
-#elif CCUTL_SAME_VERSION_MINOR != 3
-#error   ccutl.same minor version mismatch
-#elif CCUTL_SAME_VERSION_PATCH != 2
-#warning ccutl.same patch version mismatch
+#elif CCUTL_ICMP_VERSION_MAJOR != 0
+#error   ccutl.icmp major version mismatch
+#elif CCUTL_ICMP_VERSION_MINOR != 4
+#error   ccutl.icmp minor version mismatch
+#elif CCUTL_ICMP_VERSION_PATCH != 0
+#warning ccutl.icmp patch version mismatch
 #endif
 
-//                                                  ccutl.same version guard }}}
+//                                                  ccutl.icmp version guard }}}
 
-//                                                                ccutl.same }}}
+//                                                                ccutl.icmp }}}
 //                                                           ccutl.type_pack {{{
 
 //                                             ccutl.type_pack feature guard {{{
@@ -1782,231 +1906,79 @@ type_pack(Template<Ts...>) -> type_pack<Ts...>;
 //                                             ccutl.type_pack version guard {{{
 
 #define CCUTL_TYPE_PACK_VERSION_MAJOR 0
-#define CCUTL_TYPE_PACK_VERSION_MINOR 3
-#define CCUTL_TYPE_PACK_VERSION_PATCH 2
+#define CCUTL_TYPE_PACK_VERSION_MINOR 4
+#define CCUTL_TYPE_PACK_VERSION_PATCH 0
 
 #elif CCUTL_TYPE_PACK_VERSION_MAJOR != 0
 #error   ccutl.type_pack major version mismatch
-#elif CCUTL_TYPE_PACK_VERSION_MINOR != 3
+#elif CCUTL_TYPE_PACK_VERSION_MINOR != 4
 #error   ccutl.type_pack minor version mismatch
-#elif CCUTL_TYPE_PACK_VERSION_PATCH != 2
+#elif CCUTL_TYPE_PACK_VERSION_PATCH != 0
 #warning ccutl.type_pack patch version mismatch
 #endif
 
 //                                             ccutl.type_pack version guard }}}
 
 //                                                           ccutl.type_pack }}}
-//                                                           ccutl.different {{{
+//                                                            ccutl.found_if {{{
 
-//                                             ccutl.different feature guard {{{
-#ifndef CCUTL_DIFFERENT_INCLUDED
-#define CCUTL_DIFFERENT_INCLUDED
-//                                             ccutl.different feature guard }}}
+//                                              ccutl.found_if feature guard {{{
+#ifndef CCUTL_FOUND_IF_INCLUDED
+#define CCUTL_FOUND_IF_INCLUDED
+//                                              ccutl.found_if feature guard }}}
 
-/**
- * describes a set of types with at least one variation
- *
- * \code
- *   #include "ctl/different.h"
- *   auto x0 = ctl::different<int, int, int>;   // false
- *   auto x1 = ctl::different<int, int &, int>; // true
- * \endcode
- *
- * \anchor different
- * \ingroup ccutl
- */
-template <class... Ts>
-concept different = !same<Ts...>;
-
-//                                             ccutl.different version guard {{{
-
-#define CCUTL_DIFFERENT_VERSION_MAJOR 0
-#define CCUTL_DIFFERENT_VERSION_MINOR 3
-#define CCUTL_DIFFERENT_VERSION_PATCH 2
-
-#elif CCUTL_DIFFERENT_VERSION_MAJOR != 0
-#error   ccutl.different major version mismatch
-#elif CCUTL_DIFFERENT_VERSION_MINOR != 3
-#error   ccutl.different minor version mismatch
-#elif CCUTL_DIFFERENT_VERSION_PATCH != 2
-#warning ccutl.different patch version mismatch
-#endif
-
-//                                             ccutl.different version guard }}}
-
-//                                                           ccutl.different }}}
-//                                                               ccutl.streq {{{
-
-//                                                 ccutl.streq feature guard {{{
-#ifndef CCUTL_STREQ_INCLUDED
-#define CCUTL_STREQ_INCLUDED
-//                                                 ccutl.streq feature guard }}}
-
-// detail {{{
-namespace detail {
-namespace streq {
-/// defines types that may construct a string view
-template <class T>
-concept stringlike = requires(T&& v) {
-  std::string_view{fwd<T>(v)};
-};
-/// compare two stringlike objects
-template <stringlike A, stringlike B>
-[[nodiscard]] inline constexpr bool
-impl(A&& a, B&& b) noexcept {
-  return std::string_view{fwd<A>(a)} == std::string_view{fwd<B>(b)};
-}
-/// compare more than two stringlike objects
-template <stringlike First, stringlike... Rest>
-requires(sizeof...(Rest) > 1) // clang-format off
-[[nodiscard]] inline constexpr bool
-impl(First&& first, Rest&&... rest) { // clang-format on
-  return (impl(fwd<First>(first), fwd<Rest>(rest)) && ...);
-}
-} // namespace streq
-} // namespace detail
-// detail }}}
+// thanks to https://en.cppreference.com/w/cpp/algorithm/ranges/find
+// for the std::find_if documentation
 
 /**
- * equality comparison of stringlike objects
+ * checks if a predicate is true for any value in a range
+ * mirrors std::ranges::find_if
  *
- * \anchor streq
+ * \anchor found_if
  * \ingroup ccutl
  */
-template <detail::streq::stringlike... Strings> // clang-format off
-requires(sizeof...(Strings) > 1)
+template <
+    std::input_iterator I, std::sentinel_for<I> S, class Proj = std::identity,
+    std::indirect_unary_predicate<std::projected<I, Proj>> Pred>
 [[nodiscard]] inline constexpr bool
-streq(Strings&&... strings) noexcept { // clang-format on
-  return detail::streq::impl(fwd<Strings>(strings)...);
-};
-
-//                                                 ccutl.streq version guard {{{
-
-#define CCUTL_STREQ_VERSION_MAJOR 0
-#define CCUTL_STREQ_VERSION_MINOR 3
-#define CCUTL_STREQ_VERSION_PATCH 2
-
-#elif CCUTL_STREQ_VERSION_MAJOR != 0
-#error   ccutl.streq major version mismatch
-#elif CCUTL_STREQ_VERSION_MINOR != 3
-#error   ccutl.streq minor version mismatch
-#elif CCUTL_STREQ_VERSION_PATCH != 2
-#warning ccutl.streq patch version mismatch
-#endif
-
-//                                                 ccutl.streq version guard }}}
-
-//                                                               ccutl.streq }}}
-//                                                                ccutl.icmp {{{
-
-//                                                  ccutl.icmp feature guard {{{
-#ifndef CCUTL_ICMP_INCLUDED
-#define CCUTL_ICMP_INCLUDED
-//                                                  ccutl.icmp feature guard }}}
-
-// detail {{{
-namespace detail {
-namespace icmp {
-/// eq comparison of signed integrals
-template <std::signed_integral L, std::signed_integral R>
-[[nodiscard]] inline constexpr std::strong_ordering
-impl(L l, R r) {
-  return l <=> r;
+found_if(I first, S last, Pred pred = {}, Proj proj = {}) {
+  return std::ranges::find_if(first, last, pred, proj) != last;
 }
-/// eq comparison of unsigned integrals
-template <std::unsigned_integral L, std::unsigned_integral R>
-[[nodiscard]] inline constexpr std::strong_ordering
-impl(L l, R r) {
-  return l <=> r;
-}
-/// eq comparison of signed <=> unsigned
-template <std::signed_integral L, std::unsigned_integral R>
-[[nodiscard]] inline constexpr std::strong_ordering
-impl(L l, R r) {
-  if (l < 0)
-    return std::strong_ordering::less;
-  else {
-    if constexpr (ctl::highest<L> >= ctl::highest<R>)
-      return impl(l, static_cast<L>(r));
-    else
-      return impl(static_cast<R>(l), r);
-  }
-}
-/// eq comparison of unsigned <=> signed
-template <std::unsigned_integral L, std::signed_integral R>
-[[nodiscard]] inline constexpr std::strong_ordering
-impl(L l, R r) {
-  if (r < 0)
-    return std::strong_ordering::greater;
-  else {
-    if constexpr (ctl::highest<L> < ctl::highest<R>)
-      return impl(static_cast<R>(l), r);
-    else
-      return impl(l, static_cast<L>(r));
-  }
-}
-} // namespace icmp
-} // namespace detail
-// detail }}}
 
 /**
- * performs a three-way comparison of two integrals of any sign
+ * checks if a predicate is true for any value in a range
+ * mirrors std::ranges::find_if
  *
- * \param l  - left-hand  side
- * \param r  - right-hand side
- *
- * \returns result of strongly ordered three-way comparison
- *
- * \code
- *   #include "ctl/icmp.h"
- *
- *   ctl::icmp(0, 0);     // strong_ordering::equal
- *   ctl::icmp(0, 0u);    // strong_ordering::equal
- *   ctl::icmp(0u, 0);    // strong_ordering::equal
- *   ctl::icmp(0u, 0u);   // strong_ordering::equal
- *
- *   ctl::icmp(0, 1);     // strong_ordering::less
- *   ctl::icmp(1, 0u);    // strong_ordering::greater
- *   ctl::icmp(0u, 1);    // strong_ordering::less
- *
- *   ctl::icmp(0, 1u);    // strong_ordering::less
- *   ctl::icmp(1u, 0);    // strong_ordering::greater
- *   ctl::icmp(1u, 1u);   // strong_ordering::equal
- *
- *   ctl::icmp(-1, -1);   // strong_ordering::equal
- *   ctl::icmp(-1, 0u);   // strong_ordering::less
- *   ctl::icmp(0u, -1);   // strong_ordering::greater
- *
- *   ctl::icmp(-1, 1);    // strong_ordering::less
- *   ctl::icmp(1, -1);    // strong_ordering::greater
- * \endcode
- *
- * \anchor icmp
+ * \anchor found_if
  * \ingroup ccutl
  */
-template <std::integral L, std::integral R>
-[[nodiscard]] inline constexpr std::strong_ordering
-icmp(L l, R r) noexcept {
-  return detail::icmp::impl(l, r);
+template <
+    std::ranges::input_range R, class Proj = std::identity,
+    std::indirect_unary_predicate<
+        std::projected<std::ranges::iterator_t<R>, Proj>>
+        Pred>
+[[nodiscard]] inline constexpr bool
+found_if(R&& r, Pred pred = {}, Proj proj = {}) {
+  return std::ranges::find_if(fwd<R>(r), pred, proj) != std::ranges::end(r);
 }
 
-//                                                  ccutl.icmp version guard {{{
+//                                              ccutl.found_if version guard {{{
 
-#define CCUTL_ICMP_VERSION_MAJOR 0
-#define CCUTL_ICMP_VERSION_MINOR 3
-#define CCUTL_ICMP_VERSION_PATCH 2
+#define CCUTL_FOUND_IF_VERSION_MAJOR 0
+#define CCUTL_FOUND_IF_VERSION_MINOR 4
+#define CCUTL_FOUND_IF_VERSION_PATCH 0
 
-#elif CCUTL_ICMP_VERSION_MAJOR != 0
-#error   ccutl.icmp major version mismatch
-#elif CCUTL_ICMP_VERSION_MINOR != 3
-#error   ccutl.icmp minor version mismatch
-#elif CCUTL_ICMP_VERSION_PATCH != 2
-#warning ccutl.icmp patch version mismatch
+#elif CCUTL_FOUND_IF_VERSION_MAJOR != 0
+#error   ccutl.found_if major version mismatch
+#elif CCUTL_FOUND_IF_VERSION_MINOR != 4
+#error   ccutl.found_if minor version mismatch
+#elif CCUTL_FOUND_IF_VERSION_PATCH != 0
+#warning ccutl.found_if patch version mismatch
 #endif
 
-//                                                  ccutl.icmp version guard }}}
+//                                              ccutl.found_if version guard }}}
 
-//                                                                ccutl.icmp }}}
+//                                                            ccutl.found_if }}}
 //                                                          ccutl.value_pack {{{
 
 //                                            ccutl.value_pack feature guard {{{
@@ -2193,34 +2165,138 @@ value_pack(Template<values...>) -> value_pack<values...>;
 //                                            ccutl.value_pack version guard {{{
 
 #define CCUTL_VALUE_PACK_VERSION_MAJOR 0
-#define CCUTL_VALUE_PACK_VERSION_MINOR 3
-#define CCUTL_VALUE_PACK_VERSION_PATCH 2
+#define CCUTL_VALUE_PACK_VERSION_MINOR 4
+#define CCUTL_VALUE_PACK_VERSION_PATCH 0
 
 #elif CCUTL_VALUE_PACK_VERSION_MAJOR != 0
 #error   ccutl.value_pack major version mismatch
-#elif CCUTL_VALUE_PACK_VERSION_MINOR != 3
+#elif CCUTL_VALUE_PACK_VERSION_MINOR != 4
 #error   ccutl.value_pack minor version mismatch
-#elif CCUTL_VALUE_PACK_VERSION_PATCH != 2
+#elif CCUTL_VALUE_PACK_VERSION_PATCH != 0
 #warning ccutl.value_pack patch version mismatch
 #endif
 
 //                                            ccutl.value_pack version guard }}}
 
 //                                                          ccutl.value_pack }}}
+//                                                                ccutl.same {{{
+
+//                                                  ccutl.same feature guard {{{
+#ifndef CCUTL_SAME_INCLUDED
+#define CCUTL_SAME_INCLUDED
+//                                                  ccutl.same feature guard }}}
+
+// detail {{{
+namespace detail {
+namespace same {
+/// checks if First, Rest... are the same
+/// adheres to the spirit of the same_as conceptual redundancy;
+/// (same_as = std::is_same_v<T, U> and std::is_same_v<U, T>)
+/// all types are bidirectionally compared with each other
+template <std::size_t i, class First, class... Rest>
+[[nodiscard]] inline constexpr bool
+impl() noexcept {
+  if constexpr (i == sizeof...(Rest)) {
+    return true;
+  } else if constexpr (sizeof...(Rest) == 1) {
+    // pack is not really expanded with the ellipses (sizeof 1)
+    return (std::is_same_v<First, Rest> && ...);
+  } else /* i < sizeof...(Rest) and sizeof...(Rest) > 1 */ {
+    constexpr bool this_comparison =
+        (std::is_same_v<ctl::targ<i, First, Rest...>, Rest> && ...);
+    // recurse with First pushed to end to ensure two-way comparison
+    return this_comparison && impl<i + 1, Rest..., First>();
+  }
+}
+} // namespace same
+} // namespace detail
+// detail }}}
+
+/**
+ * describes a set of types with no variation
+ *
+ * \code
+ *   #include "ctl/same.h"
+ *   static_assert( same<int, int,   int>);
+ *   static_assert(!same<int, int &, int>);
+ * \endcode
+ *
+ * \anchor same
+ * \ingroup ccutl
+ */
+template <class... Ts>
+concept same = sizeof...(Ts) > 0 and detail::same::impl<0, Ts...>();
+
+//                                                  ccutl.same version guard {{{
+
+#define CCUTL_SAME_VERSION_MAJOR 0
+#define CCUTL_SAME_VERSION_MINOR 4
+#define CCUTL_SAME_VERSION_PATCH 0
+
+#elif CCUTL_SAME_VERSION_MAJOR != 0
+#error   ccutl.same major version mismatch
+#elif CCUTL_SAME_VERSION_MINOR != 4
+#error   ccutl.same minor version mismatch
+#elif CCUTL_SAME_VERSION_PATCH != 0
+#warning ccutl.same patch version mismatch
+#endif
+
+//                                                  ccutl.same version guard }}}
+
+//                                                                ccutl.same }}}
+//                                                           ccutl.different {{{
+
+//                                             ccutl.different feature guard {{{
+#ifndef CCUTL_DIFFERENT_INCLUDED
+#define CCUTL_DIFFERENT_INCLUDED
+//                                             ccutl.different feature guard }}}
+
+/**
+ * describes a set of types with at least one variation
+ *
+ * \code
+ *   #include "ctl/different.h"
+ *   auto x0 = ctl::different<int, int, int>;   // false
+ *   auto x1 = ctl::different<int, int &, int>; // true
+ * \endcode
+ *
+ * \anchor different
+ * \ingroup ccutl
+ */
+template <class... Ts>
+concept different = !same<Ts...>;
+
+//                                             ccutl.different version guard {{{
+
+#define CCUTL_DIFFERENT_VERSION_MAJOR 0
+#define CCUTL_DIFFERENT_VERSION_MINOR 4
+#define CCUTL_DIFFERENT_VERSION_PATCH 0
+
+#elif CCUTL_DIFFERENT_VERSION_MAJOR != 0
+#error   ccutl.different major version mismatch
+#elif CCUTL_DIFFERENT_VERSION_MINOR != 4
+#error   ccutl.different minor version mismatch
+#elif CCUTL_DIFFERENT_VERSION_PATCH != 0
+#warning ccutl.different patch version mismatch
+#endif
+
+//                                             ccutl.different version guard }}}
+
+//                                                           ccutl.different }}}
 /// \defgroup ccutl
 } // namespace CCUTL_NAMESPACE
 
 //                                                       ccutl version guard {{{
 
 #define CCUTL_VERSION_MAJOR 0
-#define CCUTL_VERSION_MINOR 3
-#define CCUTL_VERSION_PATCH 2
+#define CCUTL_VERSION_MINOR 4
+#define CCUTL_VERSION_PATCH 0
 
 #elif CCUTL_VERSION_MAJOR != 0
 #error   ccutl major version mismatch
-#elif CCUTL_VERSION_MINOR != 3
+#elif CCUTL_VERSION_MINOR != 4
 #error   ccutl minor version mismatch
-#elif CCUTL_VERSION_PATCH != 2
+#elif CCUTL_VERSION_PATCH != 0
 #warning ccutl patch version mismatch
 #endif
 

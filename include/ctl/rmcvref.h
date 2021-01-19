@@ -48,14 +48,14 @@ using rmcvref = std::remove_cvref_t<T>;
 //                                               ccutl.rmcvref version guard {{{
 
 #define CCUTL_RMCVREF_VERSION_MAJOR 0
-#define CCUTL_RMCVREF_VERSION_MINOR 3
-#define CCUTL_RMCVREF_VERSION_PATCH 2
+#define CCUTL_RMCVREF_VERSION_MINOR 4
+#define CCUTL_RMCVREF_VERSION_PATCH 0
 
 #elif CCUTL_RMCVREF_VERSION_MAJOR != 0
 #error   ccutl.rmcvref major version mismatch
-#elif CCUTL_RMCVREF_VERSION_MINOR != 3
+#elif CCUTL_RMCVREF_VERSION_MINOR != 4
 #error   ccutl.rmcvref minor version mismatch
-#elif CCUTL_RMCVREF_VERSION_PATCH != 2
+#elif CCUTL_RMCVREF_VERSION_PATCH != 0
 #warning ccutl.rmcvref patch version mismatch
 #endif
 

@@ -1,6 +1,12 @@
 # Changelog
 
-## [Upcoming](https://github.com/jpcx/ccutl/compare/0.3.2...devel)
+## [Upcoming](https://github.com/jpcx/ccutl/compare/0.4.0...devel)
+
+## [0.4.0](https://github.com/jpcx/ccutl/releases/tag/0.4.0) \[[diff](https://github.com/jpcx/ccutl/compare/0.3.2...0.4.0)\]
+
+### Added
+
+- `ccutl.pow10`: 10^n for unsigned integrals and floating points
 
 ## [0.3.2](https://github.com/jpcx/ccutl/releases/tag/0.3.2) \[[diff](https://github.com/jpcx/ccutl/compare/0.3.1...0.3.2)\]
 

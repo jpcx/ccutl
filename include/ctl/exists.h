@@ -142,14 +142,14 @@ namespace CCUTL_NAMESPACE {
 //                                        ccutl.exists_concept version guard {{{
 
 #define CCUTL_EXISTS_CONCEPT_VERSION_MAJOR 0
-#define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 3
-#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 2
+#define CCUTL_EXISTS_CONCEPT_VERSION_MINOR 4
+#define CCUTL_EXISTS_CONCEPT_VERSION_PATCH 0
 
 #elif CCUTL_EXISTS_CONCEPT_VERSION_MAJOR != 0
 #error   ccutl.exists_concept major version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 3
+#elif CCUTL_EXISTS_CONCEPT_VERSION_MINOR != 4
 #error   ccutl.exists_concept minor version mismatch
-#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 2
+#elif CCUTL_EXISTS_CONCEPT_VERSION_PATCH != 0
 #warning ccutl.exists_concept patch version mismatch
 #endif
 
@@ -195,14 +195,14 @@ concept exists = detail::exists::impl<Template, Args...>;
 //                                                ccutl.exists version guard {{{
 
 #define CCUTL_EXISTS_VERSION_MAJOR 0
-#define CCUTL_EXISTS_VERSION_MINOR 3
-#define CCUTL_EXISTS_VERSION_PATCH 2
+#define CCUTL_EXISTS_VERSION_MINOR 4
+#define CCUTL_EXISTS_VERSION_PATCH 0
 
 #elif CCUTL_EXISTS_VERSION_MAJOR != 0
 #error   ccutl.exists major version mismatch
-#elif CCUTL_EXISTS_VERSION_MINOR != 3
+#elif CCUTL_EXISTS_VERSION_MINOR != 4
 #error   ccutl.exists minor version mismatch
-#elif CCUTL_EXISTS_VERSION_PATCH != 2
+#elif CCUTL_EXISTS_VERSION_PATCH != 0
 #warning ccutl.exists patch version mismatch
 #endif
 

@@ -1,4 +1,3 @@
-#pragma once
 /*                                                                         C++20
                                                |    |
                              __|   __|  |   |  __|  |
@@ -7,7 +6,6 @@
 
                               ccutl Core Utilities
 
-    [ccutl]: a C++ utilities library focused on flexibility and expressibility
     Copyright (C) 2020, 2021 Justin Collier
 
       This program is free software: you can redistribute it and/or modify
@@ -23,27 +21,28 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.    */
 
-/// \defgroup ccutl
+#include "cctest.h"
 
-#include "ctl/arg.h"
-#include "ctl/different.h"
-#include "ctl/exists.h"
-#include "ctl/exists_concept.h"
-#include "ctl/found.h"
-#include "ctl/found_if.h"
-#include "ctl/fwd.h"
-#include "ctl/highest.h"
-#include "ctl/icmp.h"
-#include "ctl/lowest.h"
-#include "ctl/mv.h"
 #include "ctl/pow10.h"
-#include "ctl/rmcv.h"
-#include "ctl/rmcvref.h"
-#include "ctl/rmref.h"
-#include "ctl/same.h"
-#include "ctl/streq.h"
-#include "ctl/targ.h"
-#include "ctl/type_pack.h"
-#include "ctl/typeof.h"
-#include "ctl/typeof_concept.h"
-#include "ctl/value_pack.h"
+
+using namespace CCUTL_NAMESPACE;
+
+template <std::floating_point N>
+[[nodiscard]] static constexpr bool
+islessgreater(N a, N b) noexcept {
+  return a < b || a > b;
+}
+
+TEST("ccutl.pow10") {
+  static_assert(pow10(0u) == 1);
+  static_assert(pow10(1u) == 10);
+  static_assert(pow10(2u) == 100);
+  static_assert(pow10<unsigned>(0) == 1);
+  static_assert(pow10<unsigned>(1) == 10);
+  static_assert(pow10<unsigned>(2) == 100);
+  static_assert(!islessgreater(pow10<double>(0), 1.0));
+  static_assert(!islessgreater(pow10<double>(1), 10.0));
+  static_assert(!islessgreater(pow10<double>(2), 100.0));
+  static_assert(!islessgreater(pow10<double>(-1), 0.1));
+  static_assert(!islessgreater(pow10<double>(-2), 0.01));
+};

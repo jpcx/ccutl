@@ -54,14 +54,14 @@ using rmref = std::remove_reference_t<T>;
 //                                                 ccutl.rmref version guard {{{
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
-#define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 2
+#define CCUTL_RMREF_VERSION_MINOR 4
+#define CCUTL_RMREF_VERSION_PATCH 0
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
-#elif CCUTL_RMREF_VERSION_MINOR != 3
+#elif CCUTL_RMREF_VERSION_MINOR != 4
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 2
+#elif CCUTL_RMREF_VERSION_PATCH != 0
 #warning ccutl.rmref patch version mismatch
 #endif
 
@@ -127,14 +127,14 @@ fwd(rmref<T>&& t) noexcept {
 //                                                   ccutl.fwd version guard {{{
 
 #define CCUTL_FWD_VERSION_MAJOR 0
-#define CCUTL_FWD_VERSION_MINOR 3
-#define CCUTL_FWD_VERSION_PATCH 2
+#define CCUTL_FWD_VERSION_MINOR 4
+#define CCUTL_FWD_VERSION_PATCH 0
 
 #elif CCUTL_FWD_VERSION_MAJOR != 0
 #error   ccutl.fwd major version mismatch
-#elif CCUTL_FWD_VERSION_MINOR != 3
+#elif CCUTL_FWD_VERSION_MINOR != 4
 #error   ccutl.fwd minor version mismatch
-#elif CCUTL_FWD_VERSION_PATCH != 2
+#elif CCUTL_FWD_VERSION_PATCH != 0
 #warning ccutl.fwd patch version mismatch
 #endif
 
@@ -183,14 +183,14 @@ found(R&& r, T const& value, Proj proj = {}) { // clang-format on
 //                                                 ccutl.found version guard {{{
 
 #define CCUTL_FOUND_VERSION_MAJOR 0
-#define CCUTL_FOUND_VERSION_MINOR 3
-#define CCUTL_FOUND_VERSION_PATCH 2
+#define CCUTL_FOUND_VERSION_MINOR 4
+#define CCUTL_FOUND_VERSION_PATCH 0
 
 #elif CCUTL_FOUND_VERSION_MAJOR != 0
 #error   ccutl.found major version mismatch
-#elif CCUTL_FOUND_VERSION_MINOR != 3
+#elif CCUTL_FOUND_VERSION_MINOR != 4
 #error   ccutl.found minor version mismatch
-#elif CCUTL_FOUND_VERSION_PATCH != 2
+#elif CCUTL_FOUND_VERSION_PATCH != 0
 #warning ccutl.found patch version mismatch
 #endif
 

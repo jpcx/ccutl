@@ -54,14 +54,14 @@ using rmref = std::remove_reference_t<T>;
 //                                                 ccutl.rmref version guard {{{
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
-#define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 2
+#define CCUTL_RMREF_VERSION_MINOR 4
+#define CCUTL_RMREF_VERSION_PATCH 0
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
-#elif CCUTL_RMREF_VERSION_MINOR != 3
+#elif CCUTL_RMREF_VERSION_MINOR != 4
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 2
+#elif CCUTL_RMREF_VERSION_PATCH != 0
 #warning ccutl.rmref patch version mismatch
 #endif
 
@@ -127,14 +127,14 @@ fwd(rmref<T>&& t) noexcept {
 //                                                   ccutl.fwd version guard {{{
 
 #define CCUTL_FWD_VERSION_MAJOR 0
-#define CCUTL_FWD_VERSION_MINOR 3
-#define CCUTL_FWD_VERSION_PATCH 2
+#define CCUTL_FWD_VERSION_MINOR 4
+#define CCUTL_FWD_VERSION_PATCH 0
 
 #elif CCUTL_FWD_VERSION_MAJOR != 0
 #error   ccutl.fwd major version mismatch
-#elif CCUTL_FWD_VERSION_MINOR != 3
+#elif CCUTL_FWD_VERSION_MINOR != 4
 #error   ccutl.fwd minor version mismatch
-#elif CCUTL_FWD_VERSION_PATCH != 2
+#elif CCUTL_FWD_VERSION_PATCH != 0
 #warning ccutl.fwd patch version mismatch
 #endif
 
@@ -185,14 +185,14 @@ streq(Strings&&... strings) noexcept { // clang-format on
 //                                                 ccutl.streq version guard {{{
 
 #define CCUTL_STREQ_VERSION_MAJOR 0
-#define CCUTL_STREQ_VERSION_MINOR 3
-#define CCUTL_STREQ_VERSION_PATCH 2
+#define CCUTL_STREQ_VERSION_MINOR 4
+#define CCUTL_STREQ_VERSION_PATCH 0
 
 #elif CCUTL_STREQ_VERSION_MAJOR != 0
 #error   ccutl.streq major version mismatch
-#elif CCUTL_STREQ_VERSION_MINOR != 3
+#elif CCUTL_STREQ_VERSION_MINOR != 4
 #error   ccutl.streq minor version mismatch
-#elif CCUTL_STREQ_VERSION_PATCH != 2
+#elif CCUTL_STREQ_VERSION_PATCH != 0
 #warning ccutl.streq patch version mismatch
 #endif
 

@@ -53,14 +53,14 @@ using rmref = std::remove_reference_t<T>;
 //                                                 ccutl.rmref version guard {{{
 
 #define CCUTL_RMREF_VERSION_MAJOR 0
-#define CCUTL_RMREF_VERSION_MINOR 3
-#define CCUTL_RMREF_VERSION_PATCH 2
+#define CCUTL_RMREF_VERSION_MINOR 4
+#define CCUTL_RMREF_VERSION_PATCH 0
 
 #elif CCUTL_RMREF_VERSION_MAJOR != 0
 #error   ccutl.rmref major version mismatch
-#elif CCUTL_RMREF_VERSION_MINOR != 3
+#elif CCUTL_RMREF_VERSION_MINOR != 4
 #error   ccutl.rmref minor version mismatch
-#elif CCUTL_RMREF_VERSION_PATCH != 2
+#elif CCUTL_RMREF_VERSION_PATCH != 0
 #warning ccutl.rmref patch version mismatch
 #endif
 
@@ -102,14 +102,14 @@ mv(T&& t) noexcept {
 //                                                    ccutl.mv version guard {{{
 
 #define CCUTL_MV_VERSION_MAJOR 0
-#define CCUTL_MV_VERSION_MINOR 3
-#define CCUTL_MV_VERSION_PATCH 2
+#define CCUTL_MV_VERSION_MINOR 4
+#define CCUTL_MV_VERSION_PATCH 0
 
 #elif CCUTL_MV_VERSION_MAJOR != 0
 #error   ccutl.mv major version mismatch
-#elif CCUTL_MV_VERSION_MINOR != 3
+#elif CCUTL_MV_VERSION_MINOR != 4
 #error   ccutl.mv minor version mismatch
-#elif CCUTL_MV_VERSION_PATCH != 2
+#elif CCUTL_MV_VERSION_PATCH != 0
 #warning ccutl.mv patch version mismatch
 #endif
 
